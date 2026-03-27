@@ -25,12 +25,12 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px 20px;
+            padding: 80px 20px;
             background: linear-gradient(to bottom, #1e3a8a, #0f172a);
             border-bottom: 2px solid #00e5ff;
         }
 
-        /* Harf harf yazma ve kaybolan çubuk kurgusu */
+        /* Harf harf yazma kurgusu */
         .typing-container {
             display: inline-block;
             position: relative;
@@ -47,28 +47,9 @@
             animation: typing 3s steps(12, end) forwards;
         }
 
-        .cursor {
-            position: absolute;
-            right: -10px;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background-color: #00e5ff;
-            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
-        }
-
         @keyframes typing {
             from { width: 0; }
             to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes hideCursor {
-            to { width: 0; opacity: 0; }
         }
 
         .unvan {
@@ -76,7 +57,16 @@
             color: #b026ff;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* --- KANKA İŞTE O VURUCU VE KISA AÇIKLAMA --- */
+        .summary {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            max-width: 90%;
+            margin-bottom: 35px;
+            text-align: center;
         }
 
         /* İletişim Butonları (Tek Satır Ortalı) */
@@ -98,9 +88,13 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             width: 100%;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         /* Metrik Sayıları */
@@ -144,132 +138,5 @@
             background: #1e293b;
             border: 1px solid rgba(0, 229, 255, 0.2);
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .card h3 {
-            color: #b026ff;
-            margin-bottom: 15px;
-            font-size: 1.25rem;
-            text-transform: uppercase;
-        }
-
-        .card ul {
-            list-style: none;
-            text-align: left;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        .card ul li {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .card ul li::before {
-            content: "◆";
-            margin-right: 10px;
-            color: #00e5ff;
-        }
-
-        .tech-box {
-            display: inline-block;
-            background: #0f172a;
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #02040a;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        footer p {
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="typing-container">
-            <h1>EMRE KEÇİCİ</h1>
-            <div class="cursor"></div>
-        </div>
-        
-        <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
-
-        <div class="contact-hub">
-            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ Bizimle İletişime Geçin</a>
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🔗 LinkedIn Profesyonel Ağ</a>
-        </div>
-    </header>
-
-    <div class="stats-grid">
-        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
-        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
-        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
-        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
-    </div>
-
-    <div class="container">
-        <h2 class="sec-title">Profesyonel Ekosistem</h2>
-
-        <div class="card">
-            <h3>🎯 Uzmanlık Alanları</h3>
-            <ul>
-                <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
-                <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
-                <li>Hafif yazılım katmanlarıyla sistemleri bozmayan Web Scraping botları.</li>
-                <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📢 Yayınlar & Bülten Köşesi</h3>
-            <ul>
-                <li>Uçtan Uca Yapay Zeka Mimarisi adlı LinkedIn bülteni kurumsal yayınları.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>🔐 Veri Güvenliği ve Gizlilik</h3>
-            <ul>
-                <li>Sıfır Veri Toplama Politikası (Cookieless): KVKK ve GDPR ile tam uyumludur.</li>
-                <li>Güvenli Altyapı: GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📂 Teknoloji Envanteri</h3>
-            <div style="text-align: center;">
-                <div class="tech-box">Python</div>
-                <div class="tech-box">REST API</div>
-                <div class="tech-box">HTML5</div>
-                <div class="tech-box">JSON</div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div style="margin-bottom: 15px;">
-            <span style="border: 1px solid #10b981; color: #10b981; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; margin-right: 10px;">🔒 SSL Şifreli</span>
-            <span style="border: 1px solid #10b981; color: #10b981; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem;">🛡️ KVKK Uyumlu</span>
-        </div>
-        <p>© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
-    </footer>
-
-</body>
-</html>
+            padding: 25
+            
