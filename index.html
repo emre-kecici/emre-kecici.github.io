@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçeci | Saha Operasyonları & Yapay Zeka Uzmanı</title>
+    <title>Emre Keçeci | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
+    
+    <meta name="description" content="Emre Keçeci - Web Geliştirme ve Otomasyon Uzmanı | İşletmeler İçin Yapay Zeka Entegrasyonu | Süreç Tasarımı">
+    <meta name="keywords" content="Yapay Zeka, Otomasyon, API Entegrasyonu, Scraping, Emre Keçeci">
+
     <style>
         :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0b1329;
+            --bg-card: #111a36;
             --cyan: #00e5ff;
             --purple: #b026ff;
-            --bg-deep: #060b19;
-            --bg-card: #121e45;
+            --green: #10b981;
             --text-high: #ffffff;
-            --text-low: #8b9bb4;
+            --text-low: #9ca3af;
+            --border: rgba(0, 229, 255, 0.15);
+        }
+
+        .light-mode {
+            --bg-primary: #f3f4f6;
+            --bg-secondary: #ffffff;
+            --bg-card: #f9fafb;
+            --text-high: #111827;
+            --text-low: #4b5563;
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -22,14 +38,54 @@
         }
 
         body {
-            background-color: var(--bg-deep);
+            background-color: var(--bg-primary);
             color: var(--text-high);
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, Arial, sans-serif;
             overflow-x: hidden;
-            line-height: 1.5;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* --- Giriş Alanı (Telefona Tam Uyumlu) --- */
+        /* --- Üst Menü & Tema --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 19, 41, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-weight: bold;
+            color: var(--cyan);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-tools {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .theme-btn, .lang-btn {
+            background: transparent;
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- Giriş Alanı (Hero) --- */
         header {
             min-height: 100vh;
             display: flex;
@@ -37,240 +93,15 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            background: radial-gradient(circle at center, #111a36 0%, var(--bg-deep) 80%);
-            border-bottom: 2px solid var(--cyan);
+            padding: 100px 20px 40px;
+            background: radial-gradient(circle at center, #111a36 0%, var(--bg-primary) 80%);
+            border-bottom: 1px solid var(--border);
         }
 
         h1 {
-            font-size: 2.2rem; /* Mobilde taşmasın diye küçültüldü */
+            font-size: 2.5rem;
             font-weight: bold;
-            letter-spacing: 1px;
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-            width: 100%;
-            word-wrap: break-word; /* Taşmayı önler */
-        }
-
-        .typing {
-            font-size: 1rem; /* Mobilde taşmasın diye küçültüldü */
-            color: var(--cyan);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            border-right: 2px solid var(--cyan);
-            white-space: normal; /* Yan yana taşmayı engeller, alt satıra geçer */
-            text-align: center;
-            width: 100%;
-            max-width: 90%;
-        }
-
-        .summary {
-            font-size: 0.95rem;
-            color: var(--text-low);
-            max-width: 90%;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .btn-hub {
-            display: flex;
-            flex-direction: column; /* Mobilde butonlar alt alta olsun diye */
-            gap: 15px;
-            width: 90%;
-            max-width: 320px;
-        }
-
-        .btn {
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .btn-prime {
-            background: var(--cyan);
-            color: #000;
-            box-shadow: 0 0 15px var(--cyan);
-        }
-
-        .btn-second {
-            border: 2px solid var(--purple);
-            color: #fff;
-        }
-
-        /* --- Konteynır Düzeni --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .sec-title {
-            font-size: 1.8rem;
-            color: var(--cyan);
-            text-align: center;
-            margin-bottom: 40px;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-            text-transform: uppercase;
-        }
-
-        /* --- Maddeli Uzmanlıklar --- */
-        .expert-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .expert-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            border-radius: 8px;
-            padding: 25px;
-        }
-
-        .expert-card h3 {
-            font-size: 1.3rem;
-            color: var(--cyan);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .expert-list {
-            list-style: none;
-        }
-
-        .expert-list li {
-            color: var(--text-low);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .expert-list li::before {
-            content: '⚡';
-            margin-right: 10px;
-            color: var(--cyan);
-        }
-
-        /* --- Teknik Barlar --- */
-        .skills-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .skill-item {
-            margin-bottom: 15px;
-        }
-
-        .skill-head {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .bar-outline {
-            height: 10px;
-            background: #101a36;
-            border-radius: 5px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .bar-inner {
-            height: 100%;
-            border-radius: 5px;
-            background: linear-gradient(to right, var(--cyan), var(--purple));
-        }
-
-        footer {
-            background: #030611;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 229, 255, 0.1);
-        }
-
-        footer p {
-            font-size: 0.85rem;
-            color: var(--text-low);
-        }
-
-        footer span {
-            color: var(--cyan);
-        }
-    </style>
-</head>
-<body>
-
-    <header id="anasayfa">
-        <h1>EMRE KEÇECİ</h1>
-        <div class="typing">Saha Operasyonları & Yapay Zeka Uzmanı</div>
-        
-        <p class="summary">
-            Lean Manufacturing, 5S ve Poka-Yoke uzmanlığı ile akıllı yapay zeka entegrasyonlarını sahada birleştiren operasyonel liderlik portfolyosu.
-        </p>
-
-        <div class="btn-hub">
-            <a href="#uzmanliklar" class="btn btn-prime">Portfolyoyu Keşfet</a>
-            <a href="https://www.linkedin.com" target="_blank" class="btn btn-second">Bağlantı Kur</a>
-        </div>
-    </header>
-
-    <div class="container" id="uzmanliklar">
-        <h2 class="sec-title">Profesyonel Operasyon Sistemleri</h2>
-
-        <div class="expert-grid">
-            <div class="expert-card">
-                <h3>Yapay Zeka ve Mikro Otomasyon</h3>
-                <ul class="expert-list">
-                    <li>Özel veri çekme (Scraping) bot mimarileri.</li>
-                    <li>Operasyonu hızlandıran akıllı Chrome eklentileri.</li>
-                    <li>Süreçleri analiz eden yapay zeka (Prompt) mühendisliği.</li>
-                    <li>Bağımsız veri ve sistem akış mimarisi yönetimi.</li>
-                </ul>
-            </div>
-
-            <div class="expert-card">
-                <h3>Saha Verimlilik Yönetimi</h3>
-                <ul class="expert-list">
-                    <li>Hataları sıfıra indiren kurumsal Poka-Yoke mekanizmaları.</li>
-                    <li>Standartlaştırma sağlayan kurumsal modern 5S kütüphanesi.</li>
-                    <li>Mavi ve beyaz yaka arasındaki kritik süreç optimizasyonları.</li>
-                    <li>Hızlı karar alma sistemleri ve görsel fabrika metrikleri.</li>
-                </ul>
-            </div>
-
-            <div class="expert-card">
-                <h3>LinkedIn Yayıncılığı ve İletişim</h3>
-                <ul class="expert-list">
-                    <li>"Saha Vizyonu" bültenleri, teknik makaleler ve içerikler.</li>
-                    <li>B2B ve endüstriyel topluluk yönetimi dinamikleri.</li>
-                    <li>Dijital profesyonel network inşası ve kitle odaklı SEO.</li>
-                    <li>Süreç iyileştirme blog stratejileri ve kurumsal yazarlık.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" id="yetenekler">
-        <h2 class="sec-title">Sistem Yetkinlik Metrikleri</h2>
-
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-head"><span>Saha Operasyon Yönetimi</span><span>95%</span></div>
-                <div class="bar-outline"><div class="bar-inner"
-                                             
+            -webkit-
+            
