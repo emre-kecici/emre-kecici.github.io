@@ -41,7 +41,6 @@
             border-bottom: 2px solid var(--cyan);
         }
 
-        /* --- HARF HARF DÖKÜLME ANİMASYONU --- */
         .typing-container {
             display: inline-block;
             position: relative;
@@ -54,13 +53,12 @@
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            overflow: hidden; /* Taşmayı gizler */
-            white-space: nowrap; /* Satırı kırmaz */
+            overflow: hidden;
+            white-space: nowrap;
             max-width: fit-content;
-            animation: typing 3s steps(12, end) forwards; /* 12 harf için 3 saniye */
+            animation: typing 3s steps(12, end) forwards;
         }
 
-        /* Yanıp sönen imleç kurgusu */
         .cursor {
             position: absolute;
             right: -10px;
@@ -68,23 +66,12 @@
             width: 3px;
             height: 100%;
             background-color: var(--cyan);
-            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s; /* 3sn sonra gizlenir */
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes hideCursor {
-            to { width: 0; opacity: 0; }
-        }
-        /* -------------------------------------- */
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { from, to { opacity: 0; } 50% { opacity: 1; } }
+        @keyframes hideCursor { to { width: 0; opacity: 0; } }
 
         .unvan {
             font-size: 1rem;
@@ -165,7 +152,6 @@
             margin: 0 auto;
         }
 
-        /* SARSILMAZ AÇILIR MENÜ STİLLERİ (BOZULMADI) */
         details {
             background: var(--bg-card);
             border: 1px solid rgba(0, 229, 255, 0.2);
@@ -276,10 +262,10 @@
             <div class="cursor"></div>
         </div>
         
-        <div class="unvan">Süreç Tasarımı ve Yapay Zeka Uzmanı</div>
+        <div class="unvan">Saha Analisti ve Süreç Geliştirme Lideri</div>
 
         <p class="summary">
-            Saha tecrübesini siber güvenlik uyumlu otonom yazılım mimarileriyle birleştiren; işletmelerin süreçlerini bozmadan mikro otomasyonlar ve dijital Poka-Yoke mekanizmalarıyla güçlendiren uçtan uca sistem entegratörü.
+            Üretim sahasındaki ve operasyon hatlarındaki süreçleri doğrudan mavi yaka disipliniyle deneyimleyen bir uygulayıcıyım. Sahada gözlemlediğim operasyonel eksiklikleri ve dar boğazları kendi yöntemlerimle analiz ederek, işletme verimliliğini artıracak somut çözüm önerilerini üst yönetime raporluyorum. Süreçlerin iyileştirilmesinde aktif sorumluluk alarak, teoriyi pratik saha tecrübesiyle birleştiriyorum.
         </p>
 
         <div class="contact-hub">
@@ -289,10 +275,10 @@
     </header>
 
     <div class="stats-grid">
-        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
-        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
+        <div class="stat-card"><h3>50+</h3><p>Saha Analizi</p></div>
+        <div class="stat-card"><h3>20+</h3><p>Çözüm Raporu</p></div>
         <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
-        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
+        <div class="stat-card"><h3>%100</h3><p>Saha Hakimiyeti</p></div>
     </div>
 
     <div class="container">
@@ -301,8 +287,8 @@
             <summary>🎯 Uzmanlıklar</summary>
             <div class="content-box">
                 <ul>
-                    <li>İşletmelerin mevcut yazılım ekosistemlerini bozmadan tam bağımsız çalışan mikro otomasyon mimarileri kurguluyorum.</li>
-                    <li>Saha operasyonlarında insan kaynaklı hatayı sıfıra indirmek için dijital Poka-Yoke felsefesini süreçlere uyguluyorum.</li>
+                    <li>Üretim hatlarındaki dar boğazları ve operasyonel kayıpları yerinde tespit ederek yalın yönetim teknikleriyle analiz ediyorum.</li>
+                    <li>İnsan kaynaklı hataları sıfırlayacak Poka-Yoke ve 5S mekanizmalarının sahada uygulanabilirliğini denetliyorum.</li>
                 </ul>
             </div>
         </details>
@@ -311,8 +297,8 @@
             <summary>📢 Yayınlar</summary>
             <div class="content-box">
                 <ul>
-                    <li>LinkedIn üzerinde modern operasyonel vaka analizleri ve sektörel kurgular yayınlıyorum.</li>
-                    <li>Geleceğin operasyon modelleri üzerine teknik öngörüler ve kurumsal sistem kurguları paylaşıyorum.</li>
+                    <li>LinkedIn bültenimde sahadan edindiğim pratik tecrübeleri ve operasyonel iyileştirme senaryolarını paylaşıyorum.</li>
+                    <li>Mavi yaka ve beyaz yaka arasındaki entegrasyonu güçlendirecek yönetimsel fikirler geliştiriyorum.</li>
                 </ul>
             </div>
         </details>
@@ -321,19 +307,19 @@
             <summary>🔐 Güvenlik</summary>
             <div class="content-box">
                 <ul>
-                    <li>Cookieless (çerezsiz) veri toplama prensibi ile KVKK ve GDPR standartlarına %100 uyumlu otonom akışlar inşa ediyorum.</li>
-                    <li>Platformlar arası veri akışlarını en yüksek endüstri standartlarında HTTPS kalkanıyla koruma altına alıyorum.</li>
+                    <li>Platform, kişisel verilerin korunması kanununa ve endüstriyel gizlilik standartlarına tamamen uyumludur.</li>
+                    <li>Bütün veri akışları şifrelenmiş sunucu kalkanı HTTPS ile korunur.</li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>📂 Teknoloji</summary>
+            <summary>📂 Teknoloji ve Araçlar</summary>
             <div class="content-box" style="text-align: center;">
-                <span class="tech-box">Python Architect</span>
-                <span class="tech-box">REST API Master</span>
-                <span class="tech-box">Modern HTML5/CSS3</span>
-                <span class="tech-box">JSON Data Parsing</span>
+                <span class="tech-box">Saha Veri Analizi</span>
+                <span class="tech-box">Yalın Üretim</span>
+                <span class="tech-box">Raporlama ve Sunum</span>
+                <span class="tech-box">Süreç Optimizasyonu</span>
             </div>
         </details>
 
