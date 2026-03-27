@@ -3,57 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Süreç Tasarımı ve Yapay Zeka</title>
-</head>
-<body style="background-color: #0f172a; color: #ffffff; font-family: sans-serif; margin: 0; padding: 20px; line-height: 1.6;">
+    <title>Emre Keçici | Dijital Süreç Mimarisi ve Yapay Zeka Portfolyosu</title>
+    <style>
+        :root {
+            --cyan: #00e5ff;
+            --purple: #b026ff;
+            --bg-deep: #0f172a;
+            --bg-card: #1e293b;
+            --text-high: #ffffff;
+            --text-low: #94a3b8;
+        }
 
-    <header style="text-align: center; padding: 50px 20px; border-bottom: 2px solid #00e5ff;">
-        <h1 style="color: #00e5ff; margin-bottom: 10px;">EMRE KEÇİCİ</h1>
-        <h2 style="color: #b026ff; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 20px;">Süreç Tasarımı ve Yapay Zeka Uzmanı</h2>
-        <p style="color: #94a3b8; font-size: 0.95rem; max-width: 600px; margin: 0 auto 30px auto;">
-            Gemlik ve Bursa sanayi havzasındaki saha tecrübesini otonom yazılım mimarileriyle birleştiren, işletmeleri mikro otomasyonlar ve dijital Poka-Yoke felsefesiyle güçlendiren kurumsal süreç mühendisi.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+
+        .unvan {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-low);
+            max-width: 85%;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .contact-hub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .contact-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 60px 20px;
+            background: #1e293b;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+
+        .container {
+            padding: 60px 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .tabs-header {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab-input {
+            display: none;
+        }
+
+        .tab-label {
+            color: var(--text-low);
+            padding: 12px 18px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #tab1:checked ~ .tabs-header label[for="tab1"],
+        #tab2:checked ~ .tabs-header label[for="tab2"],
+        #tab3:checked ~ .tabs-header label[for="tab3"],
+        #tab4:checked ~ .tabs-header label[for="tab4"] {
+            color: var(--cyan);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        #tab1:checked ~ .tab-content-container #content1,
+        #tab2:checked ~ .tab-content-container #content2,
+        #tab3:checked ~ .tab-content-container #content3,
+        #tab4:checked ~ .tab-content-container #content4 {
+            display: block;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: var(--purple);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .card ul {
+            list-style: none;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .card ul li {
+            color: var(--text-low);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .card ul li::before {
+            content: "◆";
+            margin-right: 12px;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        .tech-box {
+            display: inline-block;
+            background: var(--bg-deep);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #02040a;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .secure-badge {
+            border: 1px solid #10b981;
+            color: #10b981;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: rgba(16, 185, 129, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <input type="radio" name="tabs" id="tab1" class="tab-input" checked>
+    <input type="radio" name="tabs" id="tab2" class="tab-input">
+    <input type="radio" name="tabs" id="tab3" class="tab-input">
+    <input type="radio" name="tabs" id="tab4" class="tab-input">
+
+    <header>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+        </div>
+        
+        <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
+
+        <p class="summary">
+            Saha operasyonlarının dinamiklerini kurumsal yazılım mimarileriyle birleştiren; işletmelerin süreçlerini bozmadan mikro otomasyonlar ve dijital Poka-Yoke mekanizmalarıyla güçlendiren uçtan uca sistem entegratörü.
         </p>
-        <div style="display: flex; justify-content: center; gap: 15px;">
-            <a href="mailto:emrekecici1985@outlook.com" style="background-color: #1e293b; color: #00e5ff; border: 1px solid #00e5ff; padding: 12px 15px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">✉️ İletişime Geçebilirsiniz</a>
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" style="background-color: #1e293b; color: #00e5ff; border: 1px solid #00e5ff; padding: 12px 15px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">🌐 Bağlantı Kurabilirsiniz</a>
+
+        <div class="contact-hub">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçebilirsiniz</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurabilirsiniz</a>
         </div>
     </header>
 
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 15px;">
-        
-        <div style="background-color: #1e293b; padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 229, 255, 0.2); margin-bottom: 25px;">
-            <h3 style="color: #00e5ff; margin-bottom: 15px; text-transform: uppercase;">🎯 Uzmanlıklar ve Projeler</h3>
-            <ul style="color: #94a3b8; padding-left: 20px;">
-                <li style="margin-bottom: 10px;">Kurumların mevcut ERP ve yazılım ekosistemlerini bozmadan tam bağımsız çalışan mikro otomasyon kurguları.</li>
-                <li style="margin-bottom: 10px;">Büyük Dil Modellerinin (LLM) siber güvenlik standartlarında kurumsal iş akışlarına entegrasyonu.</li>
-                <li style="margin-bottom: 10px;">Veri doğruluğunu sabitleyen akıllı Web Scraping ve REST API otonom veri çekme mekanizmaları.</li>
-                <li style="margin-bottom: 10px;">Saha operasyonlarında insan kaynaklı hatayı sıfıra indiren dijital Poka-Yoke mekanizmaları tasarımı.</li>
-            </ul>
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
+        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
+    </div>
+
+    <div class="container">
+        <div class="tabs-header">
+            <label for="tab1" class="tab-label">🎯 Uzmanlıklar</label>
+            <label for="tab2" class="tab-label">📢 Yayınlar</label>
+            <label for="tab3" class="tab-label">🔐 Güvenlik</label>
+            <label for="tab4" class="tab-label">📂 Teknoloji</label>
         </div>
 
-        <div style="background-color: #1e293b; padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 229, 255, 0.2); margin-bottom: 25px;">
-            <h3 style="color: #00e5ff; margin-bottom: 15px; text-transform: uppercase;">📢 Yayınlar ve Bülten</h3>
-            <ul style="color: #94a3b8; padding-left: 20px;">
-                <li style="margin-bottom: 10px;">LinkedIn "Uçtan Uca Yapay Zeka Mimarisi" platformunda modern otomasyon senaryoları ve vaka analizlerinin paylaşılması.</li>
-            </ul>
-        </div>
+        <div class="tab-content-container">
+            
+            <div class="tab-content" id="content1">
+                <div class="card">
+                    <h3>Dijital Sistem Mimarisi</h3>
+                    <ul>
+                        <li>Kurumların mevcut ERP ve yazılım ekosistemlerini bozmadan tam bağımsız çalışan mikro otomasyon kurguları.</li>
+                        <li>Büyük Dil Modellerinin (LLM) siber güvenlik standartlarında kurumsal iş akışlarına pürüzsüz entegrasyonu.</li>
+                        <li>Veri doğruluğunu sabitleyen akıllı Web Scraping ve REST API otonom veri çekme mekanizmaları.</li>
+                        <li>Saha operasyonlarında insan kaynaklı hatayı sıfıra indiren dijital Poka-Yoke mekanizmaları tasarımı.</li>
+                    </ul>
+                </div>
+            </div>
 
-        <div style="background-color: #1e293b; padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 229, 255, 0.2); margin-bottom: 25px;">
-            <h3 style="color: #00e5ff; margin-bottom: 15px; text-transform: uppercase;">🔐 Güvenlik ve Gizlilik</h3>
-            <ul style="color: #94a3b8; padding-left: 20px;">
-                <li style="margin-bottom: 10px;">Sıfır İzinli Veri Toplama (Cookieless): KVKK ve GDPR standartlarına tam entegrasyon.</li>
-                <li style="margin-bottom: 10px;">SSL Kalkanı: Platform veri akışları HTTPS şifreleme sertifikalarıyla korunur.</li>
-            </ul>
-        </div>
+            <div class="tab-content" id="content2">
+                <div class="card">
+                    <h3>Kurumsal Teknoloji Yayıncılığı</h3>
+                    <ul>
+                        <li>LinkedIn "Uçtan Uca Yapay Zeka Mimarisi" platformunda modern otomasyon senaryoları ve sektörel kurguların yayınlanması.</li>
+                        <li>Geleceğin operasyon modelleri üzerine teknik vaka analizleri ve sektörel öngörüler.</li>
+                    </ul>
+                </div>
+            </div>
 
-    </main>
+            <div class="tab-content" id="content3">
+                <div class="card">
+                    <h3>Veri Güvenliği ve Politikalar</h3>
+                    <ul>
+                        <li><strong>Sıfır İzinli Veri Toplama (Cookieless):</strong> Dijital ayak izi analizleri ve pazarlama çerezleri toplanmaz. KVKK ve GDPR standartlarına tam uyum.</li>
+                        <li><strong>Sunucu Kalkanı:</strong> Platform veri akışları endüstri standardı olan HTTPS şifreleme sertifikalarıyla korunur.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(0, 229, 255, 0.2);">
-        <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 20px;">
-            <span style="border: 1px solid #10b981; color: #10b981; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem;">🔒 SSL Güvenlikli</span>
-            <span style="border: 1px solid #10b981; color: #10b981; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem;">🛡️ KVKK Uyumlu</span>
+            <div class="tab-content" id="content4">
+                <div class="card">
+                    <h3>Dijital Dağılım ve Envanter</h3>
+                    <div style="text-align: center;">
+                        <div class="tech-box">Python Architect</div>
+                        <div class="tech-box">REST API Master</div>
+                        <div class="tech-box">Modern HTML5/CSS3</div>
+                        <div class="tech-box">JSON Data Parsing</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <p style="color: #94a3b8; font-size: 0.85rem;">© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
+    </div>
+
+    <footer>
+        <div class="footer-badges">
+            <span class="secure-badge">🔒 SSL Güvenlikli</span>
+            <span class="secure-badge">🛡️ KVKK Uyumlu Platform</span>
+        </div>
+        <p>© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
