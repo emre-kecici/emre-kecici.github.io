@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Dijital Portfolyo</title>
+    <title>Emre Keçici | Portfolyo</title>
     <style>
         :root {
             --cyan: #00e5ff;
@@ -35,4 +35,80 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .unvan {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-low);
+            max-width: 85%;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .contact-hub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .contact-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 60px 20px;
+            background: #1e293b;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2.2rem;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+        
