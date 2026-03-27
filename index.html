@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçeci | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
-    
-    <meta name="description" content="Emre Keçeci - Web Geliştirme ve Otomasyon Uzmanı | İşletmeler İçin Yapay Zeka Entegrasyonu | Süreç Tasarımı">
-    <meta name="keywords" content="Yapay Zeka, Otomasyon, API Entegrasyonu, Scraping, Emre Keçeci">
-
+    <title>Emre Keçici | Web Geliştirme ve Otomasyon Uzmanı</title>
     <style>
         :root {
             --bg-primary: #030712;
@@ -15,7 +11,6 @@
             --bg-card: #111a36;
             --cyan: #00e5ff;
             --purple: #b026ff;
-            --green: #10b981;
             --text-high: #ffffff;
             --text-low: #9ca3af;
             --border: rgba(0, 229, 255, 0.15);
@@ -40,21 +35,20 @@
         body {
             background-color: var(--bg-primary);
             color: var(--text-high);
-            font-family: system-ui, -apple-system, Arial, sans-serif;
+            font-family: system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
             transition: background 0.3s, color 0.3s;
         }
 
-        /* --- Üst Menü & Tema --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(11, 19, 41, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 19, 41, 0.9);
+            backdrop-filter: blur(5px);
             border-bottom: 1px solid var(--border);
-            padding: 15px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -64,28 +58,19 @@
         .nav-logo {
             font-weight: bold;
             color: var(--cyan);
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
         }
 
-        .nav-tools {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .theme-btn, .lang-btn {
+        .theme-btn {
             background: transparent;
             border: 1px solid var(--cyan);
             color: var(--cyan);
-            padding: 6px 12px;
-            border-radius: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
             font-size: 0.8rem;
             cursor: pointer;
-            font-weight: bold;
         }
 
-        /* --- Giriş Alanı (Hero) --- */
         header {
             min-height: 100vh;
             display: flex;
@@ -93,15 +78,50 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 100px 20px 40px;
+            padding: 80px 15px 30px;
             background: radial-gradient(circle at center, #111a36 0%, var(--bg-primary) 80%);
             border-bottom: 1px solid var(--border);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
-            -webkit-
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            width: 100%;
+            word-wrap: break-word;
+        }
+
+        .unvan {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: bold;
+            margin-bottom: 15px;
+            max-width: 90%;
+            text-transform: uppercase;
+        }
+
+        .contact-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            width: 100%;
+            max-width: 350px;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        .contact-box a {
+            color: var(--cyan);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .terminal {
+            width: 100%;
+            max-
             
