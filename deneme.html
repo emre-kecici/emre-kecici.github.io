@@ -5,58 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Dijital Süreç Mimarisi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>:root{--cyan:#00f2ff;--bg-deep:#0f172a;--text-low:#94a3b8;--bg-card:#1e293b;--glass:rgba(255,255,255,0.03)}*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}body{background-color:var(--bg-deep);color:#ffffff;font-family:sans-serif;overflow:hidden}.intro-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-deep);display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999;opacity:1;visibility:visible;transition:opacity 1s ease-out, visibility 1s ease-out;text-align:center}.typing-container{display:inline-block;position:relative;margin-bottom:25px;border-bottom:2px solid var(--cyan);padding-bottom:8px}.puzzle-name-word{display:inline-block;opacity:0;position:relative;animation:puzzleAssembleName 1.2s ease-out forwards;font-size:2.2rem;font-weight:bold;color:var(--cyan);text-shadow:0 0 10px rgba(0,242,255,0.4);white-space:nowrap}.puzzle-name-word:nth-child(1){animation-delay:0.1s}.puzzle-name-word:nth-child(2){animation-delay:0.3s}@keyframes puzzleAssembleName{0%{opacity:0;transform:translate(var(--dxn),var(--dyn)) scale(0.5) rotate(var(--drn))}100%{opacity:1;transform:translate(0,0) scale(1) rotate(0deg)}}.advanced-puzzle-grid{display:grid;grid-template-columns:1fr;gap:45px;max-width:900px;width:95%;position:relative}.puzzle-row{display:grid;grid-template-columns:repeat(2,1fr);align-items:center;gap:30px;opacity:0;transform:translateY(30px) skewX(20deg);animation:puzzleAssembleRow 1s ease-out forwards}.puzzle-row:nth-child(1){animation-delay:0.2s}.puzzle-row:nth-child(2){animation-delay:0.4s}@keyframes puzzleAssembleRow{100%{opacity:1;transform:translateY(0) skewX(0deg)}}.puzzle-box{display:block;opacity:0;animation:puzzleAssembleBox 1s ease-out forwards;position:relative}.unvan-line{font-size:1.1rem;color:var(--cyan);font-weight:bold;letter-spacing:0.5px;line-height:1.6;display:block}.unvan-sub-text{font-size:0.8rem;color:var(--text-low);margin-top:2px;display:block}.puzzle-row:nth-child(1) .puzzle-box:nth-child(1){animation-delay:0.6s;transform:translate(-50px,-50px);grid-column:1;text-align:right}.puzzle-row:nth-child(1) .puzzle-box:nth-child(2){animation-delay:0.8s;transform:translate(50px,50px);grid-column:2;text-align:left}.puzzle-row:nth-child(2) .puzzle-box:nth-child(1){animation-delay:1s;transform:translate(50px,-50px);grid-column:2;text-align:left}.puzzle-row:nth-child(2) .puzzle-box:nth-child(2){animation-delay:1.2s;transform:translate(-50px,50px);grid-column:1;text-align:right}@keyframes puzzleAssembleBox{100%{opacity:1;transform:translate(0,0)}}.content-wrapper{opacity:0;transform:translateY(50px);visibility:hidden;transition:opacity 1s ease-out 1.2s,transform 1s ease-out 1.2s,visibility 1s ease-out 1.2s}body.loaded .content-wrapper{opacity:1;transform:translateY(0);visibility:visible}body.loaded .intro-overlay{opacity:0;visibility:hidden}.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;width:95%;margin:0 auto 40px auto;text-align:left}.summary-box{background:var(--glass);border:1px solid rgba(0,229,255,0.1);border-radius:12px;padding:20px;transition:all .3s ease}.summary-box:hover{border-color:var(--cyan);transform:translateY(-5px)}.summary-box h3{font-size:1.15rem;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:10px}.summary-box p{font-size:.9rem;color:#b4c6ef;margin:0}.contact-hub{display:flex;gap:15px;margin-bottom:40px;justify-content:center}.contact-btn{background:var(--bg-card);border:1px solid var(--cyan);color:var(--cyan);padding:14px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:.8rem;display:flex;align-items:center;gap:8px;box-shadow:0 0 10px rgba(0,242,255,0.1)}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px;width:100%;padding:60px 20px;background:#1e293b;text-align:center}.container{padding:60px 15px;max-width:900px;margin:0 auto}details{background:var(--bg-card);border:1px solid rgba(0,229,255,0.2);border-radius:10px;margin-bottom:20px;padding:15px}summary{color:var(--cyan);font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:space-between}details[open] summary::after{transform:rotate(180deg)}.content-box ul{list-style:none}.content-box ul li{color:#b4c6ef;font-size:.95rem;margin-bottom:12px;display:flex;align-items:flex-start}.tech-box{display:inline-block;background:var(--bg-deep);border:1px solid rgba(0,229,255,0.34);padding:10px 15px;border-radius:5px;margin:6px;font-size:.85rem}footer{background:#02040a;padding:50px 20px;text-align:center}.footer-sig{font-size:0.85rem;font-weight:bold;color:var(--cyan);margin-top:20px}</style>
+    <style>:root{--cyan:#00f2ff;--bg-deep:#0f172a;--bg-card:#1e293b;--text-low:#94a3b8;--glass:rgba(255,255,255,0.03)}*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}body{background-color:var(--bg-deep);color:#ffffff;font-family:sans-serif;overflow:hidden}.intro-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-deep);display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999;opacity:1;visibility:visible;transition:opacity 0.8s ease-out,visibility 0.8s ease-out;text-align:center}.prof-title{font-size:2rem;font-weight:bold;color:var(--cyan);border-bottom:2px solid var(--cyan);padding-bottom:10px;margin-bottom:25px;opacity:0;transform:scale(0.9);animation:fadeInTitle 1s ease-out forwards}.unvan-clean-grid{display:flex;flex-direction:column;gap:20px;margin-bottom:35px;opacity:0;animation:fadeInTitle 1s ease-out 0.5s forwards}.unvan-clean-item{display:inline-block;border-bottom:1px solid var(--cyan);padding-bottom:5px;margin:0 auto}.unvan-main{font-size:1.2rem;font-weight:bold;color:#ffffff;display:block}.unvan-sub{font-size:0.85rem;color:var(--text-low);display:block;margin-top:2px}@keyframes fadeInTitle{to{opacity:1;transform:scale(1)}}.stats-intro{display:flex;gap:30px;justify-content:center;opacity:0;animation:fadeInTitle 1s ease-out 1s forwards}.stats-box h3{color:var(--cyan);font-size:1.5rem}.stats-box p{font-size:0.8rem;color:var(--text-low)}.content-wrapper{opacity:0;transform:translateY(100px);visibility:hidden;transition:transform 0.8s cubic-bezier(0.25,1,0.5,1),opacity 0.8s ease-out;padding-top:40px}body.loaded .content-wrapper{opacity:1;transform:translateY(0);visibility:visible}body.loaded .intro-overlay{opacity:0;visibility:hidden}.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;width:95%;margin:0 auto 40px auto;text-align:left}.summary-box{background:var(--glass);border:1px solid rgba(0,229,255,0.1);border-radius:12px;padding:20px;transition:all .3s ease}.summary-box:hover{border-color:var(--cyan);transform:translateY(-5px)}.summary-box h3{font-size:1.15rem;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:10px}.summary-box p{font-size:.9rem;color:#b4c6ef;margin:0}.contact-hub{display:flex;gap:15px;margin-bottom:40px;justify-content:center}.contact-btn{background:var(--bg-card);border:1px solid var(--cyan);color:var(--cyan);padding:14px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:.8rem;display:flex;align-items:center;gap:8px;box-shadow:0 0 10px rgba(0,242,255,0.1)}.container{padding:60px 15px;max-width:900px;margin:0 auto}details{background:var(--bg-card);border:1px solid rgba(0,229,255,0.2);border-radius:10px;margin-bottom:20px;padding:15px}summary{color:var(--cyan);font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:space-between}details[open] summary::after{transform:rotate(180deg)}.tech-box{display:inline-block;background:var(--bg-deep);border:1px solid rgba(0,229,255,0.34);padding:10px 15px;border-radius:5px;margin:6px;font-size:.85rem}footer{background:#02040a;padding:40px 20px;text-align:center}.footer-sig{font-size:0.85rem;font-weight:bold;color:var(--cyan)}</style>
 </head>
-<body id="top">
+<body>
     <div class="intro-overlay" id="introOverlay">
-        <div class="typing-container">
-            <span class="puzzle-name-word">Emre</span> 
-            <span class="puzzle-name-word">Keçici</span>
+        <h1 class="prof-title">Emre Keçici</h1>
+        
+        <div class="unvan-clean-grid">
+            <div class="unvan-clean-item">
+                <span class="unvan-main">Saha Analisti</span>
+                <span class="unvan-sub">Veri & Optimizasyon</span>
+            </div>
+            <div class="unvan-clean-item">
+                <span class="unvan-main">Dijital Süreç Mimarı</span>
+                <span class="unvan-sub">Otomasyon & Yapay Zeka</span>
+            </div>
         </div>
-        <div class="advanced-puzzle-grid">
-            <div class="puzzle-row">
-                <span class="puzzle-box">
-                    <span class="unvan-line">Saha Analisti</span>
-                </span>
-                <span class="puzzle-box">
-                    <span class="unvan-sub-text">Veri & Optimizasyon</span>
-                </span>
-            </div>
-            <div class="puzzle-row">
-                <span class="puzzle-box">
-                    <span class="unvan-line">Dijital Süreç Mimarı</span>
-                </span>
-                <span class="puzzle-box">
-                    <span class="unvan-sub-text">Otomasyon & Yapay Zeka</span>
-                </span>
-            </div>
+
+        <div class="stats-intro">
+            <div class="stats-box"><h3>50+</h3><p>Saha Analizi</p></div>
+            <div class="stats-box"><h3>15+</h3><p>AI Fikri</p></div>
+            <div class="stats-box"><h3>%100</h3><p>Saha Hâkimiyeti</p></div>
         </div>
     </div>
 
-    <div class="content-wrapper">
-        <div class="stats-grid">
-            <div><h3>50+</h3><p>Saha Analizi</p></div>
-            <div><h3>15+</h3><p>AI Fikri</p></div>
-            <div><h3>%100</h3><p>Saha Hâkimiyeti</p></div>
-        </div>
+    <div class="content-wrapper" id="mainContent">
         <div class="summary-grid">
             <div class="summary-box"><h3><i class="fas fa-search-location"></i> Yerinde Tespit</h3><p>Saha ve üretim hatlarındaki operasyonel akışları bizzat deneyimleyerek, dar boğazları tespit ediyorum.</p></div>
             <div class="summary-box"><h3><i class="fas fa-microchip"></i> Akıllı Çözümler</h3><p>İyileştirme noktalarını modern yapay zeka entegrasyonları ve mikro otomasyonlarla birleştiriyorum.</p></div>
             <div class="summary-box"><h3><i class="fas fa-chart-line"></i> Raporlama</h3><p>Saha tecrübesini dijitalleşmenin hızıyla harmanlayıp üst yönetime raporluyorum.</p></div>
         </div>
+
         <div class="contact-hub">
             <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçin</a>
             <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurun</a>
         </div>
+
         <div class="container">
             <details open><summary><div class="sum-wrap"><i class="fas fa-bullseye"></i> Uzmanlıklar</div></summary>
-                <div class="content-box"><ul><li>Dar boğazları yalın üretim ve akıllı mekanizmalarla analiz ediyorum.</li><li>İnsan kaynaklı hataları sıfırlayacak süreç iyileştirme adımları kurguluyorum.</li></ul></div></details>
+                <div class="content-box"><ul style="list-style:none;padding:15px;border-top:1px solid rgba(255,255,255,0.1);margin-top:15px;"><li>Dar boğazları yalın üretim ve akıllı mekanizmalarla analiz ediyorum.</li><li>İnsan kaynaklı hataları sıfırlayacak süreç iyileştirme adımları kurguluyorum.</li></ul></div></details>
             <details><summary><div class="sum-wrap"><i class="fas fa-folder-open"></i> Araçlar</div></summary>
-                <div class="content-box" style="text-align:center;"><span class="tech-box">Saha Veri Analizi</span><span class="tech-box">Mikro Otomasyon</span><span class="tech-box">Yalın Üretim</span></div></details>
+                <div class="content-box" style="text-align:center;padding:15px;border-top:1px solid rgba(255,255,255,0.1);margin-top:15px;"><span class="tech-box">Saha Veri Analizi</span><span class="tech-box">Mikro Otomasyon</span><span class="tech-box">Yalın Üretim</span></div></details>
         </div>
         <footer><div class="footer-sig">2026 Designed by Emre Keçici</div></footer>
     </div>
 
-    <script>const puzzleNameWords=document.querySelectorAll('.puzzle-name-word');puzzleNameWords.forEach(word=>{word.style.setProperty('--dxn',`${Math.random()*300-150}px`);word.style.setProperty('--dyn',`${Math.random()*300-150}px`);word.style.setProperty('--drn',`${Math.random()*120-60}deg`)});document.body.classList.add('loading');window.addEventListener('load',()=>{setTimeout(()=>{document.body.classList.remove('loading');document.body.classList.add('loaded');document.body.style.overflow='auto';},4000)});</script>
+    <script>window.addEventListener('load',()=>{setTimeout(()=>{document.body.classList.add('loaded');document.body.style.overflow='auto';},4000)});</script>
 </body>
 </html>
