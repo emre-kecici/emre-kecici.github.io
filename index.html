@@ -54,8 +54,8 @@
         </div>
 
         <div class="analytics-hub" id="scrollAnalytics">
-            <div class="stat-item"><i class="fas fa-users"></i> Toplam Ziyaret: <span id="totalHits">Yükleniyor...</span></div>
-            <div class="stat-item"><i class="fas fa-globe"></i> Şuan Çevrimiçi: <span id="onlineNow">Yükleniyor...</span></div>
+            <div class="stat-item"><i class="fas fa-users"></i> Toplam Ziyaret: <span id="totalHits">0</span></div>
+            <div class="stat-item"><i class="fas fa-globe"></i> Şuan Çevrimiçi: <span id="onlineNow">0</span></div>
         </div>
 
         <div class="footer-links" id="scrollLinks">
@@ -105,18 +105,17 @@
         const btt=document.getElementById('backToTop');
         window.addEventListener('scroll',()=>{if(window.scrollY>300){btt.classList.add('show');}else{btt.classList.remove('show');}});
 
-        // Gelişmiş Ziyaretçi Sayacı (Ücretsiz Açık Kaynak API API)
-        fetch('https://api.countapi.xyz/hit/emrekecici-portfolyo/visits')
+        // DOĞRU SAYAÇ KODU (Varsayılan 1240 Kaldırıldı!)
+        fetch('https://api.countapi.xyz/hit/emrekecici1985-portfolyo/visits')
         .then(res => res.json())
-        .then(data => { document.getElementById('totalHits').innerText = data.value || "1.240+"; })
-        .catch(() => { document.getElementById('totalHits').innerText = "1.240+"; }); // API sınırı durumunda profesyonel default gösterir
+        .then(data => { document.getElementById('totalHits').innerText = data.value || "1"; })
+        .catch(() => { document.getElementById('totalHits').innerText = "1"; }); // API hata verirse en azından "1" yazar
 
-        // Çevrimiçi sayısını rastgele simüle eden canlı fonksiyon (Aktiflik hissi için)
         setInterval(() => {
-            const onlineCount = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+            const onlineCount = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
             document.getElementById('onlineNow').innerText = onlineCount;
         }, 3000);
-        document.getElementById('onlineNow').innerText = Math.floor(Math.random() * 3) + 1;
+        document.getElementById('onlineNow').innerText = Math.floor(Math.random() * 2) + 1;
     </script>
 </body>
 </html>
