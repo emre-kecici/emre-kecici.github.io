@@ -3,90 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Profesyonel Hub</title>
+    <title>Emre Keçici | Dijital Süreç Mimarisi ve Yapay Zeka Sistemleri</title>
     <style>
-        body { background-color: #0f172a; color: #ffffff; font-family: sans-serif; margin: 0; padding: 20px; line-height: 1.6; }
-        header { text-align: center; padding: 50px 20px; border-bottom: 2px solid #00e5ff; }
-        h1 { color: #00e5ff; margin: 0 0 10px 0; }
-        .summary { color: #94a3b8; font-size: 0.9rem; max-width: 600px; margin: 0 auto 30px auto; }
-        
-        /* Sekme Butonları */
-        .tab-buttons { display: flex; overflow-x: auto; gap: 10px; margin: 20px 0; border-bottom: 1px solid #334155; padding-bottom: 10px; }
-        .tab-btn { background: #1e293b; color: #00e5ff; border: 1px solid #00e5ff; padding: 10px 15px; border-radius: 5px; font-weight: bold; font-size: 0.85rem; cursor: pointer; white-space: nowrap; }
-        
-        /* Sekme İçerikleri */
-        .tab-content { display: none; background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #334155; margin-top: 15px; }
-        .active { display: block; }
-        
-        ul { padding-left: 20px; color: #94a3b8; }
-        li { margin-bottom: 10px; }
-        
-        .contact-box { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .contact-btn { background: #00e5ff; color: #000; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.85rem; }
+        :root {
+            --cyan: #00e5ff;
+            --purple: #b026ff;
+            --bg-deep: #0f172a;
+            --bg-card: #1e293b;
+            --text-high: #ffffff;
+            --text-low: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        /* Daktilo Animasyonu ve Çubuğun Kaybolması */
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards;
+        }
+
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--cyan);
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { from, to { opacity: 0; } 50% { opacity: 1; } }
+        @keyframes hideCursor { to { width: 0; opacity: 0; } }
+
+        .unvan {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* --- BURSA/GEMLİK LEAN VE AI VİZYONUNU VEREN AĞIR METİN --- */
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-low);
+            max-width: 85%;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* Modern İletişim Butonları */
+        .contact-hub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--purple);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 60px 20px;
+            background: #1e293b;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
+            color: var(--text-low);
+        }
+
+        /* --- SEKMELİ KUSURSUZ PROFESYONEL YAPI --- */
+        .container {
+            padding: 60px 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .tabs-header {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab-input {
+            display: none;
+        }
+
+        .tab-label {
+            background: transparent;
+            color: var(--text-low);
+            padding: 12px 18px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #tab1:checked ~ .tabs-header label[for="tab1"],
+        #tab2:checked ~ .tabs-header label[for="tab2"],
+        #tab3:checked ~ .tabs-header label[for="tab3"],
+        #tab4:checked ~ .tabs-header label[for="tab4"] {
+            color: var(--cyan);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        #tab1:checked ~ .tab-content-container #content1,
+        #tab2:checked ~ .tab-content-container #content2,
+        #tab3:checked ~ .tab-content-container #content3,
+        #tab4:checked ~ .tab-content-container #content4 {
+            display: block;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: var(--purple);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .card ul li {
+            color: var(--text-low);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .card ul li::before {
+            content: "◆";
+            margin-right: 12px;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        .tech-box {
+            display: inline-block;
+            background: var(--bg-deep);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #02040a;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-low);
+        }
     </style>
 </head>
 <body>
 
+    <input type="radio" name="tabs" id="tab1" class="tab-input" checked>
+    <input type="radio" name="tabs" id="tab2" class="tab-input">
+    <input type="radio" name="tabs" id="tab3" class="tab-input">
+    <input type="radio" name="tabs" id="tab4" class="tab-input">
+
     <header>
-        <h1>EMRE KEÇİCİ</h1>
-        <p style="color: #b026ff; font-weight: bold; margin-top: 0;">Süreç Tasarımı ve Yapay Zeka Uzmanı</p>
-        <p class="summary">İşletmeler için siber güvenlik uyumlu, uçtan uca otonom yapay zeka ve mikro otomasyon mimarileri tasarlayan profesyonel süreç mühendisi.</p>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+            <div class="cursor"></div>
+        </div>
         
-        <div class="contact-box">
-            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geç</a>
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 LinkedIn</a>
+        <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
+
+        <p class="summary">
+            Gemlik ve Bursa sanayi havzasındaki saha tecrübesini, modern siber güvenlik protokolleri ve otonom yazılım mimarileriyle birleştiren; işletmelerin mevcut sistemlerini bozmadan mikro otomasyonlar ve Poka-Yoke felsefesiyle dijitalleştiren süreç tasarımcısı.
+        </p>
+
+        <div class="contact-hub">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçebilirsiniz</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurabilirsiniz</a>
         </div>
     </header>
 
-    <div class="tab-buttons">
-        <button class="tab-btn" onclick="openTab('uzmanlik')">🎯 Uzmanlıklar</button>
-        <button class="tab-btn" onclick="openTab('bulten')">📢 Yayınlar & Bülten</button>
-        <button class="tab-btn" onclick="openTab('guvenlik')">🔐 Güvenlik & Gizlilik</button>
-        <button class="tab-btn" onclick="openTab('teknoloji')">📂 Teknoloji</button>
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
+        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
     </div>
 
-    <div id="uzmanlik" class="tab-content active">
-        <h3>Profesyonel Uzmanlık Alanları</h3>
-        <ul>
-            <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
-            <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
-            <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
-        </ul>
+    <div class="container">
+        <div class="tabs-header">
+            <label for="tab1" class="tab-label">🎯 Uzmanlıklar & Projeler</label>
+            <label for="tab2" class="tab-label">📢 Yayınlar & Bülten</label>
+            <label for="tab3" class="tab-label">🔐 Güvenlik & Gizlilik</label>
+            <label for="tab4" class="tab-label">📂 Teknoloji Stack</label>
+        </div>
+
+        <div class="tab-content-container">
+            
+            <div class="tab-content" id="content1">
+                <div class="card">
+                    <h3>Dijital Mimari & Süreç Tasarımı</h3>
+                    <ul>
+                        <li>İşletmelerin mevcut yazılımlarına dokunmadan çalışan bağımsız mikro otomasyon botları tasarımı.</li>
+                        <li>Büyük Dil Modellerinin (LLM) siber güvenlik standartlarında kurumsal iş akışlarına kurgulanması.</li>
+                        <li>Eyleme dönüştürülebilir veri analitiği tabanlı otonom Web Scraping & API veri akışları.</li>
+                        <li>Sahadaki insan hatasını minimize eden dijital Poka-Yoke mekanizmalarının entegrasyonu.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="content2">
+                <div class="card">
+                    <h3>📢 Kurumsal Teknoloji Yayıncılığı</h3>
+                    <ul>
+                        <li>LinkedIn "Uçtan Uca Yapay Zeka Mimarisi" platformunda modern otomasyon kurguları, sektörel tahminler ve case study paylaşımları.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="content3">
+                <div class="card">
+                    <h3>🔐 Şeffaf Güvenlik Mühürleri</h3>
+                    <ul>
+                        <li><strong>Sıfır İzinli Veri Toplama (Cookieless):</strong> Dijital ayak izi analizleri ve pazarlama çerezleri toplanmaz. KVKK / GDPR standartlarına tam entegrasyon.</li>
+                        <li><strong>GitHub Sunucu Kalkanı:</strong> Platform yönlendirmeleri SSL (HTTPS) kriptolama sertifikalarıyla şifrelenir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content" id="content4">
+                <div class="card">
+                    <h3>📂 Dijital Envanter Dağılımı</h3>
+                    <div style="text-align: center;">
+                        <div class="tech-box">Python Architect</div>
+                        <div class="tech-box">REST API</div>
+                        <div class="tech-box">HTML5/CSS3</div>
+                        <div class="tech-box">JSON Processing</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div id="bulten" class="tab-content">
-        <h3>Yayınlar ve Bülten Köşesi</h3>
-        <ul>
-            <li>Uçtan Uca Yapay Zeka Mimarisi adlı LinkedIn bülteni kurumsal yayınları.</li>
-        </ul>
-    </div>
-
-    <div id="guvenlik" class="tab-content">
-        <h3>Veri Güvenliği ve Gizlilik</h3>
-        <ul>
-            <li>Sıfır Veri Toplama Politikası (Cookieless): KVKK ve GDPR uyumlu.</li>
-            <li>GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
-        </ul>
-    </div>
-
-    <div id="teknoloji" class="tab-content">
-        <h3>Teknoloji Envanteri</h3>
-        <p>Aktif Kullanılan Diller ve Standartlar:</p>
-        <ul>
-            <li>Python, REST API, HTML5, JSON</li>
-        </ul>
-    </div>
-
-    <script>
-        function openTab(tabId) {
-            var i;
-            var x = document.getElementsByClassName("tab-content");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none"; 
-            }
-            document.getElementById(tabId).style.display = "block"; 
-        }
-    </script>
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <span style="border: 1px solid #10b981; color: #10b981; padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; margin-right: 12px;">🔒 SSL Güvenlikli</span>
+            <span style="border: 1px solid #10b981; color: #10b981; padding: 6px 14px; border-radius: 4px; font-size: 0.8rem;">🛡️ KVKK Uyumlu Platform</span>
+        </div>
+        <p>© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
+    </footer>
 
 </body>
 </html>
