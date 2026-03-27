@@ -14,12 +14,7 @@
             --text-low: #94a3b8;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-deep);
@@ -55,5 +50,255 @@
             color: var(--cyan);
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 2
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-low);
+            max-width: 85%;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .contact-hub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .contact-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 60px 20px;
+            background: #1e293b;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .stat-card h3 { font-size: 2.2rem; color: var(--cyan); margin-bottom: 5px; }
+        .stat-card p { font-size: 0.85rem; color: var(--text-low); }
+
+        .container { padding: 60px 15px; max-width: 1100px; margin: 0 auto; }
+
+        .tabs-header {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab-input { display: none; }
+
+        .tab-label {
+            color: var(--text-low);
+            padding: 12px 18px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        #tab1:checked ~ .tabs-header label[for="tab1"],
+        #tab2:checked ~ .tabs-header label[for="tab2"],
+        #tab3:checked ~ .tabs-header label[for="tab3"],
+        #tab4:checked ~ .tabs-header label[for="tab4"] {
+            color: var(--cyan);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        #tab1:checked ~ .tab-content-container #content1,
+        #tab2:checked ~ .tab-content-container #content2,
+        #tab3:checked ~ .tab-content-container #content3,
+        #tab4:checked ~ .tab-content-container #content4 {
+            display: block;
+        }
+
+        .tab-content h3 { color: var(--purple); margin-bottom: 20px; font-size: 1.3rem; text-transform: uppercase; }
+
+        .tab-content ul { list-style: none; max-width: 90%; margin: 0 auto; }
+
+        .tab-content ul li {
+            color: var(--text-low);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .tab-content ul li::before {
+            content: "◆";
+            margin-right: 12px;
+            color: var(--cyan);
+            font-weight: bold;
+        }
+
+        .tech-box {
+            display: inline-block;
+            background: var(--bg-deep);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #02040a;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .secure-badge {
+            border: 1px solid #10b981;
+            color: #10b981;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: rgba(16, 185, 129, 0.05);
+            height: 40px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="radio" name="tabs" id="tab1" class="tab-input" checked>
+    <input type="radio" name="tabs" id="tab2" class="tab-input">
+    <input type="radio" name="tabs" id="tab3" class="tab-input">
+    <input type="radio" name="tabs" id="tab4" class="tab-input">
+
+    <header id="top">
+        <h1>EMRE KEÇİCİ</h1>
+        <div class="unvan">Süreç Tasarımı ve Yapay Zeka Uzmanı</div>
+
+        <p class="summary">
+            Saha tecrübesini siber güvenlik uyumlu otonom yazılım mimarileriyle birleştiren; işletmelerin süreçlerini bozmadan mikro otomasyonlar ve dijital Poka-Yoke mekanizmalarıyla güçlendiren uçtan uca sistem entegratörü.
+        </p>
+
+        <div class="contact-hub">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçebilirsiniz</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurabilirsiniz</a>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
+        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
+    </div>
+
+    <div class="container">
+        <div class="tabs-header">
+            <label for="tab1" class="tab-label">🎯 Uzmanlıklar</label>
+            <label for="tab2" class="tab-label">📢 Yayınlar</label>
+            <label for="tab3" class="tab-label">🔐 Güvenlik</label>
+            <label for="tab4" class="tab-label">📂 Teknoloji</label>
+        </div>
+
+        <div class="tab-content-container">
             
+            <div class="tab-content" id="content1">
+                <h3>🎯 Dijital Sistem Mimarisi</h3>
+                <ul>
+                    <li>İşletmelerin mevcut yazılım ekosistemlerini bozmadan tam bağımsız çalışan mikro otomasyon mimarileri kurguluyorum.</li>
+                    <li>Saha operasyonlarında insan kaynaklı hatayı sıfıra indirmek için dijital Poka-Yoke felsefesini süreçlere uyguluyorum.</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="content2">
+                <h3>📢 Kurumsal Teknoloji Yayıncılığı</h3>
+                <ul>
+                    <li>LinkedIn üzerinde modern vaka analizleri ve sektörel kurgular yayınlıyorum.</li>
+                    <li>Geleceğin operasyon modelleri üzerine teknik öngörüler ve kurumsal sistem kurguları paylaşıyorum.</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="content3">
+                <h3>🔐 Veri Güvenliği ve Politikalar</h3>
+                <ul>
+                    <li>Cookieless (çerezsiz) veri toplama prensibi ile KVKK ve GDPR standartlarına %100 uyumlu otonom akışlar inşa ediyorum.</li>
+                    <li>Platformlar arası veri akışlarını en yüksek endüstri standartlarında HTTPS kalkanıyla koruma altına alıyorum.</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="content4">
+                <h3>📂 Dijital Envanter Dağılımı</h3>
+                <div style="text-align: center;">
+                    <span class="tech-box">Python Architect</span>
+                    <span class="tech-box">REST API Master</span>
+                    <span class="tech-box">Modern HTML5/CSS3</span>
+                    <span class="tech-box">JSON Data Parsing</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-badges">
+            <span class="secure-badge">🔒 SSL Güvenlikli</span>
+            <span class="secure-badge">🛡️ KVKK Uyumlu Platform</span>
+        </div>
+        <p style="color: var(--text-low); font-size: 0.85rem;">© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
+        <a href="#top" style="color:var(--cyan); text-decoration:none; display:block; margin-top:15px; font-size:0.8rem;">↑ Başa Dön</a>
+    </footer>
+
+</body>
+</html>
