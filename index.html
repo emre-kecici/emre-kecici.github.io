@@ -3,227 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Portfolyo</title>
+    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Sistemleri</title>
+    
+    <meta name="description" content="Emre Keçici - Web Geliştirme ve Otomasyon Uzmanı. İşletmeler için yapay zeka entegrasyonu ve süreç tasarımı platformu.">
+    <meta name="keywords" content="Yapay Zeka Entegrasyonu, Süreç Tasarımı, API Geliştirme, Web Scraping, Emre Keçici">
+    <meta name="author" content="Emre Keçici">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0b1120;
+            --bg-card: #0f172a;
+            --accent-cyan: #00e5ff;
+            --accent-purple: #7c3aed;
+            --text-high: #f8fafc;
+            --text-mid: #94a3b8;
+            --border-glow: rgba(0, 229, 255, 0.2);
+        }
+
+        .light-theme {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-card: #ffffff;
+            --accent-cyan: #0284c7;
+            --accent-purple: #6d28d9;
+            --text-high: #0f172a;
+            --text-mid: #475569;
+            --border-glow: rgba(2, 132, 199, 0.2);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #030712;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-high);
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
             line-height: 1.6;
+            transition: all 0.3s ease;
         }
 
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-            background: #0b1329;
-            border-bottom: 2px solid #00e5ff;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: #00e5ff;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .unvan {
-            font-size: 1rem;
-            color: #a855f7;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            max-width: 90%;
-        }
-
-        /* --- Emoji İletişim Butonları --- */
-        .contact-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 40px;
+        /* --- Üst Kurumsal Menü --- */
+        nav {
+            position: fixed;
+            top: 0;
             width: 100%;
-            max-width: 320px;
-        }
-
-        .contact-btn {
-            background: #111a36;
-            border: 1px solid #00e5ff;
-            color: #00e5ff;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .scroll-btn {
-            background: #00e5ff;
-            color: #000000;
-            padding: 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            width: 100%;
-            max-width: 320px;
-            text-align: center;
-            box-shadow: 0 0 12px #00e5ff;
-        }
-
-        /* --- Konteynır Düzeni ve Kartlar --- */
-        .container {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .sec-title {
-            font-size: 1.6rem;
-            color: #00e5ff;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .card {
-            background: #111a36;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .card h3 {
-            color: #a855f7;
-            margin-bottom: 20px;
-            font-size: 1.25rem;
-        }
-
-        .card ul {
-            list-style: none;
-            text-align: left;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-
-        .card ul li {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .card ul li::before {
-            content: "⚡";
-            margin-right: 10px;
-            color: #00e5ff;
-        }
-
-        .code-block {
-            background: #000000;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            color: #ffffff;
-            overflow-x: auto;
-            font-size: 0.8rem;
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            margin-top: 15px;
-        }
-
-        footer {
-            background: #02040a;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        footer p {
-            font-size: 0.8rem;
-            color: #9ca3af;
-        }
-    </style>
-</head>
-<body>
-
-    <header id="baslangic">
-        <h1>EMRE KEÇİCİ</h1>
-        <div class="unvan">Web Geliştirme ve Otomasyon Uzmanı</div>
-
-        <div class="contact-grid">
-            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ Mail At</a>
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🔗 LinkedIn</a>
-        </div>
-
-        <a href="#detaylar" class="scroll-btn">Yol Haritasını Gör</a>
-    </header>
-
-    <div class="container" id="detaylar">
-        <h2 class="sec-title">Teknoloji & Altyapı</h2>
-
-        <div class="card">
-            <h3>🎯 Uzmanlık Alanları</h3>
-            <ul>
-                <li>Yapay Zeka (AI) ve Prompt Mühendisliği</li>
-                <li>Web Entegrasyonu ve API Altyapıları</li>
-                <li>Chrome Uzantısı Geliştirme & Web Scraping</li>
-                <li>Süreç Tasarımı & Mikro Otomasyonlar</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📊 Başarı Metrikleri</h3>
-            <ul>
-                <li>50+ Optimize Edilmiş Operasyonel Süreç</li>
-                <li>10+ Kurumsal Yapay Zeka Entegrasyonu</li>
-                <li>1000+ Okuyucuya Ulaşan Teknoloji Bülteni</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>🔐 Güvenlik Politikası</h3>
-            <ul>
-                <li><strong>Sıfır Veri Toplama Politikası:</strong> İzinsiz veri toplanmaz.</li>
-                <li><strong>Çerezsiz Deneyim:</strong> KVKK ve GDPR normlarına uyumludur.</li>
-                <li><strong>GitHub SSL Altyapısı:</strong> HTTPS şifreleme ile tam koruma.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>📂 Kod Vitrini (API Örneği)</h3>
-            <div class="code-block">
-import requests
-
-def fetch_data(api_url):
-    res = requests.get(api_url)
-    if res.status_code == 200:
-        return res.json()
-    return None
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
-        <a href="#baslangic" style="color: #00e5ff; text-decoration: none; font-size: 0.8rem; display: block; margin-top: 15px;">↑ Başa Dön</a>
-    </footer>
-
-</body>
-</html>
+            background:
+                
