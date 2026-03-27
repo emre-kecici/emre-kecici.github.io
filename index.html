@@ -41,14 +41,37 @@
             border-bottom: 2px solid var(--cyan);
         }
 
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
         h1 {
             font-size: 2.2rem;
             font-weight: bold;
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards;
         }
+
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--cyan);
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
+        }
+
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { from, to { opacity: 0; } 50% { opacity: 1; } }
+        @keyframes hideCursor { to { width: 0; opacity: 0; } }
 
         .unvan {
             font-size: 1rem;
@@ -95,7 +118,6 @@
             gap: 8px;
         }
 
-        /* Başarı Sayaçları */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -156,10 +178,10 @@
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; opacity: 1; transform: translateY(0); }
         }
 
-        /* Sekme Sistemi */
+        /* Sekme Mekanizması */
         #tab1:checked ~ .tabs-header label[for="tab1"],
         #tab2:checked ~ .tabs-header label[for="tab2"],
         #tab3:checked ~ .tabs-header label[for="tab3"],
@@ -231,7 +253,6 @@
             border-top: 1px solid rgba(0, 229, 255, 0.2);
         }
 
-        /* Mühürlerin Hizalandığı Alan */
         .footer-badges {
             display: flex;
             justify-content: center;
@@ -264,7 +285,10 @@
     <input type="radio" name="tabs" id="tab4" class="tab-input">
 
     <header id="top">
-        <h1>EMRE KEÇİCİ</h1>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+            <div class="cursor"></div>
+        </div>
         
         <div class="unvan">Süreç Tasarımı ve Yapay Zeka Uzmanı</div>
 
@@ -311,8 +335,8 @@
                 <div class="card">
                     <h3>📢 Kurumsal Teknoloji Yayıncılığı</h3>
                     <ul>
-                        <li>LinkedIn "Uçtan Uca Yapay Zeka Mimarisi" platformunda modern otomasyon senaryoları ve sektörel kurguların yayınlanması.</li>
-                        <li>Geleceğin operasyon modelleri üzerine teknik vaka analizleri ve sektörel kurguların yayınlanması.</li>
+                        <li>LinkedIn "Uçtan Uca Yapay Zeka Mimarisi" platformunda modern otomasyon senaryoları ve vaka analizlerinin paylaşılması.</li>
+                        <li>Geleceğin operasyon modelleri üzerine teknik öngörüler ve sektörel kurguların yayınlanması.</li>
                     </ul>
                 </div>
             </div>
