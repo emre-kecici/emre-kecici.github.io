@@ -3,34 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Sistemleri</title>
-    
-    <meta name="description" content="Emre Keçici - Web Geliştirme ve Otomasyon Uzmanı. İşletmeler için yapay zeka entegrasyonu ve süreç tasarımı platformu.">
-    <meta name="keywords" content="Yapay Zeka Entegrasyonu, Süreç Tasarımı, API Geliştirme, Web Scraping, Emre Keçici">
-    <meta name="author" content="Emre Keçici">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <title>Emre Keçici | Profesyonel Portfolyo</title>
     <style>
-        :root {
-            --bg-primary: #030712;
-            --bg-secondary: #0b1120;
-            --bg-card: #0f172a;
-            --accent-cyan: #00e5ff;
-            --accent-purple: #7c3aed;
-            --text-high: #f8fafc;
-            --text-mid: #94a3b8;
-            --border-glow: rgba(0, 229, 255, 0.2);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
-            
+            background-color: #0f172a; /* Gece Mavisi */
+            color: #ffffff;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            border-bottom: 2px solid #00e5ff;
+        }
+
+        /* Harf harf yazma ve kaybolan çubuk kurgusu */
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #00e5ff;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards;
+        }
+
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #00e5ff;
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes hideCursor {
+            to { width: 0; opacity: 0; }
+        }
+
+        .unvan {
+            font-size: 1rem;
+            color: #b026ff;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* İletişim Butonları (Tek Satır Ortalı) */
+        .contact-hub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .contact-btn {
+            background: #1e293b;
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Metrik Sayıları */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 50px 20px;
+            background: #1e293b;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: #00e5ff;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sec-title {
+            font-size: 1.6rem;
+            color: #00e5ff;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #b026ff;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .card ul li {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .card ul li::before {
+            content: "◆";
+            margin-right: 10px;
+            color: #00e5ff;
+        }
+
+        .tech-box {
+            display: inline-block;
+            background: #0f172a;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #02040a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+            <div class="cursor"></div>
+        </div>
+        
+        <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
+
+        <div class="contact-hub">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ Bizimle İletişime Geçin</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🔗 LinkedIn Profesyonel Ağ</a>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
+        <div class="stat-card"><h3>10+</h3><p>AI Entegrasyonu</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
+    </div>
+
+    <div class="container">
+        <h2 class="sec-title">Profesyonel Ekosistem</h2>
+
+        <div class="card">
+            <h3>🎯 Uzmanlık Alanları</h3>
+            <ul>
+                <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
+                <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
+                <li>Hafif yazılım katmanlarıyla sistemleri bozmayan Web Scraping botları.</li>
+                <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📢 Yayınlar & Bülten Köşesi</h3>
+            <ul>
+                <li>Uçtan Uca Yapay Zeka Mimarisi adlı LinkedIn bülteni kurumsal yayınları.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🔐 Veri Güvenliği ve Gizlilik</h3>
+            <ul>
+                <li>Sıfır Veri Toplama Politikası (Cookieless): KVKK ve GDPR ile tam uyumludur.</li>
+                <li>Güvenli Altyapı: GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📂 Teknoloji Envanteri</h3>
+            <div style="text-align: center;">
+                <div class="tech-box">Python</div>
+                <div class="tech-box">REST API</div>
+                <div class="tech-box">HTML5</div>
+                <div class="tech-box">JSON</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="margin-bottom: 15px;">
+            <span style="border: 1px solid #10b981; color: #10b981; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; margin-right: 10px;">🔒 SSL Şifreli</span>
+            <span style="border: 1px solid #10b981; color: #10b981; padding: 5px 10px; border-radius: 4px; font-size: 0.75rem;">🛡️ KVKK Uyumlu</span>
+        </div>
+        <p>© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
