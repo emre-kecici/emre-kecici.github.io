@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici</title>
-</head>
-<body style="background-color: white; color: black; font-family: sans-serif; text-align: center; padding: 30px;">
+    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
+    
+    <style>
+        :root {
+            --bg-primary: #030712;
+            --bg-secondary: #0b1329;
+            --bg-card: #111a36;
+            --cyan: #00e5ff;
+            --purple: #b026ff;
+            --text-high: #ffffff;
+            --text-low: #9ca3af;
+            --border: rgba(0, 229, 255, 0.15);
+        }
 
-    <h1>EMRE KEÇİCİ</h1>
-    <p>Web Geliştirme ve Otomasyon Uzmanı</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    <hr style="border: 1px solid #ddd; margin: 20px 0;">
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-high);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    <div style="margin-bottom: 20px;">
-        <a href="mailto:emrekecici1985@outlook.com" style="display: inline-block; padding: 10px; background: #f3f4f6; text-decoration: none; color: black; border-radius: 5px; margin: 5px;">✉️ E-posta At</a>
-        <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" style="display: inline-block; padding: 10px; background: #f3f4f6; text-decoration: none; color: black; border-radius: 5px; margin: 5px;">🔗 LinkedIn Profili</a>
-    </div>
-
-    <hr style="border: 1px solid #ddd; margin: 20px 0;">
-
-    <h3 style="text-align: left;">🎯 Uzmanlıklar</h3>
-    <ul style="text-align: left; line-height: 1.6;">
-        <li>Yapay Zeka (AI) & Prompt Mühendisliği</li>
-        <li>API ve Web Entegrasyonları</li>
-        <li>Chrome Uzantısı Geliştirme (Scraping)</li>
-        <li>Mikro Otomasyonlar ve Veri Analitiği</li>
-    </ul>
-
-</body>
-</html>
+        /* --- ANA GİRİŞ ALANI (GÖRÜNTÜYÜ ORTALAYAN BÖLÜM) --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Yatayda Ortala */
+            text-align: center;   /* Metni Ortala
+            
