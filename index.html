@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Web Geliştirme & Otomasyon Uzmanı</title>
+    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-dark: #030712;
-            --bg-card: #0f172a;
+            --bg-primary: #030712;
+            --bg-secondary: #0b1329;
+            --bg-card: #111a36;
             --cyan: #00e5ff;
-            --purple: #a855f7;
-            --text: #ffffff;
-            --muted: #94a3b8;
+            --purple: #b026ff;
+            --text-high: #ffffff;
+            --text-low: #9ca3af;
+            --border: rgba(0, 229, 255, 0.15);
+        }
+
+        /* Tema Ayarları */
+        .light-mode {
+            --bg-primary: #f3f4f6;
+            --bg-secondary: #ffffff;
+            --bg-card: #f9fafb;
+            --text-high: #111827;
+            --text-low: #4b5563;
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -22,279 +39,54 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text);
-            font-family: Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-high);
+            font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
-            line-height: 1.5;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* --- Giriş Alanı --- */
+        /* Navigasyon Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 19, 41, 0.9);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            color: var(--cyan);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .theme-btn {
+            background: transparent;
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: bold;
+        }
+
+        /* --- ANA GİRİŞ ALANI (GÖNTÜYÜ ORTALAYAN BÖLÜM) --- */
         header {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 15px;
-            background: radial-gradient(circle at center, #1e1b4b 0%, var(--bg-dark) 80%);
-            border-bottom: 2px solid var(--cyan);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(to right, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            width: 100%;
-        }
-
-        .unvan {
-            font-size: 1rem;
-            color: var(--cyan);
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 350px;
-            font-size: 0.85rem;
-            text-align: left;
-        }
-
-        .contact-box a {
-            color: var(--cyan);
-            text-decoration: none;
-        }
-
-        .nav-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        .nav-btn {
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .btn-prime {
-            background: var(--cyan);
-            color: #000;
-            box-shadow: 0 0 12px var(--cyan);
-        }
-
-        .btn-second {
-            border: 2px solid var(--purple);
-            color: #fff;
-        }
-
-        /* --- Sekme İçerikleri ve Yapısı --- */
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 15px;
-        }
-
-        .sec-title {
-            font-size: 1.8rem;
-            color: var(--cyan);
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(0, 229, 255, 0.15);
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-
-        .card h3 {
-            color: var(--cyan);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-            padding-bottom: 10px;
-        }
-
-        .card ul {
-            list-style: none;
-        }
-
-        .card ul li {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .card ul li::before {
-            content: "⚡";
-            margin-right: 10px;
-            color: var(--cyan);
-        }
-
-        .code-block {
-            background: #000;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            color: #f8f8f2;
-            overflow-x: auto;
-            font-size: 0.8rem;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            margin-top: 15px;
-        }
-
-        footer {
-            background: #02040a;
-            padding: 40px 15px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 229, 255, 0.1);
-        }
-
-        footer p {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        footer span {
-            color: var(--cyan);
-        }
-    </style>
-</head>
-<body>
-
-    <header id="anasayfa">
-        <h1>EMRE KEÇİCİ</h1>
-        <div class="unvan">Web Geliştirme ve Otomasyon Uzmanı</div>
-        
-        <div class="contact-box">
-            <p>✉️ <a href="mailto:emrekecici1985@outlook.com">emrekecici1985@outlook.com</a></p>
-            <p>🔗 <a href="https://www.linkedin.com/in/emrekeçici" target="_blank">linkedin.com/in/emrekeçici</a></p>
-        </div>
-
-        <div class="nav-buttons">
-            <a href="#uzmanliklar" class="nav-btn btn-prime">Uzmanlık Alanlarını Gör</a>
-            <a href="#yolharitasi" class="nav-btn btn-second">Yol Haritası & Metrikler</a>
-            <a href="#guvenlik" class="nav-btn btn-second">Gizlilik & Güvenlik Politikası</a>
-        </div>
-    </header>
-
-    <div class="container" id="uzmanliklar">
-        <h2 class="sec-title">Uzmanlık Alanları</h2>
-        
-        <div class="card">
-            <h3>Yapay Zeka & Prompt Mühendisliği</h3>
-            <ul>
-                <li>İşletmeler İçin Yapay Zeka Entegrasyonu & Süreç Tasarımı</li>
-                <li>Web Entegrasyonu & API Entegrasyonları Yönetimi</li>
-                <li>Chrome Uzantısı Geliştirme & Web Scraping</li>
-                <li>Süreç Otomasyonu & Mikro Otomasyon Sistemleri</li>
-                <li>Dijital Veri Analitiği & Kurumsal Raporlama</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container" id="yolharitasi">
-        <h2 class="sec-title">Yol Haritası ve Metrikler</h2>
-
-        <div class="card">
-            <h3>📢 Yayınlar ve Bülten Köşesi</h3>
-            <ul>
-                <li>Uçtan Uca Yapay Zeka Mimarisi (LinkedIn Bülteni) entegrasyonu.</li>
-                <li>Okuyucuları bültene yönlendiren profesyonel yönlendirme alanı.</li>
-            </ul>
-            <a href="https://www.linkedin.com" target="_blank" class="nav-btn btn-prime" style="display:inline-block; padding: 10px 20px; font-size: 0.8rem; margin-top: 10px;">LinkedIn Bültenine Git</a>
-        </div>
-
-        <div class="card">
-            <h3>📊 Başarı Sayaçları ve Metrikler</h3>
-            <ul>
-                <li>50+ Optimize Edilmiş Operasyonel Süreç</li>
-                <li>10+ Kurumsal Yapay Zeka Entegrasyonu</li>
-                <li>1000+ Okuyucuya Ulaşan Teknoloji Bülteni</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>❓ Sıkça Sorulan Sorular (S.S.S.)</h3>
-            <ul>
-                <li><strong>Yapay zeka veri güvenliğini riske atar mı?</strong> Hayır. Tüm mimariler, kurumsal veri güvenliği politikalarına ve API standartlarına tam uyumludur.</li>
-                <li><strong>Mikro otomasyonlar mevcut sistemleri bozar mı?</strong> Hayır. Mevcut yazılımlara dokunmadan hafif ve bağımsız katmanlar olarak çalışır.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container" id="guvenlik">
-        <h2 class="sec-title">Güvenlik ve Veri Politikası</h2>
-
-        <div class="card">
-            <h3>🔐 Veri Güvenliği ve Gizlilik Beyanı</h3>
-            <ul>
-                <li><strong>Sıfır Veri Toplama Politikası:</strong> Bu platform, ziyaretçilerden izinsiz kişisel veri toplamaz, işlemez.</li>
-                <li><strong>Çerezsiz Deneyim (Cookieless):</strong> Reklam çerezleri veya analitik izleyiciler kullanılmaz (KVKK/GDPR uyumlu).</li>
-                <li><strong>Şeffaf Entegrasyon & Güvenli Altyapı:</strong> Tüm yönlendirmeler resmi platformlara yapılır. GitHub Pages SSL sertifikalıdır (HTTPS).</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container" id="arge">
-        <h2 class="sec-title">Ar-Ge ve Kod Vitrini</h2>
-
-        <div class="card">
-            <h3>📂 Örnek Kod (Clean Code Showcase)</h3>
-            <div class="code-block">
-# Örnek API Entegrasyon Yapısı
-import requests
-
-def fetch_data(api_url):
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        return response.json()
-    return None
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>🌍 Küresel Vizyon ve Ar-Ge Entegrasyonu</h3>
-            <ul>
-                <li>Açık Kaynak Katkıları ve GitHub felsefesi.</li>
-                <li>Sürdürülebilirlik ve Yeşil Teknoloji Beyanı (Düşük enerji tüketimi).</li>
-                <li>Yeni nesil profesyonellere yönelik Dijital Mentorluk vizyonu.</li>
-            </ul>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 <span>Emre Keçici</span>. Tüm Hakları Saklıdır. | KVKK Uyumlu & Şeffaf Veri Platformu</p>
-        <a href="#anasayfa" style="color:var(--cyan); text-decoration:none; display:block; margin-top:15px; font-size:0.85rem;">↑ Başa Dön</a>
-    </footer>
-
-</body>
-</html>
+            align-items
+            
