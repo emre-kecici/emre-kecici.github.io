@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Portfolyo</title>
+    <title>Emre Keçici | Dijital Süreç Mimarisi ve Yapay Zeka Sistemleri</title>
     <style>
         :root {
             --cyan: #00e5ff;
@@ -41,14 +41,50 @@
             border-bottom: 2px solid var(--cyan);
         }
 
+        /* --- HARF HARF DÖKÜLME ANİMASYONU --- */
+        .typing-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
         h1 {
             font-size: 2.2rem;
             font-weight: bold;
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
+            overflow: hidden; /* Taşmayı gizler */
+            white-space: nowrap; /* Satırı kırmaz */
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards; /* 12 harf için 3 saniye */
         }
+
+        /* Yanıp sönen imleç kurgusu */
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--cyan);
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s; /* 3sn sonra gizlenir */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes hideCursor {
+            to { width: 0; opacity: 0; }
+        }
+        /* -------------------------------------- */
 
         .unvan {
             font-size: 1rem;
@@ -93,6 +129,12 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            border-color: var(--purple);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
         }
 
         .stats-grid {
@@ -123,7 +165,7 @@
             margin: 0 auto;
         }
 
-        /* YENİ VE KIRILMAZ AÇILIR MENÜ STİLLERİ */
+        /* SARSILMAZ AÇILIR MENÜ STİLLERİ (BOZULMADI) */
         details {
             background: var(--bg-card);
             border: 1px solid rgba(0, 229, 255, 0.2);
@@ -149,9 +191,7 @@
             justify-content: space-between;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
-        }
+        summary::-webkit-details-marker { display: none; }
 
         summary::after {
             content: "▼";
@@ -160,9 +200,7 @@
             transition: 0.3s;
         }
 
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
+        details[open] summary::after { transform: rotate(180deg); }
 
         .content-box {
             padding-top: 15px;
@@ -170,9 +208,7 @@
             margin-top: 15px;
         }
 
-        .content-box ul {
-            list-style: none;
-        }
+        .content-box ul { list-style: none; }
 
         .content-box ul li {
             color: var(--text-low);
@@ -235,7 +271,11 @@
 <body>
 
     <header id="top">
-        <h1>EMRE KEÇİCİ</h1>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+            <div class="cursor"></div>
+        </div>
+        
         <div class="unvan">Süreç Tasarımı ve Yapay Zeka Uzmanı</div>
 
         <p class="summary">
