@@ -26,5 +26,35 @@
             color: var(--text-high);
             font-family: sans-serif;
             overflow-x: hidden;
-            line-height:
-                
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: fit-content;
+            animation: typing 3s steps(12, end) forwards;
+        }
+
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top
+            
