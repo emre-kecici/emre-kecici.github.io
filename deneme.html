@@ -82,38 +82,13 @@
             letter-spacing: 1px;
         }
 
-        /* Yeni Madde Tasarımları */
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            width: 95%;
-            margin: 0 auto 40px auto;
-            text-align: left;
-        }
-
-        .summary-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .summary-box h3 {
-            font-size: 1.15rem;
-            color: var(--cyan);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .summary-box p {
-            font-size: 0.9rem;
+        .summary {
+            font-size: 0.95rem;
             color: var(--text-low);
-            line-height: 1.6;
-            margin: 0;
+            max-width: 85%;
+            margin-bottom: 40px;
+            text-align: left;
+            line-height: 1.7;
         }
 
         .contact-hub {
@@ -274,4 +249,97 @@
             height: 40px;
             white-space: nowrap;
             display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+            <div class="cursor"></div>
+        </div>
         
+        <div class="unvan">Saha Analisti & Dijital Süreç Mimarı</div>
+
+        <div class="summary">
+            <p style="margin-bottom: 15px; font-weight: bold; color: var(--cyan);">📍 Yerinde Tespit</p>
+            <p style="margin-bottom: 25px;">Saha ve üretim hatlarındaki operasyonel akışları doğrudan mavi yaka disipliniyle deneyimleyerek, dar boğazları ve verimsizlikleri yerinde tespit ediyorum.</p>
+
+            <p style="margin-bottom: 15px; font-weight: bold; color: var(--cyan);">🤖 Akıllı Çözümler</p>
+            <p style="margin-bottom: 25px;">Tespit ettiğim iyileştirme noktalarını modern yapay zeka entegrasyonları ve mikro otomasyon kurgularıyla birleştirerek, uygulanabilir akılcı çözümler üretiyorum.</p>
+
+            <p style="margin-bottom: 15px; font-weight: bold; color: var(--cyan);">📊 Stratejik Raporlama</p>
+            <p>Sahadaki gerçek tecrübeyi dijitalleşmenin hızıyla harmanlayarak üst yönetime raporluyor ve süreçlerde aktif sorumluluk alıyorum.</p>
+        </div>
+
+        <div class="contact-hub">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçebilirsiniz</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurabilirsiniz</a>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Saha Analizi</p></div>
+        <div class="stat-card"><h3>15+</h3><p>AI ve Otomasyon Fikri</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%100</h3><p>Saha Hâkimiyeti</p></div>
+    </div>
+
+    <div class="container">
+
+        <details open>
+            <summary>🎯 Uzmanlıklar</summary>
+            <div class="content-box">
+                <ul>
+                    <li>Üretim hatlarındaki dar boğazları yerinde tespit ederek, yalın üretim ve akıllı Poka-Yoke mekanizmalarıyla analiz ediyorum.</li>
+                    <li>Saha operasyonlarında insan kaynaklı hataları sıfırlayacak veri odaklı süreç iyileştirme adımlarını kurguluyorum.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>📢 Yayınlar & Entegrasyonlar</summary>
+            <div class="content-box">
+                <ul>
+                    <li>LinkedIn bültenimde sahadan edindiğim pratik tecrübeleri ve operasyonel iyileştirme senaryolarını paylaşıyorum.</li>
+                    <li>Mavi yaka ve beyaz yaka arasındaki entegrasyonu güçlendirecek otonom veri akışı modelleri geliştiriyorum.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>🔐 Güvenlik</summary>
+            <div class="content-box">
+                <ul>
+                    <li>Platform, kişisel verilerin korunması kanununa ve endüstriyel gizlilik standartlarına tamamen uyumludur.</li>
+                    <li>Bütün veri akışları şifrelenmiş sunucu kalkanı HTTPS ile korunur.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>📂 Teknoloji ve Araçlar</summary>
+            <div class="content-box" style="text-align: center;">
+                <span class="tech-box">Saha Veri Analizi</span>
+                <span class="tech-box">Mikro Otomasyon</span>
+                <span class="tech-box">AI Temelli Süreçler</span>
+                <span class="tech-box">Yalın Üretim</span>
+            </div>
+        </details>
+
+    </div>
+
+    <footer>
+        <div class="footer-badges">
+            <span class="secure-badge">🔒 SSL Güvenlikli</span>
+            <span class="secure-badge">🛡️ KVKK Uyumlu Platform</span>
+        </div>
+        <p style="color: var(--text-low); font-size: 0.85rem;">© 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
+        <a href="#top" style="color:var(--cyan); text-decoration:none; display:block; margin-top:15px; font-size:0.8rem;">↑ Başa Dön</a>
+    </footer>
+
+</body>
+</html>
