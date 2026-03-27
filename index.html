@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçeci | Saha Operasyonları & Endüstriyel Yapay Zeka Uzmanı</title>
+    <title>Emre Keçeci | Saha Operasyonları & Yapay Zeka Uzmanı</title>
     <style>
         :root {
-            --primary: #00e5ff;
-            --secondary: #b026ff;
+            --cyan: #00e5ff;
+            --purple: #b026ff;
             --bg-deep: #060b19;
-            --bg-surface: #0c1636;
             --bg-card: #121e45;
             --text-high: #ffffff;
             --text-low: #8b9bb4;
@@ -27,12 +26,12 @@
             color: var(--text-high);
             font-family: Arial, sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* --- Giriş Alanı --- */
+        /* --- Giriş Alanı (Telefona Tam Uyumlu) --- */
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,125 +39,110 @@
             text-align: center;
             padding: 20px;
             background: radial-gradient(circle at center, #111a36 0%, var(--bg-deep) 80%);
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 2px solid var(--cyan);
         }
 
         h1 {
-            font-size: 3.2rem;
+            font-size: 2.2rem; /* Mobilde taşmasın diye küçültüldü */
             font-weight: bold;
-            letter-spacing: 2px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            letter-spacing: 1px;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            width: 100%;
+            word-wrap: break-word; /* Taşmayı önler */
         }
 
         .typing {
-            font-size: 1.4rem;
-            color: var(--primary);
+            font-size: 1rem; /* Mobilde taşmasın diye küçültüldü */
+            color: var(--cyan);
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            border-right: 3px solid var(--primary);
-            white-space: nowrap;
-            animation: caret 0.75s step-end infinite;
-        }
-
-        @keyframes caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary); }
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-right: 2px solid var(--cyan);
+            white-space: normal; /* Yan yana taşmayı engeller, alt satıra geçer */
+            text-align: center;
+            width: 100%;
+            max-width: 90%;
         }
 
         .summary {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: var(--text-low);
-            max-width: 650px;
-            margin-bottom: 40px;
+            max-width: 90%;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .btn-hub {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column; /* Mobilde butonlar alt alta olsun diye */
+            gap: 15px;
+            width: 90%;
+            max-width: 320px;
         }
 
         .btn {
             text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 4px;
+            padding: 15px;
+            border-radius: 5px;
             font-weight: bold;
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
         .btn-prime {
-            background: var(--primary);
+            background: var(--cyan);
             color: #000;
-            box-shadow: 0 0 15px var(--primary);
-        }
-
-        .btn-prime:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px var(--primary);
+            box-shadow: 0 0 15px var(--cyan);
         }
 
         .btn-second {
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--purple);
             color: #fff;
-        }
-
-        .btn-second:hover {
-            background: rgba(176, 38, 255, 0.2);
-            transform: translateY(-3px);
         }
 
         /* --- Konteynır Düzeni --- */
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .sec-title {
-            font-size: 2.2rem;
-            color: var(--primary);
+            font-size: 1.8rem;
+            color: var(--cyan);
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             text-transform: uppercase;
         }
 
         /* --- Maddeli Uzmanlıklar --- */
         .expert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .expert-card {
             background: var(--bg-card);
             border: 1px solid rgba(0, 229, 255, 0.1);
             border-radius: 8px;
-            padding: 35px;
-            transition: all 0.3s ease;
-        }
-
-        .expert-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--secondary);
-            box-shadow: 0 10px 30px rgba(176, 38, 255, 0.2);
+            padding: 25px;
         }
 
         .expert-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: var(--cyan);
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
@@ -168,63 +152,65 @@
 
         .expert-list li {
             color: var(--text-low);
-            font-size: 1rem;
-            margin-bottom: 12px;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
             display: flex;
             align-items: flex-start;
         }
 
         .expert-list li::before {
             content: '⚡';
-            margin-right: 12px;
-            color: var(--primary);
+            margin-right: 10px;
+            color: var(--cyan);
         }
 
         /* --- Teknik Barlar --- */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .skill-item {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         .skill-head {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .bar-outline {
-            height: 12px;
+            height: 10px;
             background: #101a36;
-            border-radius: 6px;
+            border-radius: 5px;
             overflow: hidden;
             border: 1px solid rgba(0, 229, 255, 0.2);
         }
 
         .bar-inner {
             height: 100%;
-            border-radius: 6px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            box-shadow: 0 0 10px var(--primary);
+            border-radius: 5px;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
         }
 
         footer {
             background: #030611;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-top: 1px solid rgba(0, 229, 255, 0.1);
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .expert-grid { grid-template-columns: 1fr; }
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-low);
+        }
+
+        footer span {
+            color: var(--cyan);
         }
     </style>
 </head>
@@ -240,7 +226,7 @@
 
         <div class="btn-hub">
             <a href="#uzmanliklar" class="btn btn-prime">Portfolyoyu Keşfet</a>
-            <a href="https://www.linkedin.com" target="_blank" class="btn btn-second">LinkedIn'de Bağlan</a>
+            <a href="https://www.linkedin.com" target="_blank" class="btn btn-second">Bağlantı Kur</a>
         </div>
     </header>
 
@@ -252,8 +238,8 @@
                 <h3>Yapay Zeka ve Mikro Otomasyon</h3>
                 <ul class="expert-list">
                     <li>Özel veri çekme (Scraping) bot mimarileri.</li>
-                    <li>Operasyon ve raporlamayı hızlandıran akıllı Chrome eklentileri.</li>
-                    <li>Saha süreçlerini analiz eden yapay zeka (Prompt) mühendisliği.</li>
+                    <li>Operasyonu hızlandıran akıllı Chrome eklentileri.</li>
+                    <li>Süreçleri analiz eden yapay zeka (Prompt) mühendisliği.</li>
                     <li>Bağımsız veri ve sistem akış mimarisi yönetimi.</li>
                 </ul>
             </div>
@@ -284,35 +270,7 @@
         <h2 class="sec-title">Sistem Yetkinlik Metrikleri</h2>
 
         <div class="skills-grid">
-            <div>
-                <div class="skill-item">
-                    <div class="skill-head"><span>Saha Operasyon Yönetimi ve Organizasyon</span><span>95%</span></div>
-                    <div class="bar-outline"><div class="bar-inner" style="width: 95%;"></div></div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-head"><span>Yalın Üretim ve Sürekli İyileştirme (Kaizen, 5S)</span><span>90%</span></div>
-                    <div class="bar-outline"><div class="bar-inner" style="width: 90%;"></div></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="skill-item">
-                    <div class="skill-head"><span>Yapay Zeka Ajan Tasarımı ve Entegrasyonu</span><span>85%</span></div>
-                    <div class="bar-outline"><div class="bar-inner" style="width: 85%;"></div></div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-head"><span>Mikro Otomasyon (Scraping ve Web Botları)</span><span>80%</span></div>
-                    <div class="bar-outline"><div class="bar-inner" style="width: 80%;"></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 <span>Emre Keçeci</span>. Tüm Hakları Saklıdır. Sahada Verimlilik, Dijitalde Gelecek.</p>
-    </footer>
-
-</body>
-</html>
+            <div class="skill-item">
+                <div class="skill-head"><span>Saha Operasyon Yönetimi</span><span>95%</span></div>
+                <div class="bar-outline"><div class="bar-inner"
+                                             
