@@ -3,166 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Profesyonel Portfolyo</title>
+    <title>Emre Keçici | Profesyonel Hub</title>
     <style>
-        :root {
-            --cyan: #00e5ff;
-            --purple: #b026ff;
-            --bg-deep: #0f172a; /* Gece Mavisi */
-            --bg-card: #1e293b; 
-            --text-high: #ffffff;
-            --text-low: #94a3b8;
-        }
+        body { background-color: #0f172a; color: #ffffff; font-family: sans-serif; margin: 0; padding: 20px; line-height: 1.6; }
+        header { text-align: center; padding: 50px 20px; border-bottom: 2px solid #00e5ff; }
+        h1 { color: #00e5ff; margin: 0 0 10px 0; }
+        .summary { color: #94a3b8; font-size: 0.9rem; max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* Sekme Butonları */
+        .tab-buttons { display: flex; overflow-x: auto; gap: 10px; margin: 20px 0; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+        .tab-btn { background: #1e293b; color: #00e5ff; border: 1px solid #00e5ff; padding: 10px 15px; border-radius: 5px; font-weight: bold; font-size: 0.85rem; cursor: pointer; white-space: nowrap; }
+        
+        /* Sekme İçerikleri */
+        .tab-content { display: none; background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #334155; margin-top: 15px; }
+        .active { display: block; }
+        
+        ul { padding-left: 20px; color: #94a3b8; }
+        li { margin-bottom: 10px; }
+        
+        .contact-box { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .contact-btn { background: #00e5ff; color: #000; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    <header>
+        <h1>EMRE KEÇİCİ</h1>
+        <p style="color: #b026ff; font-weight: bold; margin-top: 0;">Süreç Tasarımı ve Yapay Zeka Uzmanı</p>
+        <p class="summary">İşletmeler için siber güvenlik uyumlu, uçtan uca otonom yapay zeka ve mikro otomasyon mimarileri tasarlayan profesyonel süreç mühendisi.</p>
+        
+        <div class="contact-box">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geç</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 LinkedIn</a>
+        </div>
+    </header>
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-high);
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    <div class="tab-buttons">
+        <button class="tab-btn" onclick="openTab('uzmanlik')">🎯 Uzmanlıklar</button>
+        <button class="tab-btn" onclick="openTab('bulten')">📢 Yayınlar & Bülten</button>
+        <button class="tab-btn" onclick="openTab('guvenlik')">🔐 Güvenlik & Gizlilik</button>
+        <button class="tab-btn" onclick="openTab('teknoloji')">📂 Teknoloji</button>
+    </div>
 
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(to bottom, #1e3a8a, #0f172a);
-            border-bottom: 2px solid var(--cyan);
-        }
+    <div id="uzmanlik" class="tab-content active">
+        <h3>Profesyonel Uzmanlık Alanları</h3>
+        <ul>
+            <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
+            <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
+            <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
+        </ul>
+    </div>
 
-        /* Daktilo Efekti Ve Kaybolan Çubuk */
-        .typing-container {
-            display: inline-block;
-            position: relative;
-            margin-bottom: 15px;
-        }
+    <div id="bulten" class="tab-content">
+        <h3>Yayınlar ve Bülten Köşesi</h3>
+        <ul>
+            <li>Uçtan Uca Yapay Zeka Mimarisi adlı LinkedIn bülteni kurumsal yayınları.</li>
+        </ul>
+    </div>
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: bold;
-            background: linear-gradient(to right, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            overflow: hidden;
-            white-space: nowrap;
-            max-width: fit-content;
-            animation: typing 3s steps(12, end) forwards;
-        }
+    <div id="guvenlik" class="tab-content">
+        <h3>Veri Güvenliği ve Gizlilik</h3>
+        <ul>
+            <li>Sıfır Veri Toplama Politikası (Cookieless): KVKK ve GDPR uyumlu.</li>
+            <li>GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
+        </ul>
+    </div>
 
-        .cursor {
-            position: absolute;
-            right: -10px;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background-color: var(--cyan);
-            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
-        }
+    <div id="teknoloji" class="tab-content">
+        <h3>Teknoloji Envanteri</h3>
+        <p>Aktif Kullanılan Diller ve Standartlar:</p>
+        <ul>
+            <li>Python, REST API, HTML5, JSON</li>
+        </ul>
+    </div>
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+    <script>
+        function openTab(tabId) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none"; 
+            }
+            document.getElementById(tabId).style.display = "block"; 
         }
+    </script>
 
-        @keyframes blink {
-            from, to { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        @keyframes hideCursor {
-            to { width: 0; opacity: 0; }
-        }
-
-        .unvan {
-            font-size: 1rem;
-            color: var(--cyan);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .summary {
-            font-size: 0.9rem;
-            color: var(--text-low);
-            max-width: 90%;
-            margin-bottom: 35px;
-            text-align: center;
-        }
-
-        .contact-hub {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .contact-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--cyan);
-            color: var(--cyan);
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8rem;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .contact-btn:hover {
-            border-color: var(--purple);
-            box-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
-            width: 100%;
-            padding: 50px 20px;
-            background: #1e293b;
-            text-align: center;
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-        }
-
-        .stat-card h3 {
-            font-size: 2rem;
-            color: var(--cyan);
-            margin-bottom: 5px;
-        }
-
-        .stat-card p {
-            font-size: 0.85rem;
-            color: var(--text-low);
-        }
-
-        /* --- PROFESYONEL SEKMELER KONTROLLERİ --- */
-        .container {
-            padding: 60px 15px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .tabs-header {
-            display: flex
-            
+</body>
+</html>
