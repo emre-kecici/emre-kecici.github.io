@@ -8,10 +8,10 @@
         :root {
             --cyan: #00e5ff;
             --purple: #b026ff;
-            --bg-deep: #030712;
-            --bg-card: #0b1329;
+            --bg-deep: #0f172a; /* Gece Mavisi Arka Plan */
+            --bg-card: #1e293b; /* Kartların Rengi */
             --text-high: #ffffff;
-            --text-low: #9ca3af;
+            --text-low: #94a3b8;
         }
 
         * {
@@ -37,7 +37,7 @@
             align-items: center;
             text-align: center;
             padding: 80px 15px 30px;
-            background: radial-gradient(circle at center, #111a36 0%, var(--bg-deep) 80%);
+            background: radial-gradient(circle at center, #1e3a8a 0%, var(--bg-deep) 80%);
             border-bottom: 2px solid var(--cyan);
         }
 
@@ -70,7 +70,7 @@
             margin-bottom: 35px;
         }
 
-        /* --- Güncellenmiş Emojili İletişim Butonları --- */
+        /* Tıklanabilir Kurumsal İletişim Butonları */
         .contact-box {
             display: flex;
             justify-content: center;
@@ -137,7 +137,7 @@
             gap: 20px;
             width: 100%;
             padding: 60px 20px;
-            background: #0b1120;
+            background: #1e293b;
             text-align: center;
             border-bottom: 1px solid rgba(0, 229, 255, 0.15);
         }
@@ -175,7 +175,7 @@
         }
 
         .item-card {
-            background: #0f172a;
+            background: var(--bg-card);
             border: 1px solid rgba(0, 229, 255, 0.15);
             border-radius: 8px;
             padding: 25px;
@@ -218,7 +218,7 @@
         }
 
         .tech-box {
-            background: #030712;
+            background: #0f172a;
             border: 1px solid rgba(0, 229, 255, 0.2);
             padding: 12px;
             border-radius: 6px;
@@ -258,12 +258,12 @@
 </head>
 <body>
 
-    <header>
+    <header id="top">
         <h1>EMRE KEÇİCİ</h1>
         <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
         
         <p class="summary">
-            Süreç tasarımı ve kurumsal yapay zeka entegrasyonu ile dijital ekosistemleri optimize eden, veri tabanlı fütüristik mühendislik portfolyosu.
+            Süreç tasarımı ve kurumsal yapay zeka entegrasyonu ile dijital ekosistemleri optimize eden, veri tabanlı fütüristik mühendislik platformu.
         </p>
 
         <div class="contact-box">
@@ -309,63 +309,5 @@
         </div>
     </div>
 
-    <div class="container" id="yolharitasi">
-        <h2 class="sec-title">Yol Haritası ve Bülten</h2>
-        <div class="grid">
-            <div class="item-card">
-                <h3>📢 Yayınlar & Bülten Köşesi</h3>
-                <ul>
-                    <li>"Uçtan Uca Yapay Zeka Mimarisi" adlı LinkedIn bülteni yayınları.</li>
-                </ul>
-                <a href="https://www.linkedin.com" target="_blank" class="btn btn-prime" style="display:inline-block; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px; max-width: 250px;">Bültene Abone Ol</a>
-            </div>
-
-            <div class="item-card">
-                <h3>❓ Sıkça Sorulan Sorular (S.S.S.)</h3>
-                <ul>
-                    <li><strong>Mikro otomasyonlar mevcut sistemleri bozar mı?</strong> Hayır, bağımsız katmanlar olarak çalışır.</li>
-                    <li><strong>Veri güvenliği API'lerde korunur mu?</strong> Standart kurumsal API protokolleri ile tam uyumludur.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" id="teknoloji">
-        <h2 class="sec-title">Altyapı ve Teknoloji</h2>
-        <div class="grid">
-            <div class="item-card">
-                <h3>🔐 Veri Güvenliği ve Gizlilik Beyanı</h3>
-                <ul>
-                    <li><strong>Sıfır Veri Toplama Politikası (Cookieless):</strong> Dijital izler ve çerezler takip edilmez (KVKK/GDPR uyumlu).</li>
-                    <li><strong>Güvenli Altyapı:</strong> GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
-                </ul>
-            </div>
-
-            <div class="item-card">
-                <h3>📂 Örnek Kod (Clean Code Showcase)</h3>
-                <div class="code-block">
-import requests
-
-def fetch_data(api_url):
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        return response.json()
-    return None
-                </div>
-                <div class="tech-grid">
-                    <div class="tech-box">Python</div>
-                    <div class="tech-box">REST API</div>
-                    <div class="tech-box">HTML5/JS</div>
-                    <div class="tech-box">JSON</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 <span>Emre Keçici</span>. Tüm Hakları Saklıdır. | KVKK Uyumlu & Şeffaf Veri Standartları</p>
-        <a href="#top" style="color:var(--cyan); text-decoration:none; display:block; margin-top:15px; font-size:0.8rem;">↑ Başa Dön</a>
-    </footer>
-
-</body>
-</html>
+    <div class="container" id="yol
+        
