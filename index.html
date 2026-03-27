@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Profesyonel Portfolyo</title>
     <style>
+        :root {
+            --cyan: #00e5ff;
+            --purple: #b026ff;
+            --bg-deep: #0f172a; /* Gece Mavisi */
+            --bg-card: #1e293b; 
+            --text-high: #ffffff;
+            --text-low: #94a3b8;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #0f172a; /* Gece Mavisi */
-            color: #ffffff;
-            font-family: sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-high);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
             line-height: 1.6;
         }
 
@@ -27,10 +38,10 @@
             text-align: center;
             padding: 80px 20px;
             background: linear-gradient(to bottom, #1e3a8a, #0f172a);
-            border-bottom: 2px solid #00e5ff;
+            border-bottom: 2px solid var(--cyan);
         }
 
-        /* Harf harf yazma kurgusu */
+        /* Daktilo Efekti Ve Kaybolan Çubuk */
         .typing-container {
             display: inline-block;
             position: relative;
@@ -39,12 +50,24 @@
 
         h1 {
             font-size: 2.2rem;
-            color: #00e5ff;
             font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             overflow: hidden;
             white-space: nowrap;
             max-width: fit-content;
             animation: typing 3s steps(12, end) forwards;
+        }
+
+        .cursor {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--cyan);
+            animation: blink 0.75s step-end infinite, hideCursor 0s forwards 3s;
         }
 
         @keyframes typing {
@@ -52,24 +75,32 @@
             to { width: 100%; }
         }
 
+        @keyframes blink {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes hideCursor {
+            to { width: 0; opacity: 0; }
+        }
+
         .unvan {
             font-size: 1rem;
-            color: #b026ff;
+            color: var(--cyan);
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
-        /* --- KANKA İŞTE O VURUCU VE KISA AÇIKLAMA --- */
         .summary {
             font-size: 0.9rem;
-            color: #94a3b8;
+            color: var(--text-low);
             max-width: 90%;
             margin-bottom: 35px;
             text-align: center;
         }
 
-        /* İletişim Butonları (Tek Satır Ortalı) */
         .contact-hub {
             display: flex;
             justify-content: center;
@@ -81,9 +112,9 @@
         }
 
         .contact-btn {
-            background: #1e293b;
-            border: 1px solid #00e5ff;
-            color: #00e5ff;
+            background: var(--bg-card);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
             padding: 12px;
             border-radius: 8px;
             text-decoration: none;
@@ -95,9 +126,14 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            transition: 0.3s;
         }
 
-        /* Metrik Sayıları */
+        .contact-btn:hover {
+            border-color: var(--purple);
+            box-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -111,32 +147,22 @@
 
         .stat-card h3 {
             font-size: 2rem;
-            color: #00e5ff;
+            color: var(--cyan);
             margin-bottom: 5px;
         }
 
         .stat-card p {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: var(--text-low);
         }
 
+        /* --- PROFESYONEL SEKMELER KONTROLLERİ --- */
         .container {
-            padding: 60px 20px;
+            padding: 60px 15px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        .sec-title {
-            font-size: 1.6rem;
-            color: #00e5ff;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .card {
-            background: #1e293b;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            border-radius: 10px;
-            padding: 25
+        .tabs-header {
+            display: flex
             
