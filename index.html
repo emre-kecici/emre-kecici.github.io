@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
+    
     <style>
         :root {
             --cyan: #00e5ff;
             --purple: #b026ff;
-            --bg-deep: #0f172a; /* Gece Mavisi Arka Plan */
-            --bg-card: #1e293b; /* Kartların Rengi */
+            --bg-deep: #0f172a; /* Gece Mavisi */
+            --bg-card: #1e293b; 
             --text-high: #ffffff;
             --text-low: #94a3b8;
         }
@@ -41,16 +42,38 @@
             border-bottom: 2px solid var(--cyan);
         }
 
+        /* --- HARF HARF YAZILMA EFEKTİ (SAF CSS - ÇÖKMEZ) --- */
+        .typing-container {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
         h1 {
             font-size: 2.2rem;
             font-weight: bold;
             background: linear-gradient(to right, var(--cyan), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
             width: 100%;
             word-wrap: break-word;
             text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            
+            /* Animasyon Ayarları */
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--cyan);
+            animation: typing 3s steps(12, end) forwards, blink 0.75s step-end infinite;
+            max-width: fit-content;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: var(--cyan); }
         }
 
         .unvan {
@@ -70,7 +93,6 @@
             margin-bottom: 35px;
         }
 
-        /* Tıklanabilir Kurumsal İletişim Butonları */
         .contact-box {
             display: flex;
             justify-content: center;
@@ -258,8 +280,11 @@
 </head>
 <body>
 
-    <header id="top">
-        <h1>EMRE KEÇİCİ</h1>
+    <header>
+        <div class="typing-container">
+            <h1>EMRE KEÇİCİ</h1>
+        </div>
+        
         <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
         
         <p class="summary">
@@ -296,18 +321,12 @@
                 <ul>
                     <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
                     <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
+                    <li>Süreç iyileştirme için prompt mühendisliği kurguları.</li>
                 </ul>
             </div>
 
             <div class="item-card">
                 <h3>Mikro Otomasyon & Entegrasyon</h3>
                 <ul>
-                    <li>Hafif yazılım katmanlarıyla sistemleri bozmayan Web Scraping botları.</li>
-                    <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="container" id="yol
-        
+                    <li>Hafif
+                        
