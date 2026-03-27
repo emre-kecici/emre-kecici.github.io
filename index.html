@@ -3,37 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Sistemleri</title>
-    
-    <meta name="description" content="Emre Keçici - Web Geliştirme ve Otomasyon Uzmanı. İşletmeler için yapay zeka entegrasyonu ve süreç tasarımı platformu.">
-    <meta name="keywords" content="Yapay Zeka Entegrasyonu, Süreç Tasarımı, API Geliştirme, Web Scraping, Emre Keçici">
-    <meta name="author" content="Emre Keçici">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
+    <title>Emre Keçici | Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</title>
     <style>
         :root {
-            --bg-primary: #030712;
-            --bg-secondary: #0b1120;
-            --bg-card: #0f172a;
-            --accent-cyan: #00e5ff;
-            --accent-purple: #7c3aed;
-            --text-high: #f8fafc;
-            --text-mid: #94a3b8;
-            --border-glow: rgba(0, 229, 255, 0.2);
-        }
-
-        .light-theme {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #f1f5f9;
-            --bg-card: #ffffff;
-            --accent-cyan: #0284c7;
-            --accent-purple: #6d28d9;
-            --text-high: #0f172a;
-            --text-mid: #475569;
-            --border-glow: rgba(2, 132, 199, 0.2);
+            --cyan: #00e5ff;
+            --purple: #b026ff;
+            --bg-deep: #030712;
+            --bg-card: #0b1329;
+            --text-high: #ffffff;
+            --text-low: #9ca3af;
         }
 
         * {
@@ -44,18 +22,350 @@
         }
 
         body {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-deep);
             color: var(--text-high);
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 15px 30px;
+            background: radial-gradient(circle at center, #111a36 0%, var(--bg-deep) 80%);
+            border-bottom: 2px solid var(--cyan);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            width: 100%;
+            word-wrap: break-word;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+
+        .unvan {
+            font-size: 1rem;
+            color: var(--cyan);
+            font-weight: bold;
+            margin-bottom: 20px;
+            max-width: 90%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--text-low);
+            max-width: 90%;
+            margin-bottom: 35px;
+        }
+
+        /* --- Güncellenmiş Emojili İletişim Butonları --- */
+        .contact-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .contact-link {
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--cyan);
+            font-size: 0.85rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 12px;
+            border-radius: 6px;
+            width: 100%;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        /* --- Üst Kurumsal Menü --- */
-        nav {
-            position: fixed;
-            top: 0;
+        .contact-link:hover {
+            border-color: var(--purple);
+            box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-hub {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             width: 100%;
-            background:
-                
+            max-width: 320px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .btn-prime {
+            background: var(--cyan);
+            color: #000;
+            box-shadow: 0 0 12px var(--cyan);
+        }
+
+        .btn-second {
+            border: 1px solid var(--purple);
+            color: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 20px;
+            width: 100%;
+            padding: 60px 20px;
+            background: #0b1120;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 0.8rem;
+            color: var(--text-low);
+        }
+
+        .container {
+            width: 100%;
+            padding: 60px 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sec-title {
+            font-size: 1.6rem;
+            color: var(--cyan);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .item-card {
+            background: #0f172a;
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .item-card h3 {
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+        }
+
+        .item-card ul {
+            list-style: none;
+            text-align: left;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        .item-card ul li {
+            color: var(--text-low);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .item-card ul li::before {
+            content: "◆";
+            margin-right: 10px;
+            color: var(--cyan);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-box {
+            background: #030712;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #000;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #f8f8f2;
+            overflow-x: auto;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        footer {
+            background: #010309;
+            padding: 40px 15px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-low);
+        }
+
+        footer span {
+            color: var(--cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EMRE KEÇİCİ</h1>
+        <div class="unvan">Web Geliştirme, Otomasyon & Yapay Zeka Uzmanı</div>
+        
+        <p class="summary">
+            Süreç tasarımı ve kurumsal yapay zeka entegrasyonu ile dijital ekosistemleri optimize eden, veri tabanlı fütüristik mühendislik portfolyosu.
+        </p>
+
+        <div class="contact-box">
+            <a href="mailto:emrekecici1985@outlook.com" class="contact-link">
+                ✉️ Bizimle İletişime Geçin
+            </a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-link">
+                🔗 LinkedIn Profesyonel Ağ
+            </a>
+        </div>
+
+        <div class="btn-hub">
+            <a href="#uzmanlik" class="btn btn-prime">Uzmanlık Alanları</a>
+            <a href="#yolharitasi" class="btn btn-second">Yol Haritası & Bülten</a>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card"><h3>50+</h3><p>Optimize Operasyon</p></div>
+        <div class="stat-card"><h3>10+</h3><p>Yapay Zeka Mimarisi</p></div>
+        <div class="stat-card"><h3>1000+</h3><p>Bülten Okuyucusu</p></div>
+        <div class="stat-card"><h3>%99.9</h3><p>Sistem Kararlılığı</p></div>
+    </div>
+
+    <div class="container" id="uzmanlik">
+        <h2 class="sec-title">Profesyonel Uzmanlıklar</h2>
+        <div class="grid">
+            <div class="item-card">
+                <h3>Yapay Zeka & Prompt Mühendisliği</h3>
+                <ul>
+                    <li>Kurumsal dil modellerinin (LLM) iş süreçlerine entegrasyonu.</li>
+                    <li>Veri analitiği tabanlı akıllı yapay zeka ajan (AI Agents) tasarımı.</li>
+                </ul>
+            </div>
+
+            <div class="item-card">
+                <h3>Mikro Otomasyon & Entegrasyon</h3>
+                <ul>
+                    <li>Hafif yazılım katmanlarıyla sistemleri bozmayan Web Scraping botları.</li>
+                    <li>REST API entegrasyonu ve dijital iş akışı otomasyonu.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="yolharitasi">
+        <h2 class="sec-title">Yol Haritası ve Bülten</h2>
+        <div class="grid">
+            <div class="item-card">
+                <h3>📢 Yayınlar & Bülten Köşesi</h3>
+                <ul>
+                    <li>"Uçtan Uca Yapay Zeka Mimarisi" adlı LinkedIn bülteni yayınları.</li>
+                </ul>
+                <a href="https://www.linkedin.com" target="_blank" class="btn btn-prime" style="display:inline-block; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px; max-width: 250px;">Bültene Abone Ol</a>
+            </div>
+
+            <div class="item-card">
+                <h3>❓ Sıkça Sorulan Sorular (S.S.S.)</h3>
+                <ul>
+                    <li><strong>Mikro otomasyonlar mevcut sistemleri bozar mı?</strong> Hayır, bağımsız katmanlar olarak çalışır.</li>
+                    <li><strong>Veri güvenliği API'lerde korunur mu?</strong> Standart kurumsal API protokolleri ile tam uyumludur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="teknoloji">
+        <h2 class="sec-title">Altyapı ve Teknoloji</h2>
+        <div class="grid">
+            <div class="item-card">
+                <h3>🔐 Veri Güvenliği ve Gizlilik Beyanı</h3>
+                <ul>
+                    <li><strong>Sıfır Veri Toplama Politikası (Cookieless):</strong> Dijital izler ve çerezler takip edilmez (KVKK/GDPR uyumlu).</li>
+                    <li><strong>Güvenli Altyapı:</strong> GitHub Pages ile SSL sertifikalı (HTTPS) şifreleme.</li>
+                </ul>
+            </div>
+
+            <div class="item-card">
+                <h3>📂 Örnek Kod (Clean Code Showcase)</h3>
+                <div class="code-block">
+import requests
+
+def fetch_data(api_url):
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        return response.json()
+    return None
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-box">Python</div>
+                    <div class="tech-box">REST API</div>
+                    <div class="tech-box">HTML5/JS</div>
+                    <div class="tech-box">JSON</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <span>Emre Keçici</span>. Tüm Hakları Saklıdır. | KVKK Uyumlu & Şeffaf Veri Standartları</p>
+        <a href="#top" style="color:var(--cyan); text-decoration:none; display:block; margin-top:15px; font-size:0.8rem;">↑ Başa Dön</a>
+    </footer>
+
+</body>
+</html>
