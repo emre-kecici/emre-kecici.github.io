@@ -200,7 +200,6 @@
             color: var(--primary-color);
         }
 
-        /* YAZAR KİRLETMEYE BAŞLASIN (DAKTİLO ALANI) */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
             font-size: 0.85rem;
@@ -352,7 +351,6 @@
         document.getElementById('pop').classList.add('show');
     }
 
-    // SCROLL İLE TETİKLENEN DAKTİLO EFEKTİ
     const fullText = "Designed and Developed by Emre Keçici";
     const targetElement = document.getElementById("tw-text");
     let i = 0;
@@ -366,18 +364,16 @@
         }
     }
 
-    // Intersection Observer: Eleman ekrana girdiğinde çalışır
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !hasStarted) {
-                hasStarted = true; // Sadece bir kere çalışsın
+                hasStarted = true;
                 typeWriter();
             }
         });
-    }, { threshold: 0.5 }); // Yazının yarısı ekrana girdiğinde tetiklenir
+    }, { threshold: 0.5 });
 
     observer.observe(document.getElementById("tw-observer-point"));
 </script>
-
 </body>
 </html>
