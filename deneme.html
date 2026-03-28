@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Operasyonel Mükemmellik & Dijital Çözümler</title>
+    <title>Emre Keçici | Operasyonel Mükemmellik</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
-            --primary-color: #22d3ee; 
+            --primary-color: #22d3ee; /* Turkuaz Neon */
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
         }
@@ -25,92 +25,123 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
+        /* Hero Section (Üst Kısım) */
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            position: relative;
+            padding-bottom: 20px;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 0 25px rgba(34, 211, 238, 0.2);
-            background-color: var(--card-bg); /* Resim yüklenmezse boşluk kalmasın */
+        /* Kalkan Logosunun Olduğu Yer */
+        .shield-logo {
+            width: 100%;
+            max-width: 800px; /* Logonun genişliği */
+            height: auto;
+            margin: 0 auto; /* Ortalamak için */
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px; /* Altındaki isme boşluk */
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 10px 0;
-            letter-spacing: -1px;
-            font-weight: 700;
+            letter-spacing: -2px;
+            font-weight: 800;
         }
 
         .subtitle {
             color: var(--primary-color);
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .social-links a {
             color: var(--text-main);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             transition: all 0.3s ease;
             text-decoration: none;
         }
 
         .social-links a:hover {
             color: var(--primary-color);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
+        /* Bölüm Başlıkları */
         .section-title {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 15px;
-            margin: 50px 0 25px;
-            font-size: 1.4rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 18px;
+            margin: 60px 0 30px;
+            font-size: 1.6rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-item {
+        /* Profesyonel Özet Listesi (Mermi gibi tane tane) */
+        .summary-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
+        .summary-list li {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* İkonların Ayarı */
+        .summary-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px; /* İkonu metinle hizala */
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        /* Uzmanlık Alanları */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-item {
+            list-style: none;
+            padding: 0;
+        }
+
         .skill-item li {
-            margin-bottom: 12px;
-            padding-left: 25px;
+            margin-bottom: 15px;
+            padding-left: 30px;
             position: relative;
         }
 
@@ -121,61 +152,58 @@
             position: absolute;
             left: 0;
             color: var(--primary-color);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
+        /* Sertifikalar */
         .cert-list p {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .cert-list p:last-child { border-bottom: none; }
 
+        /* Footer & Signature */
         footer {
             text-align: center;
-            padding: 60px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 80px;
+            padding: 80px 0 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 100px;
         }
 
         .footer-info {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-dim);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-        }
-
-        .footer-info span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .signature {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--text-main);
             font-style: italic;
-            margin-top: 10px;
+            margin-top: 15px;
             letter-spacing: 1px;
         }
 
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             bottom: 40px;
             right: 40px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50%;
             text-align: center;
-            font-size: 32px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            font-size: 36px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -184,10 +212,11 @@
             transition: all 0.3s ease;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .signature { font-size: 1.8rem; }
-            .profile-img { width: 150px; height: 150px; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .summary-list li { font-size: 1rem; padding-left: 35px; }
+            .summary-list li i { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -195,7 +224,7 @@
 
 <div class="container">
     <header>
-        <img src="profil.jpg" alt="Emre Keçici" class="profile-img">
+        <img src="image_1.png" alt="Emre Keçici Digital Portfolio" class="shield-logo">
         <h1>Emre Keçici</h1>
         <div class="subtitle">Operasyonel Mükemmellik & Dijital Süreç Danışmanı</div>
         <div class="social-links">
@@ -205,44 +234,48 @@
         </div>
     </header>
 
-    <section>
+    <section id="ozet">
         <h2 class="section-title">Profesyonel Özet</h2>
         <div class="card">
-            <p>Operasyonel mükemmelliği hedefleyen, süreçlerin dijital dönüşümü ve sürekli gelişim disiplini üzerine odaklanan bir profesyonelim. Teorik planları saha gerçekleriyle buluşturma vizyonuyla, operasyonel süreçlerdeki darboğazları ve israfları (MUDA) minimize eden çözümler geliştiriyorum.</p>
-            <p>Analitik problem çözme yetkinliğimi (5 Neden Analizi, Pareto, PUKÖ) modern yapay zeka araçlarıyla destekleyerek, geleneksel üretim ve lojistik süreçlerini dijital dönüşümle geleceğe hazırlıyorum.</p>
+            <ul class="summary-list">
+                <li><i class="fas fa-chart-line"></i> Sürekli gelişim ve değişimin gücüne inanan, operasyonel mükemmelliği hedefleyen disiplinli bir profesyonelim.</li>
+                <li><i class="fas fa-robot"></i> BTK Akademi bünyesinde tamamladığım yapay zeka ve problem çözme eğitimlerini saha gerçekleriyle birleştiriyorum.</li>
+                <li><i class="fas fa-tools"></i> 5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaştım.</li>
+                <li><i class="fas fa-eye"></i> MUDA (İsraf) analizi ve PUKÖ döngüsü ile maliyetleri düşürmeyi amaçlıyorum.</li>
+                <li><i class="fas fa-shield-virus"></i> "Sıfır iş kazası" vizyonuyla güvenli ve verimli çalışma ortamları kurmayı temel ilke edindim.</li>
+            </ul>
         </div>
     </section>
 
     <div class="grid">
-        <section>
+        <section id="uzmanlik">
             <h2 class="section-title">Uzmanlık Alanları</h2>
             <div class="card">
                 <ul class="skill-item">
-                    <li>Yalın Üretim (5S, Kaizen, Poka-Yoke)</li>
-                    <li>Kök Neden Analizi & Problem Çözme</li>
-                    <li>MUDA (İsraf) Avcılığı & Verimlilik</li>
-                    <li>Saha İSG & 5S Entegrasyonu</li>
-                    <li>Lojistik & Depo Yönetimi Optimizasyonu</li>
-                    <li>Yapay Zeka Destekli Süreç Analizi</li>
+                    <li>Yalın Araçlar: 5S, Kaizen, Poka-Yoke</li>
+                    <li>Analiz: 5 Neden, Balık Kılçığı, Pareto</li>
+                    <li>Operasyonel: MUDA Avcılığı, Gemba Walk, PUKÖ</li>
+                    <li>Görsel: Andon, T-Kart, Standart İş Talimatları</li>
+                    <li>Lojistik: Depo Yönetimi & Stok Optimizasyonu</li>
                 </ul>
             </div>
         </section>
 
-        <section>
+        <section id="sertifikalar">
             <h2 class="section-title">Eğitim & Sertifikalar</h2>
             <div class="card cert-list">
-                <p><strong>BTK Akademi</strong> Yapay Zeka Uygulamaları ve Gelecek Vizyonu</p>
-                <p><strong>BTK Akademi</strong> Modern İş Dünyasında Risk Yönetimi</p>
+                <p><strong>BTK Akademi (2026)</strong> Yapay Zeka Uygulamaları ve Risk Yönetimi</p>
+                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri (Analitik Yaklaşımlar)</p>
                 <p><strong>BTK Akademi</strong> Değişim ve Gelişim Yönetimi</p>
-                <p><strong>Milli Eğitim Bakanlığı (MEB)</strong> İş Makinesi Operatörlük Belgesi (Forklift)</p>
+                <p><strong>Milli Eğitim Bakanlığı (MEB)</strong> Forklift Operatörlük Belgesi</p>
             </div>
         </section>
     </div>
 
-    <section>
+    <section id="basarilar">
         <h2 class="section-title">Projeler ve Başarılar</h2>
         <div class="card">
-            <p><strong>Hata Önleme (Poka-Yoke):</strong> Operasyonel hataların kaynağını fiziksel engellerle kapatarak fire oranlarında belirgin düşüşler sağladım.</p>
+            <p><strong>Hata Önleme (Poka-Yoke):</strong> Operasyonel hataların kaynağını fiziksel engellerle kapatarak fire oranlarında ölçülebilir düşüş sağladım.</p>
             <p><strong>Saha İSG & 5S Entegrasyonu:</strong> 5S disiplinini İSG standartlarıyla birleştirerek güvenli çalışma alanları oluşturdum.</p>
             <p><strong>Üretim Hattı Optimizasyonu:</strong> Teknik aksaklıkları 5 Neden Analizi ile inceleyerek duruş sürelerinde %10 iyileştirme gerçekleştirdim.</p>
         </div>
@@ -250,9 +283,9 @@
 
     <footer>
         <div class="footer-info">
-            <span><i class="fas fa-shield-alt"></i> KVKK & Veri Gizliliği Uyumluluğu</span>
-            <span><i class="fas fa-check-circle"></i> ISO Standartları Yönetimi</span>
-            <span><i class="fas fa-lock"></i> Bilgi Güvenliği Disiplini</span>
+            <span><i class="fas fa-shield-alt"></i> KVKK Uyumluluğu</span>
+            <span><i class="fas fa-lock"></i> Bilgi Güvenliği</span>
+            <span><i class="fas fa-check-circle"></i> ISO Standartları</span>
         </div>
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
         <div class="signature">Emre Keçici</div>
