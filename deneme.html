@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Operasyonel Mükemmellik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <title>Emre Keçici | Fütüristik Operasyonel Mükemmellik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:ital,wght@1,600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --badge-bg: #334155;
-            --primary-color: #22d3ee;
+            --bg-color: #050a14;
+            --card-bg: #111a2e;
+            --badge-bg: #1e293b;
+            --primary-color: #22d3ee; 
+            --accent-glow: rgba(34, 211, 238, 0.4);
             --text-main: #f8fafc;
-            --text-dim: #94a3b8;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
@@ -31,48 +30,54 @@
             padding: 40px 20px;
         }
 
-        /* Hero Section */
+        /* --- FÜTÜRİSTİK GİRİŞ SHOW --- */
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            perspective: 1000px;
         }
 
         .shield-logo {
             width: 100%;
             max-width: 800px;
             height: auto;
-            margin: 0 auto 20px;
-            display: block;
             border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin: 0 auto 30px;
+            display: block;
+            box-shadow: 0 0 30px var(--accent-glow);
+            /* Logo Giriş Animasyonu */
+            animation: logoFadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateZ(-100px) rotateX(20deg);
         }
 
-        h1 {
-            font-size: 3.2rem;
-            margin: 0;
-            letter-spacing: -2px;
+        @keyframes logoFadeIn {
+            to { opacity: 1; transform: translateZ(0) rotateX(0); }
+        }
+
+        /* İsim Giriş Efekti (Teker Teker Karakterler) */
+        .name-container {
+            font-family: 'Space Mono', monospace; /* Daha teknolojik bir font */
+            font-size: 3.5rem;
             font-weight: 800;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 25px;
-        }
-
-        .social-links a {
+            letter-spacing: -2px;
+            display: inline-block;
+            position: relative;
             color: var(--text-main);
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            text-decoration: none;
         }
 
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-5px);
+        .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+            animation: charIn 0.5s cubic-bezier(0.5, 0, 0.5, 1) forwards;
         }
 
+        @keyframes charIn {
+            to { opacity: 1; transform: translateY(0) scale(1); text-shadow: 0 0 15px var(--primary-color); }
+        }
+
+        /* --- İÇERİK KARTLARI --- */
         .section-title {
             border-left: 5px solid var(--primary-color);
             padding-left: 18px;
@@ -80,6 +85,7 @@
             font-size: 1.6rem;
             text-transform: uppercase;
             font-weight: 700;
+            letter-spacing: 2px;
         }
 
         .card {
@@ -87,50 +93,23 @@
             padding: 40px;
             border-radius: 20px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .summary-list {
-            list-style: none;
-            padding: 0;
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
 
-        .summary-list li {
-            position: relative;
-            padding-left: 45px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
+        .summary-list { list-style: none; padding: 0; }
+        .summary-list li { position: relative; padding-left: 45px; margin-bottom: 20px; font-size: 1.1rem; }
+        .summary-list li i { position: absolute; left: 0; top: 5px; color: var(--primary-color); font-size: 1.3rem; }
 
-        .summary-list li i {
-            position: absolute;
-            left: 0;
-            top: 5px;
-            color: var(--primary-color);
-            font-size: 1.3rem;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-item { list-style: none; padding: 0; }
-        .skill-item li { margin-bottom: 15px; padding-left: 30px; position: relative; }
-        .skill-item li::before {
-            content: "\f054";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-
+        /* --- FOOTER & TYPEWRITER --- */
         footer {
             text-align: center;
-            padding: 60px 0 100px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 80px 0 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 80px;
         }
 
@@ -143,28 +122,24 @@
         }
 
         .badge-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
             background-color: var(--badge-bg);
-            padding: 12px 20px;
+            padding: 12px 25px;
             border-radius: 8px;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .badge-item:hover { background-color: #475569; }
+        .badge-item:hover { background-color: #334155; border-color: var(--primary-color); }
 
-        /* TEKER TEKER ÇIKAN YAZI (Typewriter Effect) */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             color: var(--primary-color);
             font-style: italic;
-            margin-top: 20px;
-            min-height: 40px;
+            margin-top: 30px;
+            min-height: 50px;
         }
 
         .typewriter-text {
@@ -175,55 +150,29 @@
             width: 0;
         }
 
-        /* Sayfa sonuna inince tetiklenecek animasyon */
         .typewriter-active {
-            animation: typing 3.5s steps(30, end) forwards, blink .75s step-end infinite;
+            animation: typing 2.5s steps(25, end) forwards, blink .75s step-end infinite;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { from, to { border-color: transparent } 50% { border-color: var(--primary-color); } }
 
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary-color); }
+        /* --- WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px; height: 70px; bottom: 40px; right: 40px;
+            background-color: #25d366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 36px; color: white; text-decoration: none; z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
 
         /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            align-items: center;
-            justify-content: center;
-        }
-
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
         .modal.show { display: flex; }
+        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 16px; width: 90%; max-width: 600px; border: 1px solid var(--primary-color); }
 
-        .modal-content {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            width: 65px; height: 65px; bottom: 30px; right: 30px;
-            background-color: #25d366; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 32px; color: white; text-decoration: none; z-index: 1000;
-        }
+        @media (max-width: 768px) { .name-container { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -231,7 +180,9 @@
 <div class="container">
     <header>
         <img src="image_1.png" alt="Emre Keçici Logo" class="shield-logo">
-        <h1>Emre Keçici</h1>
+        
+        <div class="name-container" id="futuristicName"></div>
+
         <div class="social-links">
             <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -239,95 +190,77 @@
         </div>
     </header>
 
-    <section id="ozet">
-        <h2 class="section-title">Profesyonel Özet</h2>
-        <div class="card">
-            <ul class="summary-list">
-                <li><i class="fas fa-chart-line"></i> Sürekli gelişim ve değişimin gücüne inanan, operasyonel mükemmelliği hedefleyen disiplinli bir profesyonelim.</li>
-                <li><i class="fas fa-robot"></i> BTK Akademi bünyesinde tamamladığım yapay zeka ve problem çözme eğitimlerini saha gerçekleriyle birleştiriyorum.</li>
-                <li><i class="fas fa-tools"></i> 5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaştım.</li>
-                <li><i class="fas fa-eye"></i> MUDA (İsraf) analizi ve PUKÖ döngüsü ile maliyetleri düşürmeyi amaçlıyorum.</li>
-                <li><i class="fas fa-shield-virus"></i> "Sıfır iş kazası" vizyonuyla güvenli ve verimli çalışma ortamları kurmayı temel ilke edindim.</li>
-            </ul>
-        </div>
+    <section class="card">
+        <ul class="summary-list">
+            <li><i class="fas fa-microchip"></i> Yapay zeka entegrasyonu ile geleneksel süreçleri dijitalleştiriyorum.</li>
+            <li><i class="fas fa-vial"></i> Kaizen ve Yalın Üretim tekniklerini saha operasyonlarına aşılıyorum.</li>
+            <li><i class="fas fa-shield-alt"></i> Sıfır hata vizyonuyla verimlilikte maksimum seviyeyi hedefliyorum.</li>
+        </ul>
     </section>
 
     <div class="grid">
-        <section id="uzmanlik">
-            <h2 class="section-title">Uzmanlık Alanları</h2>
-            <div class="card">
-                <ul class="skill-item">
-                    <li>Yalın Araçlar: 5S, Kaizen, Poka-Yoke</li>
-                    <li>Analiz: 5 Neden, Balık Kılçığı, Pareto</li>
-                    <li>Operasyonel: MUDA Avcılığı, Gemba Walk, PUKÖ</li>
-                    <li>Lojistik: Depo Yönetimi & Stok Optimizasyonu</li>
-                </ul>
-            </div>
+        <section class="card">
+            <h3 style="color:var(--primary-color)">Uzmanlık Alanları</h3>
+            <p>• 5S & Kaizen Disiplini<br>• Poka-Yoke Hata Önleme<br>• Dijital Süreç Analizi<br>• Lojistik Optimizasyonu</p>
         </section>
-
-        <section id="sertifikalar">
-            <h2 class="section-title">Eğitim & Sertifikalar</h2>
-            <div class="card cert-list">
-                <p><strong>BTK Akademi</strong> Yapay Zeka Uygulamaları ve Risk Yönetimi</p>
-                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri</p>
-                <p><strong>Milli Eğitim Bakanlığı (MEB)</strong> Forklift Operatörlük Belgesi</p>
-            </div>
+        <section class="card">
+            <h3 style="color:var(--primary-color)">Sertifikasyonlar</h3>
+            <p>• BTK Akademi Y.Z. Risk Yönetimi<br>• MEB Forklift Operatörlük<br>• Analitik Problem Çözme</p>
         </section>
     </div>
 
     <footer>
         <div class="footer-badges">
-            <div class="badge-item" onclick="openModal('kvkk')"><i class="fas fa-user-shield"></i> KVKK Uyumluluğu</div>
-            <div class="badge-item" onclick="openModal('security')"><i class="fas fa-file-contract"></i> Bilgi Güvenliği</div>
-            <div class="badge-item" onclick="openModal('iso')"><i class="fas fa-certificate"></i> ISO Standartları</div>
+            <div class="badge-item" onclick="openModal('kvkk')">KVKK</div>
+            <div class="badge-item" onclick="openModal('security')">GÜVENLİK</div>
+            <div class="badge-item" onclick="openModal('iso')">ISO 9001</div>
         </div>
-        
-        <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
-        
         <div class="typewriter-container">
             <span id="typewriter" class="typewriter-text">Designed by Emre Keçici</span>
         </div>
     </footer>
 </div>
 
-<a href="https://wa.me/905375807666" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/905375807666" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<div id="infoModal" class="modal" onclick="closeModalOnOverlay(event)">
+<div id="infoModal" class="modal" onclick="this.classList.remove('show')">
     <div class="modal-content">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
         <h3 id="modalTitle" style="color:var(--primary-color)"></h3>
-        <p id="modalBody" style="margin-top:20px"></p>
+        <p id="modalBody"></p>
     </div>
 </div>
 
 <script>
-    const modalContents = {
-        kvkk: { title: "KVKK Uyumluluğu", body: "Kişisel verileriniz yasal mevzuata uygun olarak korunmaktadır." },
-        security: { title: "Bilgi Güvenliği", body: "Tüm dijital süreçlerde veri bütünlüğü ve gizliliği esastır." },
-        iso: { title: "ISO Standartları", body: "Süreçlerim ISO 9001 ve 45001 standartları referans alınarak yönetilir." }
+    // İSİM ANİMASYONU: Harf Harf Dizme
+    const name = "EMRE KEÇİCİ";
+    const nameContainer = document.getElementById('futuristicName');
+    
+    name.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.innerText = char === ' ' ? '\u00A0' : char; // Boşlukları koru
+        span.className = 'char';
+        span.style.animationDelay = (index * 0.1) + 's'; // Her harf 0.1 saniye sonra çıksın
+        nameContainer.appendChild(span);
+    });
+
+    // FOOTER TYPEWRITER
+    window.onscroll = function() {
+        let tw = document.getElementById('typewriter');
+        let pos = tw.getBoundingClientRect();
+        if(pos.top < window.innerHeight) tw.classList.add('typewriter-active');
     };
 
+    // MODAL
     function openModal(type) {
-        document.getElementById('modalTitle').innerText = modalContents[type].title;
-        document.getElementById('modalBody').innerText = modalContents[type].body;
+        const data = {
+            kvkk: { t: "KVKK", b: "Verileriniz bizimle güvende." },
+            security: { t: "Güvenlik", b: "Dijital altyapımız siber tehditlere karşı korunmaktadır." },
+            iso: { t: "ISO", b: "Tüm süreçler uluslararası kalite standartlarındadır." }
+        };
+        document.getElementById('modalTitle').innerText = data[type].t;
+        document.getElementById('modalBody').innerText = data[type].b;
         document.getElementById('infoModal').classList.add('show');
     }
-
-    function closeModal() { document.getElementById('infoModal').classList.remove('show'); }
-    function closeModalOnOverlay(e) { if(e.target.id === 'infoModal') closeModal(); }
-
-    // Scroll İzleyici: Sayfa sonuna gelince daktilo efektini başlatır
-    window.onscroll = function() {
-        let typewriter = document.getElementById('typewriter');
-        let position = typewriter.getBoundingClientRect();
-
-        // Eğer yazı görünür alana girdiyse animasyonu başlat
-        if(position.top < window.innerHeight && position.bottom >= 0) {
-            typewriter.classList.add('typewriter-active');
-        }
-    };
 </script>
 
 </body>
