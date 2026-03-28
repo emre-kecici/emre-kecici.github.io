@@ -3,119 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Süreç Yönetimi ve Analiz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>:root{--cyan:#00f2ff;--bg-deep:#1e293b;--bg-card:#0f172a;--text-low:#94a3b8}*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}body{background-color:var(--bg-deep);color:#ffffff;font-family:sans-serif;overflow-x:hidden}.header-pad{padding-top:40px}.container{padding:0 15px 40px 15px;max-width:900px;margin:0 auto}.vertical-list{display:flex;flex-direction:column;gap:15px;width:100%}.minimal-card{background:rgba(255,255,255,0.02);border:1px solid rgba(0,242,255,0.05);border-radius:10px;padding:18px;opacity:0;transform:translateY(-30px);animation:dropIn .5s ease-out forwards;transition:all .3s ease}@keyframes dropIn{to{opacity:1;transform:translateY(0)}}.minimal-card:nth-child(1){animation-delay:0.2s}.minimal-card:nth-child(2){animation-delay:0.4s}.minimal-card:nth-child(3){animation-delay:0.6s}.minimal-card:nth-child(4){animation-delay:0.8s}.minimal-card:nth-child(5){animation-delay:1s}.minimal-card:nth-child(6){animation-delay:1.2s}.minimal-card:hover{border-color:var(--cyan);background:rgba(255,255,255,0.04)}.minimal-card h4{font-size:1.05rem;color:var(--cyan);margin-bottom:8px;display:flex;align-items:center;gap:10px}.minimal-card p{font-size:0.88rem;color:#b4c6ef;margin:0;line-height:1.5}.contact-hub{display:flex;gap:15px;margin-top:40px;margin-bottom:40px;justify-content:center;opacity:0;animation:fadeIn .5s ease-out 1.4s forwards}@keyframes fadeIn{to{opacity:1}}.contact-btn{background:var(--bg-card);border:1px solid var(--cyan);color:var(--cyan);padding:14px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:.8rem;display:flex;align-items:center;gap:8px;box-shadow:0 0 10px rgba(0,242,255,0.1)}footer{background:#02040a;padding:50px 20px;text-align:center}.footer-badges{display:flex;justify-content:center;gap:15px;margin-bottom:25px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:all 0.8s ease-out}.footer-badges.visible{opacity:1;transform:translateY(0)}.secure-badge{border:1px solid #10b981;color:#10b981;padding:8px 14px;border-radius:4px;font-size:.8rem;display:flex;align-items:center;gap:8px}.analytics-hub{display:flex;justify-content:center;gap:20px;margin-bottom:25px;opacity:0;transform:translateY(20px);transition:all 0.8s ease-out 0.1s}.analytics-hub.visible{opacity:1;transform:translateY(0)}.stat-item{background:rgba(255,255,255,0.03);border:1px solid rgba(0,242,255,0.1);padding:10px 15px;border-radius:6px;font-size:0.8rem;color:#ffffff;display:flex;align-items:center;gap:8px}.stat-item span{color:var(--cyan);font-weight:bold}.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:25px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:all 0.8s ease-out 0.2s}.footer-links.visible{opacity:1;transform:translateY(0)}.footer-links a{color:var(--text-low);text-decoration:none;font-size:0.8rem;transition:color 0.3s;cursor:pointer}.footer-links a:hover{color:var(--cyan)}.footer-sig{font-size:0.85rem;font-weight:bold;color:var(--cyan);margin-top:20px;border-right:2px solid var(--cyan);white-space:nowrap;overflow:hidden;width:0;margin:20px auto 0 auto;display:inline-block}.footer-sig.visible{animation:typingSig 4s steps(27, end) forwards;border-right:none}@keyframes typingSig{from{width:0}to{width:100%}}#backToTop{position:fixed;bottom:20px;right:20px;background:var(--bg-card);border:1px solid var(--cyan);color:var(--cyan);width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:1000}#backToTop.show{opacity:1;visibility:visible}.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:2000;backdrop-filter:blur(5px)}.modal.show{opacity:1;visibility:visible}.modal-content{background:var(--bg-card);border:2px solid var(--cyan);border-radius:12px;width:90%;max-width:500px;padding:25px;position:relative;max-height:80vh;overflow-y:auto}.modal-close{position:absolute;top:15px;right:15px;color:var(--cyan);font-size:1.2rem;cursor:pointer}.modal-title{color:var(--cyan);margin-bottom:15px;font-size:1.2rem;border-bottom:1px solid rgba(0,242,255,0.2);padding-bottom:10px}.modal-body{color:#b4c6ef;font-size:0.9rem;line-height:1.5}</style>
-</head>
-<body id="top">
-    <div class="header-pad"></div>
+    <title>Emre Keçici | Operasyonel Mükemmellik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --badge-bg: #334155;
+            --primary-color: #22d3ee;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
 
-    <div class="container">
-        <div class="vertical-list">
-            <div class="minimal-card">
-                <h4><i class="fas fa-bullseye"></i> Uzmanlıklar</h4>
-                <p>Dar boğazları yalın üretim prensipleriyle analiz edip, insan kaynaklı hataları önleyen proaktif süreç mekanizmaları kurguluyorum.</p>
-            </div>
-            <div class="minimal-card">
-                <h4><i class="fas fa-search-location"></i> Yerinde Tespit</h4>
-                <p>Saha ve üretim hatlarındaki operasyonel akışları bizzat deneyimleyerek, dar boğazları tespit ediyorum.</p>
-            </div>
-            <div class="minimal-card">
-                <h4><i class="fas fa-search-minus"></i> Hata Araştırma ve Kök Neden Analizi</h4>
-                <p>Repetitif saha operasyonlarındaki hataların ana kaynaklarını 5 Neden ve Balık Kılçığı analizleriyle tespit edip kalıcı çözüyorum.</p>
-            </div>
-            <div class="minimal-card">
-                <h4><i class="fas fa-microchip"></i> Akıllı Çözümler</h4>
-                <p>İyileştirme noktalarını modern yapay zeka entegrasyonları ve mikro otomasyon senaryolarıyla birleştiriyorum.</p>
-            </div>
-            <div class="minimal-card">
-                <h4><i class="fas fa-chart-line"></i> Raporlama</h4>
-                <p>Saha tecrübesini dijitalleşmenin hızıyla harmanlayıp, ilgili birimlere ve gerekli mercilere karar destek raporları sunuyorum.</p>
-            </div>
-            <div class="minimal-card">
-                <h4><i class="fas fa-laptop-code"></i> Dijital Gelişim & Web Tasarım</h4>
-                <p>İhtiyaçlara uygun modern web site tasarımları yapabiliyor, kullanıcı dostu arayüzler kurgulayarak dijital gelişim süreçlerini yönetiyorum.</p>
-            </div>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px 20px 60px; /* Üst boşluk azaltıldı */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: var(--text-dim);
+            font-size: 1.8rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin: 30px 0 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Kesin taşma engelleme */
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .summary-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .summary-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-card {
+            padding: 25px;
+        }
+
+        .grid-card h3 {
+            font-weight: 400;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .grid-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .badge-item {
+            background-color: var(--badge-bg);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .badge-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .typewriter-container {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-style: italic;
+            margin-top: 20px;
+            min-height: 25px;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+        }
+
+        .active-type {
+            animation: typing 2.5s steps(35, end) forwards;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            align-items: center; justify-content: center;
+        }
+
+        .modal.show { display: flex; }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            width: 85%;
+            max-width: 400px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 55px; height: 55px; bottom: 30px; right: 30px;
+            background-color: #25d366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; color: white; text-decoration: none; z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/emrekecici" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:emrekecici1985@outlook.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Profesyonel Özet</h2>
+        <div class="card">
+            <ul class="summary-list">
+                <li><i class="fas fa-rocket"></i> Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</li>
+                <li><i class="fas fa-microchip"></i> Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</li>
+                <li><i class="fas fa-industry"></i> Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</li>
+                <li><i class="fas fa-check-double"></i> Analitik problem çözme metodolojileriyle kalıcı çözümler üretiyorum.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="grid">
+        <div class="grid-column">
+            <section class="card grid-card">
+                <h3>Uzmanlık Alanları</h3>
+                <p>• 5S, Kaizen & Yalın Araçlar<br>
+                   • Poka-Yoke & Hata Önleme<br>
+                   • Web Teknolojileri & DNS Yönetimi<br>
+                   • Süreç Optimizasyonu</p>
+            </section>
+            
+            <section class="card grid-card">
+                <h3>Sertifikalar</h3>
+                <p>• BTK Akademi Yapay Zeka<br>
+                   • MEB Forklift Operatörlük<br>
+                   • Risk Yönetimi Uzmanlığı<br>
+                   • Analitik Problem Çözme</p>
+            </section>
         </div>
 
-        <div class="contact-hub">
-            <a href="mailto:emrekecici1985@outlook.com" class="contact-btn">✉️ İletişime Geçin</a>
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="contact-btn">🌐 Bağlantı Kurun</a>
+        <div class="grid-column">
+            <section class="card grid-card">
+                <h3>Yetkinlikler</h3>
+                <p>• Dijital Süreç Analizi & Otomasyon<br>
+                   • Risk ve Gelişim Yönetimi<br>
+                   • İSG & ISO Standartları Uyumu<br>
+                   • Uçtan Uca Operasyon Takibi</p>
+            </section>
         </div>
     </div>
-
-    <a href="#top" id="backToTop" title="Başa Dön"><i class="fas fa-chevron-up"></i></a>
 
     <footer>
-        <div class="footer-badges" id="scrollBadges">
-            <span class="secure-badge"><i class="fas fa-lock"></i> SSL Güvenlikli</span>
-            <span class="secure-badge"><i class="fas fa-shield-alt"></i> KVKK Uyumlu</span>
-            <span class="secure-badge"><i class="fas fa-certificate"></i> ISO Sertifikalı</span>
+        <div class="footer-badges">
+            <div class="badge-item" onclick="showPop('kvkk')">KVKK Uyumluluğu</div>
+            <div class="badge-item" onclick="showPop('sec')">Bilgi Güvenliği</div>
+            <div class="badge-item" onclick="showPop('iso')">ISO Standartları</div>
         </div>
-
-        <div class="analytics-hub" id="scrollAnalytics">
-            <div class="stat-item"><i class="fas fa-users"></i> Toplam Ziyaret: <span id="totalHits">0</span></div>
-            <div class="stat-item"><i class="fas fa-globe"></i> Şuan Çevrimiçi: <span id="onlineNow">0</span></div>
+        <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
+        <div class="typewriter-container">
+            <span id="tw" class="typewriter-text">Designed by Emre Keçici</span>
         </div>
-
-        <div class="footer-links" id="scrollLinks">
-            <a onclick="openModal('kvkk')">KVKK Politikası</a>
-            <a onclick="openModal('cookie')">Çerez Politikası</a>
-            <a onclick="openModal('privacy')">Gizlilik Sözleşmesi</a>
-        </div>
-
-        <div class="footer-sig" id="scrollSig">Designed by Emre Keçici</div>
     </footer>
+</div>
 
-    <div id="legalModal" class="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></span>
-            <h3 class="modal-title" id="mTitle"></h3>
-            <div class="modal-body" id="mBody"></div>
-        </div>
+<a href="https://wa.me/905375807666" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<div id="pop" class="modal" onclick="this.classList.remove('show')">
+    <div class="modal-content">
+        <h3 id="popT" style="color:var(--primary-color); margin-top:0;"></h3>
+        <p id="popB" style="margin-bottom:0; line-height:1.5;"></p>
     </div>
+</div>
 
-    <script>
-        const content = {
-            kvkk: { title: "KVKK Politikası", text: "Kişisel verileriniz, 6698 sayılı Kanun uyarınca veri sorumlusu sıfatıyla Emre Keçici tarafından yalnızca dijital süreç analizi ve iletişim amaçlı işlenmektedir. Verileriniz 3. şahıslarla paylaşılmaz." },
-            cookie: { title: "Çerez Politikası", text: "Bu platformda kullanıcı deneyimini iyileştirmek ve sayfa performansını ölçmek amacıyla teknik zorunlu çerezler kullanılmaktadır. Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz." },
-            privacy: { title: "Gizlilik Sözleşmesi", text: "Bu web sitesi üzerinden paylaşılan tüm profesyonel bilgiler ve kurumsal projeler mesleki gizlilik ilkeleri çerçevesinde korunmaktadır. İzniniz olmadan hiçbir veri yayılmaz." }
+<script>
+    function showPop(type) {
+        const d = {
+            kvkk: { t: "KVKK", b: "Kişisel verileriniz yasal mevzuat kapsamında en üst düzeyde korunmaktadır." },
+            sec: { t: "Güvenlik", b: "Dijital ve fiziksel tüm süreçlerde bilgi güvenliği disiplini esastır." },
+            iso: { t: "ISO Standartları", b: "Operasyonlarımız ISO kalite ve güvenlik yönetim sistemlerine tam uyumlu yürütülür." }
         };
-        function openModal(type) {
-            document.getElementById('mTitle').innerText = content[type].title;
-            document.getElementById('mBody').innerText = content[type].text;
-            document.getElementById('legalModal').classList.add('show');
+        document.getElementById('popT').innerText = d[type].t;
+        document.getElementById('popB').innerText = d[type].b;
+        document.getElementById('pop').classList.add('show');
+    }
+
+    window.addEventListener('scroll', function() {
+        let tw = document.getElementById('tw');
+        let pos = tw.getBoundingClientRect();
+        if(pos.top < window.innerHeight - 50) {
+            tw.classList.add('active-type');
         }
-        function closeModal() { document.getElementById('legalModal').classList.remove('show'); }
+    });
+</script>
 
-        const obsOpts={threshold:0.3};
-        const observer=new IntersectionObserver((entries)=>{
-            entries.forEach(entry=>{
-                if(entry.isIntersecting){
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        },obsOpts);
-        observer.observe(document.getElementById('scrollBadges'));
-        observer.observe(document.getElementById('scrollAnalytics'));
-        observer.observe(document.getElementById('scrollLinks'));
-        observer.observe(document.getElementById('scrollSig'));
-
-        const btt=document.getElementById('backToTop');
-        window.addEventListener('scroll',()=>{if(window.scrollY>300){btt.classList.add('show');}else{btt.classList.remove('show');}});
-
-        // DOĞRU SAYAÇ KODU (Varsayılan 1240 Kaldırıldı!)
-        fetch('https://api.countapi.xyz/hit/emrekecici1985-portfolyo/visits')
-        .then(res => res.json())
-        .then(data => { document.getElementById('totalHits').innerText = data.value || "1"; })
-        .catch(() => { document.getElementById('totalHits').innerText = "1"; }); // API hata verirse en azından "1" yazar
-
-        setInterval(() => {
-            const onlineCount = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-            document.getElementById('onlineNow').innerText = onlineCount;
-        }, 3000);
-        document.getElementById('onlineNow').innerText = Math.floor(Math.random() * 2) + 1;
-    </script>
 </body>
 </html>
