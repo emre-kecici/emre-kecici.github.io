@@ -14,6 +14,7 @@
             --primary-color: #22d3ee;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
+            --standard-gap: 25px;
         }
 
         body {
@@ -29,7 +30,7 @@
         .container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 20px 20px 60px; /* Üst boşluk azaltıldı */
+            padding: 40px 20px 60px;
         }
 
         header {
@@ -69,11 +70,13 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 16px;
-            margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            /* Kesin taşma engelleme */
             word-break: break-word;
             overflow-wrap: break-word;
+        }
+
+        .main-spacer {
+            margin-bottom: var(--standard-gap);
         }
 
         .summary-list {
@@ -89,6 +92,8 @@
             font-size: 1.05rem;
         }
 
+        .summary-list li:last-child { margin-bottom: 0; }
+
         .summary-list li i {
             position: absolute;
             left: 0;
@@ -100,11 +105,15 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: var(--standard-gap);
+            align-items: start;
+            margin-bottom: var(--standard-gap);
         }
 
-        .grid-card {
-            padding: 25px;
+        .grid-column {
+            display: flex;
+            flex-direction: column;
+            gap: var(--standard-gap);
         }
 
         .grid-card h3 {
@@ -122,6 +131,34 @@
             line-height: 1.7;
         }
 
+        .cv-center-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .cv-button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cv-button:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+            transform: translateY(-2px);
+        }
+
         footer {
             text-align: center;
             padding: 60px 0 80px;
@@ -134,7 +171,7 @@
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .badge-item {
@@ -157,7 +194,7 @@
             font-size: 0.95rem;
             color: var(--primary-color);
             font-style: italic;
-            margin-top: 20px;
+            margin-top: 25px;
             min-height: 25px;
         }
 
@@ -208,7 +245,7 @@
 <div class="container">
     <header>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/emrekecici" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="mailto:emrekecici1985@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
@@ -216,7 +253,7 @@
 
     <section>
         <h2 class="section-title">Profesyonel Özet</h2>
-        <div class="card">
+        <div class="card main-spacer">
             <ul class="summary-list">
                 <li><i class="fas fa-rocket"></i> Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</li>
                 <li><i class="fas fa-microchip"></i> Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</li>
@@ -256,12 +293,19 @@
         </div>
     </div>
 
+    <div class="cv-center-container">
+        <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
+            <i class="fab fa-google-drive"></i> Özgeçmişi Görüntüle
+        </a>
+    </div>
+
     <footer>
         <div class="footer-badges">
             <div class="badge-item" onclick="showPop('kvkk')">KVKK Uyumluluğu</div>
             <div class="badge-item" onclick="showPop('sec')">Bilgi Güvenliği</div>
             <div class="badge-item" onclick="showPop('iso')">ISO Standartları</div>
         </div>
+        
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
         <div class="typewriter-container">
             <span id="tw" class="typewriter-text">Designed by Emre Keçici</span>
