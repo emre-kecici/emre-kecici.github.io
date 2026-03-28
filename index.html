@@ -125,13 +125,6 @@
             gap: 10px;
         }
 
-        .grid-card p {
-            font-size: 0.95rem;
-            color: var(--text-dim);
-            line-height: 1.8;
-        }
-
-        /* SERTİFİKALAR BÖLÜMÜ TAŞMA DÜZELTMESİ */
         .grid-card ul {
             list-style: none;
             padding: 0;
@@ -142,7 +135,7 @@
             font-size: 0.95rem;
             color: var(--text-dim);
             line-height: 1.8;
-            white-space: nowrap; /* Mobilde tek satırda tut */
+            white-space: nowrap;
         }
 
         .btn-container {
@@ -210,23 +203,20 @@
         /* YENİ DAKTİLO EFEYİ VE YAZI AYARLARI */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 0.8rem; /* Ufaltıldı */
+            font-size: 0.8rem;
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
-            display: inline-block;
-            white-space: nowrap;
+            min-height: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #tw-text {
             overflow: hidden;
-            border-right: none; /* Çubuk kaldırıldı */
-        }
-        
-        .active-type {
-            animation: typingAnimation 3s steps(40, end) forwards;
-        }
-        
-        @keyframes typingAnimation {
-            from { width: 0; }
-            to { width: 100%; }
+            white-space: nowrap;
+            display: inline-block;
+            width: 0; /* JS ile artırılacak */
         }
 
         .whatsapp-float {
@@ -261,7 +251,6 @@
 
         @media (max-width: 600px) {
             .grid { grid-template-columns: 1fr; }
-            /* Mobilde taşma yapmasın diye yazı boyutunu biraz daha ufalt */
             .grid-card ul li { font-size: 0.85rem; }
         }
     </style>
@@ -339,8 +328,8 @@
         </div>
         
         <p>&copy; 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
-        <div class="typewriter-container active-type">
-            <span>Designed and Developed by Emre Keçici</span>
+        <div class="typewriter-container">
+            <span id="tw-text">Designed and Developed by Emre Keçici</span>
         </div>
     </footer>
 </div>
@@ -367,6 +356,24 @@
         document.getElementById('popB').innerText = d[type].b;
         document.getElementById('pop').classList.add('show');
     }
+
+    // Harf harf gelme efekti
+    const target = document.getElementById("tw-text");
+    const fullText = target.innerText;
+    target.innerText = "";
+    target.style.width = "auto";
+    let index = 0;
+
+    function startTyping() {
+        if (index < fullText.length) {
+            target.innerText += fullText.charAt(index);
+            index++;
+            setTimeout(startTyping, 100); // Hız ayarı
+        }
+    }
+
+    // Sayfa yüklendiğinde başlasın
+    window.onload = startTyping;
 </script>
 
 </body>
