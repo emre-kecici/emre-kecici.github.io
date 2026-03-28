@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>emrekecici.com.tr</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0a192f;
             --card-bg: #112240;
-            --primary-cyan: #00d2ff;
+            --cyan: #00d2ff;
             --text-main: #ccd6f6;
-            --text-bright: #ffffff;
-            --btn-border: rgba(0, 210, 255, 0.3);
+            --text-white: #ffffff;
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-bright);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
+            color: var(--text-white);
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            flex-direction: column;
         }
 
         .main-container {
@@ -34,115 +35,131 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            animation: slideUp 0.8s ease;
         }
 
-        /* Üst Bölüm / Daktilo Efekti Alanı */
-        .typewriter-box {
-            min-height: 40px;
-            font-size: 18px;
-            color: var(--primary-cyan);
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Daktilo Alanı */
+        .header-typewriter {
+            height: 30px;
             text-align: center;
+            color: var(--cyan);
             font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
         }
 
         /* Profesyonel Özet Kartı */
         .glass-card {
             background: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 25px;
             padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: var(--shadow);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s;
         }
 
         h2 {
             font-size: 20px;
-            border-left: 4px solid var(--primary-cyan);
-            padding-left: 15px;
             margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
         }
 
-        .summary-item {
+        h2::before {
+            content: '';
+            width: 5px;
+            height: 25px;
+            background: var(--cyan);
+            border-radius: 3px;
+        }
+
+        .item {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
         }
 
-        .summary-item i {
-            font-size: 22px;
-            color: var(--primary-cyan);
-            width: 25px;
-            text-align: center;
+        .item i {
+            color: var(--cyan);
+            font-size: 20px;
+            margin-top: 4px;
         }
 
-        .summary-item p {
-            margin: 0;
-            font-size: 15px;
+        .item p {
+            font-size: 14.5px;
             line-height: 1.6;
             color: var(--text-main);
         }
 
-        /* Grid Bölümü (Sertifikalar & Yetkinlikler) */
-        .info-grid {
+        /* Sertifika ve Yetkinlik Gridleri */
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
 
-        .info-card {
+        .grid-item {
             background: var(--card-bg);
-            border: 1px solid var(--btn-border);
-            border-radius: 18px;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 20px;
             padding: 20px;
             text-align: center;
-            transition: 0.3s ease;
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .info-card:hover {
-            border-color: var(--primary-cyan);
+        .grid-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
             background: rgba(0, 210, 255, 0.05);
         }
 
-        .info-card i {
-            font-size: 30px;
-            color: var(--primary-cyan);
+        .grid-item i {
+            font-size: 32px;
+            color: var(--cyan);
             margin-bottom: 12px;
             display: block;
         }
 
-        .info-card span {
+        .grid-item span {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
         }
 
-        /* Ana Butonlar */
-        .button-group {
+        /* Aksiyon Butonları */
+        .btn-stack {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .action-btn {
+        .btn-custom {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             padding: 16px;
-            border: 2px solid var(--primary-cyan);
-            border-radius: 14px;
-            color: var(--primary-cyan);
+            border: 2px solid var(--cyan);
+            border-radius: 15px;
+            color: var(--cyan);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             transition: 0.3s;
             text-transform: uppercase;
             font-size: 14px;
         }
 
-        .action-btn:hover {
-            background: var(--primary-cyan);
+        .btn-custom:hover {
+            background: var(--cyan);
             color: var(--bg-color);
-            box-shadow: 0 0 15px var(--primary-cyan);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         }
 
         /* KVKK Alanı */
@@ -157,8 +174,8 @@
             line-height: 1.6;
         }
 
-        /* Yüzen Aksiyon Butonları */
-        .fab-group {
+        /* Sabit Yüzen Butonlar */
+        .fab-wrapper {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -175,55 +192,55 @@
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 28px;
+            font-size: 26px;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
             transition: 0.3s;
         }
 
         .fab:hover { transform: scale(1.1); }
-        .fab-email { background: #ea4335; }
-        .fab-whatsapp { background: #25d366; }
+        .email-btn { background: #ea4335; }
+        .wp-btn { background: #25d366; }
 
     </style>
 </head>
 <body>
 
     <div class="main-container">
-        <div class="typewriter-box" id="typing"></div>
+        <div class="header-typewriter" id="typewriter"></div>
 
         <div class="glass-card">
-            <h2>PROFESYONEL ÖZET</h2>
-            <div class="summary-item">
+            <h2>Profesyonel Özet</h2>
+            <div class="item">
                 <i class="fas fa-rocket"></i>
                 <p>Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</p>
             </div>
-            <div class="summary-item">
+            <div class="item">
                 <i class="fas fa-microchip"></i>
                 <p>Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</p>
             </div>
-            <div class="summary-item">
+            <div class="item">
                 <i class="fas fa-industry"></i>
                 <p>Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</p>
             </div>
         </div>
 
-        <div class="info-grid">
-            <div class="info-card">
+        <div class="grid-layout">
+            <div class="grid-item">
                 <i class="fas fa-award"></i>
                 <span>Sertifikalar</span>
             </div>
-            <div class="info-card">
+            <div class="grid-item">
                 <i class="fas fa-tools"></i>
                 <span>Yetkinlikler</span>
             </div>
         </div>
 
-        <div class="button-group">
-            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="action-btn">
+        <div class="btn-stack">
+            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn-custom">
                 <i class="fas fa-file-pdf"></i> Özgeçmişimi Görüntüle
             </a>
-            <a href="https://linkedin.com/in/emrekecici" class="action-btn">
+            <a href="https://linkedin.com/in/emrekecici" class="btn-custom">
                 <i class="fab fa-linkedin"></i> LinkedIn Profili
             </a>
         </div>
@@ -234,27 +251,27 @@
         </div>
     </div>
 
-    <div class="fab-group">
-        <a href="mailto:emre@emrekecici.com.tr" class="fab fab-email">
+    <div class="fab-wrapper">
+        <a href="mailto:emre@emrekecici.com.tr" class="fab email-btn">
             <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://wa.me/905321234567" class="fab fab-whatsapp">
+        <a href="https://wa.me/905321234567" class="fab wp-btn">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
     <script>
-        const text = "Dijital Dönüşüm Yolculuğu Başlıyor...";
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, 100);
+        const textArray = ["Dijital Dönüşüm Yolculuğu Başlıyor..."];
+        let textIndex = 0;
+        let charIndex = 0;
+        function typeEffect() {
+            if (charIndex < textArray[textIndex].length) {
+                document.getElementById("typewriter").innerHTML += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, 100);
             }
         }
-        window.onload = type;
+        window.onload = typeEffect;
     </script>
-
 </body>
 </html>
