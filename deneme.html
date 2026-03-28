@@ -11,6 +11,7 @@
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --primary-color: #22d3ee; /* Turkuaz Neon */
+            --success-color: #25d366; /* WhatsApp Yeşili */
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
         }
@@ -172,14 +173,30 @@
             margin-top: 100px;
         }
 
-        .footer-info {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            margin-bottom: 35px;
+        /* Yeşil Güvenlik Kutucukları (Veri Gizliliği) */
+        .footer-badges {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(37, 211, 102, 0.1); /* Çok hafif yeşil arka plan */
+            color: var(--success-color); /* Canlı yeşil metin */
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .badge-item i {
+            font-size: 1.1rem;
         }
 
         .signature {
@@ -217,6 +234,7 @@
             .subtitle { font-size: 1.1rem; }
             .summary-list li { font-size: 1rem; padding-left: 35px; }
             .summary-list li i { font-size: 1.1rem; }
+            .badge-item { padding: 10px 15px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -226,7 +244,7 @@
     <header>
         <img src="image_1.png" alt="Emre Keçici Digital Portfolio" class="shield-logo">
         <h1>Emre Keçici</h1>
-        <div class="subtitle">Operasyonel Mükemmellik & Dijital Süreç Danışmanı</div>
+        <div class="subtitle">Operasyonel Mükembellik & Dijital Süreç Danışmanı</div>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -282,11 +300,12 @@
     </section>
 
     <footer>
-        <div class="footer-info">
-            <span><i class="fas fa-shield-alt"></i> KVKK Uyumluluğu</span>
-            <span><i class="fas fa-lock"></i> Bilgi Güvenliği</span>
-            <span><i class="fas fa-check-circle"></i> ISO Standartları</span>
+        <div class="footer-badges">
+            <div class="badge-item"><i class="fas fa-user-shield"></i> KVKK & Veri Gizliliği Uyumluluğu</div>
+            <div class="badge-item"><i class="fas fa-file-contract"></i> Bilgi Güvenliği Disiplini</div>
+            <div class="badge-item"><i class="fas fa-certificate"></i> ISO Standartları Yönetimi</div>
         </div>
+        
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
         <div class="signature">Emre Keçici</div>
     </footer>
@@ -297,4 +316,5 @@
 </a>
 
 </body>
-</html>
+    </html>
+        
