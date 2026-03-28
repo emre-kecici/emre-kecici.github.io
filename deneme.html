@@ -23,38 +23,32 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Sayfa geneli taşmayı engeller */
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 20px 20px 60px; /* Üst boşluk azaltıldı */
         }
 
         header {
             text-align: center;
-            margin-bottom: 70px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: -2px;
-            font-weight: 800;
+            margin-bottom: 40px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 25px;
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         .social-links a {
             color: var(--text-dim);
             font-size: 1.8rem;
             transition: 0.3s;
+            text-decoration: none;
         }
 
         .social-links a:hover {
@@ -65,22 +59,21 @@
         .section-title {
             border-left: 4px solid var(--primary-color);
             padding-left: 15px;
-            margin: 50px 0 30px;
-            font-size: 1.4rem;
+            margin: 30px 0 20px;
+            font-size: 1.3rem;
             text-transform: uppercase;
             font-weight: 700;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 35px;
+            padding: 30px;
             border-radius: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            /* Taşma Ayarı */
-            word-wrap: break-word;
+            /* Kesin taşma engelleme */
+            word-break: break-word;
             overflow-wrap: break-word;
-            hyphens: auto;
         }
 
         .summary-list {
@@ -91,9 +84,9 @@
 
         .summary-list li {
             position: relative;
-            padding-left: 45px;
-            margin-bottom: 18px;
-            font-size: 1.1rem;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
         }
 
         .summary-list li i {
@@ -101,58 +94,58 @@
             left: 0;
             top: 5px;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            align-items: start;
+            gap: 20px;
         }
 
         .grid-card {
-            padding: 30px;
+            padding: 25px;
         }
 
         .grid-card h3 {
             font-weight: 400;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .grid-card p {
             margin: 0;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-main);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         footer {
             text-align: center;
-            padding: 80px 0 100px;
+            padding: 60px 0 80px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 70px;
+            margin-top: 50px;
         }
 
         .footer-badges {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .badge-item {
             background-color: var(--badge-bg);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
             border: 1px solid transparent;
+            transition: 0.3s;
         }
 
         .badge-item:hover {
@@ -161,11 +154,11 @@
 
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--primary-color);
             font-style: italic;
-            margin-top: 25px;
-            min-height: 30px;
+            margin-top: 20px;
+            min-height: 25px;
         }
 
         .typewriter-text {
@@ -173,7 +166,6 @@
             overflow: hidden;
             white-space: nowrap;
             width: 0;
-            border-right: none;
         }
 
         .active-type {
@@ -195,19 +187,19 @@
 
         .modal-content {
             background: var(--card-bg);
-            padding: 35px;
+            padding: 30px;
             border-radius: 12px;
-            width: 90%;
-            max-width: 450px;
+            width: 85%;
+            max-width: 400px;
             border: 1px solid var(--primary-color);
         }
 
         .whatsapp-float {
             position: fixed;
-            width: 60px; height: 60px; bottom: 30px; right: 30px;
+            width: 55px; height: 55px; bottom: 30px; right: 30px;
             background-color: #25d366; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 30px; color: white; z-index: 1000;
+            font-size: 28px; color: white; text-decoration: none; z-index: 1000;
         }
     </style>
 </head>
@@ -215,7 +207,6 @@
 
 <div class="container">
     <header>
-        <h1>Emre Keçici</h1>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/emrekecici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
