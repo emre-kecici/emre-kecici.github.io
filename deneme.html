@@ -65,38 +65,18 @@
             font-weight: 700;
         }
 
-        .cv-button {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px; /* Üstteki kutuyla mesafe */
-            width: fit-content;
-        }
-
-        .cv-button:hover {
-            background-color: var(--primary-color);
-            color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
-            transform: translateY(-2px);
-        }
-
         .card {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 16px;
-            margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             word-break: break-word;
             overflow-wrap: break-word;
+        }
+
+        /* Kutular arası boşluk */
+        .spacer-card {
+            margin-bottom: 25px;
         }
 
         .summary-list {
@@ -127,11 +107,6 @@
             align-items: start;
         }
 
-        .grid-card {
-            padding: 25px;
-            margin-bottom: 0; /* Grid içindeki boşluğu grid gap yönetiyor */
-        }
-
         .grid-card h3 {
             font-weight: 400;
             color: var(--primary-color);
@@ -145,6 +120,35 @@
             font-size: 0.95rem;
             color: var(--text-main);
             line-height: 1.7;
+        }
+
+        /* Buton Ortalama Alanı */
+        .cv-center-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .cv-button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cv-button:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+            transform: translateY(-2px);
         }
 
         footer {
@@ -241,7 +245,7 @@
 
     <section>
         <h2 class="section-title">Profesyonel Özet</h2>
-        <div class="card">
+        <div class="card spacer-card">
             <ul class="summary-list">
                 <li><i class="fas fa-rocket"></i> Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</li>
                 <li><i class="fas fa-microchip"></i> Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</li>
@@ -253,7 +257,7 @@
 
     <div class="grid">
         <div class="grid-column">
-            <section class="card grid-card">
+            <section class="card grid-card spacer-card">
                 <h3>Uzmanlık Alanları</h3>
                 <p>• 5S, Kaizen & Yalın Araçlar<br>
                    • Poka-Yoke & Hata Önleme<br>
@@ -278,11 +282,13 @@
                    • İSG & ISO Standartları Uyumu<br>
                    • Uçtan Uca Operasyon Takibi</p>
             </section>
-
-            <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
-                <i class="fab fa-google-drive"></i> Özgeçmişi Görüntüle
-            </a>
         </div>
+    </div>
+
+    <div class="cv-center-container">
+        <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
+            <i class="fab fa-google-drive"></i> Özgeçmişi Görüntüle
+        </a>
     </div>
 
     <footer>
