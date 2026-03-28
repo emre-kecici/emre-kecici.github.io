@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Operasyonel Mükemmellik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -26,15 +26,14 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 80px;
-            padding-top: 40px;
+            margin-bottom: 70px;
         }
 
         h1 {
@@ -42,7 +41,6 @@
             margin: 0;
             letter-spacing: -2px;
             font-weight: 800;
-            color: var(--text-main);
         }
 
         .social-links {
@@ -55,8 +53,7 @@
         .social-links a {
             color: var(--text-dim);
             font-size: 1.8rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            transition: 0.3s;
         }
 
         .social-links a:hover {
@@ -67,16 +64,15 @@
         .section-title {
             border-left: 4px solid var(--primary-color);
             padding-left: 15px;
-            margin: 60px 0 30px;
-            font-size: 1.5rem;
+            margin: 50px 0 30px;
+            font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
             font-weight: 700;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 40px;
+            padding: 35px;
             border-radius: 16px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -91,8 +87,8 @@
         .summary-list li {
             position: relative;
             padding-left: 45px;
-            margin-bottom: 20px;
-            font-size: 1.15rem;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
         }
 
         .summary-list li i {
@@ -100,51 +96,67 @@
             left: 0;
             top: 5px;
             color: var(--primary-color);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
+        /* Başlıkları incelttik ve sağa kaydırdık */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-card {
+            padding-left: 15px; /* İçeriği biraz sağa çektik */
+        }
+
+        .grid-card h3 {
+            font-weight: 400; /* Kalınlığı kaldırdık, ince yaptık */
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .grid-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-main);
         }
 
         footer {
             text-align: center;
             padding: 80px 0 100px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 80px;
+            margin-top: 70px;
         }
 
         .footer-badges {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .badge-item {
             background-color: var(--badge-bg);
-            color: var(--text-main);
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
             border: 1px solid transparent;
         }
 
         .badge-item:hover {
             border-color: var(--primary-color);
-            background-color: #475569;
         }
 
-        /* --- GÜNCELLENEN DAKTİLO ALANI --- */
+        /* İmza Alanı */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem; /* Boyut küçültüldü */
+            font-size: 1.1rem; /* Biraz daha küçültüldü */
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
@@ -156,11 +168,11 @@
             overflow: hidden;
             white-space: nowrap;
             width: 0;
-            border-right: none; /* Yanıp sönen çubuk kaldırıldı */
+            border-right: none; /* Çubuk yok */
         }
 
         .active-type {
-            animation: typing 3s steps(30, end) forwards;
+            animation: typing 2.5s steps(35, end) forwards;
         }
 
         @keyframes typing { from { width: 0 } to { width: 100% } }
@@ -179,20 +191,19 @@
 
         .modal-content {
             background: var(--card-bg);
-            padding: 40px;
+            padding: 35px;
             border-radius: 12px;
             width: 90%;
-            max-width: 500px;
+            max-width: 450px;
             border: 1px solid var(--primary-color);
-            position: relative;
         }
 
         .whatsapp-float {
             position: fixed;
-            width: 65px; height: 65px; bottom: 40px; right: 40px;
+            width: 60px; height: 60px; bottom: 30px; right: 30px;
             background-color: #25d366; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 32px; color: white; text-decoration: none; z-index: 1000;
+            font-size: 30px; color: white; z-index: 1000;
         }
     </style>
 </head>
@@ -202,7 +213,7 @@
     <header>
         <h1>Emre Keçici</h1>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/emrekecici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="mailto:emrekecici1985@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
@@ -221,13 +232,19 @@
     </section>
 
     <div class="grid">
-        <section class="card">
-            <h3 style="color:var(--primary-color)">Uzmanlık Alanları</h3>
-            <p>• 5S, Kaizen & Yalın Araçlar<br>• Poka-Yoke & Hata Önleme<br>• Depo & Lojistik Yönetimi<br>• <strong>Web Yönetimi & DNS Yapılandırma</strong></p>
+        <section class="card grid-card">
+            <h3>Uzmanlık Alanları</h3>
+            <p>• 5S, Kaizen & Yalın Araçlar<br>
+               • Poka-Yoke & Hata Önleme<br>
+               • Web Teknolojileri & DNS Yönetimi<br>
+               • Süreç Optimizasyonu</p>
         </section>
-        <section class="card">
-            <h3 style="color:var(--primary-color)">Yetkinlikler</h3>
-            <p>• Dijital Süreç Analizi & Otomasyon<br>• Risk ve Gelişim Yönetimi<br>• İSG & ISO Standartları<br>• <strong>Uçtan Uca Proje Takibi</strong></p>
+        <section class="card grid-card">
+            <h3>Yetkinlikler</h3>
+            <p>• Dijital Süreç Analizi & Otomasyon<br>
+               • Risk ve Gelişim Yönetimi<br>
+               • İSG & ISO Standartları Uyumu<br>
+               • Uçtan Uca Operasyon Takibi</p>
         </section>
     </div>
 
@@ -251,27 +268,29 @@
 <div id="pop" class="modal" onclick="this.classList.remove('show')">
     <div class="modal-content">
         <h3 id="popT" style="color:var(--primary-color); margin-top:0;"></h3>
-        <p id="popB" style="margin-bottom:0;"></p>
+        <p id="popB" style="margin-bottom:0; line-height:1.5;"></p>
     </div>
 </div>
 
 <script>
     function showPop(type) {
         const d = {
-            kvkk: { t: "KVKK", b: "Kişisel verileriniz yasal mevzuat kapsamında korunmaktadır." },
-            sec: { t: "Güvenlik", b: "Tüm süreçlerde veri gizliliği ve bilgi güvenliği önceliğimizdir." },
-            iso: { t: "ISO Standartları", b: "Operasyonlarımız ISO kalite yönetim sistemlerine uygun yürütülmektedir." }
+            kvkk: { t: "KVKK", b: "Kişisel verileriniz yasal mevzuat kapsamında en üst düzeyde korunmaktadır." },
+            sec: { t: "Güvenlik", b: "Dijital ve fiziksel tüm süreçlerde bilgi güvenliği disiplini esastır." },
+            iso: { t: "ISO Standartları", b: "Operasyonlarımız ISO kalite ve güvenlik yönetim sistemlerine tam uyumlu yürütülür." }
         };
         document.getElementById('popT').innerText = d[type].t;
         document.getElementById('popB').innerText = d[type].b;
         document.getElementById('pop').classList.add('show');
     }
 
-    window.onscroll = function() {
+    window.addEventListener('scroll', function() {
         let tw = document.getElementById('tw');
         let pos = tw.getBoundingClientRect();
-        if(pos.top < window.innerHeight) tw.classList.add('active-type');
-    };
+        if(pos.top < window.innerHeight - 50) {
+            tw.classList.add('active-type');
+        }
+    });
 </script>
 
 </body>
