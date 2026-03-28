@@ -200,7 +200,7 @@
             color: var(--primary-color);
         }
 
-        /* DAKTİLO EFEYİ - SABAHKİ GİBİ TANE TANE */
+        /* YAZAR KİRLETMEYE BAŞLASIN (DAKTİLO ALANI) */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
             font-size: 0.85rem;
@@ -323,7 +323,7 @@
         </div>
         
         <p>&copy; 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
-        <div class="typewriter-container">
+        <div class="typewriter-container" id="tw-observer-point">
             <span id="tw-text"></span>
         </div>
     </footer>
@@ -352,21 +352,31 @@
         document.getElementById('pop').classList.add('show');
     }
 
-    // TANE TANE YAZMA FONKSİYONU
-    const text = "Designed and Developed by Emre Keçici";
+    // SCROLL İLE TETİKLENEN DAKTİLO EFEKTİ
+    const fullText = "Designed and Developed by Emre Keçici";
+    const targetElement = document.getElementById("tw-text");
     let i = 0;
-    const target = document.getElementById("tw-text");
+    let hasStarted = false;
 
     function typeWriter() {
-        if (i < text.length) {
-            target.innerHTML += text.charAt(i);
+        if (i < fullText.length) {
+            targetElement.innerHTML += fullText.charAt(i);
             i++;
-            setTimeout(typeWriter, 100); // 100ms hız (ideal hızdır)
+            setTimeout(typeWriter, 100);
         }
     }
 
-    // Sayfa yüklendiğinde efekt başlasın
-    window.onload = typeWriter;
+    // Intersection Observer: Eleman ekrana girdiğinde çalışır
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasStarted) {
+                hasStarted = true; // Sadece bir kere çalışsın
+                typeWriter();
+            }
+        });
+    }, { threshold: 0.5 }); // Yazının yarısı ekrana girdiğinde tetiklenir
+
+    observer.observe(document.getElementById("tw-observer-point"));
 </script>
 
 </body>
