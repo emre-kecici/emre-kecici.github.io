@@ -10,11 +10,10 @@
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
-            --badge-bg: #334155; /* Eski Gri/Füme Kutular */
-            --primary-color: #22d3ee; /* Turkuaz Neon */
+            --badge-bg: #334155;
+            --primary-color: #22d3ee;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
-            --modal-overlay: rgba(0, 0, 0, 0.8);
         }
 
         body {
@@ -24,7 +23,6 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Kayan yazı için */
         }
 
         .container {
@@ -33,47 +31,40 @@
             padding: 40px 20px;
         }
 
-        /* Hero Section (Üst Kısım) */
+        /* Hero Section */
         header {
             text-align: center;
-            margin-bottom: 70px;
-            position: relative;
+            margin-bottom: 50px;
         }
 
-        /* Kalkan Logosunun Olduğu Yer */
         .shield-logo {
             width: 100%;
-            max-width: 800px; /* Logonun genişliği */
+            max-width: 800px;
             height: auto;
-            margin: 0 auto; /* Ortalamak için */
+            margin: 0 auto 20px;
             display: block;
             border-radius: 12px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            margin-bottom: 30px; /* Altındaki isme boşluk */
         }
 
         h1 {
-            font-size: 3rem;
-            margin: 10px 0;
+            font-size: 3.2rem;
+            margin: 0;
             letter-spacing: -2px;
             font-weight: 800;
-        }
-
-        /* Subtitle (Yazı Kaldırıldı, Sadece Boşluk) */
-        .subtitle {
-            margin-bottom: 30px;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 25px;
+            margin-top: 25px;
         }
 
         .social-links a {
             color: var(--text-main);
             font-size: 1.8rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             text-decoration: none;
         }
 
@@ -82,14 +73,12 @@
             transform: translateY(-5px);
         }
 
-        /* Bölüm Başlıkları */
         .section-title {
             border-left: 5px solid var(--primary-color);
             padding-left: 18px;
             margin: 60px 0 30px;
             font-size: 1.6rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
             font-weight: 700;
         }
 
@@ -99,14 +88,11 @@
             border-radius: 20px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* Profesyonel Özet Listesi (Mermi gibi tane tane) */
         .summary-list {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .summary-list li {
@@ -114,35 +100,24 @@
             padding-left: 45px;
             margin-bottom: 20px;
             font-size: 1.1rem;
-            color: var(--text-main);
         }
 
         .summary-list li i {
             position: absolute;
             left: 0;
-            top: 5px; /* İkonu metinle hizala */
+            top: 5px;
             color: var(--primary-color);
             font-size: 1.3rem;
         }
 
-        /* Uzmanlık Alanları */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        .skill-item {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-item li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-
+        .skill-item { list-style: none; padding: 0; }
+        .skill-item li { margin-bottom: 15px; padding-left: 30px; position: relative; }
         .skill-item li::before {
             content: "\f054";
             font-family: "Font Awesome 6 Free";
@@ -150,106 +125,83 @@
             position: absolute;
             left: 0;
             color: var(--primary-color);
-            font-size: 0.9rem;
         }
 
-        /* Sertifikalar */
-        .cert-list p {
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .cert-list p:last-child { border-bottom: none; }
-
-        /* Footer & Signature */
         footer {
             text-align: center;
-            padding: 80px 0 0px; /* Kayan yazı için alt boşluk kaldırıldı */
+            padding: 60px 0 100px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 100px;
-            position: relative;
+            margin-top: 80px;
         }
 
-        /* Gri, Tıklanabilir Güvenlik Kutucukları */
         .footer-badges {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .badge-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            background-color: var(--badge-bg); /* Gri Arka Plan */
-            color: var(--text-main);
+            background-color: var(--badge-bg);
             padding: 12px 20px;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
             font-weight: 600;
-            cursor: pointer; /* Tıklanabilir */
-            transition: background 0.3s ease;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .badge-item:hover {
-            background-color: #475569; /* Hoverda hafif aç kırmızısı */
-        }
+        .badge-item:hover { background-color: #475569; }
 
-        .badge-item i {
-            font-size: 1.1rem;
-            color: var(--primary-color); /* İkonlar turkuaz kalsın */
-        }
-
-        /* Kayan İmza (Marquee Style) */
-        .marquee-container {
-            width: 100%;
-            background-color: var(--card-bg);
-            color: var(--primary-color);
+        /* TEKER TEKER ÇIKAN YAZI (Typewriter Effect) */
+        .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
             font-style: italic;
-            padding: 10px 0;
-            overflow: hidden;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            margin-top: 20px;
+            min-height: 40px;
         }
 
-        .marquee-content {
+        .typewriter-text {
             display: inline-block;
+            overflow: hidden;
             white-space: nowrap;
-            animation: marquee 15s linear infinite;
+            border-right: 3px solid var(--primary-color);
+            width: 0;
         }
 
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        /* Sayfa sonuna inince tetiklenecek animasyon */
+        .typewriter-active {
+            animation: typing 3.5s steps(30, end) forwards, blink .75s step-end infinite;
         }
 
-        /* Modal (KVKK Açılır Pencere) */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color); }
+        }
+
+        /* Modal */
         .modal {
-            display: none; /* Gizli başla */
+            display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--modal-overlay);
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .modal.show {
-            display: flex;
-            opacity: 1;
-        }
+        .modal.show { display: flex; }
 
         .modal-content {
             background-color: var(--card-bg);
@@ -257,54 +209,20 @@
             border-radius: 16px;
             width: 90%;
             max-width: 600px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
         }
 
         .close-modal {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: var(--text-dim);
-            cursor: pointer;
+            top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer;
         }
 
-        .close-modal:hover {
-            color: var(--text-main);
-        }
-
-        .modal-title {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            width: 70px;
-            height: 70px;
-            bottom: 60px; /* Kayan yazıya çarpmaması için biraz daha yukarı */
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 36px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .badge-item { padding: 10px 15px; font-size: 0.8rem; }
-            .whatsapp-float { bottom: 60px; right: 20px; width: 60px; height: 60px; font-size: 30px; }
+            width: 65px; height: 65px; bottom: 30px; right: 30px;
+            background-color: #25d366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; color: white; text-decoration: none; z-index: 1000;
         }
     </style>
 </head>
@@ -312,9 +230,8 @@
 
 <div class="container">
     <header>
-        <img src="image_1.png" alt="Emre Keçici Digital Portfolio" class="shield-logo">
+        <img src="image_1.png" alt="Emre Keçici Logo" class="shield-logo">
         <h1>Emre Keçici</h1>
-        <div class="subtitle"></div>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -343,7 +260,6 @@
                     <li>Yalın Araçlar: 5S, Kaizen, Poka-Yoke</li>
                     <li>Analiz: 5 Neden, Balık Kılçığı, Pareto</li>
                     <li>Operasyonel: MUDA Avcılığı, Gemba Walk, PUKÖ</li>
-                    <li>Görsel: Andon, T-Kart, Standart İş Talimatları</li>
                     <li>Lojistik: Depo Yönetimi & Stok Optimizasyonu</li>
                 </ul>
             </div>
@@ -352,22 +268,12 @@
         <section id="sertifikalar">
             <h2 class="section-title">Eğitim & Sertifikalar</h2>
             <div class="card cert-list">
-                <p><strong>BTK Akademi (2026)</strong> Yapay Zeka Uygulamaları ve Risk Yönetimi</p>
-                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri (Analitik Yaklaşımlar)</p>
-                <p><strong>BTK Akademi</strong> Değişim ve Gelişim Yönetimi</p>
+                <p><strong>BTK Akademi</strong> Yapay Zeka Uygulamaları ve Risk Yönetimi</p>
+                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri</p>
                 <p><strong>Milli Eğitim Bakanlığı (MEB)</strong> Forklift Operatörlük Belgesi</p>
             </div>
         </section>
     </div>
-
-    <section id="basarilar">
-        <h2 class="section-title">Projeler ve Başarılar</h2>
-        <div class="card">
-            <p><strong>Hata Önleme (Poka-Yoke):</strong> Operasyonel hataların kaynağını fiziksel engellerle kapatarak fire oranlarında ölçülebilir düşüş sağladım.</p>
-            <p><strong>Saha İSG & 5S Entegrasyonu:</strong> 5S disiplinini İSG standartlarıyla birleştirerek güvenli çalışma alanları oluşturdum.</p>
-            <p><strong>Üretim Hattı Optimizasyonu:</strong> Teknik aksaklıkları 5 Neden Analizi ile inceleyerek duruş sürelerinde %10 iyileştirme gerçekleştirdim.</p>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-badges">
@@ -378,10 +284,8 @@
         
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
         
-        <div class="marquee-container">
-            <div class="marquee-content">
-                &nbsp; Designed by Emre Keçici &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed by Emre Keçici &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
+        <div class="typewriter-container">
+            <span id="typewriter" class="typewriter-text">Designed by Emre Keçici</span>
         </div>
     </footer>
 </div>
@@ -393,50 +297,38 @@
 <div id="infoModal" class="modal" onclick="closeModalOnOverlay(event)">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h3 id="modalTitle" class="modal-title"></h3>
-        <div id="modalBody" class="modal-text"></div>
+        <h3 id="modalTitle" style="color:var(--primary-color)"></h3>
+        <p id="modalBody" style="margin-top:20px"></p>
     </div>
 </div>
 
 <script>
-    // Hafızaya Alınan KVKK İçerikleri
     const modalContents = {
-        kvkk: {
-            title: "KVKK & Veri Gizliliği Uyumluluğu",
-            body: "Kişisel verilerin korunması kanunu kapsamında, süreçlerimde veri gizliliğini temel ilke ediniyorum. Bu portfolyo üzerinde toplanan herhangi bir veri (mail atılması durumunda) yasal süreler dışında saklanmamakta ve üçüncü taraflarla paylaşılmamaktadır. Analitik süreçlerde sadece işleme özgü, anonimleştirilmiş veri disiplini gözetilmektedir."
-        },
-        security: {
-            title: "Bilgi Güvenliği Disiplini",
-            body: "ISO 27001 Bilgi Güvenliği Yönetim Sistemi disipliniyle hareket ediyorum. Süreçlerin dijitalleşmesi ve yapay zeka entegrasyonu aşamalarında veri bütünlüğünü, erişilebilirliğini ve gizliliğini korumaya yönelik analitik risk yönetimi prosedürlerini uyguluyorum. 'Hata Önleme' felsefesi, dijital veri akışlarında da geçerlidir."
-        },
-        iso: {
-            title: "ISO Standartları Yönetimi",
-            body: "Operasyonel mükemmellik projelerimde, ISO 9001:2015 (Kalite), ISO 14001 (Çevre) ve ISO 45001 (İSG) standartlarını temel referans alıyorum. Süreç haritalama, standart iş talimatları ve PUKÖ döngüsü uygulamalarında bu standartların gerekliliklerini saha gerçekleriyle bütünleştirerek sürdürülebilir bir sistem kurguluyorum."
-        }
+        kvkk: { title: "KVKK Uyumluluğu", body: "Kişisel verileriniz yasal mevzuata uygun olarak korunmaktadır." },
+        security: { title: "Bilgi Güvenliği", body: "Tüm dijital süreçlerde veri bütünlüğü ve gizliliği esastır." },
+        iso: { title: "ISO Standartları", body: "Süreçlerim ISO 9001 ve 45001 standartları referans alınarak yönetilir." }
     };
 
     function openModal(type) {
-        const modal = document.getElementById('infoModal');
-        const title = document.getElementById('modalTitle');
-        const body = document.getElementById('modalBody');
-
-        title.innerText = modalContents[type].title;
-        body.innerText = modalContents[type].body;
-
-        modal.classList.add('show');
+        document.getElementById('modalTitle').innerText = modalContents[type].title;
+        document.getElementById('modalBody').innerText = modalContents[type].body;
+        document.getElementById('infoModal').classList.add('show');
     }
 
-    function closeModal() {
-        document.getElementById('infoModal').classList.remove('show');
-    }
+    function closeModal() { document.getElementById('infoModal').classList.remove('show'); }
+    function closeModalOnOverlay(e) { if(e.target.id === 'infoModal') closeModal(); }
 
-    function closeModalOnOverlay(event) {
-        if (event.target === document.getElementById('infoModal')) {
-            closeModal();
+    // Scroll İzleyici: Sayfa sonuna gelince daktilo efektini başlatır
+    window.onscroll = function() {
+        let typewriter = document.getElementById('typewriter');
+        let position = typewriter.getBoundingClientRect();
+
+        // Eğer yazı görünür alana girdiyse animasyonu başlat
+        if(position.top < window.innerHeight && position.bottom >= 0) {
+            typewriter.classList.add('typewriter-active');
         }
-    }
+    };
 </script>
 
 </body>
 </html>
-    
