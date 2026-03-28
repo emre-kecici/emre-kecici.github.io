@@ -99,7 +99,6 @@
             font-size: 1.2rem;
         }
 
-        /* Başlıkları incelttik ve sağa kaydırdık */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -107,11 +106,11 @@
         }
 
         .grid-card {
-            padding-left: 15px; /* İçeriği biraz sağa çektik */
+            padding-left: 20px;
         }
 
         .grid-card h3 {
-            font-weight: 400; /* Kalınlığı kaldırdık, ince yaptık */
+            font-weight: 400; /* İnce başlık */
             color: var(--primary-color);
             font-size: 1.2rem;
             margin-top: 0;
@@ -153,10 +152,9 @@
             border-color: var(--primary-color);
         }
 
-        /* İmza Alanı */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem; /* Biraz daha küçültüldü */
+            font-size: 1rem; /* Küçük boyut */
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
@@ -177,7 +175,6 @@
 
         @keyframes typing { from { width: 0 } to { width: 100% } }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -232,20 +229,33 @@
     </section>
 
     <div class="grid">
-        <section class="card grid-card">
-            <h3>Uzmanlık Alanları</h3>
-            <p>• 5S, Kaizen & Yalın Araçlar<br>
-               • Poka-Yoke & Hata Önleme<br>
-               • Web Teknolojileri & DNS Yönetimi<br>
-               • Süreç Optimizasyonu</p>
-        </section>
-        <section class="card grid-card">
-            <h3>Yetkinlikler</h3>
-            <p>• Dijital Süreç Analizi & Otomasyon<br>
-               • Risk ve Gelişim Yönetimi<br>
-               • İSG & ISO Standartları Uyumu<br>
-               • Uçtan Uca Operasyon Takibi</p>
-        </section>
+        <div class="grid-column">
+            <section class="card grid-card">
+                <h3>Uzmanlık Alanları</h3>
+                <p>• 5S, Kaizen & Yalın Araçlar<br>
+                   • Poka-Yoke & Hata Önleme<br>
+                   • Web Teknolojileri & DNS Yönetimi<br>
+                   • Süreç Optimizasyonu</p>
+            </section>
+            
+            <section class="card grid-card">
+                <h3>Sertifikalar</h3>
+                <p>• BTK Akademi Yapay Zeka<br>
+                   • MEB Forklift Operatörlük<br>
+                   • Risk Yönetimi Uzmanlığı<br>
+                   • Analitik Problem Çözme</p>
+            </section>
+        </div>
+
+        <div class="grid-column">
+            <section class="card grid-card">
+                <h3>Yetkinlikler</h3>
+                <p>• Dijital Süreç Analizi & Otomasyon<br>
+                   • Risk ve Gelişim Yönetimi<br>
+                   • İSG & ISO Standartları Uyumu<br>
+                   • Uçtan Uca Operasyon Takibi</p>
+            </section>
+        </div>
     </div>
 
     <footer>
@@ -294,4 +304,5 @@
 </script>
 
 </body>
-</html>
+    </html>
+    
