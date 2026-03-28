@@ -14,7 +14,7 @@
             --primary-color: #22d3ee;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
-            --standard-gap: 25px; /* Tüm boşlukları buradan kontrol ediyoruz */
+            --standard-gap: 25px;
         }
 
         body {
@@ -75,7 +75,6 @@
             overflow-wrap: break-word;
         }
 
-        /* Ana bölümler arası dikey boşluk */
         .main-spacer {
             margin-bottom: var(--standard-gap);
         }
@@ -106,16 +105,15 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--standard-gap); /* Kolonlar arası boşluk */
+            gap: var(--standard-gap);
             align-items: start;
             margin-bottom: var(--standard-gap);
         }
 
-        /* Kolon içindeki kutuların alt alta boşluğu */
         .grid-column {
             display: flex;
             flex-direction: column;
-            gap: var(--standard-gap); /* Yapışık kutuları ayıran can alıcı nokta */
+            gap: var(--standard-gap);
         }
 
         .grid-card h3 {
@@ -136,7 +134,7 @@
         .cv-center-container {
             display: flex;
             justify-content: center;
-            margin-top: 15px; /* Grid ile arasındaki dengeyi sağlar */
+            margin-top: 15px;
         }
 
         .cv-button {
@@ -247,7 +245,7 @@
 <div class="container">
     <header>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/emrekecici" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="mailto:emrekecici1985@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
@@ -348,5 +346,4 @@
 </script>
 
 </body>
-    </html>
-    
+</html>
