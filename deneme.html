@@ -56,24 +56,15 @@
             transform: translateY(-3px);
         }
 
-        /* Başlık ve Buton Hizalaması */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 30px 0 20px;
-        }
-
         .section-title {
             border-left: 4px solid var(--primary-color);
             padding-left: 15px;
+            margin: 30px 0 20px;
             font-size: 1.3rem;
             text-transform: uppercase;
             font-weight: 700;
-            margin: 0;
         }
 
-        /* --- PROFESYONEL DRIVE BUTONU --- */
         .cv-button {
             background-color: transparent;
             color: var(--primary-color);
@@ -87,6 +78,8 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            margin-top: 10px; /* Üstteki kutuyla mesafe */
+            width: fit-content;
         }
 
         .cv-button:hover {
@@ -131,10 +124,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            align-items: start;
         }
 
         .grid-card {
             padding: 25px;
+            margin-bottom: 0; /* Grid içindeki boşluğu grid gap yönetiyor */
         }
 
         .grid-card h3 {
@@ -164,7 +159,7 @@
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 40px; /* Buton için boşluk */
+            margin-bottom: 30px;
         }
 
         .badge-item {
@@ -245,12 +240,7 @@
     </header>
 
     <section>
-        <div class="section-header">
-            <h2 class="section-title">Profesyonel Özet</h2>
-            <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
-                <i class="fab fa-google-drive"></i> Özgeçmişi Görüntüle
-            </a>
-        </div>
+        <h2 class="section-title">Profesyonel Özet</h2>
         <div class="card">
             <ul class="summary-list">
                 <li><i class="fas fa-rocket"></i> Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</li>
@@ -288,6 +278,10 @@
                    • İSG & ISO Standartları Uyumu<br>
                    • Uçtan Uca Operasyon Takibi</p>
             </section>
+
+            <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
+                <i class="fab fa-google-drive"></i> Özgeçmişi Görüntüle
+            </a>
         </div>
     </div>
 
@@ -298,12 +292,6 @@
             <div class="badge-item" onclick="showPop('iso')">ISO Standartları</div>
         </div>
         
-        <div style="margin-bottom: 30px;">
-            <a href="https://drive.google.com/file/d/1bB_8AGxfgxFKlYIBWZvhu0JcNlRDlLH1/view?usp=drivesdk" class="cv-button" target="_blank">
-                <i class="fas fa-file-pdf"></i> Tüm Özgeçmişi Aç (Drive)
-            </a>
-        </div>
-
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
         <div class="typewriter-container">
             <span id="tw" class="typewriter-text">Designed by Emre Keçici</span>
@@ -334,7 +322,6 @@
         document.getElementById('pop').classList.add('show');
     }
 
-    // Scroll İzleyici (Typewriter)
     window.addEventListener('scroll', function() {
         let tw = document.getElementById('tw');
         let pos = tw.getBoundingClientRect();
