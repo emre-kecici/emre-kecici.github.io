@@ -23,6 +23,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Sayfa geneli taşmayı engeller */
         }
 
         .container {
@@ -76,6 +77,10 @@
             border-radius: 16px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Taşma Ayarı */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .summary-list {
@@ -103,14 +108,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            align-items: start;
         }
 
         .grid-card {
-            padding-left: 20px;
+            padding: 30px;
         }
 
         .grid-card h3 {
-            font-weight: 400; /* İnce başlık */
+            font-weight: 400;
             color: var(--primary-color);
             font-size: 1.2rem;
             margin-top: 0;
@@ -121,6 +127,7 @@
             margin: 0;
             font-size: 1rem;
             color: var(--text-main);
+            line-height: 1.8;
         }
 
         footer {
@@ -154,7 +161,7 @@
 
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem; /* Küçük boyut */
+            font-size: 1rem;
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
@@ -166,7 +173,7 @@
             overflow: hidden;
             white-space: nowrap;
             width: 0;
-            border-right: none; /* Çubuk yok */
+            border-right: none;
         }
 
         .active-type {
@@ -304,5 +311,4 @@
 </script>
 
 </body>
-    </html>
-    
+</html>
