@@ -10,10 +10,11 @@
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
+            --badge-bg: #334155; /* Eski Gri/Füme Kutular */
             --primary-color: #22d3ee; /* Turkuaz Neon */
-            --success-color: #25d366; /* WhatsApp Yeşili */
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
+            --modal-overlay: rgba(0, 0, 0, 0.8);
         }
 
         body {
@@ -23,6 +24,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Kayan yazı için */
         }
 
         .container {
@@ -36,7 +38,6 @@
             text-align: center;
             margin-bottom: 70px;
             position: relative;
-            padding-bottom: 20px;
         }
 
         /* Kalkan Logosunun Olduğu Yer */
@@ -58,12 +59,9 @@
             font-weight: 800;
         }
 
+        /* Subtitle (Yazı Kaldırıldı, Sadece Boşluk) */
         .subtitle {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            font-weight: 500;
             margin-bottom: 30px;
-            letter-spacing: 0.5px;
         }
 
         .social-links {
@@ -119,7 +117,6 @@
             color: var(--text-main);
         }
 
-        /* İkonların Ayarı */
         .summary-list li i {
             position: absolute;
             left: 0;
@@ -168,12 +165,13 @@
         /* Footer & Signature */
         footer {
             text-align: center;
-            padding: 80px 0 50px;
+            padding: 80px 0 0px; /* Kayan yazı için alt boşluk kaldırıldı */
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             margin-top: 100px;
+            position: relative;
         }
 
-        /* Yeşil Güvenlik Kutucukları (Veri Gizliliği) */
+        /* Gri, Tıklanabilir Güvenlik Kutucukları */
         .footer-badges {
             display: flex;
             justify-content: center;
@@ -186,26 +184,100 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background-color: rgba(37, 211, 102, 0.1); /* Çok hafif yeşil arka plan */
-            color: var(--success-color); /* Canlı yeşil metin */
+            background-color: var(--badge-bg); /* Gri Arka Plan */
+            color: var(--text-main);
             padding: 12px 20px;
             border-radius: 8px;
-            border: 1px solid rgba(37, 211, 102, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
             font-weight: 600;
+            cursor: pointer; /* Tıklanabilir */
+            transition: background 0.3s ease;
+        }
+
+        .badge-item:hover {
+            background-color: #475569; /* Hoverda hafif aç kırmızısı */
         }
 
         .badge-item i {
             font-size: 1.1rem;
+            color: var(--primary-color); /* İkonlar turkuaz kalsın */
         }
 
-        .signature {
+        /* Kayan İmza (Marquee Style) */
+        .marquee-container {
+            width: 100%;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--text-main);
+            font-size: 1.3rem;
             font-style: italic;
-            margin-top: 15px;
-            letter-spacing: 1px;
+            padding: 10px 0;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Modal (KVKK Açılır Pencere) */
+        .modal {
+            display: none; /* Gizli başla */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--modal-overlay);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: var(--text-main);
+        }
+
+        .modal-title {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
         /* WhatsApp Button */
@@ -213,7 +285,7 @@
             position: fixed;
             width: 70px;
             height: 70px;
-            bottom: 40px;
+            bottom: 60px; /* Kayan yazıya çarpmaması için biraz daha yukarı */
             right: 40px;
             background-color: #25d366;
             color: #FFF;
@@ -231,10 +303,8 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .subtitle { font-size: 1.1rem; }
-            .summary-list li { font-size: 1rem; padding-left: 35px; }
-            .summary-list li i { font-size: 1.1rem; }
             .badge-item { padding: 10px 15px; font-size: 0.8rem; }
+            .whatsapp-float { bottom: 60px; right: 20px; width: 60px; height: 60px; font-size: 30px; }
         }
     </style>
 </head>
@@ -244,7 +314,7 @@
     <header>
         <img src="image_1.png" alt="Emre Keçici Digital Portfolio" class="shield-logo">
         <h1>Emre Keçici</h1>
-        <div class="subtitle">Operasyonel Mükembellik & Dijital Süreç Danışmanı</div>
+        <div class="subtitle"></div>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -301,13 +371,18 @@
 
     <footer>
         <div class="footer-badges">
-            <div class="badge-item"><i class="fas fa-user-shield"></i> KVKK & Veri Gizliliği Uyumluluğu</div>
-            <div class="badge-item"><i class="fas fa-file-contract"></i> Bilgi Güvenliği Disiplini</div>
-            <div class="badge-item"><i class="fas fa-certificate"></i> ISO Standartları Yönetimi</div>
+            <div class="badge-item" onclick="openModal('kvkk')"><i class="fas fa-user-shield"></i> KVKK Uyumluluğu</div>
+            <div class="badge-item" onclick="openModal('security')"><i class="fas fa-file-contract"></i> Bilgi Güvenliği</div>
+            <div class="badge-item" onclick="openModal('iso')"><i class="fas fa-certificate"></i> ISO Standartları</div>
         </div>
         
         <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
-        <div class="signature">Emre Keçici</div>
+        
+        <div class="marquee-container">
+            <div class="marquee-content">
+                &nbsp; Designed by Emre Keçici &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed by Emre Keçici &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
     </footer>
 </div>
 
@@ -315,6 +390,53 @@
     <i class="fab fa-whatsapp"></i>
 </a>
 
+<div id="infoModal" class="modal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <div id="modalBody" class="modal-text"></div>
+    </div>
+</div>
+
+<script>
+    // Hafızaya Alınan KVKK İçerikleri
+    const modalContents = {
+        kvkk: {
+            title: "KVKK & Veri Gizliliği Uyumluluğu",
+            body: "Kişisel verilerin korunması kanunu kapsamında, süreçlerimde veri gizliliğini temel ilke ediniyorum. Bu portfolyo üzerinde toplanan herhangi bir veri (mail atılması durumunda) yasal süreler dışında saklanmamakta ve üçüncü taraflarla paylaşılmamaktadır. Analitik süreçlerde sadece işleme özgü, anonimleştirilmiş veri disiplini gözetilmektedir."
+        },
+        security: {
+            title: "Bilgi Güvenliği Disiplini",
+            body: "ISO 27001 Bilgi Güvenliği Yönetim Sistemi disipliniyle hareket ediyorum. Süreçlerin dijitalleşmesi ve yapay zeka entegrasyonu aşamalarında veri bütünlüğünü, erişilebilirliğini ve gizliliğini korumaya yönelik analitik risk yönetimi prosedürlerini uyguluyorum. 'Hata Önleme' felsefesi, dijital veri akışlarında da geçerlidir."
+        },
+        iso: {
+            title: "ISO Standartları Yönetimi",
+            body: "Operasyonel mükemmellik projelerimde, ISO 9001:2015 (Kalite), ISO 14001 (Çevre) ve ISO 45001 (İSG) standartlarını temel referans alıyorum. Süreç haritalama, standart iş talimatları ve PUKÖ döngüsü uygulamalarında bu standartların gerekliliklerini saha gerçekleriyle bütünleştirerek sürdürülebilir bir sistem kurguluyorum."
+        }
+    };
+
+    function openModal(type) {
+        const modal = document.getElementById('infoModal');
+        const title = document.getElementById('modalTitle');
+        const body = document.getElementById('modalBody');
+
+        title.innerText = modalContents[type].title;
+        body.innerText = modalContents[type].body;
+
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        document.getElementById('infoModal').classList.remove('show');
+    }
+
+    function closeModalOnOverlay(event) {
+        if (event.target === document.getElementById('infoModal')) {
+            closeModal();
+        }
+    }
+</script>
+
 </body>
-    </html>
-        
+</html>
+    
