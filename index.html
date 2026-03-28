@@ -4,184 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>emrekecici.com.tr</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #0a192f;
+            --bg-color: #0a192f;
             --card-bg: #112240;
             --primary-cyan: #00d2ff;
             --text-main: #ccd6f6;
-            --text-white: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --text-bright: #ffffff;
+            --btn-border: rgba(0, 210, 255, 0.3);
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-bright);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
+            flex-direction: column;
         }
 
-        .main-wrapper {
+        .main-container {
             width: 100%;
-            max-width: 450px;
+            max-width: 480px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            animation: fadeIn 0.8s ease-out;
+            gap: 20px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Üst Bölüm / Daktilo Efekti Alanı */
+        .typewriter-box {
+            min-height: 40px;
+            font-size: 18px;
+            color: var(--primary-cyan);
+            text-align: center;
+            font-weight: 600;
         }
 
-        /* PROFESYONEL ÖZET KARTI */
+        /* Profesyonel Özet Kartı */
         .glass-card {
             background: var(--card-bg);
             border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
-            overflow: hidden;
         }
 
         h2 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            font-size: 20px;
+            border-left: 4px solid var(--primary-cyan);
+            padding-left: 15px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h2::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: var(--primary-cyan);
-            border-radius: 2px;
+            letter-spacing: 1.5px;
         }
 
         .summary-item {
             display: flex;
-            gap: 16px;
+            gap: 15px;
             margin-bottom: 20px;
-            transition: var(--transition);
         }
 
         .summary-item i {
             font-size: 22px;
             color: var(--primary-cyan);
-            flex-shrink: 0;
-            margin-top: 2px;
+            width: 25px;
+            text-align: center;
         }
 
         .summary-item p {
+            margin: 0;
             font-size: 15px;
             line-height: 1.6;
             color: var(--text-main);
         }
 
-        /* GRID BÖLÜMÜ (SERTİFİKA & YETKİNLİK) */
+        /* Grid Bölümü (Sertifikalar & Yetkinlikler) */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 15px;
         }
 
-        .grid-card {
+        .info-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 24px;
+            border: 1px solid var(--btn-border);
+            border-radius: 18px;
+            padding: 20px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-            cursor: pointer;
+            transition: 0.3s ease;
         }
 
-        .grid-card:hover {
-            transform: translateY(-5px);
+        .info-card:hover {
             border-color: var(--primary-cyan);
-            background: rgba(0, 210, 255, 0.02);
+            background: rgba(0, 210, 255, 0.05);
         }
 
-        .grid-card i {
-            font-size: 32px;
+        .info-card i {
+            font-size: 30px;
             color: var(--primary-cyan);
             margin-bottom: 12px;
             display: block;
         }
 
-        .grid-card span {
+        .info-card span {
             font-weight: 600;
             font-size: 16px;
         }
 
-        /* AKSİYON BUTONLARI */
-        .action-links {
+        /* Ana Butonlar */
+        .button-group {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .main-btn {
-            background: transparent;
-            border: 2px solid var(--primary-cyan);
-            border-radius: 16px;
-            padding: 16px;
-            color: var(--primary-cyan);
-            text-decoration: none;
-            font-weight: 700;
+        .action-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            transition: var(--transition);
+            gap: 10px;
+            padding: 16px;
+            border: 2px solid var(--primary-cyan);
+            border-radius: 14px;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
         }
 
-        .main-btn:hover {
+        .action-btn:hover {
             background: var(--primary-cyan);
-            color: var(--bg-dark);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--primary-cyan);
         }
 
-        /* KVKK BOX */
-        .kvkk-footer {
+        /* KVKK Alanı */
+        .kvkk-notice {
             background: rgba(255, 255, 255, 0.02);
             border: 1px dashed rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 16px;
+            border-radius: 15px;
+            padding: 15px;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #8892b0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* FLOATING ACTION BUTTONS */
-        .fab-container {
+        /* Yüzen Aksiyon Butonları */
+        .fab-group {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            z-index: 100;
+            gap: 15px;
         }
 
         .fab {
@@ -194,26 +177,21 @@
             color: white;
             font-size: 28px;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: 0.3s;
         }
 
-        .fab:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
+        .fab:hover { transform: scale(1.1); }
+        .fab-email { background: #ea4335; }
+        .fab-whatsapp { background: #25d366; }
 
-        .fab-mail { background: #ff4b2b; }
-        .fab-wp { background: #25d366; }
-
-        @media (max-width: 480px) {
-            .main-wrapper { padding: 10px; }
-            h2 { font-size: 19px; }
-        }
     </style>
 </head>
 <body>
 
-    <div class="main-wrapper">
+    <div class="main-container">
+        <div class="typewriter-box" id="typing"></div>
+
         <div class="glass-card">
             <h2>PROFESYONEL ÖZET</h2>
             <div class="summary-item">
@@ -231,39 +209,52 @@
         </div>
 
         <div class="info-grid">
-            <div class="grid-card">
+            <div class="info-card">
                 <i class="fas fa-award"></i>
                 <span>Sertifikalar</span>
             </div>
-            <div class="grid-card">
+            <div class="info-card">
                 <i class="fas fa-tools"></i>
                 <span>Yetkinlikler</span>
             </div>
         </div>
 
-        <div class="action-links">
-            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="main-btn">
-                <i class="fas fa-file-pdf"></i> ÖZGEÇMİŞİMİ GÖRÜNTÜLE
+        <div class="button-group">
+            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="action-btn">
+                <i class="fas fa-file-pdf"></i> Özgeçmişimi Görüntüle
             </a>
-            <a href="https://linkedin.com/in/emrekecici" class="main-btn">
-                <i class="fab fa-linkedin"></i> LINKEDIN PROFİLİ
+            <a href="https://linkedin.com/in/emrekecici" class="action-btn">
+                <i class="fab fa-linkedin"></i> LinkedIn Profili
             </a>
         </div>
 
-        <div class="kvkk-footer">
+        <div class="kvkk-notice">
             Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır.<br>
             © 2026 Emre Keçici
         </div>
     </div>
 
-    <div class="fab-container">
-        <a href="mailto:emre@emrekecici.com.tr" class="fab fab-mail">
+    <div class="fab-group">
+        <a href="mailto:emre@emrekecici.com.tr" class="fab fab-email">
             <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://wa.me/905321234567" class="fab fab-wp">
+        <a href="https://wa.me/905321234567" class="fab fab-whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+
+    <script>
+        const text = "Dijital Dönüşüm Yolculuğu Başlıyor...";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        window.onload = type;
+    </script>
 
 </body>
 </html>
