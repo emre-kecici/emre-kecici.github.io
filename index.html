@@ -39,12 +39,6 @@
             width: 100%;
             margin: 0 auto;
             padding: 40px 20px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
@@ -87,12 +81,6 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            border-color: rgba(34, 211, 238, 0.3);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
         .summary-list {
@@ -104,7 +92,6 @@
             padding-left: 40px;
             margin-bottom: 18px;
             font-size: 1.05rem;
-            color: var(--text-main);
         }
 
         .summary-list li i {
@@ -115,7 +102,6 @@
             font-size: 1.2rem;
         }
 
-        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -145,7 +131,20 @@
             line-height: 1.8;
         }
 
-        /* Butonlar */
+        /* SERTİFİKALAR BÖLÜMÜ TAŞMA DÜZELTMESİ */
+        .grid-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .grid-card ul li {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            white-space: nowrap; /* Mobilde tek satırda tut */
+        }
+
         .btn-container {
             display: flex;
             flex-direction: column;
@@ -177,7 +176,6 @@
             transform: scale(1.05);
         }
 
-        /* Footer & Badges */
         footer {
             text-align: center;
             padding: 60px 0 40px;
@@ -209,17 +207,28 @@
             color: var(--primary-color);
         }
 
-        /* Daktilo Efekti */
+        /* YENİ DAKTİLO EFEYİ VE YAZI AYARLARI */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
+            font-size: 0.8rem; /* Ufaltıldı */
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
-            min-height: 25px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: none; /* Çubuk kaldırıldı */
+        }
+        
+        .active-type {
+            animation: typingAnimation 3s steps(40, end) forwards;
+        }
+        
+        @keyframes typingAnimation {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
-        /* WhatsApp Floating */
         .whatsapp-float {
             position: fixed;
             width: 60px; height: 60px; bottom: 30px; right: 30px;
@@ -230,9 +239,8 @@
             transition: var(--transition);
         }
 
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* Modal */
         .modal {
             display: none; position: fixed; z-index: 2000;
             left: 0; top: 0; width: 100%; height: 100%;
@@ -253,6 +261,8 @@
 
         @media (max-width: 600px) {
             .grid { grid-template-columns: 1fr; }
+            /* Mobilde taşma yapmasın diye yazı boyutunu biraz daha ufalt */
+            .grid-card ul li { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -283,28 +293,34 @@
         <div class="grid-column">
             <section class="card grid-card">
                 <h3><i class="fas fa-star"></i> Uzmanlık Alanları</h3>
-                <p>• 5S, Kaizen & Yalın Araçlar<br>
-                   • Poka-Yoke & Hata Önleme<br>
-                   • Web Teknolojileri & DNS Yönetimi<br>
-                   • Süreç Optimizasyonu</p>
+                <ul>
+                    <li>• 5S, Kaizen & Yalın Araçlar</li>
+                    <li>• Poka-Yoke & Hata Önleme</li>
+                    <li>• Web Teknolojileri & DNS Yönetimi</li>
+                    <li>• Süreç Optimizasyonu</li>
+                </ul>
             </section>
             
             <section class="card grid-card">
                 <h3><i class="fas fa-certificate"></i> Sertifikalar</h3>
-                <p>• BTK Akademi Yapay Zeka Uzmanlığı<br>
-                   • MEB Forklift Operatörlük Belgesi<br>
-                   • Risk Yönetimi ve Analizi<br>
-                   • Analitik Problem Çözme Teknikleri</p>
+                <ul>
+                    <li>• BTK Akademi Yapay Zeka Uzmanlığı</li>
+                    <li>• MEB Forklift Operatörlük Belgesi</li>
+                    <li>• Risk Yönetimi ve Analizi</li>
+                    <li>• Analitik Problem Çözme Teknikleri</li>
+                </ul>
             </section>
         </div>
 
         <div class="grid-column">
             <section class="card grid-card">
                 <h3><i class="fas fa-brain"></i> Yetkinlikler</h3>
-                <p>• Dijital Süreç Analizi & Otomasyon<br>
-                   • Risk ve Gelişim Yönetimi<br>
-                   • İSG & ISO Standartları Uyumu<br>
-                   • Uçtan Uca Operasyon Takibi</p>
+                <ul>
+                    <li>• Dijital Süreç Analizi & Otomasyon</li>
+                    <li>• Risk ve Gelişim Yönetimi</li>
+                    <li>• İSG & ISO Standartları Uyumu</li>
+                    <li>• Uçtan Uca Operasyon Takibi</li>
+                </ul>
             </section>
         </div>
     </div>
@@ -323,8 +339,8 @@
         </div>
         
         <p>&copy; 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
-        <div class="typewriter-container">
-            <span id="tw-text"></span>
+        <div class="typewriter-container active-type">
+            <span>Designed and Developed by Emre Keçici</span>
         </div>
     </footer>
 </div>
@@ -343,27 +359,14 @@
 <script>
     function showPop(type) {
         const d = {
-            kvkk: { t: "KVKK Uyumluluğu", b: "Kişisel verileriniz 6698 sayılı kanun kapsamında en üst düzeyde korunmaktadır." },
-            sec: { t: "Bilgi Güvenliği", b: "Dijital ve fiziksel tüm operasyonlarda ISO 27001 disiplini esastır." },
-            iso: { t: "ISO Standartları", b: "Süreçlerimiz uluslararası kalite yönetim sistemlerine tam uyumlu yürütülür." }
+            kvkk: { t: "KVKK Uyumluluğu", b: "Kişisel verileriniz yasal mevzuat kapsamında en üst düzeyde korunmaktadır." },
+            sec: { t: "Bilgi Güvenliği", b: "Dijital ve fiziksel tüm süreçlerde bilgi güvenliği disiplini esastır." },
+            iso: { t: "ISO Standartları", b: "Operasyonlarımız ISO kalite yönetim sistemlerine tam uyumlu yürütülür." }
         };
         document.getElementById('popT').innerText = d[type].t;
         document.getElementById('popB').innerText = d[type].b;
         document.getElementById('pop').classList.add('show');
     }
-
-    const text = "Designed and Developed by Emre Keçici";
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("tw-text").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-
-    // Scroll izleme yerine direkt yüklenince başlasın ya da istersen scrolla bağla
-    window.onload = typeWriter;
 </script>
 
 </body>
