@@ -6,152 +6,130 @@
     <title>emrekecici.com.tr</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #00d2ff;
-            --bg-dark: #0a192f;
-            --card-bg: #112240;
-            --text-light: #ccd6f6;
-            --text-white: #ffffff;
-        }
-
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
+            background-color: #0a192f;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
             padding: 20px;
         }
-
         .container {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
-
-        /* PROFESYONEL KART */
         .card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
+            background-color: #172a45;
+            border-radius: 25px;
             padding: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
         }
-
         h2 {
             font-size: 20px;
-            border-left: 4px solid var(--primary-color);
+            color: #ffffff;
+            border-left: 4px solid #00d2ff;
             padding-left: 15px;
             margin-bottom: 20px;
-            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
         .item {
             display: flex;
+            align-items: flex-start;
             gap: 15px;
             margin-bottom: 20px;
         }
-
         .item i {
-            color: var(--primary-color);
+            color: #00d2ff;
             font-size: 20px;
             margin-top: 3px;
         }
-
         .item p {
             margin: 0;
             font-size: 14px;
-            line-height: 1.6;
-            color: var(--text-light);
+            line-height: 1.5;
+            color: #ccd6f6;
         }
-
-        /* YETKİNLİKLER VE SERTİFİKALAR BÖLÜMÜ */
-        .grid-section {
+        /* SERTİFİKA & YETKİNLİK KUTULARI */
+        .grid-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
         }
-
-        .mini-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 12px;
+        .sub-card {
+            background-color: #112240;
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
-
-        .mini-card i {
-            font-size: 24px;
-            color: var(--primary-color);
+        .sub-card i {
+            color: #00d2ff;
+            font-size: 30px;
             margin-bottom: 10px;
+            display: block;
         }
-
+        .sub-card span {
+            font-size: 16px;
+            font-weight: 500;
+        }
         /* BUTONLAR */
-        .btn-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             padding: 14px;
-            border: 1px solid var(--primary-color);
+            border: 2px solid #00d2ff;
             border-radius: 12px;
-            color: var(--primary-color);
+            color: #00d2ff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             transition: 0.3s;
         }
-
         .btn:hover {
             background: rgba(0, 210, 255, 0.1);
         }
-
-        /* KVK VE ALT METİN */
-        .kvk-box {
+        /* KVKK KUTUSU */
+        .kvkk-container {
+            border: 1px dashed rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 15px;
             font-size: 11px;
             color: #8892b0;
             text-align: center;
-            padding: 10px;
-            border: 1px dashed rgba(255,255,255,0.1);
-            border-radius: 10px;
+            line-height: 1.4;
         }
-
-        /* WHATSAPP VE E-POSTA */
-        .floating-actions {
+        /* FLOATING BUTONLAR */
+        .action-buttons {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            z-index: 999;
         }
-
-        .float-btn {
-            width: 55px;
-            height: 55px;
+        .f-btn {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
             color: white;
-            font-size: 25px;
+            font-size: 28px;
+            text-decoration: none;
         }
-
-        .whatsapp { background-color: #25d366; }
-        .email { background-color: #ea4335; }
-
+        .email-btn { background-color: #ff4b2b; }
+        .wp-btn { background-color: #25d366; }
     </style>
 </head>
 <body>
@@ -173,37 +151,35 @@
         </div>
     </div>
 
-    <div class="grid-section">
-        <div class="mini-card">
+    <div class="grid-box">
+        <div class="sub-card">
             <i class="fas fa-award"></i>
-            <div>Sertifikalar</div>
+            <span>Sertifikalar</span>
         </div>
-        <div class="mini-card">
+        <div class="sub-card">
             <i class="fas fa-tools"></i>
-            <div>Yetkinlikler</div>
+            <span>Yetkinlikler</span>
         </div>
     </div>
 
-    <div class="btn-list">
-        <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">
-            <i class="fas fa-file-pdf"></i> Özgeçmişi Görüntüle
-        </a>
-        <a href="https://linkedin.com/in/emrekecici" class="btn">
-            <i class="fab fa-linkedin"></i> LinkedIn Profili
-        </a>
-    </div>
+    <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">
+        <i class="fas fa-file-pdf"></i> Özgeçmişi Görüntüle
+    </a>
+    <a href="https://linkedin.com/in/emrekecici" class="btn">
+        <i class="fab fa-linkedin"></i> LinkedIn Profili
+    </a>
 
-    <div class="kvk-box">
-        Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır. <br>
+    <div class="kvkk-container">
+        Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır.<br>
         © 2026 Emre Keçici
     </div>
 </div>
 
-<div class="floating-actions">
-    <a href="mailto:emre@emrekecici.com.tr" class="float-btn email">
+<div class="action-buttons">
+    <a href="mailto:emre@emrekecici.com.tr" class="f-btn email-btn">
         <i class="fas fa-envelope"></i>
     </a>
-    <a href="https://wa.me/905321234567" class="float-btn whatsapp">
+    <a href="https://wa.me/905321234567" class="f-btn wp-btn">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
