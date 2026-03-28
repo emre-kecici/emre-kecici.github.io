@@ -18,79 +18,75 @@
             padding: 20px;
         }
         .container {
-            max-width: 450px;
             width: 100%;
-            text-align: center;
+            max-width: 400px;
         }
         .card {
-            background: rgba(255, 255, 255, 0.03);
+            background-color: #112240;
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
         }
         h2 {
             font-size: 22px;
-            text-align: left;
+            color: #ffffff;
             border-left: 4px solid #00d2ff;
             padding-left: 15px;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
-        .ozet-item {
+        .item {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 15px;
             margin-bottom: 25px;
-            text-align: left;
         }
-        .ozet-item i {
-            font-size: 24px;
+        .item i {
             color: #00d2ff;
-            min-width: 30px;
+            font-size: 22px;
+            margin-top: 3px;
         }
-        .ozet-item p {
+        .item p {
             margin: 0;
             font-size: 15px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #ccd6f6;
         }
-        .btn-group {
+        .btn-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 30px;
         }
         .btn {
+            display: block;
             padding: 15px;
+            border: 2px solid #00d2ff;
             border-radius: 12px;
-            border: 1px solid #00d2ff;
             color: #00d2ff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
+            text-align: center;
             transition: 0.3s;
-            background: transparent;
         }
         .btn:hover {
             background: rgba(0, 210, 255, 0.1);
-            transform: translateY(-2px);
         }
-        .whatsapp-btn {
+        .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #25d366;
-            width: 60px;
-            height: 60px;
+            background-color: #25d366;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
-        .whatsapp-btn i {
+        .whatsapp-float i {
             color: white;
             font-size: 35px;
         }
@@ -102,34 +98,34 @@
     <div class="card">
         <h2>PROFESYONEL ÖZET</h2>
         
-        <div class="ozet-item">
+        <div class="item">
             <i class="fas fa-rocket"></i>
             <p>Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</p>
         </div>
         
-        <div class="ozet-item">
+        <div class="item">
             <i class="fas fa-microchip"></i>
             <p>Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</p>
         </div>
         
-        <div class="ozet-item">
+        <div class="item">
             <i class="fas fa-industry"></i>
             <p>Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</p>
         </div>
         
-        <div class="ozet-item">
-            <i class="fas fa-check-double"></i>
+        <div class="item">
+            <i class="fas fa-check-circle"></i>
             <p>Analitik problem çözme metodolojileriyle kalıcı çözümler üretiyorum.</p>
         </div>
 
-        <div class="btn-group">
+        <div class="btn-container">
             <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">Özgeçmişimi Görüntüle</a>
             <a href="https://linkedin.com/in/emrekecici" class="btn">LinkedIn Profili</a>
         </div>
     </div>
 </div>
 
-<a href="https://wa.me/905321234567" class="whatsapp-btn">
+<a href="https://wa.me/905321234567" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
 </a>
 
