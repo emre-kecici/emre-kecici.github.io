@@ -10,7 +10,7 @@
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
-            --primary-color: #22d3ee; /* Turkuaz / Neon Mavi */
+            --primary-color: #22d3ee; 
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
         }
@@ -30,7 +30,6 @@
             padding: 40px 20px;
         }
 
-        /* Hero Section */
         header {
             text-align: center;
             margin-bottom: 60px;
@@ -60,7 +59,6 @@
             margin-bottom: 25px;
         }
 
-        /* Sosyal Medya */
         .social-links {
             display: flex;
             justify-content: center;
@@ -79,7 +77,6 @@
             transform: translateY(-3px);
         }
 
-        /* Bölüm Başlıkları */
         .section-title {
             border-left: 4px solid var(--primary-color);
             padding-left: 15px;
@@ -98,7 +95,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Grid Yapısı */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -115,11 +111,10 @@
             margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
-            color: var(--text-main);
         }
 
         .skill-item li::before {
-            content: "\f054"; /* FontAwesome ok işareti */
+            content: "\f054";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
@@ -128,16 +123,13 @@
             font-size: 0.8rem;
         }
 
-        /* Sertifika Listesi */
         .cert-list p {
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .cert-list p:last-child {
-            border-bottom: none;
-        }
+        .cert-list p:last-child { border-bottom: none; }
 
         .cert-list strong {
             color: var(--primary-color);
@@ -145,7 +137,6 @@
             margin-bottom: 4px;
         }
 
-        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             width: 65px;
@@ -168,7 +159,6 @@
 
         .whatsapp-float:hover {
             transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
 
         footer {
@@ -180,12 +170,9 @@
             margin-top: 80px;
         }
 
-        /* Mobil Optimizasyon */
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .subtitle { font-size: 1.1rem; }
-            .whatsapp-float { bottom: 25px; right: 25px; width: 55px; height: 55px; font-size: 28px; }
-            .container { padding: 30px 15px; }
         }
     </style>
 </head>
@@ -197,13 +184,13 @@
         <h1>Emre Keçici</h1>
         <div class="subtitle">Operasyonel Mükemmellik & Dijital Süreç Danışmanı</div>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.x.com/_emrekecici" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:emrekecici1985@outlook.com" title="E-posta"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.x.com/_emrekecici" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:emrekecici1985@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
     </header>
 
-    <section id="ozet">
+    <section>
         <h2 class="section-title">Profesyonel Özet</h2>
         <div class="card">
             <p>Operasyonel mükemmelliği hedefleyen, süreçlerin dijital dönüşümü ve sürekli gelişim disiplini üzerine odaklanan bir profesyonelim. Teorik planları saha gerçekleriyle buluşturma vizyonuyla, operasyonel süreçlerdeki darboğazları ve israfları (MUDA) minimize eden çözümler geliştiriyorum.</p>
@@ -212,7 +199,7 @@
     </section>
 
     <div class="grid">
-        <section id="uzmanlik">
+        <section>
             <h2 class="section-title">Uzmanlık Alanları</h2>
             <div class="card">
                 <ul class="skill-item">
@@ -226,24 +213,24 @@
             </div>
         </section>
 
-        <section id="sertifikalar">
+        <section>
             <h2 class="section-title">Eğitim & Sertifikalar</h2>
             <div class="card cert-list">
                 <p><strong>BTK Akademi</strong> Yapay Zeka Uygulamaları ve Gelecek Vizyonu</p>
                 <p><strong>BTK Akademi</strong> Modern İş Dünyasında Risk Yönetimi</p>
                 <p><strong>BTK Akademi</strong> Değişim ve Gelişim Yönetimi</p>
-                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri (Analitik Yaklaşımlar)</p>
-                <p><strong>T.C. Emniyet Genel Müdürlüğü</strong> Forklift Operatörlüğü Belgesi</p>
+                <p><strong>BTK Akademi</strong> Problem Çözme Teknikleri</p>
+                <p><strong>Milli Eğitim Bakanlığı (MEB)</strong> İş Makinesi Operatörlük Belgesi (Forklift)</p>
             </div>
         </section>
     </div>
 
-    <section id="basarilar">
+    <section>
         <h2 class="section-title">Projeler ve Başarılar</h2>
         <div class="card">
-            <p><strong>Hata Önleme (Poka-Yoke):</strong> Operasyonel hataların kaynağını fiziksel engellerle kapatarak fire oranlarında ölçülebilir düşüşler sağladım.</p>
-            <p><strong>Saha İSG & 5S Entegrasyonu:</strong> "Sıfır iş kazası" vizyonuyla, 5S disiplinini İSG standartlarıyla birleştirerek daha güvenli ve verimli çalışma alanları oluşturdum.</p>
-            <p><strong>Üretim Hattı Optimizasyonu:</strong> Teknik aksaklıkları 5 Neden Analizi yaklaşımıyla inceleyerek üretim hattı duruş sürelerinde %10 oranında iyileştirme gerçekleştirdim.</p>
+            <p><strong>Hata Önleme (Poka-Yoke):</strong> Operasyonel hataların kaynağını fiziksel engellerle kapatarak fire oranlarında belirgin düşüşler sağladım.</p>
+            <p><strong>Saha İSG & 5S Entegrasyonu:</strong> "Sıfır iş kazası" vizyonuyla, 5S disiplinini İSG standartlarıyla birleştirerek güvenli çalışma alanları oluşturdum.</p>
+            <p><strong>Üretim Hattı Optimizasyonu:</strong> Teknik aksaklıkları 5 Neden Analizi yaklaşımıyla inceleyerek duruş sürelerinde %10 iyileştirme gerçekleştirdim.</p>
         </div>
     </section>
 
