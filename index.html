@@ -25,19 +25,19 @@
             gap: 15px;
         }
         .card {
-            background-color: #172a45;
+            background-color: #112240;
             border-radius: 25px;
             padding: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         h2 {
             font-size: 20px;
             color: #ffffff;
             border-left: 4px solid #00d2ff;
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         .item {
             display: flex;
@@ -53,33 +53,37 @@
         .item p {
             margin: 0;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #ccd6f6;
         }
-        /* SERTİFİKA & YETKİNLİK KUTULARI */
         .grid-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            margin-bottom: 10px;
         }
         .sub-card {
-            background-color: #112240;
+            background-color: #172a45;
             border-radius: 15px;
             padding: 20px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .sub-card i {
             color: #00d2ff;
-            font-size: 30px;
+            font-size: 28px;
             margin-bottom: 10px;
             display: block;
         }
         .sub-card span {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
         }
-        /* BUTONLAR */
+        .btn-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
         .btn {
             display: flex;
             align-items: center;
@@ -96,25 +100,22 @@
         .btn:hover {
             background: rgba(0, 210, 255, 0.1);
         }
-        /* KVKK KUTUSU */
-        .kvkk-container {
-            border: 1px dashed rgba(255,255,255,0.15);
-            border-radius: 15px;
-            padding: 15px;
+        .kvkk-box {
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
             font-size: 11px;
             color: #8892b0;
             text-align: center;
-            line-height: 1.4;
+            margin-top: 10px;
         }
-        /* FLOATING BUTONLAR */
-        .action-buttons {
+        .floating-actions {
             position: fixed;
             bottom: 25px;
             right: 25px;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            z-index: 999;
         }
         .f-btn {
             width: 60px;
@@ -123,13 +124,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             color: white;
             font-size: 28px;
             text-decoration: none;
         }
-        .email-btn { background-color: #ff4b2b; }
-        .wp-btn { background-color: #25d366; }
+        .mail-color { background-color: #ea4335; }
+        .wp-color { background-color: #25d366; }
     </style>
 </head>
 <body>
@@ -162,24 +163,26 @@
         </div>
     </div>
 
-    <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">
-        <i class="fas fa-file-pdf"></i> Özgeçmişi Görüntüle
-    </a>
-    <a href="https://linkedin.com/in/emrekecici" class="btn">
-        <i class="fab fa-linkedin"></i> LinkedIn Profili
-    </a>
+    <div class="btn-list">
+        <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">
+            <i class="fas fa-file-pdf"></i> Özgeçmişimi Görüntüle
+        </a>
+        <a href="https://linkedin.com/in/emrekecici" class="btn">
+            <i class="fab fa-linkedin"></i> LinkedIn Profili
+        </a>
+    </div>
 
-    <div class="kvkk-container">
+    <div class="kvk-box">
         Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır.<br>
         © 2026 Emre Keçici
     </div>
 </div>
 
-<div class="action-buttons">
-    <a href="mailto:emre@emrekecici.com.tr" class="f-btn email-btn">
+<div class="floating-actions">
+    <a href="mailto:emre@emrekecici.com.tr" class="f-btn mail-color">
         <i class="fas fa-envelope"></i>
     </a>
-    <a href="https://wa.me/905321234567" class="f-btn wp-btn">
+    <a href="https://wa.me/905321234567" class="f-btn wp-color">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
