@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background-color: #0a192f;
+            background-color: #0d1b2a;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -15,122 +15,105 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
         .container {
             width: 100%;
-            max-width: 450px;
+            max-width: 420px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
         .card {
-            background-color: #112240;
-            border-radius: 25px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #1b263b;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
         h2 {
-            font-size: 20px;
-            color: #ffffff;
-            border-left: 4px solid #00d2ff;
-            padding-left: 15px;
-            margin-bottom: 25px;
+            font-size: 19px;
+            border-left: 4px solid #00b4d8;
+            padding-left: 12px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
         .item {
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
         .item i {
-            color: #00d2ff;
-            font-size: 20px;
+            color: #00b4d8;
+            font-size: 18px;
             margin-top: 3px;
         }
         .item p {
             margin: 0;
             font-size: 14px;
-            line-height: 1.6;
-            color: #ccd6f6;
+            line-height: 1.5;
+            color: #e0e1dd;
         }
         .grid-box {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 10px;
+            gap: 12px;
         }
         .sub-card {
-            background-color: #172a45;
+            background-color: #1b263b;
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .sub-card i {
-            color: #00d2ff;
-            font-size: 28px;
-            margin-bottom: 10px;
+            color: #00b4d8;
+            font-size: 26px;
+            margin-bottom: 8px;
             display: block;
-        }
-        .sub-card span {
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .btn-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
         }
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 14px;
-            border: 2px solid #00d2ff;
-            border-radius: 12px;
-            color: #00d2ff;
+            padding: 12px;
+            border: 2px solid #00b4d8;
+            border-radius: 10px;
+            color: #00b4d8;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 15px;
         }
-        .btn:hover {
-            background: rgba(0, 210, 255, 0.1);
-        }
-        .kvkk-box {
-            border: 1px dashed rgba(255,255,255,0.1);
+        .kvkk-text {
+            border: 1px dashed rgba(255,255,255,0.2);
             border-radius: 12px;
             padding: 12px;
             font-size: 11px;
-            color: #8892b0;
+            color: #a0a0a0;
             text-align: center;
-            margin-top: 10px;
         }
-        .floating-actions {
+        .floating-buttons {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
         .f-btn {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             text-decoration: none;
         }
-        .mail-color { background-color: #ea4335; }
-        .wp-color { background-color: #25d366; }
+        .mail-bg { background-color: #e63946; }
+        .wp-bg { background-color: #25d366; }
     </style>
 </head>
 <body>
@@ -138,53 +121,27 @@
 <div class="container">
     <div class="card">
         <h2>PROFESYONEL ÖZET</h2>
-        <div class="item">
-            <i class="fas fa-rocket"></i>
-            <p>Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</p>
-        </div>
-        <div class="item">
-            <i class="fas fa-microchip"></i>
-            <p>Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</p>
-        </div>
-        <div class="item">
-            <i class="fas fa-industry"></i>
-            <p>Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</p>
-        </div>
+        <div class="item"><i class="fas fa-rocket"></i><p>Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</p></div>
+        <div class="item"><i class="fas fa-microchip"></i><p>Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</p></div>
+        <div class="item"><i class="fas fa-industry"></i><p>Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</p></div>
     </div>
 
     <div class="grid-box">
-        <div class="sub-card">
-            <i class="fas fa-award"></i>
-            <span>Sertifikalar</span>
-        </div>
-        <div class="sub-card">
-            <i class="fas fa-tools"></i>
-            <span>Yetkinlikler</span>
-        </div>
+        <div class="sub-card"><i class="fas fa-award"></i><span>Sertifikalar</span></div>
+        <div class="sub-card"><i class="fas fa-tools"></i><span>Yetkinlikler</span></div>
     </div>
 
-    <div class="btn-list">
-        <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">
-            <i class="fas fa-file-pdf"></i> Özgeçmişimi Görüntüle
-        </a>
-        <a href="https://linkedin.com/in/emrekecici" class="btn">
-            <i class="fab fa-linkedin"></i> LinkedIn Profili
-        </a>
-    </div>
+    <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn"><i class="fas fa-file-pdf"></i> Özgeçmişimi Görüntüle</a>
+    <a href="https://linkedin.com/in/emrekecici" class="btn"><i class="fab fa-linkedin"></i> LinkedIn Profili</a>
 
-    <div class="kvk-box">
-        Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır.<br>
-        © 2026 Emre Keçici
+    <div class="kvkk-text">
+        Bu sayfa KVKK metinlerine uygun olarak tasarlanmıştır.<br>© 2026 Emre Keçici
     </div>
 </div>
 
-<div class="floating-actions">
-    <a href="mailto:emre@emrekecici.com.tr" class="f-btn mail-color">
-        <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/905321234567" class="f-btn wp-color">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<div class="floating-buttons">
+    <a href="mailto:emre@emrekecici.com.tr" class="f-btn mail-bg"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/905321234567" class="f-btn wp-bg"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 </body>
