@@ -200,23 +200,18 @@
             color: var(--primary-color);
         }
 
-        /* YENİ DAKTİLO EFEYİ VE YAZI AYARLARI */
+        /* DAKTİLO EFEYİ - SABAHKİ GİBİ TANE TANE */
         .typewriter-container {
             font-family: 'Playfair Display', serif;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--primary-color);
             font-style: italic;
             margin-top: 25px;
             min-height: 20px;
-            display: flex;
-            justify-content: center;
         }
         
         #tw-text {
-            overflow: hidden;
-            white-space: nowrap;
             display: inline-block;
-            width: 0; /* JS ile artırılacak */
         }
 
         .whatsapp-float {
@@ -329,7 +324,7 @@
         
         <p>&copy; 2026 Emre Keçici. Tüm Hakları Saklıdır.</p>
         <div class="typewriter-container">
-            <span id="tw-text">Designed and Developed by Emre Keçici</span>
+            <span id="tw-text"></span>
         </div>
     </footer>
 </div>
@@ -357,23 +352,21 @@
         document.getElementById('pop').classList.add('show');
     }
 
-    // Harf harf gelme efekti
+    // TANE TANE YAZMA FONKSİYONU
+    const text = "Designed and Developed by Emre Keçici";
+    let i = 0;
     const target = document.getElementById("tw-text");
-    const fullText = target.innerText;
-    target.innerText = "";
-    target.style.width = "auto";
-    let index = 0;
 
-    function startTyping() {
-        if (index < fullText.length) {
-            target.innerText += fullText.charAt(index);
-            index++;
-            setTimeout(startTyping, 100); // Hız ayarı
+    function typeWriter() {
+        if (i < text.length) {
+            target.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100); // 100ms hız (ideal hızdır)
         }
     }
 
-    // Sayfa yüklendiğinde başlasın
-    window.onload = startTyping;
+    // Sayfa yüklendiğinde efekt başlasın
+    window.onload = typeWriter;
 </script>
 
 </body>
