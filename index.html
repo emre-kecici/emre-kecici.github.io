@@ -5,115 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>emrekecici.com.tr</title>
     <style>
-        /* Tüm sitenin ana görsel yapısı */
+        /* Orijinal Tasarımın: Koyu Lacivert ve Şık Butonlar */
         body {
-            background-color: #0d0d0d;
-            color: #00ff00; /* Matrix yeşili dokunuşu */
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #0a192f;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            flex-direction: column;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            width: 90%;
             padding: 20px;
         }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            border: 1px solid #333;
-            padding: 40px;
-            background: #1a1a1a;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        #typewriter {
-            font-size: 22px;
+        h1 {
+            font-size: 24px;
             margin-bottom: 30px;
-            min-height: 1.2em;
-            border-right: 2px solid #00ff00;
-            display: inline-block;
-            white-space: pre-wrap;
         }
-
-        .links-section {
+        .profesyonel-ozet {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .ozet-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .icon {
+            color: #00d2ff;
+            font-size: 20px;
+        }
+        .btn-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 30px;
         }
-
         .btn {
-            display: block;
-            padding: 15px;
-            color: #00ff00;
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
-            border: 1px solid #00ff00;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
+            transition: 0.3s;
         }
-
         .btn:hover {
-            background-color: #00ff00;
-            color: #000;
-            box-shadow: 0 0 15px #00ff00;
+            background: rgba(255, 255, 255, 0.1);
         }
-
-        .footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        /* Animasyonlar ve Diğer 300+ Satırlık Detayların Mantığı Burada Devam Ediyor */
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-        
-        /* Mobil Uyumluluk Ayarları */
-        @media (max-width: 600px) {
-            #typewriter { font-size: 18px; }
-            .container { padding: 20px; }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div id="typewriter"></div>
-
-        <div class="links-section">
-            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">Özgeçmiş (CV) İndir</a>
-            <a href="https://wa.me/905321234567" class="btn">WhatsApp İletişim</a>
-            <a href="https://linkedin.com/in/emrekecici" class="btn">LinkedIn Profili</a>
+<div class="container">
+    <div class="profesyonel-ozet">
+        <h2 style="font-size: 18px; border-left: 4px solid #00d2ff; padding-left: 10px;">PROFESYONEL ÖZET</h2>
+        
+        <div class="ozet-item">
+            <span class="icon">🚀</span>
+            <p>Operasyonel mükemmellik ve süreç dijitalleşmesi üzerine odaklıyım.</p>
         </div>
-
-        <div class="footer">
-            © 2026 emrekecici.com.tr | Dijital Dönüşüm Uzmanı
+        <div class="ozet-item">
+            <span class="icon">⚙️</span>
+            <p>Yapay zeka araçlarını iş akışlarına entegre ederek verimlilik sağlıyorum.</p>
+        </div>
+        <div class="ozet-item">
+            <span class="icon">🏭</span>
+            <p>Yalın Üretim teknikleriyle israfları (MUDA) minimize ediyorum.</p>
+        </div>
+        <div class="ozet-item">
+            <span class="icon">✔️</span>
+            <p>Analitik problem çözme metodolojileriyle kalıcı çözümler üretiyorum.</p>
         </div>
     </div>
 
-    <script>
-        const text = "Dijital Dönüşüm Yolculuğu Başlıyor...\nSistemler optimize ediliyor...\nVeri yapıları kontrol ediliyor...\nBağlantı başarılı: emre-kecici.github.io";
-        let i = 0;
-        const speed = 50;
+    <div class="btn-container">
+        <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">Özgeçmişimi Görüntüle</a>
+        <a href="https://linkedin.com/in/emrekecici" class="btn">LinkedIn Profili</a>
+    </div>
+</div>
 
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-
-        // Sayfa açıldığında daktiloyu başlat
-        window.onload = typeWriter;
-    </script>
+<a href="https://wa.me/905321234567" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+</a>
 
 </body>
 </html>
