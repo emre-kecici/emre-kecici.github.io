@@ -11,11 +11,11 @@
     <style>
         :root {
             --bg-color: #ffffff;        
-            --card-bg: #261f1a;         
+            --card-bg: #d4a373;         /* Kutular artık başlık renginde */
             --primary-color: #d4a373;   
-            --text-main: #f4f1de;       
-            --text-dim: #a8a39d;        
-            --border-color: rgba(212, 163, 115, 0.2); 
+            --text-dark: #1a1512;       /* Kutuların içindeki koyu metin rengi */
+            --text-dim: #4b5563;        
+            --border-color: rgba(26, 21, 18, 0.1); 
             --status-green: #a7c957;    
         }
 
@@ -23,7 +23,7 @@
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg-color); 
-            color: var(--text-main); 
+            color: var(--text-dark); 
             overflow-x: hidden; 
             min-height: 100vh; 
             display: flex; 
@@ -42,9 +42,8 @@
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
-        .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
-        .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
+        .icon-btn { width: 45px; height: 45px; background: #261f1a; border: 1px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
+        .icon-btn:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
 
         .bottom-nav {
             position: fixed;
@@ -54,91 +53,72 @@
             height: 65px;
             background: rgba(38, 31, 26, 0.95);
             backdrop-filter: blur(12px);
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--primary-color);
             display: flex;
             justify-content: space-around;
             align-items: center;
             z-index: 1500;
-            box-shadow: 0 -5px 25px rgba(0,0,0,0.5);
         }
-        .nav-item {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            text-decoration: none;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 25%;
-            height: 100%;
-        }
-        .nav-item:active { transform: scale(0.9); opacity: 0.7; }
-        .nav-item svg { fill: currentColor; width: 22px; height: 22px; }
+        .nav-item { color: var(--primary-color); font-size: 1.4rem; text-decoration: none; width: 25%; height: 100%; display: flex; align-items: center; justify-content: center; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--border-color); }
-        .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
-        .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
-        .card p { color: var(--text-main); font-size: 0.95rem; line-height: 1.7; }
-        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.8; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
+        .card h3 { color: var(--text-dark); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800; }
+        .card h3::before { content: "●"; font-size: 0.7rem; color: var(--text-dark); }
+        .card p { color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; font-weight: 500; }
+        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--text-dark); opacity: 0.7; font-style: italic; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 10px; }
 
-        .assessment-section { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .analysis-box { background: var(--card-bg); padding: 35px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .analysis-box h2 { font-size: 1rem; color: var(--primary-color); margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; }
-        .q-item p { font-size: 1.1rem; color: var(--text-main); font-weight: 600; margin-bottom: 25px; }
+        .assessment-section { margin-top: 60px; }
+        .analysis-box { background: var(--card-bg); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
+        .analysis-box h2 { font-size: 1rem; color: var(--text-dark); margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
+        .q-item p { font-size: 1.1rem; color: var(--text-dark); font-weight: 700; margin-bottom: 25px; }
         .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        .opt { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-dim); padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
-        .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--bg-color); background: var(--primary-color); }
-        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(0, 0, 0, 0.3); border-left: 4px solid var(--primary-color); display: none; text-align: left; animation: fadeIn 0.4s ease; }
+        .opt { background: rgba(26, 21, 18, 0.1); border: 1px solid rgba(0,0,0,0.1); color: var(--text-dark); padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; font-weight: 600; }
+        .opt:hover, .opt.active { background: var(--text-dark); color: var(--primary-color); }
+        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(255, 255, 255, 0.9); border-left: 4px solid var(--text-dark); display: none; text-align: left; }
 
         .faq-section { margin-top: 60px; }
         .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .faq-item { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid rgba(212, 163, 115, 0.1); }
-        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
-        .faq-item p { font-size: 0.85rem; color: var(--text-main); line-height: 1.6; opacity: 0.9; }
+        .faq-item { background: var(--card-bg); padding: 20px; border-radius: 12px; }
+        .faq-item h5 { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; font-weight: 800; }
+        .faq-item p { font-size: 0.85rem; color: var(--text-dark); line-height: 1.6; font-weight: 500; }
 
-        .cta-section { margin-top: 80px; background: var(--card-bg); padding: 50px; border-radius: 20px; border: 1px solid var(--primary-color); text-align: center; }
-        .cta-section h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: 1px; color: var(--primary-color); }
-        .cta-section p { color: var(--text-dim); font-size: 0.9rem; margin-top: 10px; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(212, 163, 115, 0.4); }
+        .cta-section { margin-top: 80px; background: var(--card-bg); padding: 50px; border-radius: 20px; text-align: center; }
+        .cta-section h2 { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); }
+        .cta-section p { color: var(--text-dark); font-size: 0.95rem; margin-top: 10px; font-weight: 500; }
+        .cta-btn { display: inline-block; background: var(--text-dark); color: var(--primary-color); padding: 14px 35px; border-radius: 8px; font-weight: 800; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
+        .cta-btn:hover { transform: scale(1.05); }
 
-        footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
-        .legal-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 25px; }
-        .legal-row { display: flex; justify-content: center; gap: 10px; }
-        .legal-btn { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--primary-color); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; transition: 0.3s; }
-        .legal-btn:hover { background: var(--primary-color); color: var(--bg-color); }
+        footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--primary-color); }
+        .legal-btn { background: var(--card-bg); border: 1px solid rgba(0,0,0,0.1); color: var(--text-dark); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; font-weight: 700; transition: 0.3s; }
+        .legal-btn:hover { background: var(--text-dark); color: var(--primary-color); }
 
-        .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; min-height: 30px; }
-        #typewriter { font-family: 'Fira Code', monospace; color: var(--card-bg); font-size: 0.8rem; font-weight: 600; opacity: 0.8; }
+        .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; }
+        #typewriter { font-family: 'Fira Code', monospace; color: var(--primary-color); font-size: 0.8rem; font-weight: 800; }
 
         .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 1px solid var(--primary-color); position: relative; }
-        .close-btn { position: absolute; top: 20px; right: 20px; color: var(--primary-color); cursor: pointer; font-size: 1.8rem; }
-
-        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 2px solid var(--text-dark); position: relative; }
+        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } .container { padding: 30px 15px; } }
+        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
             <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.x.com/_emrekecici" class="icon-btn" title="X">
-                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.x.com/_emrekecici" class="icon-btn">
+                    <svg viewBox="0 0 24 24" style="fill:currentColor; width:18px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                 </a>
-                <a href="mailto:emrekecici1985@outlook.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="tel:05375807666" class="icon-btn" title="Telefon"><i class="fas fa-phone"></i></a>
-                <a href="tel:05375807666" class="icon-btn" title="Rehbere Ekle"><i class="fas fa-user-plus"></i></a>
+                <a href="mailto:emrekecici1985@outlook.com" class="icon-btn"><i class="fas fa-envelope"></i></a>
+                <a href="tel:05375807666" class="icon-btn"><i class="fas fa-phone"></i></a>
             </div>
         </header>
 
@@ -176,14 +156,12 @@
         </section>
 
         <section class="faq-section">
-            <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase; color:#1a1512;">Sıkça Sorulan Sorular</h2>
+            <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase; color:var(--primary-color);">Sıkça Sorulan Sorular</h2>
             <div class="faq-grid">
                 <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasomasyonları ile mevcut sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
                 <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz sadece sizin kontrolünüzdedir.</p></div>
-                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Karmaşıklığa bağlı olarak analiz ve uygulama genellikle 2 ile 6 hafta arasındadır.</p></div>
-                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. "Süreci olan" her işletmede verimlilik artışı sağlıyoruz.</p></div>
-                <div class="faq-item"><h5>AI yatırımı ne kadar sürede geri döner?</h5><p>Zaman kazancı ve hata maliyetlerinin azalmasıyla, yatırımlar genellikle 3-6 ay içinde kendisini amorti eder.</p></div>
-                <div class="faq-item"><h5>Kurulum sonrası destek veriyor musunuz?</h5><p>Kesinlikle. Devreye alınan sistemler izlenir ve verimlilik için sürekli optimize edilir.</p></div>
+                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Analiz ve uygulama genellikle 2 ile 6 hafta arasındadır.</p></div>
+                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreci olan her işletmede verimlilik artışı sağlıyoruz.</p></div>
             </div>
         </section>
 
@@ -194,8 +172,8 @@
         </section>
 
         <footer>
-            <div class="legal-btns">
-                <div class="legal-row">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:25px;">
+                <div style="display:flex; gap:10px;">
                     <button class="legal-btn" onclick="openPop('kvkk')">KVKK UYUMU</button>
                     <button class="legal-btn" onclick="openPop('sec')">BİLGİ GÜVENLİĞİ</button>
                 </div>
@@ -206,17 +184,17 @@
     </div>
 
     <nav class="bottom-nav">
-        <a href="https://www.linkedin.com/in/emrekeçici" class="nav-item" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.x.com/_emrekecici" class="nav-item" title="X">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        <a href="https://www.linkedin.com/in/emrekeçici" class="nav-item"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.x.com/_emrekecici" class="nav-item">
+            <svg viewBox="0 0 24 24" style="fill:currentColor; width:22px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
         </a>
-        <a href="mailto:emrekecici1985@outlook.com" class="nav-item" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:05375807666" class="nav-item" title="Telefon"><i class="fas fa-phone"></i></a>
+        <a href="mailto:emrekecici1985@outlook.com" class="nav-item"><i class="fas fa-envelope"></i></a>
+        <a href="tel:05375807666" class="nav-item"><i class="fas fa-phone"></i></a>
     </nav>
 
     <div class="signature-container"><div id="typewriter"></div></div>
 
-    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePop()">&times;</span><h2 id="mTitle" style="color:var(--primary-color); margin-bottom:20px; font-size:1.1rem;"></h2><p id="mBody" style="color:var(--text-main); line-height:1.7; font-size:0.9rem;"></p></div></div>
+    <div id="infoModal" class="modal"><div class="modal-content"><h2 id="mTitle" style="color:var(--text-dark); margin-bottom:20px;"></h2><p id="mBody" style="color:var(--text-dark); font-weight:500;"></p><button onclick="closePop()" style="margin-top:20px; background:var(--text-dark); color:var(--primary-color); border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">KAPAT</button></div></div>
 
     <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
@@ -244,12 +222,12 @@
             document.getElementById('infoModal').style.display = "flex";
         }
         function closePop() { document.getElementById('infoModal').style.display = "none"; }
-        window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closePop(); }
-
+        
         const sign = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
         let idx = 0; let started = false;
         function type() { if(idx < sign.length) { document.getElementById("typewriter").innerHTML += sign.charAt(idx); idx++; setTimeout(type, 80); } }
         window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { started = true; type(); } };
     </script>
 </body>
-</html>
+    </html>
+    
