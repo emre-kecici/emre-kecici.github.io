@@ -51,7 +51,7 @@
         .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 10px 20px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; font-weight: 600; }
         .legal-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
-        /* Yeni Harf Dökülme Alanı */
+        /* İmza Alanı - Gri Renk Ayarı */
         .signature-container {
             width: 100%;
             text-align: center;
@@ -62,10 +62,11 @@
 
         #typewriter {
             font-family: 'Fira Code', monospace;
-            color: var(--primary-color);
-            font-size: 0.85rem;
+            color: var(--text-dim); /* İSTEDİĞİN GRİ RENK BURASI */
+            font-size: 0.8rem;
             letter-spacing: 1px;
             display: inline-block;
+            opacity: 0.7;
         }
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
@@ -137,7 +138,6 @@
         function closePop() { document.getElementById('infoModal').style.display = "none"; }
         window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closePop(); }
 
-        // Harf Harf Dökülme Yazma Fonksiyonu
         const text = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
         let index = 0;
         let hasStarted = false;
@@ -146,12 +146,11 @@
             if (index < text.length) {
                 document.getElementById("typewriter").innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeEffect, 80); // Harf hızı
+                setTimeout(typeEffect, 80);
             }
         }
 
         window.addEventListener('scroll', () => {
-            // Sayfa altına geldiğinde tetikle
             if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) {
                 hasStarted = true;
                 typeEffect();
