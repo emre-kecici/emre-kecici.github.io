@@ -32,13 +32,10 @@
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-        .stack-label { font-size: 0.65rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-top: 25px; display: block; opacity: 0.7; }
-        .tech-stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .tech-item { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--text-dim); background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
-
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
+        .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
@@ -57,15 +54,15 @@
         #test-result h4 { font-size: 0.85rem; color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
         #test-result p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        .cta-section { margin-top: 60px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; }
-
         .faq-section { margin-top: 60px; }
         .faq-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; text-align: center; opacity: 0.8; }
-        .faq-grid { display: grid; gap: 15px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
         .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
-        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
+        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; line-height: 1.4; }
         .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+
+        .cta-section { margin-top: 60px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; }
 
         .workflow { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
         .flow-item { padding: 20px; background: rgba(34, 211, 238, 0.02); border-radius: 10px; border: 1px dashed rgba(34, 211, 238, 0.1); }
@@ -85,7 +82,7 @@
 
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow, .faq-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -96,14 +93,11 @@
             <p class="subtitle">Process-Oriented AI Designer</p>
             <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
 
-            <span class="stack-label">Tools Stack</span>
-            <div class="tech-stack">
-                <span class="tech-item">ChatGPT</span><span class="tech-item">Claude</span><span class="tech-item">Make.com</span><span class="tech-item">Python</span><span class="tech-item">AI Agentics</span>
-            </div>
-
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.x.com/_emrekecici" class="icon-btn" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                <a href="https://www.x.com/_emrekecici" class="icon-btn" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                </a>
                 <a href="mailto:emrekecici1985@outlook.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
                 <a href="tel:05375807666" class="icon-btn" title="Telefon"><i class="fas fa-phone"></i></a>
                 <a href="tel:05375807666" class="icon-btn" title="Rehbere Ekle"><i class="fas fa-user-plus"></i></a>
@@ -147,8 +141,30 @@
         <section class="faq-section">
             <h2>Sıkça Sorulan Sorular</h2>
             <div class="faq-grid">
-                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. Mevcut sistemlerinize iş akışınızı bozmadan akıllı katmanlar ekliyoruz.</p></div>
-                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır.</p></div>
+                <div class="faq-item">
+                    <h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5>
+                    <p>Evet. Mevcut sistemlerinize iş akışınızı bozmadan API ve ara yüz otomasyonları ile akıllı katmanlar ekliyoruz.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Veri güvenliği nasıl sağlanıyor?</h5>
+                    <p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır. Verileriniz sadece sizin kontrolünüzdeki güvenli sistemlerde işlenir.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>AI yatırımı ne kadar sürede geri döner?</h5>
+                    <p>Zaman kazancı ve hata maliyetlerinin azalmasıyla, yatırımlar genellikle 3 ile 6 ay arasında kendisini amorti etmektedir.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Kurulum sonrası destek veriyor musunuz?</h5>
+                    <p>Kesinlikle. Devreye alınan sistemler periyodik olarak izlenir ve Kaizen prensibiyle sürekli iyileştirilir.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Hangi sektörler için uygundur?</h5>
+                    <p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. "Süreci olan" her işletmede verimlilik artışı sağlıyoruz.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Entegrasyon süreci ne kadar sürer?</h5>
+                    <p>Sürecin karmaşıklığına bağlı olarak, ilk analizden lansmana kadar geçen süre genellikle 2 ile 6 hafta arasındadır.</p>
+                </div>
             </div>
         </section>
 
@@ -215,5 +231,4 @@
         window.addEventListener('scroll', () => { if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) { hasStarted = true; typeEffect(); } });
     </script>
 </body>
-    </html>
-    
+</html>
