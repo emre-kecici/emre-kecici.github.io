@@ -11,9 +11,9 @@
     <style>
         :root {
             --bg-color: #ffffff;        
-            --card-bg: #d4a373;         /* Kutular artık başlık renginde */
+            --card-bg: #d4a373;         
             --primary-color: #d4a373;   
-            --text-dark: #1a1512;       /* Kutuların içindeki koyu metin rengi */
+            --text-dark: #1a1512;       
             --text-dim: #4b5563;        
             --border-color: rgba(26, 21, 18, 0.1); 
             --status-green: #a7c957;    
@@ -41,25 +41,28 @@
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 
+        /* Üst İkonlar - Altın Renk Modu */
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .icon-btn { width: 45px; height: 45px; background: #261f1a; border: 1px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
+        .icon-btn { width: 45px; height: 45px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .icon-btn:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
 
+        /* Alt Bar - İkonlar Altın Renk */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 65px;
-            background: rgba(38, 31, 26, 0.95);
+            background: #1a1512;
             backdrop-filter: blur(12px);
-            border-top: 1px solid var(--primary-color);
+            border-top: 2px solid var(--primary-color);
             display: flex;
             justify-content: space-around;
             align-items: center;
             z-index: 1500;
         }
-        .nav-item { color: var(--primary-color); font-size: 1.4rem; text-decoration: none; width: 25%; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .nav-item { color: var(--primary-color); font-size: 1.4rem; text-decoration: none; width: 25%; height: 100%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .nav-item:active { transform: scale(0.9); }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
@@ -98,7 +101,9 @@
 
         .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 2px solid var(--text-dark); position: relative; }
-        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; }
+        
+        /* WhatsApp Butonu - Çerçeve Altın */
+        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; border: 2px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
@@ -229,5 +234,4 @@
         window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { started = true; type(); } };
     </script>
 </body>
-    </html>
-    
+</html>
