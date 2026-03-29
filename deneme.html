@@ -10,83 +10,79 @@
     
     <style>
         :root {
-            --bg-color: #030712;
-            --card-bg: rgba(17, 24, 39, 0.7);
+            --bg-color: #050810;
+            --card-bg: #111827;
             --primary-color: #22d3ee;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
-            --border-color: rgba(34, 211, 238, 0.15);
+            --border-color: rgba(34, 211, 238, 0.2);
             --status-green: #10b981;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #030712 100%); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; text-align: center; }
+        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
 
-        header { margin-bottom: 60px; padding-top: 40px; }
-        h1 { font-weight: 800; font-size: 3.5rem; margin-bottom: 10px; letter-spacing: -2px; color: var(--primary-color); }
-        .subtitle { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; opacity: 0.9; }
+        header { text-align: center; margin-bottom: 40px; padding-top: 20px; }
+        h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; color: var(--primary-color); }
+        .subtitle { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
 
-        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1.5px; margin-top: 20px; border: 1px solid rgba(16, 185, 129, 0.2); padding: 6px 16px; border-radius: 30px; background: rgba(16, 185, 129, 0.05); }
-        .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.4; } }
+        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(16, 185, 129, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(16, 185, 129, 0.05); }
+        .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 
-        .social-icons { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
-        .icon-btn { width: 50px; height: 50px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.2rem; text-decoration: none; transition: 0.3s; }
-        .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-5px); }
+        .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
+        .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
 
-        .process-grid { margin-top: 60px; display: grid; gap: 25px; justify-content: center; }
-        .card { background: var(--card-bg); padding: 35px; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: blur(12px); transition: 0.3s; text-align: left; }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); }
-        .card h3 { color: var(--primary-color); font-size: 0.9rem; margin-bottom: 15px; letter-spacing: 1.5px; display: flex; align-items: center; gap: 12px; text-transform: uppercase; }
-        .card h3::before { content: ""; width: 8px; height: 8px; background: var(--primary-color); border-radius: 2px; transform: rotate(45deg); }
-        .card p { color: var(--text-dim); font-size: 1rem; line-height: 1.8; }
+        .process-grid { margin-top: 40px; display: grid; gap: 20px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
+        .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
 
-        .tech-stack { margin-top: 80px; }
-        .tech-icons { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.5; filter: grayscale(1); }
-        .tech-icons i { font-size: 2rem; }
-
-        .analysis-box { background: rgba(17, 24, 39, 0.5); padding: 50px; border-radius: 24px; border: 1px solid var(--border-color); margin-top: 80px; }
-        .options { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-        .opt { background: rgba(17, 24, 39, 0.8); border: 1px solid var(--border-color); color: var(--text-dim); padding: 14px 28px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .assessment-section { margin-top: 60px; text-align: center; }
+        .analysis-box { background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .opt { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-dim); padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
         .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--primary-color); }
 
-        .cta-section { margin-top: 100px; padding: 60px; border-radius: 24px; border: 1px solid var(--border-color); }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 16px 45px; border-radius: 12px; font-weight: 800; text-decoration: none; margin-top: 35px; transition: 0.3s; }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--primary-color); }
+        .faq-section { margin-top: 60px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
+        .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        /* MODAL (BİLGİ KUTUCUĞU) TASARIMI */
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(3, 7, 18, 0.9); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 500px; width: 100%; border: 1px solid var(--primary-color); position: relative; backdrop-filter: blur(20px); text-align: left; }
-        .close-modal { position: absolute; top: 15px; right: 20px; color: var(--text-dim); cursor: pointer; font-size: 1.5rem; transition: 0.3s; }
-        .close-modal:hover { color: var(--primary-color); }
-        .modal-h { color: var(--primary-color); font-size: 1.2rem; margin-bottom: 20px; font-weight: 800; }
-        .modal-p { color: var(--text-dim); line-height: 1.7; font-size: 0.9rem; }
+        /* BUTON ARASI AÇILDI */
+        .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color); }
 
-        footer { margin-top: 100px; padding-bottom: 120px; border-top: 1px solid var(--border-color); padding-top: 40px; }
-        .legal-btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-dim); padding: 10px 20px; border-radius: 8px; cursor: pointer; margin: 5px; transition: 0.3s; }
-        .legal-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
+        .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; margin: 5px; }
 
-        .signature-container { width: 100%; text-align: center; padding-bottom: 40px; min-height: 30px; }
-        #typewriter { font-family: 'Fira Code', monospace; color: var(--primary-color); font-size: 0.85rem; opacity: 0.8; letter-spacing: 2px; }
+        .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; }
+        #typewriter { font-family: 'Fira Code', monospace; color: var(--text-dim); font-size: 0.8rem; opacity: 0.7; }
 
-        .wa-link { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #fff; z-index: 1500; }
+        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1500; }
 
-        @media (max-width: 768px) { h1 { font-size: 2.5rem; } }
+        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
-            <div class="status-badge"><span class="dot"></span> MÜSAİT</div>
+            <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
+
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:emrekecici1985@outlook.com" class="icon-btn"><i class="fas fa-envelope"></i></a>
-                <a href="tel:05375807666" class="icon-btn"><i class="fas fa-phone"></i></a>
+                <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:emrekecici1985@outlook.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:05375807666" class="icon-btn" title="Telefon"><i class="fas fa-phone"></i></a>
             </div>
         </header>
 
@@ -101,43 +97,49 @@
             </div>
             <div class="card">
                 <h3>AI ENTEGRASYONU</h3>
-                <p>Süreçlerinize özel yapay zeka otomasyonları kurarak operasyonel hızı ve verimliliği artırıyorum.</p>
+                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kurarak hızı artırıyorum.</p>
             </div>
         </main>
 
-        <section class="analysis-box">
-            <h2>Hızlı Verimlilik Analizi</h2>
-            <div class="options">
-                <span class="opt" onclick="runTest(1)">%20'den az</span>
-                <span class="opt" onclick="runTest(2)">%20 - %50 arası</span>
-                <span class="opt" onclick="runTest(3)">%50'den fazla</span>
+        <section class="assessment-section">
+            <div class="analysis-box">
+                <h2 style="font-size:1rem; margin-bottom:20px;">Hızlı Verimlilik Analizi</h2>
+                <p>Tekrarlayan manuel işler mesainizin ne kadarını alıyor?</p>
+                <div class="options">
+                    <span class="opt" onclick="runTest(1)">%20'den az</span>
+                    <span class="opt" onclick="runTest(2)">%20 - %50 arası</span>
+                    <span class="opt" onclick="runTest(3)">%50'den fazla</span>
+                </div>
+                <div id="test-result" style="display:none; margin-top:20px; text-align:left; border-left:3px solid var(--primary-color); padding-left:15px;">
+                    <h4 id="res-title"></h4><p id="res-body" style="font-size:0.9rem; color:var(--text-dim);"></p>
+                </div>
             </div>
-            <div id="test-result" style="display:none; margin-top:30px; text-align:left; border-left:3px solid var(--primary-color); padding-left:20px;">
-                <h4 id="res-title"></h4><p id="res-body"></p>
+        </section>
+
+        <section class="faq-section">
+            <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase;">Sıkça Sorulan Sorular</h2>
+            <div class="faq-grid">
+                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasyonları ile sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
+                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz kontrolünüzdedir.</p></div>
+                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Karmaşıklığa bağlı olarak süreç genellikle 2 ile 6 hafta arasındadır.</p></div>
+                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. Süreci olan her işletmede çalışıyoruz.</p></div>
+                <div class="faq-item"><h5>AI yatırımı ne kadar sürede geri döner?</h5><p>Hata maliyetlerinin azalmasıyla, yatırımlar genellikle 3-6 ay içinde kendini amorti eder.</p></div>
+                <div class="faq-item"><h5>Kurulum sonrası destek veriyor musunuz?</h5><p>Kesinlikle. Devreye alınan sistemler izlenir ve sürekli optimize edilir.</p></div>
             </div>
         </section>
 
         <section class="cta-section">
-            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
+            <h2 style="font-size:1.2rem;">POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
             <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
         </section>
 
         <footer>
-            <div style="margin-bottom: 30px;">
-                <button class="legal-btn" onclick="openLegal('kvkk')">KVKK</button>
-                <button class="legal-btn" onclick="openLegal('gizlilik')">GİZLİLİK</button>
-                <button class="legal-btn" onclick="openLegal('iso')">ISO 27001</button>
+            <div style="margin-bottom: 20px;">
+                <button class="legal-btn">KVKK</button>
+                <button class="legal-btn">GİZLİLİK</button>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-dim);">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
+            <p style="font-size: 0.75rem; color: var(--text-dim);">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
         </footer>
-    </div>
-
-    <div id="legalModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeLegal()">&times;</span>
-            <div id="modalH" class="modal-h"></div>
-            <div id="modalP" class="modal-p"></div>
-        </div>
     </div>
 
     <div class="signature-container"><div id="typewriter"></div></div>
@@ -145,51 +147,21 @@
     <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        // Modal Bilgileri
-        const legalData = {
-            kvkk: { h: "KVKK Aydınlatma Metni", p: "Süreç tasarımı ve danışmanlık hizmetlerimizde, kişisel verileriniz 6698 sayılı kanuna uygun olarak uçtan uca şifrelenmiş sistemlerde korunmaktadır. Veri güvenliği temel prensibimizdir." },
-            gizlilik: { h: "Gizlilik Politikası", p: "İş ortaklarımızın ticari sırları ve operasyonel verileri, NDA (Gizlilik Sözleşmesi) standartlarında ele alınır. AI modellerimiz verinizi asla üçüncü taraf eğitimlerinde kullanmaz." },
-            iso: { h: "ISO 27001 Standartları", b: "ISO", p: "Bilgi güvenliği yönetim sistemimiz, uluslararası ISO 27001 standartlarına tam uyum içerisindedir. Süreç mimarimiz siber güvenlik odaklı inşa edilir." }
-        };
-
-        function openLegal(type) {
-            document.getElementById('modalH').innerText = legalData[type].h;
-            document.getElementById('modalP').innerText = legalData[type].p;
-            document.getElementById('legalModal').style.display = 'flex';
-        }
-
-        function closeLegal() { document.getElementById('legalModal').style.display = 'none'; }
-        window.onclick = (e) => { if(e.target == document.getElementById('legalModal')) closeLegal(); }
-
-        // Test Fonksiyonu
         function runTest(v) {
-            const res = {
-                1: { t: "Optimizasyon Fırsatı", b: "Süreçleriniz stabil görünüyor. Mevcut verimliliği AI ile %20 daha artırabiliriz." },
-                2: { t: "Kritik Verimlilik Eşiği", b: "İş yükünüzün yarısı manuel. AI otomasyonu ile maliyetlerinizi %40 azaltabiliriz." },
-                3: { t: "Acil Dönüşüm", b: "Yüksek operasyonel israf tespit edildi. Acilen dijital süreç mimarisi önerilir." }
+            const data = {
+                1: { t: "Optimizasyon Fırsatı", b: "Süreçleriniz stabil ama AI ile otonom hale getirilebilir." },
+                2: { t: "Kritik Eşik", b: "Manuel yük altındasınız. AI ile verimliliği artırabiliriz." },
+                3: { t: "Acil Dönüşüm", b: "Yüksek israf tespit edildi. Acilen dijital mimariye geçilmeli." }
             };
-            document.getElementById('res-title').innerText = res[v].t;
-            document.getElementById('res-body').innerText = res[v].b;
+            document.getElementById('res-title').innerText = data[v].t;
+            document.getElementById('res-body').innerText = data[v].b;
             document.getElementById('test-result').style.display = 'block';
         }
 
-        // Daktilo Efekti (Typewriter)
-        const sign = "AI DRIVEN PROCESS DESIGN BY EMRE KEÇİCİ";
+        const sign = "DESIGNED BY EMRE KEÇİCİ";
         let idx = 0; let started = false;
-        function type() { 
-            if(idx < sign.length) { 
-                document.getElementById("typewriter").innerHTML += sign.charAt(idx); 
-                idx++; 
-                setTimeout(type, 80); 
-            } 
-        }
-
-        window.onscroll = () => { 
-            if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) { 
-                started = true; 
-                type(); 
-            } 
-        };
+        function type() { if(idx < sign.length) { document.getElementById("typewriter").innerHTML += sign.charAt(idx); idx++; setTimeout(type, 100); } }
+        window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { started = true; type(); } };
     </script>
 </body>
 </html>
