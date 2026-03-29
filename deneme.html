@@ -46,7 +46,6 @@
         .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
         .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
         
-        /* Başarı Metriği Notu */
         .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
 
         .cta-section { margin-top: 50px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
@@ -55,13 +54,16 @@
         .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(34, 211, 238, 0.3); }
 
-        /* SSS Bölümü */
-        .faq-section { margin-top: 50px; text-align: left; }
-        .faq-item { background: rgba(255,255,255,0.02); padding: 15px 20px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        .faq-item h5 { font-size: 0.85rem; color: var(--primary-color); margin-bottom: 5px; }
-        .faq-item p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.5; }
+        /* SSS Bölümü Güncellendi */
+        .faq-section { margin-top: 60px; text-align: left; }
+        .faq-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; text-align: center; opacity: 0.8; }
+        .faq-grid { display: grid; gap: 15px; }
+        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .faq-item:hover { border-color: rgba(34, 211, 238, 0.3); }
+        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; letter-spacing: 0.5px; }
+        .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        .workflow { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
+        .workflow { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
         .flow-item { padding: 20px; background: rgba(34, 211, 238, 0.02); border-radius: 10px; border: 1px dashed rgba(34, 211, 238, 0.1); }
         .flow-item span { display: block; color: var(--primary-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 5px; }
         .flow-item h4 { font-size: 0.75rem; color: var(--text-main); letter-spacing: 1px; text-transform: uppercase; }
@@ -89,7 +91,6 @@
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
-            
             <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
 
             <div class="tech-stack">
@@ -136,13 +137,28 @@
         </section>
 
         <section class="faq-section">
-            <div class="faq-item">
-                <h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5>
-                <p>Evet, mevcut iş akışlarınız bozulmadan, uygun API ve otomasyon araçlarıyla süreçlerinize AI katmanları ekleyebiliyoruz.</p>
-            </div>
-            <div class="faq-item">
-                <h5>Analiz süreci ne kadar sürer?</h5>
-                <p>İşletmenizin karmaşıklığına göre ilk analiz ve stratejik yol haritası genellikle 1-2 hafta içinde hazır olur.</p>
+            <h2>Sıkça Sorulan Sorular</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5>
+                    <p>Evet. Mevcut sistemlerinize (ERP, CRM veya özel yazılımlar) API'lar ve ara yüz otomasyonları kullanarak, iş akışınızı bozmadan akıllı katmanlar ekliyoruz.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Veri güvenliği nasıl sağlanıyor?</h5>
+                    <p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır. Verileriniz sadece sizin kontrolünüzdeki güvenli kapalı devre sistemlerde işlenir.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>AI yatırımı ne kadar sürede geri döner (ROI)?</h5>
+                    <p>Süreç optimizasyonu ve otomasyon sayesinde kazanılan zaman ve azalan hata maliyetleri, yatırımı genellikle 3 ile 6 ay arasında amorti eder.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Kurulum sonrası destek veriyor musunuz?</h5>
+                    <p>Elbette. Devreye alınan sistemlerin performansı izlenir ve değişen iş ihtiyaçlarınıza göre periyodik olarak Kaizen (sürekli iyileştirme) prensibiyle güncellenir.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Hangi sektörler için çözüm üretiyorsunuz?</h5>
+                    <p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. Üretimden hizmete, e-ticaretten lojistiğe kadar "süreci olan" her alanda verimlilik artışı sağlıyoruz.</p>
+                </div>
             </div>
         </section>
 
