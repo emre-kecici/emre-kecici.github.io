@@ -22,7 +22,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; }
+        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
+
+        /* Dijital Uzmanlık Mühürü */
+        .verified-badge { position: absolute; top: 20px; right: 20px; border: 1px solid var(--primary-color); padding: 5px 10px; border-radius: 4px; font-size: 0.6rem; color: var(--primary-color); letter-spacing: 2px; text-transform: uppercase; font-weight: 800; opacity: 0.6; pointer-events: none; }
 
         header { text-align: center; margin-bottom: 40px; }
         h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; }
@@ -32,8 +35,10 @@
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-        .tech-stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+        .stack-label { font-size: 0.65rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-top: 25px; display: block; opacity: 0.7; }
+        .tech-stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .tech-item { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--text-dim); background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+        .method-item { border-color: var(--primary-color); color: var(--primary-color); opacity: 0.8; }
 
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
@@ -41,26 +46,30 @@
         .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); position: relative; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
         .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
         .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
-        
         .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
 
-        .cta-section { margin-top: 50px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .cta-section h2 { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
-        .cta-section p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 25px; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(34, 211, 238, 0.3); }
+        /* Olgunluk Testi Bölümü */
+        .assessment-section { margin-top: 60px; background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .assessment-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 20px; text-align: center; letter-spacing: 1px; }
+        .q-item { margin-bottom: 20px; }
+        .q-item p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; }
+        .options { display: flex; gap: 10px; flex-wrap: wrap; }
+        .opt { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-dim); padding: 8px 15px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
+        .opt:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
-        /* SSS Bölümü Güncellendi */
+        .cta-section { margin-top: 60px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-section h2 { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+
         .faq-section { margin-top: 60px; text-align: left; }
         .faq-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; text-align: center; opacity: 0.8; }
         .faq-grid { display: grid; gap: 15px; }
-        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .faq-item:hover { border-color: rgba(34, 211, 238, 0.3); }
-        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; letter-spacing: 0.5px; }
+        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
         .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
         .workflow { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
@@ -71,7 +80,6 @@
         footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
         .legal-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
         .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; transition: 0.3s; }
-        .legal-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
         .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; min-height: 30px; }
         #typewriter { font-family: 'Fira Code', monospace; color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; display: inline-block; opacity: 0.7; }
@@ -82,30 +90,32 @@
 
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } .cta-section { padding: 30px 20px; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } .verified-badge { position: relative; top: 0; right: 0; margin-bottom: 20px; display: inline-block; } }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <div class="verified-badge">Verified AI Designer 2026</div>
+        
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
             <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
 
+            <span class="stack-label">Tools Stack</span>
             <div class="tech-stack">
-                <span class="tech-item">ChatGPT</span>
-                <span class="tech-item">Claude</span>
-                <span class="tech-item">Make.com</span>
-                <span class="tech-item">Python</span>
-                <span class="tech-item">AI Agentics</span>
+                <span class="tech-item">ChatGPT</span><span class="tech-item">Claude</span><span class="tech-item">Make.com</span><span class="tech-item">Python</span><span class="tech-item">AI Agentics</span>
+            </div>
+
+            <span class="stack-label">Methodology Stack</span>
+            <div class="tech-stack">
+                <span class="tech-item method-item">Lean Six Sigma</span><span class="tech-item method-item">Kaizen</span><span class="tech-item method-item">BPMN 2.0</span><span class="tech-item method-item">Poka-Yoke</span>
             </div>
 
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.x.com/_emrekecici" class="icon-btn" title="X (Twitter)">
-                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                </a>
+                <a href="https://www.x.com/_emrekecici" class="icon-btn" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
                 <a href="mailto:emrekecici1985@outlook.com" class="icon-btn" title="Email"><i class="fas fa-envelope"></i></a>
                 <a href="tel:05375807666" class="icon-btn" title="Telefon"><i class="fas fa-phone"></i></a>
                 <a href="tel:05375807666" class="icon-btn" title="Rehbere Ekle"><i class="fas fa-user-plus"></i></a>
@@ -115,51 +125,49 @@
         <main class="process-grid">
             <div class="card">
                 <h3>STRATEJİK ANALİZ</h3>
-                <p>İş akışlarını 5 Neden, Balık Kılçığı ve Pareto metodolojileriyle denetliyorum. Operasyonel israfı (MUDA) minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
+                <p>İş akışlarını 5 Neden ve Pareto metodolojileriyle denetliyorum. Operasyonel israfı minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
                 <span class="metric-note">Sonuç: Süreç israflarında %40'a varan azalma.</span>
             </div>
             <div class="card">
                 <h3>DİJİTAL MİMARİ</h3>
-                <p>Poka-Yoke ve Kaizen prensiplerini dijital süreçlere uyguluyorum. Manuel hataları sıfırlayan, uçtan uca izlenebilir ve optimize edilmiş sistemler tasarlıyorum.</p>
+                <p>Süreçlerinize Poka-Yoke prensiplerini uyguluyorum. Manuel hataları sıfırlayan, uçtan uca izlenebilir sistemler tasarlıyorum.</p>
                 <span class="metric-note">Sonuç: Manuel hata payı %0 hedefine optimize edildi.</span>
             </div>
             <div class="card">
                 <h3>AI ENTEGRASYONU</h3>
-                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kuruyorum. Karar destek mekanizmalarını AI ile güçlendirerek operasyonel hızı artırıyorum.</p>
+                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kuruyorum. Karar destek mekanizmalarını AI ile güçlendiriyorum.</p>
                 <span class="metric-note">Sonuç: Karar destek süreçlerinde %250 hız artışı.</span>
             </div>
         </main>
 
-        <section class="cta-section">
-            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
-            <p>İş akışlarınızı AI ile optimize etmek ve geleceğin dijital mimarisini kurmak için iletişime geçin.</p>
-            <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
+        <section class="assessment-section">
+            <h2>Şirketiniz AI Devrimine Ne Kadar Hazır?</h2>
+            <div class="q-item">
+                <p>1. Tekrarlayan manuel işler günlük mesainizin ne kadarını alıyor?</p>
+                <div class="options"><span class="opt">%20'den az</span><span class="opt">%20 - %50 arası</span><span class="opt">%50'den fazla</span></div>
+            </div>
+            <div class="q-item">
+                <p>2. Süreçlerinizde hata payı ve veri kaybı izlenebiliyor mu?</p>
+                <div class="options"><span class="opt">Tamamen İzlenebilir</span><span class="opt">Kısmen</span><span class="opt">Hayır, İzlenmiyor</span></div>
+            </div>
+            <div class="q-item">
+                <p>3. AI entegrasyonu için dijital bir yol haritanız var mı?</p>
+                <div class="options"><span class="opt">Evet, Hazır</span><span class="opt">Sadece Fikir Var</span><span class="opt">Henüz Yok</span></div>
+            </div>
         </section>
 
         <section class="faq-section">
             <h2>Sıkça Sorulan Sorular</h2>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5>
-                    <p>Evet. Mevcut sistemlerinize (ERP, CRM veya özel yazılımlar) API'lar ve ara yüz otomasyonları kullanarak, iş akışınızı bozmadan akıllı katmanlar ekliyoruz.</p>
-                </div>
-                <div class="faq-item">
-                    <h5>Veri güvenliği nasıl sağlanıyor?</h5>
-                    <p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır. Verileriniz sadece sizin kontrolünüzdeki güvenli kapalı devre sistemlerde işlenir.</p>
-                </div>
-                <div class="faq-item">
-                    <h5>AI yatırımı ne kadar sürede geri döner (ROI)?</h5>
-                    <p>Süreç optimizasyonu ve otomasyon sayesinde kazanılan zaman ve azalan hata maliyetleri, yatırımı genellikle 3 ile 6 ay arasında amorti eder.</p>
-                </div>
-                <div class="faq-item">
-                    <h5>Kurulum sonrası destek veriyor musunuz?</h5>
-                    <p>Elbette. Devreye alınan sistemlerin performansı izlenir ve değişen iş ihtiyaçlarınıza göre periyodik olarak Kaizen (sürekli iyileştirme) prensibiyle güncellenir.</p>
-                </div>
-                <div class="faq-item">
-                    <h5>Hangi sektörler için çözüm üretiyorsunuz?</h5>
-                    <p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. Üretimden hizmete, e-ticaretten lojistiğe kadar "süreci olan" her alanda verimlilik artışı sağlıyoruz.</p>
-                </div>
+                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. Mevcut sistemlerinize iş akışınızı bozmadan akıllı katmanlar ekliyoruz.</p></div>
+                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır.</p></div>
+                <div class="faq-item"><h5>Kurulum sonrası destek veriyor musunuz?</h5><p>Evet. Devreye alınan sistemler Kaizen prensibiyle periyodik olarak güncellenir.</p></div>
             </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
+            <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
         </section>
 
         <section class="workflow">
@@ -174,21 +182,13 @@
                 <button class="legal-btn" onclick="openPop('iso')">ISO STANDARTLARI</button>
                 <button class="legal-btn" onclick="openPop('sec')">BİLGİ GÜVENLİĞİ</button>
             </div>
-            <p style="font-size: 0.75rem; color: var(--text-dim); letter-spacing: 1px;">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
+            <p style="font-size: 0.75rem; color: var(--text-dim);">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
         </footer>
     </div>
 
-    <div class="signature-container">
-        <div id="typewriter"></div>
-    </div>
+    <div class="signature-container"><div id="typewriter"></div></div>
 
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closePop()">&times;</span>
-            <h2 id="mTitle" style="color:var(--primary-color); margin-bottom:20px; font-size: 1.1rem;"></h2>
-            <p id="mBody" style="color:var(--text-dim); line-height:1.7; font-size: 0.9rem;"></p>
-        </div>
-    </div>
+    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePop()">&times;</span><h2 id="mTitle" style="color:var(--primary-color); margin-bottom:20px; font-size: 1.1rem;"></h2><p id="mBody" style="color:var(--text-dim); line-height:1.7; font-size: 0.9rem;"></p></div></div>
 
     <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
@@ -198,32 +198,15 @@
             iso: { t: "ISO Standartları", b: "Süreçlerimiz uluslararası kalite standartlarına uygundur." },
             sec: { t: "Bilgi Güvenliği", b: "Tüm dijital mimari bilgi güvenliği disipliniyle kurgulanmıştır." }
         };
-        function openPop(id) {
-            document.getElementById('mTitle').innerText = content[id].t;
-            document.getElementById('mBody').innerText = content[id].b;
-            document.getElementById('infoModal').style.display = "flex";
-        }
+        function openPop(id) { document.getElementById('mTitle').innerText = content[id].t; document.getElementById('mBody').innerText = content[id].b; document.getElementById('infoModal').style.display = "flex"; }
         function closePop() { document.getElementById('infoModal').style.display = "none"; }
         window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closePop(); }
 
         const text = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
-        let index = 0;
-        let hasStarted = false;
-
-        function typeEffect() {
-            if (index < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeEffect, 80);
-            }
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) {
-                hasStarted = true;
-                typeEffect();
-            }
-        });
+        let index = 0; let hasStarted = false;
+        function typeEffect() { if (index < text.length) { document.getElementById("typewriter").innerHTML += text.charAt(index); index++; setTimeout(typeEffect, 80); } }
+        window.addEventListener('scroll', () => { if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) { hasStarted = true; typeEffect(); } });
     </script>
 </body>
-</html>
+            </html>
+            
