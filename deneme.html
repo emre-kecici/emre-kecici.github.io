@@ -24,12 +24,7 @@
 
         .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
 
-        /* SİSTEM DURUMU: TÜRKÇE */
-        .system-diag { position: absolute; top: 20px; right: 20px; border: 1px solid rgba(16, 185, 129, 0.3); padding: 5px 12px; border-radius: 4px; font-size: 0.65rem; color: var(--status-green); letter-spacing: 1px; font-weight: 800; background: rgba(16, 185, 129, 0.05); display: flex; align-items: center; gap: 8px; }
-        .diag-dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; box-shadow: 0 0 10px var(--status-green); animation: pulseDiag 1.5s infinite; }
-        @keyframes pulseDiag { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-        header { text-align: center; margin-bottom: 40px; }
+        header { text-align: center; margin-bottom: 40px; padding-top: 20px; }
         h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; color: var(--primary-color); }
         .subtitle { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
 
@@ -64,8 +59,10 @@
         .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
         .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        .cta-section { margin-top: 60px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; }
+        /* CTA BUTON ARASI AÇILDI */
+        .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color); }
 
         footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
         .legal-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 25px; }
@@ -82,13 +79,12 @@
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } .system-diag { position: relative; top: 0; right: 0; margin-bottom: 20px; justify-content: center; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } .container { padding: 30px 15px; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="system-diag"><span class="diag-dot"></span> Sistem Durumu: Aktif</div>
         
         <header>
             <h1>Emre Keçici</h1>
@@ -142,15 +138,18 @@
         <section class="faq-section">
             <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase;">Sıkça Sorulan Sorular</h2>
             <div class="faq-grid">
-                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>İş akışının karmaşıklığına bağlı olarak 2-6 hafta arasındadır.</p></div>
-                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>Tamamen KVKK uyumlu ve "Privacy by Design" mimarisiyle kurgulanır.</p></div>
-                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. Süreci olan her işletmede verimlilik sağlıyoruz.</p></div>
-                <div class="faq-item"><h5>Kurulum sonrası destek var mı?</h5><p>Evet, sistemler periyodik olarak izlenir ve Kaizen prensibiyle iyileştirilir.</p></div>
+                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasyonları ile mevcut sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
+                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz sadece sizin kontrolünüzdedir.</p></div>
+                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Karmaşıklığa bağlı olarak analiz ve uygulama genellikle 2 ile 6 hafta arasındadır.</p></div>
+                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. "Süreci olan" her işletmede verimlilik artışı sağlıyoruz.</p></div>
+                <div class="faq-item"><h5>AI yatırımı ne kadar sürede geri döner?</h5><p>Zaman kazancı ve hata maliyetlerinin azalmasıyla, yatırımlar genellikle 3-6 ay içinde kendisini amorti eder.</p></div>
+                <div class="faq-item"><h5>Kurulum sonrası destek veriyor musunuz?</h5><p>Kesinlikle. Devreye alınan sistemler izlenir ve verimlilik için sürekli optimize edilir.</p></div>
             </div>
         </section>
 
         <section class="cta-section">
-            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
+            <h2 style="font-size:1.3rem; font-weight:800; letter-spacing:1px; color:var(--text-main);">POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
+            <p style="color:var(--text-dim); font-size:0.9rem; margin-top:10px;">Süreçlerinizi dijital mimariyle optimize etmek için iletişime geçin.</p>
             <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
         </section>
 
