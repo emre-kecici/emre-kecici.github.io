@@ -28,12 +28,10 @@
         h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; }
         .subtitle { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
 
-        /* Durum Göstergesi */
         .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(16, 185, 129, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(16, 185, 129, 0.05); }
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
 
-        /* Tech Stack */
         .tech-stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
         .tech-item { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--text-dim); background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
 
@@ -49,8 +47,14 @@
         .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
         .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
 
-        /* 3 Adımlı Süreç */
-        .workflow { margin-top: 50px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; }
+        /* Hızlı İletişim (CTA) Alanı */
+        .cta-section { margin-top: 50px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-section h2 { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
+        .cta-section p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 25px; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(34, 211, 238, 0.3); }
+
+        .workflow { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
         .flow-item { padding: 20px; background: rgba(34, 211, 238, 0.02); border-radius: 10px; border: 1px dashed rgba(34, 211, 238, 0.1); }
         .flow-item span { display: block; color: var(--primary-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 5px; }
         .flow-item h4 { font-size: 0.75rem; color: var(--text-main); letter-spacing: 1px; text-transform: uppercase; }
@@ -69,7 +73,7 @@
 
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } .cta-section { padding: 30px 20px; } }
     </style>
 </head>
 <body>
@@ -108,6 +112,12 @@
             <div class="card"><h3>WEB TASARIM & HOSTING</h3><p>Yüksek performanslı altyapıyla destekli web tasarımı ve profesyonel DNS/Domain yönetimi sunuyorum. Dijital varlığınızı uçtan uca kuruyor ve teknik sürekliliğini garanti ediyorum.</p></div>
             <div class="card"><h3>YAŞAM ALANI OTOMASYONU</h3><p>Kişisel yaşam alanımı ve mobil istasyonumu AI Agentics ile otomatize ettim. Bu tecrübeyi, süreçlerinizi optimize ederken uygulanabilir bir model olarak sunuyorum.</p></div>
         </main>
+
+        <section class="cta-section">
+            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
+            <p>İş akışlarınızı AI ile optimize etmek ve geleceğin dijital mimarisini kurmak için iletişime geçin.</p>
+            <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
+        </section>
 
         <section class="workflow">
             <div class="flow-item"><span>01</span><h4>ANALİZ</h4></div>
