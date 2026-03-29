@@ -31,22 +31,19 @@
             padding-bottom: 70px;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
+        .container { max-width: 850px; margin: 0 auto; padding: 30px 20px; flex: 1; position: relative; }
 
-        header { text-align: center; margin-bottom: 40px; padding-top: 20px; }
-        h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; color: var(--primary-color); }
+        header { text-align: center; margin-bottom: 40px; padding-top: 10px; }
         .subtitle { color: #6b7280; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
 
         .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(167, 201, 87, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(167, 201, 87, 0.05); }
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 
-        /* Üst İkonlar - Altın Renk Modu */
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .icon-btn { width: 45px; height: 45px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .icon-btn:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
 
-        /* Alt Bar - İkonlar Altın Renk */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -62,7 +59,6 @@
             z-index: 1500;
         }
         .nav-item { color: var(--primary-color); font-size: 1.4rem; text-decoration: none; width: 25%; height: 100%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .nav-item:active { transform: scale(0.9); }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
@@ -90,11 +86,9 @@
         .cta-section h2 { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); }
         .cta-section p { color: var(--text-dark); font-size: 0.95rem; margin-top: 10px; font-weight: 500; }
         .cta-btn { display: inline-block; background: var(--text-dark); color: var(--primary-color); padding: 14px 35px; border-radius: 8px; font-weight: 800; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
-        .cta-btn:hover { transform: scale(1.05); }
 
         footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--primary-color); }
         .legal-btn { background: var(--card-bg); border: 1px solid rgba(0,0,0,0.1); color: var(--text-dark); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; font-weight: 700; transition: 0.3s; }
-        .legal-btn:hover { background: var(--text-dark); color: var(--primary-color); }
 
         .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; }
         #typewriter { font-family: 'Fira Code', monospace; color: var(--primary-color); font-size: 0.8rem; font-weight: 800; }
@@ -102,18 +96,16 @@
         .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 2px solid var(--text-dark); position: relative; }
         
-        /* WhatsApp Butonu - Çerçeve Altın */
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; border: 2px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } .container { padding: 15px 15px; } }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
             <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
 
@@ -216,12 +208,12 @@
             document.getElementById('res-body').innerText = resData[v].b;
             document.getElementById('test-result').style.display = 'block';
         }
-        const modalData = {
-            kvkk: { t: "KVKK Uyumu", b: "Kişisel verileriniz yasal mevzuata göre titizlikle korunmaktadır." },
-            sec: { t: "Bilgi Güvenliği", b: "Dijital mimarimiz en yüksek siber güvenlik standartlarıyla kurgulanır." },
-            iso: { t: "ISO Standartları", b: "Tüm süreç yönetimimiz uluslararası kalite standartlarına uygundur." }
-        };
         function openPop(id) {
+            const modalData = {
+                kvkk: { t: "KVKK Uyumu", b: "Kişisel verileriniz yasal mevzuata göre titizlikle korunmaktadır." },
+                sec: { t: "Bilgi Güvenliği", b: "Dijital mimarimiz en yüksek siber güvenlik standartlarıyla kurgulanır." },
+                iso: { t: "ISO Standartları", b: "Tüm süreç yönetimimiz uluslararası kalite standartlarına uygundur." }
+            };
             document.getElementById('mTitle').innerText = modalData[id].t;
             document.getElementById('mBody').innerText = modalData[id].b;
             document.getElementById('infoModal').style.display = "flex";
