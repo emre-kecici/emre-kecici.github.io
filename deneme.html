@@ -51,33 +51,21 @@
         .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 10px 20px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; font-weight: 600; }
         .legal-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
-        /* İmza Alanı - Dipten Yukarıda */
+        /* Yeni Harf Dökülme Alanı */
         .signature-container {
             width: 100%;
             text-align: center;
             padding: 20px 0;
-            position: relative;
-            height: 60px;
-            overflow: hidden;
-            margin-top: -70px; 
-            opacity: 0;
-            transition: opacity 0.8s ease;
+            margin-top: -60px;
+            min-height: 30px;
         }
-        .signature-container.show { opacity: 1; }
-        .signature-text {
-            display: inline-block;
+
+        #typewriter {
             font-family: 'Fira Code', monospace;
             color: var(--primary-color);
             font-size: 0.85rem;
-            white-space: nowrap;
-            transform: translateX(100%);
-        }
-        .signature-container.animate .signature-text {
-            animation: slideInCenter 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-        @keyframes slideInCenter {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(0); }
+            letter-spacing: 1px;
+            display: inline-block;
         }
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
@@ -121,8 +109,8 @@
         </footer>
     </div>
 
-    <div class="signature-container" id="sigContainer">
-        <div class="signature-text">DESIGNED AND DEVELOPED BY EMRE KEÇİCİ</div>
+    <div class="signature-container">
+        <div id="typewriter"></div>
     </div>
 
     <div id="infoModal" class="modal">
@@ -137,9 +125,9 @@
 
     <script>
         const content = {
-            kvkk: { t: "KVKK Aydınlatma Metni", b: "Kişisel verileriniz yasal mevzuat kapsamında en üst düzeyde korunmaktadır." },
-            iso: { t: "ISO Standartları", b: "Operasyonlarımız ISO kalite yönetim sistemlerine tam uyumlu yürütülür." },
-            sec: { t: "Bilgi Güvenliği", b: "Dijital süreçlerde bilgi güvenliği disiplini esastır." }
+            kvkk: { t: "KVKK Aydınlatma Metni", b: "Kişisel verileriniz yasal mevzuat kapsamında korunmaktadır." },
+            iso: { t: "ISO Standartları", b: "Süreçlerimiz uluslararası kalite standartlarına uygundur." },
+            sec: { t: "Bilgi Güvenliği", b: "Tüm dijital mimari bilgi güvenliği disipliniyle kurgulanmıştır." }
         };
         function openPop(id) {
             document.getElementById('mTitle').innerText = content[id].t;
@@ -149,10 +137,24 @@
         function closePop() { document.getElementById('infoModal').style.display = "none"; }
         window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closePop(); }
 
+        // Harf Harf Dökülme Yazma Fonksiyonu
+        const text = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
+        let index = 0;
+        let hasStarted = false;
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 80); // Harf hızı
+            }
+        }
+
         window.addEventListener('scroll', () => {
-            const sig = document.getElementById('sigContainer');
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 25) {
-                sig.classList.add('show', 'animate');
+            // Sayfa altına geldiğinde tetikle
+            if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) {
+                hasStarted = true;
+                typeEffect();
             }
         });
     </script>
