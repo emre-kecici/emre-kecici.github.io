@@ -3,117 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emrekecici.com.tr</title>
+    <title>Emre Keçici | Process-Oriented AI Designer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* Tüm sitenin ana görsel yapısı */
+        :root {
+            --bg-color: #0a0f1a; /* Daha derin antrasit */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Şeffaf cam efekti */
+            --primary-color: #22d3ee;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            background-color: #0d0d0d;
-            color: #00ff00; /* Matrix yeşili dokunuşu */
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0a0f1a 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Üst Terminal Satırı */
+        .system-status {
+            background: rgba(0, 0, 0, 0.3);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            padding: 8px 20px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--glass-border);
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            padding: 20px;
+            justify-content: space-between;
         }
 
         .container {
-            max-width: 800px;
-            width: 100%;
-            border: 1px solid #333;
-            padding: 40px;
-            background: #1a1a1a;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
-            border-radius: 8px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        #typewriter {
-            font-size: 22px;
-            margin-bottom: 30px;
-            min-height: 1.2em;
-            border-right: 2px solid #00ff00;
-            display: inline-block;
-            white-space: pre-wrap;
-        }
+        header { text-align: center; margin-bottom: 60px; }
+        
+        h1 { font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; font-size: 2.5rem; }
+        .subtitle { color: var(--text-dim); font-size: 1.1rem; font-weight: 300; }
 
-        .links-section {
+        .social-links {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            justify-content: center;
+            gap: 20px;
             margin-top: 30px;
         }
 
-        .btn {
-            display: block;
-            padding: 15px;
-            color: #00ff00;
+        .social-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: var(--text-main);
             text-decoration: none;
-            border: 1px solid #00ff00;
-            text-align: center;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-btn:hover {
+            border-color: var(--primary-color);
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* 5 Stratejik Buton Dizilimi */
+        .process-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .process-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            animation: slideInRight 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .process-card:hover {
+            border-color: var(--primary-color);
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .process-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .process-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        .btn:hover {
-            background-color: #00ff00;
-            color: #000;
-            box-shadow: 0 0 15px #00ff00;
+        .process-content {
+            margin-top: 15px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            display: none; /* Başlangıçta gizli */
         }
 
-        .footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #666;
+        .process-card.active .process-content { display: block; }
+
+        /* Başarı Metrikleri */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 60px 0;
+            text-align: center;
         }
 
-        /* Animasyonlar ve Diğer 300+ Satırlık Detayların Mantığı Burada Devam Ediyor */
-        @keyframes blink {
-            50% { border-color: transparent; }
+        .stat-item h4 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 5px; }
+        .stat-item p { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
+
+        /* Footer & İmza */
+        footer {
+            margin-top: 100px;
+            padding-bottom: 40px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
         }
-        
-        /* Mobil Uyumluluk Ayarları */
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 6px 15px;
+            background: #1e293b;
+            border-radius: 20px;
+            color: var(--text-dim);
+            border: 1px solid var(--glass-border);
+        }
+
+        .typewriter-box {
+            font-family: 'Fira Code', monospace;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            min-height: 1.5em;
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
         @media (max-width: 600px) {
-            #typewriter { font-size: 18px; }
-            .container { padding: 20px; }
+            h1 { font-size: 1.8rem; }
+            .stats-bar { grid-template-columns: 1fr; gap: 30px; }
+            .social-links { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div id="typewriter"></div>
-
-        <div class="links-section">
-            <a href="https://emre-kecici.github.io/CV_Emre_Kececi.pdf" class="btn">Özgeçmiş (CV) İndir</a>
-            <a href="https://wa.me/905321234567" class="btn">WhatsApp İletişim</a>
-            <a href="https://linkedin.com/in/emrekecici" class="btn">LinkedIn Profili</a>
-        </div>
-
-        <div class="footer">
-            © 2026 emrekecici.com.tr | Dijital Dönüşüm Uzmanı
-        </div>
+    <div class="system-status">
+        <span>LOC: BURSA_ORHANGAZI_TR</span>
+        <span>SYSTEM_ACTIVE // AI_OPTIMIZED</span>
     </div>
 
-    <script>
-        const text = "Dijital Dönüşüm Yolculuğu Başlıyor...\nSistemler optimize ediliyor...\nVeri yapıları kontrol ediliyor...\nBağlantı başarılı: emre-kecici.github.io";
-        let i = 0;
-        const speed = 50;
+    <div class="container">
+        <header>
+            <h1>Emre Keçici</h1>
+            <p class="subtitle">Process-Oriented AI Designer & Operational Excellence Expert</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/emrekeçici" class="social-btn" target="_blank">
+                    <i class="fab fa-linkedin"></i> LINKEDIN_PROFILE
+                </a>
+                <a href="https://www.x.com/_emrekecici" class="social-btn" target="_blank">
+                    <i class="fab fa-x-twitter"></i> X_FEED
+                </a>
+                <a href="mailto:emrekecici1985@outlook.com" class="social-btn">
+                    <i class="fas fa-envelope"></i> MAIL_SERVER
+                </a>
+            </div>
+        </header>
 
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
+        <div class="process-grid">
+            <div class="process-card" style="animation-delay: 0.1s" onclick="this.classList.toggle('active')">
+                <div class="process-header">
+                    <span class="process-title">01 // Süreç Analizi</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <p class="process-content">
+                    İş akışlarını 5 Neden, Balık Kılçığı ve Pareto (80/20) prensipleriyle denetliyorum. Operasyonel israfı (MUDA) kaynağında tespit ederek, dijital dönüşüm için gerekli veri altyapısını hazırlıyorum.
+                </p>
+            </div>
+
+            <div class="process-card" style="animation-delay: 0.2s" onclick="this.classList.toggle('active')">
+                <div class="process-header">
+                    <span class="process-title">02 // Dijital Entegrasyon</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <p class="process-content">
+                    Manuel süreçleri dijital ortama aktarırken Poka-Yoke (Hata Önleme) disiplinini sisteme dahil ediyorum. Yapay zekanın verimli çalışabilmesi için hatasız bir veri akışı inşa ediyorum.
+                </p>
+            </div>
+
+            <div class="process-card" style="animation-delay: 0.3s" onclick="this.classList.toggle('active')">
+                <div class="process-header">
+                    <span class="process-title">03 // AI Otomasyonu</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <p class="process-content">
+                    Karmaşık veri işleme süreçlerini BTK Akademi destekli ileri seviye AI modellerine devrediyorum. İşletmenizin 7/24 kesintisiz ve öğrenen bir sistemle çalışmasını sağlıyorum.
+                </p>
+            </div>
+
+            <div class="process-card" style="animation-delay: 0.4s" onclick="this.classList.toggle('active')">
+                <div class="process-header">
+                    <span class="process-title">04 // Standart Operasyon (SOP)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <p class="process-content">
+                    Kurulan AI sistemlerini PUKÖ döngüsüyle kalite standartlarına dönüştürüyorum. Süreçlerin kişilere bağımlılığını ortadan kaldırarak operasyonel kaliteyi standart hale getiriyorum.
+                </p>
+            </div>
+
+            <div class="process-card" style="animation-delay: 0.5s" onclick="this.classList.toggle('active')">
+                <div class="process-header">
+                    <span class="process-title">05 // Sürdürülebilirlik</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <p class="process-content">
+                    Sistem performansını (KPI) anlık izliyor ve 5S disipliniyle çalışma alanlarını optimize ediyorum. Yatırımın verimliliğini (ROI) ve sistemin en yüksek kapasitede kalmasını garanti ediyorum.
+                </p>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h4>+%10</h4>
+                <p>Verimlilik Artışı</p>
+            </div>
+            <div class="stat-item">
+                <h4>%0</h4>
+                <p>Hata Payı Vizyonu</p>
+            </div>
+            <div class="stat-item">
+                <h4>%100</h4>
+                <p>AI Entegrasyonu</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-badges">
+                <span class="badge">5S // Kaizen</span>
+                <span class="badge">Poka-Yoke</span>
+                <span class="badge">AI Agentics</span>
+                <span class="badge">Six Sigma</span>
+            </div>
+            
+            <p style="font-size: 0.8rem; color: var(--text-dim);">&copy; 2026 EMRE KEÇİCİ. ALL RIGHTS RESERVED.</p>
+            
+            <div class="typewriter-box" id="typewriter-anchor">
+                <span id="typewriter"></span>
+            </div>
+        </footer>
+    </div>
+
+    <a href="https://wa.me/905375076666" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Daktilo Efekti
+        const text = "Designed and Developed by Emre Keçici";
+        let index = 0;
+        let hasTyped = false;
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
             }
         }
 
-        // Sayfa açıldığında daktiloyu başlat
-        window.onload = typeWriter;
-    </script>
+        // Görünürlük Kontrolü (Sayfa altına inince çalışır)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasTyped) {
+                    hasTyped = true;
+                    type();
+                }
+            });
+        }, { threshold: 0.5 });
 
+        observer.observe(document.getElementById("typewriter-anchor"));
+    </script>
 </body>
-</html>
+                </html>
+                
