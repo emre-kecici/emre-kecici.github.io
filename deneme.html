@@ -24,9 +24,6 @@
 
         .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
 
-        /* Dijital Uzmanlık Mühürü */
-        .verified-badge { position: absolute; top: 20px; right: 20px; border: 1px solid var(--primary-color); padding: 5px 10px; border-radius: 4px; font-size: 0.6rem; color: var(--primary-color); letter-spacing: 2px; text-transform: uppercase; font-weight: 800; opacity: 0.6; pointer-events: none; }
-
         header { text-align: center; margin-bottom: 40px; }
         h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; }
         .subtitle { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
@@ -38,12 +35,10 @@
         .stack-label { font-size: 0.65rem; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-top: 25px; display: block; opacity: 0.7; }
         .tech-stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .tech-item { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--text-dim); background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
-        .method-item { border-color: var(--primary-color); color: var(--primary-color); opacity: 0.8; }
 
         .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
         .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
-        .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
@@ -52,20 +47,20 @@
         .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
         .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
 
-        /* Olgunluk Testi Bölümü */
-        .assessment-section { margin-top: 60px; background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
-        .assessment-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 20px; text-align: center; letter-spacing: 1px; }
-        .q-item { margin-bottom: 20px; }
-        .q-item p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; }
-        .options { display: flex; gap: 10px; flex-wrap: wrap; }
-        .opt { background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-dim); padding: 8px 15px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
-        .opt:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        .assessment-section { margin-top: 60px; background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .assessment-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 1px; }
+        .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .opt { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-dim); padding: 10px 20px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
+        .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--primary-color); background: rgba(34, 211, 238, 0.05); }
+        
+        #test-result { margin-top: 25px; padding: 20px; border-radius: 10px; background: rgba(5, 8, 16, 0.5); border-left: 3px solid var(--primary-color); display: none; text-align: left; }
+        #test-result h4 { font-size: 0.85rem; color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        #test-result p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
         .cta-section { margin-top: 60px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .cta-section h2 { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s; text-transform: uppercase; }
 
-        .faq-section { margin-top: 60px; text-align: left; }
+        .faq-section { margin-top: 60px; }
         .faq-section h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase; text-align: center; opacity: 0.8; }
         .faq-grid { display: grid; gap: 15px; }
         .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
@@ -74,8 +69,8 @@
 
         .workflow { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; padding-bottom: 20px; }
         .flow-item { padding: 20px; background: rgba(34, 211, 238, 0.02); border-radius: 10px; border: 1px dashed rgba(34, 211, 238, 0.1); }
-        .flow-item span { display: block; color: var(--primary-color); font-weight: 800; font-size: 1.2rem; margin-bottom: 5px; }
-        .flow-item h4 { font-size: 0.75rem; color: var(--text-main); letter-spacing: 1px; text-transform: uppercase; }
+        .flow-item span { display: block; color: var(--primary-color); font-weight: 800; font-size: 1.2rem; }
+        .flow-item h4 { font-size: 0.75rem; color: var(--text-main); text-transform: uppercase; }
 
         footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
         .legal-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
@@ -90,14 +85,12 @@
 
         .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; text-decoration: none; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
-        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } .verified-badge { position: relative; top: 0; right: 0; margin-bottom: 20px; display: inline-block; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } .workflow { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="verified-badge">Verified AI Designer 2026</div>
-        
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
@@ -106,11 +99,6 @@
             <span class="stack-label">Tools Stack</span>
             <div class="tech-stack">
                 <span class="tech-item">ChatGPT</span><span class="tech-item">Claude</span><span class="tech-item">Make.com</span><span class="tech-item">Python</span><span class="tech-item">AI Agentics</span>
-            </div>
-
-            <span class="stack-label">Methodology Stack</span>
-            <div class="tech-stack">
-                <span class="tech-item method-item">Lean Six Sigma</span><span class="tech-item method-item">Kaizen</span><span class="tech-item method-item">BPMN 2.0</span><span class="tech-item method-item">Poka-Yoke</span>
             </div>
 
             <div class="social-icons">
@@ -125,17 +113,17 @@
         <main class="process-grid">
             <div class="card">
                 <h3>STRATEJİK ANALİZ</h3>
-                <p>İş akışlarını 5 Neden ve Pareto metodolojileriyle denetliyorum. Operasyonel israfı minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
+                <p>İş akışlarını metodolojik olarak denetliyorum. Operasyonel israfı minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
                 <span class="metric-note">Sonuç: Süreç israflarında %40'a varan azalma.</span>
             </div>
             <div class="card">
                 <h3>DİJİTAL MİMARİ</h3>
-                <p>Süreçlerinize Poka-Yoke prensiplerini uyguluyorum. Manuel hataları sıfırlayan, uçtan uca izlenebilir sistemler tasarlıyorum.</p>
+                <p>Manuel hataları sıfırlayan, uçtan uca izlenebilir ve optimize edilmiş süreç sistemleri tasarlıyorum.</p>
                 <span class="metric-note">Sonuç: Manuel hata payı %0 hedefine optimize edildi.</span>
             </div>
             <div class="card">
                 <h3>AI ENTEGRASYONU</h3>
-                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kuruyorum. Karar destek mekanizmalarını AI ile güçlendiriyorum.</p>
+                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kurarak operasyonel hızı artırıyorum.</p>
                 <span class="metric-note">Sonuç: Karar destek süreçlerinde %250 hız artışı.</span>
             </div>
         </main>
@@ -143,16 +131,16 @@
         <section class="assessment-section">
             <h2>Şirketiniz AI Devrimine Ne Kadar Hazır?</h2>
             <div class="q-item">
-                <p>1. Tekrarlayan manuel işler günlük mesainizin ne kadarını alıyor?</p>
-                <div class="options"><span class="opt">%20'den az</span><span class="opt">%20 - %50 arası</span><span class="opt">%50'den fazla</span></div>
+                <p>Tekrarlayan manuel işler günlük mesainizin ne kadarını alıyor?</p>
+                <div class="options">
+                    <span class="opt" onclick="runTest(1)">%20'den az</span>
+                    <span class="opt" onclick="runTest(2)">%20 - %50 arası</span>
+                    <span class="opt" onclick="runTest(3)">%50'den fazla</span>
+                </div>
             </div>
-            <div class="q-item">
-                <p>2. Süreçlerinizde hata payı ve veri kaybı izlenebiliyor mu?</p>
-                <div class="options"><span class="opt">Tamamen İzlenebilir</span><span class="opt">Kısmen</span><span class="opt">Hayır, İzlenmiyor</span></div>
-            </div>
-            <div class="q-item">
-                <p>3. AI entegrasyonu için dijital bir yol haritanız var mı?</p>
-                <div class="options"><span class="opt">Evet, Hazır</span><span class="opt">Sadece Fikir Var</span><span class="opt">Henüz Yok</span></div>
+            <div id="test-result">
+                <h4 id="res-title">Analiz Sonucu</h4>
+                <p id="res-body"></p>
             </div>
         </section>
 
@@ -161,7 +149,6 @@
             <div class="faq-grid">
                 <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. Mevcut sistemlerinize iş akışınızı bozmadan akıllı katmanlar ekliyoruz.</p></div>
                 <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>Tüm entegrasyonlar KVKK uyumlu ve "Privacy by Design" prensibiyle kurgulanır.</p></div>
-                <div class="faq-item"><h5>Kurulum sonrası destek veriyor musunuz?</h5><p>Evet. Devreye alınan sistemler Kaizen prensibiyle periyodik olarak güncellenir.</p></div>
             </div>
         </section>
 
@@ -193,6 +180,26 @@
     <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
+        const results = {
+            1: { t: "Optimizasyon Fırsatı", b: "Süreçleriniz stabil görünüyor ancak %20'lik dilim bile AI Agent'lar ile otonom hale getirilerek stratejik işlere daha fazla vakit ayırmanız sağlanabilir." },
+            2: { t: "Kritik Eşik", b: "Operasyonunuzun yarısı manuel yük altında. AI entegrasyonu ile hata payını sıfırlayıp verimliliğinizi iki katına çıkarabiliriz." },
+            3: { t: "Acil Dönüşüm Gereksinimi", b: "Yüksek operasyonel israf tespit edildi. AI otomasyonu ile bu süreci hızla dijital mimariye taşımamız gerekiyor." }
+        };
+
+        function runTest(val) {
+            const resDiv = document.getElementById('test-result');
+            const resTitle = document.getElementById('res-title');
+            const resBody = document.getElementById('res-body');
+            const opts = document.querySelectorAll('.opt');
+            
+            opts.forEach(o => o.classList.remove('active'));
+            event.target.classList.add('active');
+
+            resTitle.innerText = results[val].t;
+            resBody.innerText = results[val].b;
+            resDiv.style.display = 'block';
+        }
+
         const content = {
             kvkk: { t: "KVKK Aydınlatma Metni", b: "Kişisel verileriniz yasal mevzuat kapsamında korunmaktadır." },
             iso: { t: "ISO Standartları", b: "Süreçlerimiz uluslararası kalite standartlarına uygundur." },
@@ -208,5 +215,5 @@
         window.addEventListener('scroll', () => { if (!hasStarted && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) { hasStarted = true; typeEffect(); } });
     </script>
 </body>
-            </html>
-            
+    </html>
+    
