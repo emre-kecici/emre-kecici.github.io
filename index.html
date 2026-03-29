@@ -20,7 +20,16 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            overflow-x: hidden; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            padding-bottom: 70px; /* Alt bar için güvenli alan */
+        }
 
         .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
 
@@ -36,6 +45,36 @@
         .icon-btn { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
         .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
         .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
+
+        /* --- SABİT ALT BAR (İSİMSİZ BUTONLAR) --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1500;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.5);
+        }
+        .nav-item {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25%;
+            height: 100%;
+        }
+        .nav-item:active { transform: scale(0.9); opacity: 0.7; }
+        .nav-item svg { fill: currentColor; width: 22px; height: 22px; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
@@ -59,7 +98,6 @@
         .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
         .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        /* CTA BUTON ARASI AÇILDI */
         .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
         .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
         .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color); }
@@ -72,11 +110,11 @@
         .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; min-height: 30px; }
         #typewriter { font-family: 'Fira Code', monospace; color: var(--text-dim); font-size: 0.8rem; opacity: 0.7; }
 
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 1px solid var(--primary-color); position: relative; }
         .close-btn { position: absolute; top: 20px; right: 20px; color: var(--primary-color); cursor: pointer; font-size: 1.8rem; }
 
-        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } .container { padding: 30px 15px; } }
@@ -165,6 +203,15 @@
         </footer>
     </div>
 
+    <nav class="bottom-nav">
+        <a href="https://www.linkedin.com/in/emrekeçici" class="nav-item" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.x.com/_emrekecici" class="nav-item" title="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+        <a href="mailto:emrekecici1985@outlook.com" class="nav-item" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:05375807666" class="nav-item" title="Telefon"><i class="fas fa-phone"></i></a>
+    </nav>
+
     <div class="signature-container"><div id="typewriter"></div></div>
 
     <div id="infoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePop()">&times;</span><h2 id="mTitle" style="color:var(--primary-color); margin-bottom:20px; font-size:1.1rem;"></h2><p id="mBody" style="color:var(--text-dim); line-height:1.7; font-size:0.9rem;"></p></div></div>
@@ -203,5 +250,4 @@
         window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { started = true; type(); } };
     </script>
 </body>
-    </html>
-    
+</html>
