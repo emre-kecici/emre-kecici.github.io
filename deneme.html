@@ -20,105 +20,85 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg-color); 
             color: var(--text-main); 
-            overflow-x: hidden; 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            padding-bottom: 80px; /* Alt barın içeriği kapatmaması için boşluk */
+            min-height: 100vh;
+            padding-bottom: 90px; /* BARIN ÜZERİNE BİNMESİN DİYE ŞART */
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; text-align: center; }
 
-        header { text-align: center; margin-bottom: 40px; padding-top: 20px; }
-        h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; color: var(--primary-color); }
-        .subtitle { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
+        /* HEADER */
+        header { margin-bottom: 40px; }
+        h1 { font-weight: 800; font-size: 2.8rem; color: var(--primary-color); letter-spacing: -1px; }
+        .subtitle { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* CARDS */
+        .process-grid { display: grid; gap: 20px; margin-top: 30px; text-align: left; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; }
 
-        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(16, 185, 129, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(16, 185, 129, 0.05); }
-        .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
+        /* ANALİZ VE FAQ */
+        .analysis-box { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; margin-top: 40px; border: 1px solid var(--border-color); }
+        .opt { display: inline-block; border: 1px solid var(--border-color); padding: 10px 20px; margin: 5px; border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 0.8rem; }
+        .opt:hover { background: var(--primary-color); color: var(--bg-color); }
 
-        /* SABİT ALT MENÜ ÇUBUĞU (KÖFTECİ YUSUF STİLİ) */
-        .bottom-nav { 
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; text-align: left; }
+        .faq-item { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; }
+
+        /* KRİTİK NOKTA: SABİT ALT BAR (KÖFTECİ YUSUF STİLİ) */
+        .fixed-bottom-nav { 
             position: fixed; 
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(17, 24, 39, 0.8); 
-            backdrop-filter: blur(15px); 
-            border-top: 1px solid var(--border-color); 
+            height: 75px; 
+            background: rgba(17, 24, 39, 0.95); 
+            backdrop-filter: blur(10px); 
+            border-top: 2px solid var(--primary-color); 
             display: flex; 
             justify-content: space-around; 
             align-items: center; 
-            padding: 12px 0; 
-            z-index: 3000; 
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.5); 
+            z-index: 9999; /* HER ŞEYİN ÜSTÜNDE DURMASI İÇİN */
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.6);
         }
+
         .nav-item { 
+            text-decoration: none; 
+            color: var(--text-main); 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            text-decoration: none; 
-            color: var(--text-dim); 
-            transition: 0.3s; 
-            width: 25%; 
+            width: 25%;
+            transition: 0.3s;
         }
+
         .nav-item i, .nav-item svg { 
-            font-size: 1.3rem; 
-            margin-bottom: 5px; 
+            font-size: 1.4rem; 
             color: var(--primary-color); 
+            margin-bottom: 4px; 
         }
+
         .nav-item span { 
-            font-size: 0.65rem; 
+            font-size: 0.6rem; 
             font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            letter-spacing: 1px;
         }
-        .nav-item:hover { color: var(--primary-color); transform: translateY(-2px); }
-        .nav-item svg { width: 20px; height: 20px; fill: var(--primary-color); }
 
-        .process-grid { margin-top: 40px; display: grid; gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
-        .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
-        .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
-        .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
-        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+        .nav-item:active { transform: scale(0.9); }
 
-        .analysis-box { background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center; margin-top: 60px; }
-        .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-        .opt { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-dim); padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
-        .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--primary-color); background: rgba(34, 211, 238, 0.05); }
-        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(5, 8, 16, 0.7); border-left: 4px solid var(--primary-color); display: none; text-align: left; animation: fadeIn 0.4s ease; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 15px 40px; border-radius: 10px; font-weight: 800; text-decoration: none; margin: 40px 0; }
 
-        .faq-section { margin-top: 60px; }
-        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
-        .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
-        .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+        /* MODAL */
+        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10000; align-items:center; justify-content:center; }
+        .modal-content { background:var(--card-bg); padding:30px; border-radius:20px; border:1px solid var(--primary-color); max-width:400px; text-align:left; }
 
-        .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color); }
-
-        footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
-        .legal-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 25px; }
-        .legal-row { display: flex; justify-content: center; gap: 10px; }
-        .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; }
-
-        .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; min-height: 30px; }
-        #typewriter { font-family: 'Fira Code', monospace; color: var(--text-dim); font-size: 0.8rem; opacity: 0.7; }
-
-        .modal { display: none; position: fixed; z-index: 4000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 1px solid var(--primary-color); position: relative; }
-        .close-btn { position: absolute; top: 20px; right: 20px; color: var(--primary-color); cursor: pointer; font-size: 1.8rem; }
-
-        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1500; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
+        @media (max-width: 600px) { .faq-grid { grid-template-columns: 1fr; } h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -127,71 +107,46 @@
         <header>
             <h1>Emre Keçici</h1>
             <p class="subtitle">Process-Oriented AI Designer</p>
-            <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
         </header>
 
         <main class="process-grid">
             <div class="card">
-                <h3>STRATEJİK ANALİZ</h3>
+                <h3><i class="fas fa-microchip"></i> STRATEJİK ANALİZ</h3>
                 <p>İş akışlarını metodolojik olarak denetliyorum. Operasyonel israfı minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
-                <span class="metric-note">Sonuç: Süreç israflarında %40'a varan azalma.</span>
             </div>
             <div class="card">
-                <h3>DİJİTAL MİMARİ</h3>
+                <h3><i class="fas fa-project-diagram"></i> DİJİTAL MİMARİ</h3>
                 <p>Manuel hataları sıfırlayan, uçtan uca izlenebilir ve optimize edilmiş süreç sistemleri tasarlıyorum.</p>
-                <span class="metric-note">Sonuç: Manuel hata payı %0 hedefine optimize edildi.</span>
-            </div>
-            <div class="card">
-                <h3>AI ENTEGRASYONU</h3>
-                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kurarak hızı artırıyorum.</p>
-                <span class="metric-note">Sonuç: Karar destek süreçlerinde %250 hız artışı.</span>
             </div>
         </main>
 
         <section class="analysis-box">
-            <h2>Hızlı Verimlilik Analizi</h2>
+            <h4>Verimlilik Analizi</h4>
             <div class="options">
-                <span class="opt" onclick="runTest(1)">%20'den az</span>
-                <span class="opt" onclick="runTest(2)">%20 - %50 arası</span>
-                <span class="opt" onclick="runTest(3)">%50'den fazla</span>
-            </div>
-            <div id="test-result"><h4 id="res-title"></h4><p id="res-body"></p></div>
-        </section>
-
-        <section class="faq-section">
-            <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase;">Sıkça Sorulan Sorular</h2>
-            <div class="faq-grid">
-                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasyonları ile sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
-                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz kontrolünüzdedir.</p></div>
-                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Karmaşıklığa bağlı olarak genellikle 2 ile 6 hafta arasındadır.</p></div>
-                <div class="faq-item"><h5>AI yatırımı ne kadar sürede geri döner?</h5><p>Yatırımlar genellikle 3-6 ay içinde kendisini amorti eder.</p></div>
+                <span class="opt" onclick="alert('%20 Verimlilik Artışı Mümkün!')">%20'den az</span>
+                <span class="opt" onclick="alert('%50 Verimlilik Artışı Mümkün!')">%20-%50 arası</span>
             </div>
         </section>
 
-        <section class="cta-section">
-            <h2 style="font-size:1.3rem; font-weight:800; color:var(--text-main);">POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
-            <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
+        <section class="faq-grid">
+            <div class="faq-item"><h5>Güvenlik?</h5><p>Verileriniz KVKK standartlarında korunur.</p></div>
+            <div class="faq-item"><h5>Süre?</h5><p>Ortalama 2-4 hafta içinde teslim.</p></div>
         </section>
 
-        <footer>
-            <div class="legal-btns">
-                <div class="legal-row">
-                    <button class="legal-btn" onclick="openPop('kvkk')">KVKK UYUMU</button>
-                    <button class="legal-btn" onclick="openPop('sec')">BİLGİ GÜVENLİĞİ</button>
-                </div>
-                <button class="legal-btn" onclick="openPop('iso')">ISO STANDARTLARI</button>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--text-dim);">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
+        <a href="https://wa.me/905375807666" class="cta-btn">PROJE BAŞLAT</a>
+
+        <footer style="padding: 40px 0; color: var(--text-dim); font-size: 0.7rem;">
+            <p>&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
         </footer>
     </div>
 
-    <nav class="bottom-nav">
+    <nav class="fixed-bottom-nav">
         <a href="https://www.linkedin.com/in/emrekeçici" class="nav-item">
             <i class="fab fa-linkedin-in"></i>
             <span>LinkedIn</span>
         </a>
         <a href="https://www.x.com/_emrekecici" class="nav-item">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            <svg viewBox="0 0 24 24" style="width: 20px; fill: var(--primary-color);"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
             <span>Twitter</span>
         </a>
         <a href="mailto:emrekecici1985@outlook.com" class="nav-item">
@@ -204,42 +159,5 @@
         </a>
     </nav>
 
-    <div class="signature-container"><div id="typewriter"></div></div>
-
-    <div id="infoModal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePop()">&times;</span><h2 id="mTitle" style="color:var(--primary-color); margin-bottom:20px; font-size:1.1rem;"></h2><p id="mBody" style="color:var(--text-dim); line-height:1.7; font-size:0.9rem;"></p></div></div>
-
-    <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-    <script>
-        const resData = {
-            1: { t: "Optimizasyon Fırsatı", b: "Süreçleriniz stabil ama %20'lik dilim bile AI Agent'lar ile otonom hale getirilebilir." },
-            2: { t: "Kritik Eşik", b: "Operasyonunuzun yarısı manuel yük altında. AI ile verimliliği iki katına çıkarabiliriz." },
-            3: { t: "Acil Dönüşüm", b: "Yüksek operasyonel israf tespit edildi. Acilen dijital mimariye geçilmeli." }
-        };
-        function runTest(v) {
-            document.querySelectorAll('.opt').forEach(o => o.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('res-title').innerText = resData[v].t;
-            document.getElementById('res-body').innerText = resData[v].b;
-            document.getElementById('test-result').style.display = 'block';
-        }
-        const modalData = {
-            kvkk: { t: "KVKK Uyumu", b: "Verileriniz yasal mevzuata göre titizlikle korunmaktadır." },
-            sec: { t: "Bilgi Güvenliği", b: "Mimarimiz en yüksek siber güvenlik standartlarıyla kurgulanır." },
-            iso: { t: "ISO Standartları", b: "Tüm süreç yönetimimiz uluslararası standartlara uygundur." }
-        };
-        function openPop(id) {
-            document.getElementById('mTitle').innerText = modalData[id].t;
-            document.getElementById('mBody').innerText = modalData[id].b;
-            document.getElementById('infoModal').style.display = "flex";
-        }
-        function closePop() { document.getElementById('infoModal').style.display = "none"; }
-        window.onclick = (e) => { if(e.target == document.getElementById('infoModal')) closePop(); }
-
-        const sign = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
-        let idx = 0; let started = false;
-        function type() { if(idx < sign.length) { document.getElementById("typewriter").innerHTML += sign.charAt(idx); idx++; setTimeout(type, 80); } }
-        window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150) { started = true; type(); } };
-    </script>
 </body>
 </html>
