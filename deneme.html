@@ -10,13 +10,14 @@
     
     <style>
         :root {
-            --bg-color: #050810;
-            --card-bg: #111827;
-            --primary-color: #22d3ee;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border-color: rgba(34, 211, 238, 0.2);
-            --status-green: #10b981;
+            /* Ahmet Usta Paleti - Premium & Doğal */
+            --bg-color: #1a1512;        /* Çok koyu ahşap zemin */
+            --card-bg: #261f1a;         /* Sıcak koyu kahve kartlar */
+            --primary-color: #d4a373;   /* Ahmet Usta'nın altın/bal tonu */
+            --text-main: #f4f1de;       /* Yumuşak fildişi metin */
+            --text-dim: #a8a39d;        /* Bej-gri ikincil metin */
+            --border-color: rgba(212, 163, 115, 0.2); /* Vurgu renginde ince bordür */
+            --status-green: #a7c957;    /* Doğal yeşil (daha yumuşak) */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,16 +29,16 @@
             min-height: 100vh; 
             display: flex; 
             flex-direction: column;
-            padding-bottom: 70px; /* Alt bar için güvenli alan */
+            padding-bottom: 70px;
         }
 
         .container { max-width: 850px; margin: 0 auto; padding: 50px 20px; flex: 1; position: relative; }
 
         header { text-align: center; margin-bottom: 40px; padding-top: 20px; }
         h1 { font-weight: 800; font-size: 3rem; margin-bottom: 5px; letter-spacing: -1px; color: var(--primary-color); }
-        .subtitle { color: var(--primary-color); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
+        .subtitle { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
 
-        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(16, 185, 129, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(16, 185, 129, 0.05); }
+        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(167, 201, 87, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(167, 201, 87, 0.05); }
         .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
 
@@ -46,14 +47,13 @@
         .icon-btn:hover { background: var(--primary-color); color: var(--bg-color); transform: translateY(-3px); }
         .icon-btn svg { fill: currentColor; width: 18px; height: 18px; }
 
-        /* --- SABİT ALT BAR (İSİMSİZ BUTONLAR) --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 65px;
-            background: rgba(17, 24, 39, 0.85);
+            background: rgba(38, 31, 26, 0.95);
             backdrop-filter: blur(12px);
             border-top: 1px solid var(--border-color);
             display: flex;
@@ -77,30 +77,30 @@
         .nav-item svg { fill: currentColor; width: 22px; height: 22px; }
 
         .process-grid { margin-top: 40px; display: grid; gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--border-color); }
         .card h3 { color: var(--primary-color); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         .card h3::before { content: "●"; font-size: 0.7rem; color: var(--primary-color); }
         .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
-        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.6; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--primary-color); opacity: 0.8; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
 
         .assessment-section { margin-top: 60px; display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .analysis-box { background: rgba(255,255,255,0.02); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .analysis-box { background: rgba(212, 163, 115, 0.03); padding: 35px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
         .analysis-box h2 { font-size: 1rem; color: var(--text-main); margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; }
         .q-item p { font-size: 1.1rem; color: var(--text-main); font-weight: 600; margin-bottom: 25px; }
         .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
         .opt { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-dim); padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
-        .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--primary-color); background: rgba(34, 211, 238, 0.05); }
-        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(5, 8, 16, 0.7); border-left: 4px solid var(--primary-color); display: none; text-align: left; animation: fadeIn 0.4s ease; }
+        .opt:hover, .opt.active { border-color: var(--primary-color); color: var(--bg-color); background: var(--primary-color); }
+        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(26, 21, 18, 0.9); border-left: 4px solid var(--primary-color); display: none; text-align: left; animation: fadeIn 0.4s ease; }
 
         .faq-section { margin-top: 60px; }
         .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .faq-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .faq-item { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid rgba(212, 163, 115, 0.1); }
         .faq-item h5 { font-size: 0.9rem; color: var(--primary-color); margin-bottom: 8px; }
         .faq-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
 
-        .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(5, 8, 16, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .cta-section { margin-top: 80px; background: linear-gradient(135deg, rgba(212, 163, 115, 0.1) 0%, rgba(26, 21, 18, 0) 100%); padding: 50px; border-radius: 20px; border: 1px solid var(--primary-color); text-align: center; }
         .cta-btn { display: inline-block; background: var(--primary-color); color: var(--bg-color); padding: 14px 35px; border-radius: 8px; font-weight: 700; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary-color); }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(212, 163, 115, 0.4); }
 
         footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--border-color); }
         .legal-btns { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 25px; }
@@ -108,9 +108,9 @@
         .legal-btn { background: transparent; border: 1px solid var(--text-dim); color: var(--text-dim); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; }
 
         .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; min-height: 30px; }
-        #typewriter { font-family: 'Fira Code', monospace; color: var(--text-dim); font-size: 0.8rem; opacity: 0.7; }
+        #typewriter { font-family: 'Fira Code', monospace; color: var(--primary-color); font-size: 0.8rem; opacity: 0.6; }
 
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 1px solid var(--primary-color); position: relative; }
         .close-btn { position: absolute; top: 20px; right: 20px; color: var(--primary-color); cursor: pointer; font-size: 1.8rem; }
 
@@ -176,7 +176,7 @@
         <section class="faq-section">
             <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase;">Sıkça Sorulan Sorular</h2>
             <div class="faq-grid">
-                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasyonları ile mevcut sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
+                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasomasyonları ile mevcut sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
                 <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz sadece sizin kontrolünüzdedir.</p></div>
                 <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Karmaşıklığa bağlı olarak analiz ve uygulama genellikle 2 ile 6 hafta arasındadır.</p></div>
                 <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreç odaklı yaklaşımımız sektörel bağımsızdır. "Süreci olan" her işletmede verimlilik artışı sağlıyoruz.</p></div>
