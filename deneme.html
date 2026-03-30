@@ -57,18 +57,18 @@
         }
 
         ul { padding-left: 20px; margin: 0; }
-        li { margin-bottom: 15px; }
+        li { margin-bottom: 12px; }
         strong { color: #1B263B; }
 
         .job-detail {
             display: block;
             font-size: 14.5px;
             color: #636E72;
-            margin-top: 6px;
+            margin-top: 4px;
             font-style: italic;
         }
 
-        /* ÖZGEÇMİŞ İNDİR BUTONU - YATAY DİKDÖRTGEN */
+        /* ÖZGEÇMİŞ İNDİR BUTONU */
         .cv-download-section {
             text-align: center;
             margin: 50px 0;
@@ -77,7 +77,7 @@
         .btn-pdf {
             background: #1B263B;
             color: #FFF;
-            padding: 18px 60px; /* Yatay genişlik artırıldı */
+            padding: 18px 60px;
             text-decoration: none;
             font-weight: 800;
             border-radius: 6px;
@@ -95,10 +95,10 @@
             box-shadow: 0 10px 25px rgba(27, 38, 59, 0.4);
         }
 
-        /* YASAL FOOTER - TAM HİZALI VE PROFESYONEL */
+        /* YASAL FOOTER */
         .legal-footer {
             display: flex;
-            justify-content: space-between; /* Kutuları eşit dağıtır */
+            justify-content: space-between;
             gap: 15px;
             margin-top: 60px;
             padding-top: 30px;
@@ -106,7 +106,7 @@
         }
 
         .legal-item {
-            flex: 1; /* Tüm kutular eşit genişlikte olur */
+            flex: 1;
             background: #F8F9FA;
             padding: 15px 10px;
             border-radius: 6px;
@@ -120,13 +120,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            white-space: nowrap; /* Yazıları tek satırda tutmaya zorlar */
-        }
-
-        .legal-item:hover {
-            background: #E1E8EE;
-            border-color: #B2BEC3;
-            transform: translateY(-2px);
         }
 
         /* MODAL SİSTEMİ */
@@ -143,12 +136,7 @@
         .modal-content {
             background: #FFF; padding: 40px; border-radius: 12px;
             max-width: 550px; width: 90%; text-align: left;
-            position: relative; animation: modalIn 0.3s ease;
-        }
-
-        @keyframes modalIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            position: relative;
         }
 
         .close-x {
@@ -158,23 +146,14 @@
             color: #B2BEC3; cursor: pointer;
         }
 
-        .close-x:hover { color: #D63031; }
-
         .btn-modal-close {
             background: #1B263B; color: #FFF; border: none;
             padding: 12px 35px; font-weight: 700; cursor: pointer; border-radius: 6px;
-            display: block; margin: 20px auto 0 auto; text-transform: uppercase;
+            display: block; margin: 20px auto 0 auto;
         }
 
-        /* MOBİL UYUM */
         @media (max-width: 768px) {
-            .legal-footer {
-                flex-direction: column;
-            }
-            .btn-pdf {
-                padding: 18px 30px;
-                width: 80%;
-            }
+            .legal-footer { flex-direction: column; }
         }
     </style>
 </head>
@@ -214,10 +193,14 @@
     <div class="section">
         <h2 class="section-title">Uzmanlık & Sertifikasyon</h2>
         <ul>
-            <li>İplik Teknolojileri Ustalık Derecesi</li>
-            <li>Yüzey Hijyeni ve Endüstriyel Sanitasyon Sertifikaları</li>
-            <li>BTK Akademi: Stratejik Yapay Zeka Uygulamaları ve Risk Yönetimi (2026)</li>
-            <li>Teknik Yetkinlikler: Forklift Operasyon ve İleri İlkyardım Müdahale Belgeleri</li>
+            <li><strong>Yüzey Temizleme Sertifikası:</strong> Endüstriyel alanlarda hijyen standartlarının korunması ve yüzey bakım teknikleri uzmanlığı.</li>
+            <li><strong>Hijyen Eğitim Belgesi:</strong> Gıda güvenliği ve genel sanitasyon kuralları çerçevesinde profesyonel hijyen yetkinliği.</li>
+            <li><strong>İplik Teknolojileri Ustalık Belgesi:</strong> Tekstil üretim süreçleri, iplik mukavemeti ve kalite kontrol standartları uzmanlığı.</li>
+            <li><strong>BTK Akademi: Yapay Zeka Uygulamaları:</strong> İş süreçlerinde yapay zekanın stratejik kullanımı ve veri analizi yetkinliği (2026).</li>
+            <li><strong>BTK Akademi: Problem Çözme & Risk Yönetimi:</strong> Operasyonel risklerin analizi ve çözüm odaklı metodolojilerin uygulanması.</li>
+            <li><strong>Forklift Operatörlük Belgesi (G Sınıfı):</strong> Depo yönetimi ve endüstriyel araçların güvenli operasyonel kullanımı.</li>
+            <li><strong>İlkyardım ve Acil Müdahale Sertifikası:</strong> İş sağlığı ve güvenliği kapsamında acil durum yönetimi yetkinliği.</li>
+            <li><strong>T.C. Gençlik ve Spor Bakanlığı: Cankurtaran Sertifikası:</strong> Ekip yönetimi ve can güvenliği protokolleri liderliği.</li>
         </ul>
     </div>
 
@@ -243,18 +226,9 @@
 
 <script>
     const legData = {
-        'ssl': { 
-            t: 'Veri İletişim Güvenliği (SSL)', 
-            b: 'Web sitemiz üzerinden gerçekleştirilen tüm veri trafiği, uluslararası standartlarda kabul görmüş 256-bit SSL sertifikası ile uçtan uca şifrelenmektedir. Paylaştığınız veriler ve iletişim talepleriniz tam koruma altındadır.' 
-        },
-        'kvkk': { 
-            t: 'KVKK ve Veri Gizliliği Uyumu', 
-            b: 'Paylaşmış olduğunuz kişisel veriler, 6698 sayılı KVKK hükümlerine tam uyumlu şekilde işlenmektedir. Bilgileriniz, yasal zorunluluklar dışında üçüncü taraflarla asla paylaşılmamaktadır.' 
-        },
-        'safe': { 
-            t: 'Google Güvenli Tarama Standartları', 
-            b: 'Platformumuz, modern siber güvenlik protokolleri tarafından düzenli olarak taranmaktadır. İçeriğimizde hiçbir zararlı yazılım veya güvenlik açığı bulunmamaktadır.' 
-        }
+        'ssl': { t: 'SSL Güvenliği', b: 'Veri trafiğiniz 256-bit şifreleme ile tam koruma altındadır.' },
+        'kvkk': { t: 'KVKK Uyumu', b: 'Verileriniz kanuni mevzuata uygun olarak işlenmektedir.' },
+        'safe': { t: 'Güvenli Erişim', b: 'Sitemiz güvenlik taramalarından geçirilmiş güvenilir bir platformdur.' }
     };
 
     function openLeg(key) {
@@ -263,13 +237,8 @@
         document.getElementById('legModal').style.display = 'flex';
     }
 
-    function closeLeg() { 
-        document.getElementById('legModal').style.display = 'none'; 
-    }
-
-    window.onclick = function(e) { 
-        if (e.target == document.getElementById('legModal')) closeLeg(); 
-    }
+    function closeLeg() { document.getElementById('legModal').style.display = 'none'; }
+    window.onclick = function(e) { if (e.target == document.getElementById('legModal')) closeLeg(); }
 </script>
 
 </body>
