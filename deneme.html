@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Profesyonel Portfolyo</title>
+    <title>Emre Keçici</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -32,25 +32,21 @@
             padding: 40px 20px;
         }
 
+        /* --- Header: Sadece İsim --- */
         header {
             text-align: center;
-            padding: 80px 0 40px;
+            padding: 120px 0 60px;
         }
 
         header h1 {
             color: var(--dark-navy);
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             letter-spacing: -0.04em;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
-        header p {
-            font-size: 1.1rem;
-            color: var(--primary-blue);
-            font-weight: 500;
-        }
-
+        /* --- Ana İçerik Kartları --- */
         .section-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -96,7 +92,8 @@
             font-size: 1.05rem;
         }
 
-        .contact-area { text-align: center; padding: 40px 0; }
+        /* --- WhatsApp Butonu --- */
+        .contact-area { text-align: center; padding: 60px 0; }
 
         .btn {
             display: inline-flex;
@@ -110,9 +107,12 @@
             font-weight: 700;
             font-size: 1.1rem;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            transition: transform 0.2s;
         }
 
-        /* --- Footer Kutucuk Yapısı (Görseldeki Gibi) --- */
+        .btn:hover { transform: scale(1.03); }
+
+        /* --- En Alttaki Profesyonel Kutular (Footer) --- */
         footer {
             margin-top: 80px;
             padding: 60px 0;
@@ -120,7 +120,7 @@
             border-radius: 50px 50px 0 0;
         }
 
-        .legal-wrapper {
+        .legal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
@@ -153,9 +153,10 @@
             color: var(--text-muted);
             text-align: justify;
             line-height: 1.6;
+            margin: 0;
         }
 
-        .footer-bottom {
+        .copyright {
             text-align: center;
             margin-top: 50px;
             font-size: 0.85rem;
@@ -163,8 +164,8 @@
         }
 
         @media (max-width: 768px) {
-            .grid-list, .legal-wrapper { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.5rem; }
+            .grid-list, .legal-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -173,7 +174,6 @@
 <div class="container">
     <header>
         <h1>Emre Keçici</h1>
-        <p>Dijital Süreçlerde Şeffaflık ve Tecrübe</p>
     </header>
 
     <div class="section-card">
@@ -209,7 +209,7 @@
 </div>
 
 <footer>
-    <div class="legal-wrapper">
+    <div class="legal-grid">
         <div class="legal-box">
             <h3>KVKK Aydınlatma Metni</h3>
             <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) çerçevesinde; bu platform üzerinden paylaşılan her türlü kişisel veri, "Veri Sorumlusu" sıfatıyla, yalnızca profesyonel iletişimi sürdürmek ve taleplerinize doğru yanıtlar üretmek amacıyla işlenmektedir. Verileriniz, yasal zorunluluklar dışında hiçbir üçüncü taraf kurum veya kuruluşla paylaşılmamakta; siber güvenlik standartlarına uygun idari ve teknik tedbirlerle korunmaktadır.</p>
@@ -217,11 +217,11 @@
 
         <div class="legal-box">
             <h3>Dijital Güvenlik Politikası</h3>
-            <p>Ziyaretçi güvenliği temel standarttır. Web sitemiz, veri bütünlüğünü ve gizliliğini uçtan uca koruma altına alan endüstri standardı 256-Bit SSL (Secure Sockets Layer) sertifikası ile güçlendirilmiştir. Kullanıcı deneyiminizi optimize etmek adına sitemizde sadece teknik ve anonim çerezler kullanılmaktadır. Sitemizde gezinmeye devam ederek bu standartları kabul etmiş sayılırsınız.</p>
+            <p>Ziyaretçi güvenliği temel standarttır. Web sitemiz, veri bütünlüğünü ve gizliliğini uçtan uca koruma altına alan endüstri standardı 256-Bit SSL sertifikası ile güçlendirilmiştir. Kullanıcı deneyiminizi optimize etmek adına sitemizde sadece teknik ve anonim çerezler kullanılmaktadır. Sitemizde gezinmeye devam ederek bu standartları kabul etmiş sayılırsınız.</p>
         </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="copyright">
         <p>© 2026 | Emre Keçici | Tüm Hakları Saklıdır. | Orhangazi, Bursa</p>
     </div>
 </footer>
