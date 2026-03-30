@@ -3,233 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Process-Oriented AI Designer</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Emre Keçici | Profesyonel Öz Geçmiş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
+        /* GENEL TASARIM VE RENK PALETİ */
         :root {
-            --bg-color: #ffffff;        
-            --card-bg: #d4a373;         
-            --primary-color: #d4a373;   
-            --text-dark: #1a1512;       
-            --text-dim: #4b5563;        
-            --border-color: rgba(26, 21, 18, 0.1); 
-            --status-green: #a7c957;    
+            --bg-color: #F8F9FA; /* Açık Gri Arka Plan */
+            --card-bg: #FFFFFF;  /* Beyaz Kartlar */
+            --primary-dark: #1B263B; /* Lacivert Başlıklar */
+            --text-color: #415A77;   /* Füme Yazılar */
+            --accent-blue: #007BFF;  /* Vurgu Mavisi */
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--text-dark); 
-            overflow-x: hidden; 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column;
-            padding-bottom: 70px;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 30px 20px; flex: 1; position: relative; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-dark); }
 
-        header { text-align: center; margin-bottom: 40px; padding-top: 10px; }
-        .subtitle { color: #6b7280; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; opacity: 0.9; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-        .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; color: var(--status-green); font-weight: 600; letter-spacing: 1px; margin-top: 15px; border: 1px solid rgba(167, 201, 87, 0.2); padding: 5px 12px; border-radius: 20px; background: rgba(167, 201, 87, 0.05); }
-        .dot { width: 6px; height: 6px; background: var(--status-green); border-radius: 50%; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } }
+        /* HERO (GİRİŞ) ALANI */
+        .hero { text-align: center; padding: 40px 20px; background: var(--card-bg); border-bottom: 3px solid var(--accent-blue); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .hero h1 { margin: 0; font-size: 2.5em; }
+        .hero p { font-size: 1.1em; max-width: 700px; margin: 15px auto; }
 
-        .social-icons { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .icon-btn { width: 45px; height: 45px; background: transparent; border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; text-decoration: none; transition: 0.3s; }
-        .icon-btn:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
+        /* KART DÜZENİ */
+        .section-card { background: var(--card-bg); padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .section-title { border-left: 5px solid var(--accent-blue); padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 65px;
-            background: #1a1512;
-            backdrop-filter: blur(12px);
-            border-top: 2px solid var(--primary-color);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 1500;
+        /* LİSTE STİLLERİ */
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        ul li::before { content: "•"; color: var(--accent-blue); font-weight: bold; position: absolute; left: 0; }
+
+        /* CV İNDİR BUTONU */
+        .btn-download {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
         }
-        .nav-item { color: var(--primary-color); font-size: 1.4rem; text-decoration: none; width: 25%; height: 100%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .btn-download:hover { background: #0056b3; transform: scale(1.05); }
 
-        .process-grid { margin-top: 40px; display: grid; gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
-        .card h3 { color: var(--text-dark); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800; }
-        .card h3::before { content: "●"; font-size: 0.7rem; color: var(--text-dark); }
-        .card p { color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; font-weight: 500; }
-        .metric-note { display: block; margin-top: 15px; font-size: 0.7rem; color: var(--text-dark); opacity: 0.7; font-style: italic; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 10px; }
+        /* FOOTER VE YASAL KUTUCUKLAR */
+        footer { text-align: center; padding: 40px 0; background: #eee; margin-top: 50px; }
+        .legal-box-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .legal-box { 
+            background: #ddd; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 0.85em; 
+            transition: 0.3s; border: 1px solid #ccc;
+        }
+        .legal-box:hover { background: #ccc; }
 
-        .assessment-section { margin-top: 60px; }
-        .analysis-box { background: var(--card-bg); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 4px 15px rgba(212, 163, 115, 0.2); }
-        .analysis-box h2 { font-size: 1rem; color: var(--text-dark); margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
-        .q-item p { font-size: 1.1rem; color: var(--text-dark); font-weight: 700; margin-bottom: 25px; }
-        .options { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-        
-        /* Analiz Kutucukları - Siteye Uygun Yeni Renkler */
-        .opt { background: rgba(26, 21, 18, 0.15); border: 1px solid var(--text-dark); color: var(--text-dark); padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; font-weight: 700; }
-        .opt:hover, .opt.active { background: var(--text-dark); color: var(--primary-color); border-color: var(--text-dark); }
-        
-        #test-result { margin-top: 30px; padding: 25px; border-radius: 12px; background: rgba(255, 255, 255, 0.9); border-left: 4px solid var(--text-dark); display: none; text-align: left; }
+        /* MODAL (AÇILIR PENCERE) */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 10px; max-width: 500px; text-align: center; position: relative; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #888; }
+        .btn-close-modal { background: var(--primary-dark); color: white; padding: 8px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; }
 
-        .faq-section { margin-top: 60px; }
-        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .faq-item { background: var(--card-bg); padding: 20px; border-radius: 12px; }
-        .faq-item h5 { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; font-weight: 800; }
-        .faq-item p { font-size: 0.85rem; color: var(--text-dark); line-height: 1.6; font-weight: 500; }
-
-        .cta-section { margin-top: 80px; background: var(--card-bg); padding: 50px; border-radius: 20px; text-align: center; }
-        .cta-section h2 { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); }
-        .cta-section p { color: var(--text-dark); font-size: 0.95rem; margin-top: 10px; font-weight: 500; }
-        
-        /* Proje Başlat Butonu - Koyu Renk Optimizasyonu */
-        .cta-btn { display: inline-block; background: #1a1512; color: var(--primary-color); padding: 14px 35px; border-radius: 8px; font-weight: 800; text-decoration: none; text-transform: uppercase; transition: 0.3s; margin-top: 25px; border: 1px solid var(--text-dark); }
-        .cta-btn:hover { transform: scale(1.05); background: #000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-        footer { margin-top: 60px; padding: 40px 0 100px; text-align: center; border-top: 1px solid var(--primary-color); }
-        .legal-btn { background: var(--card-bg); border: 1px solid rgba(0,0,0,0.1); color: var(--text-dark); padding: 8px 16px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; min-width: 140px; font-weight: 700; transition: 0.3s; }
-
-        .signature-container { width: 100%; text-align: center; padding: 20px 0; margin-top: -60px; }
-        #typewriter { font-family: 'Fira Code', monospace; color: var(--primary-color); font-size: 0.8rem; font-weight: 800; }
-
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; }
-        .modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; max-width: 550px; width: 100%; border: 2px solid var(--text-dark); position: relative; }
-        
-        .wa-link { position: fixed; bottom: 85px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; z-index: 1200; border: 2px solid var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } .container { padding: 15px 15px; } }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.8em; } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <p class="subtitle">Process-Oriented AI Designer</p>
-            <div class="status-badge"><span class="dot"></span> ŞU AN YENİ PROJELER İÇİN MÜSAİT</div>
+<div class="hero">
+    [span_0](start_span)<h1>EMRE KEÇİCİ</h1>[span_0](end_span)
+    <p>Bursa/Orhangazi | [span_1](start_span)0537 580 76 66 | emrekecici1985@outlook.com</p>[span_1](end_span)
+    [span_2](start_span)[span_3](start_span)<p>Sürekli gelişim ve operasyonel mükemmelliği hedefleyen, 5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaşmış disiplinli bir profesyonelim.[span_2](end_span)[span_3](end_span)</p>
+    <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-download" target="_blank">📄 Güncel Öz Geçmişi PDF İndir</a>
+</div>
 
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/emrekeçici" class="icon-btn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.x.com/_emrekecici" class="icon-btn">
-                    <svg viewBox="0 0 24 24" style="fill:currentColor; width:18px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                </a>
-                <a href="mailto:emrekecici1985@outlook.com" class="icon-btn"><i class="fas fa-envelope"></i></a>
-                <a href="tel:05375807666" class="icon-btn"><i class="fas fa-phone"></i></a>
-            </div>
-        </header>
+<div class="container">
 
-        <main class="process-grid">
-            <div class="card">
-                <h3>STRATEJİK ANALİZ</h3>
-                <p>İş akışlarını metodolojik olarak denetliyorum. Operasyonel israfı minimize ederek AI entegrasyonuna hazır zemin oluşturuyorum.</p>
-                <span class="metric-note">Sonuç: Süreç israflarında %40'a varan azalma.</span>
-            </div>
-            <div class="card">
-                <h3>DİJİTAL MİMARİ</h3>
-                <p>Manuel hataları sıfırlayan, uçtan uca izlenebilir ve optimize edilmiş süreç sistemleri tasarlıyorum.</p>
-                <span class="metric-note">Sonuç: Manuel hata payı %0 hedefine optimize edildi.</span>
-            </div>
-            <div class="card">
-                <h3>AI ENTEGRASYONU</h3>
-                <p>BTK Akademi uzmanlığıyla, süreçlerinize özel yapay zeka otomasyonları kurarak operasyonel hızı artırıyorum.</p>
-                <span class="metric-note">Sonuç: Karar destek süreçlerinde %250 hız artışı.</span>
-            </div>
-        </main>
-
-        <section class="assessment-section">
-            <div class="analysis-box">
-                <h2>Hızlı Verimlilik Analizi</h2>
-                <div class="q-item">
-                    <p>Tekrarlayan manuel işler günlük mesainizin ne kadarını alıyor?</p>
-                    <div class="options">
-                        <span class="opt" onclick="runTest(1)">%20'den az</span>
-                        <span class="opt" onclick="runTest(2)">%20 - %50 arası</span>
-                        <span class="opt" onclick="runTest(3)">%50'den fazla</span>
-                    </div>
-                </div>
-                <div id="test-result"><h4 id="res-title"></h4><p id="res-body"></p></div>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <h2 style="text-align:center; font-size:1rem; margin-bottom:30px; text-transform:uppercase; color:var(--primary-color);">Sıkça Sorulan Sorular</h2>
-            <div class="faq-grid">
-                <div class="faq-item"><h5>Mevcut yazılımlarıma AI entegre edilebilir mi?</h5><p>Evet. API ve ara yüz otomasomasyonları ile mevcut sistemlerinize akıllı katmanlar ekliyoruz.</p></div>
-                <div class="faq-item"><h5>Veri güvenliği nasıl sağlanıyor?</h5><p>KVKK uyumlu ve "Privacy by Design" mimarisiyle verileriniz sadece sizin kontrolünüzdedir.</p></div>
-                <div class="faq-item"><h5>Entegrasyon süreci ne kadar sürer?</h5><p>Analiz ve uygulama genellikle 2 ile 6 hafta arasındadır.</p></div>
-                <div class="faq-item"><h5>Hangi sektörler için uygundur?</h5><p>Süreci olan her işletmede verimlilik artışı sağlıyoruz.</p></div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>POTANSİYELİ PERFORMANSA DÖNÜŞTÜRELİM</h2>
-            <p>Süreçlerinizi dijital mimariyle optimize etmek için iletişime geçin.</p>
-            <a href="https://wa.me/905375807666" class="cta-btn" target="_blank">PROJE BAŞLAT</a>
-        </section>
-
-        <footer>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:25px;">
-                <div style="display:flex; gap:10px;">
-                    <button class="legal-btn" onclick="openPop('kvkk')">KVKK UYUMU</button>
-                    <button class="legal-btn" onclick="openPop('sec')">BİLGİ GÜVENLİĞİ</button>
-                </div>
-                <button class="legal-btn" onclick="openPop('iso')">ISO STANDARTLARI</button>
-            </div>
-            <p style="font-size: 0.75rem; color: #6b7280;">&copy; 2026 EMRE KEÇİCİ. TÜM HAKLARI SAKLIDIR.</p>
-        </footer>
+    <div class="section-card">
+        <h2 class="section-title">Teknik Yetkinlikler</h2>
+        <ul>
+            [span_4](start_span)<li><strong>Yalın Araçlar:</strong> 5S (Tertip-Düzen), Kaizen, Poka-Yoke (Hata Önleme).[span_4](end_span)</li>
+            [span_5](start_span)<li><strong>Analiz Teknikleri:</strong> 5 Neden Analizi, Balık Kılçığı, Pareto (80/20) Analizi.[span_5](end_span)</li>
+            [span_6](start_span)<li><strong>Operasyonel Yönetim:</strong> MUDA (8 Büyük İsraf) Avcılığı, Gemba Walk, PUKÖ Döngüsü.[span_6](end_span)</li>
+            [span_7](start_span)<li><strong>Görsel Yönetim:</strong> Andon Sistemleri, T-Kart Takip, Standart İş Talimatları.[span_7](end_span)</li>
+            [span_8](start_span)<li><strong>Lojistik & Üretim:</strong> Depo Yönetimi, Stok Optimizasyonu, Forklift Operatörlüğü.[span_8](end_span)</li>
+        </ul>
     </div>
 
-    <nav class="bottom-nav">
-        <a href="https://www.linkedin.com/in/emrekeçici" class="nav-item"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.x.com/_emrekecici" class="nav-item">
-            <svg viewBox="0 0 24 24" style="fill:currentColor; width:22px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-        </a>
-        <a href="mailto:emrekecici1985@outlook.com" class="nav-item"><i class="fas fa-envelope"></i></a>
-        <a href="tel:05375807666" class="nav-item"><i class="fas fa-phone"></i></a>
-    </nav>
+    <div class="section-card">
+        <h2 class="section-title">İş Tecrübesi</h2>
+        <p><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | [span_9](start_span)2024 - Devam</p>[span_9](end_span)
+        [span_10](start_span)<ul><li>Sahadaki israfları (MUDA) minimize edecek veri odaklı çözüm önerileri geliştirme.[span_10](end_span)</li></ul>
 
-    <div class="signature-container"><div id="typewriter"></div></div>
+        <p><strong>Danışma Memuru | Iberyarns Tekstil</strong> | [span_11](start_span)2021 - 2024</p>[span_11](end_span)
+        [span_12](start_span)<ul><li>Süreç iyileştirme ve gereksinim analizi çalışmalarında aktif rol.[span_12](end_span)</li></ul>
 
-    <div id="infoModal" class="modal"><div class="modal-content"><h2 id="mTitle" style="color:var(--text-dark); margin-bottom:20px;"></h2><p id="mBody" style="color:var(--text-dark); font-weight:500;"></p><button onclick="closePop()" style="margin-top:20px; background:var(--text-dark); color:var(--primary-color); border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">KAPAT</button></div></div>
+        <p><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | [span_13](start_span)2019 - 2021</p>[span_13](end_span)
+        [span_14](start_span)<ul><li>Üretim süreç koordinasyonu ve ekip liderliği.[span_14](end_span)</li></ul>
+    </div>
 
-    <a href="https://wa.me/905375807666" class="wa-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="section-card">
+        <h2 class="section-title">Başarılar & Sertifikalar</h2>
+        <ul>
+            [span_15](start_span)<li><strong>Hata Önleme (Poka-Yoke):</strong> Fire oranlarında belirgin düşüş sağlandı.[span_15](end_span)</li>
+            [span_16](start_span)<li><strong>Hat Optimizasyonu:</strong> 5 Neden Analizi ile duruş sürelerinde %10 iyileşme.[span_16](end_span)</li>
+            [span_17](start_span)<li><strong>BTK Akademi (2026):</strong> Yapay Zeka, Problem Çözme, Proje ve Risk Yönetimi.[span_17](end_span)</li>
+            [span_18](start_span)<li><strong>Mesleki Belgeler:</strong> İplik Teknolojileri Ustalık, Yüzey Temizleme, Hijyen, Forklift, İlkyardım.[span_18](end_span)</li>
+        </ul>
+    </div>
 
-    <script>
-        const resData = {
-            1: { t: "Optimizasyon Fırsatı", b: "Süreçleriniz stabil ama %20'lik dilim bile AI Agent'lar ile otonom hale getirilebilir." },
-            2: { t: "Kritik Eşik", b: "Operasyonunuzun yarısı manuel yük altında. AI ile verimliliği iki katına çıkarabiliriz." },
-            3: { t: "Acil Dönüşüm", b: "Yüksek operasyonel israf tespit edildi. Acilen dijital mimariye geçilmesi önerilir." }
-        };
-        function runTest(v) {
-            document.querySelectorAll('.opt').forEach(o => o.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('res-title').innerText = resData[v].t;
-            document.getElementById('res-body').innerText = resData[v].b;
-            document.getElementById('test-result').style.display = 'block';
-        }
-        function openPop(id) {
-            const modalData = {
-                kvkk: { t: "KVKK Uyumu", b: "Kişisel verileriniz yasal mevzuata göre titizlikle korunmaktadır." },
-                sec: { t: "Bilgi Güvenliği", b: "Dijital mimarimiz en yüksek siber güvenlik standartlarıyla kurgulanır." },
-                iso: { t: "ISO Standartları", b: "Tüm süreç yönetimimiz uluslararası kalite standartlarına uygundur." }
-            };
-            document.getElementById('mTitle').innerText = modalData[id].t;
-            document.getElementById('mBody').innerText = modalData[id].b;
-            document.getElementById('infoModal').style.display = "flex";
-        }
-        function closePop() { document.getElementById('infoModal').style.display = "none"; }
-        
-        const sign = "DESIGNED AND DEVELOPED BY EMRE KEÇİCİ";
-        let idx = 0; let started = false;
-        function type() { if(idx < sign.length) { document.getElementById("typewriter").innerHTML += sign.charAt(idx); idx++; setTimeout(type, 80); } }
-        window.onscroll = () => { if(!started && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { started = true; type(); } };
-    </script>
+</div>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Emre Keçici - Tüm Hakları Saklıdır.</p>
+        <div class="legal-box-container">
+            <div class="legal-box" onclick="openModal('ssl')">🔒 SSL Güvenliği</div>
+            <div class="legal-box" onclick="openModal('kvkk')">🛡️ KVKK Uyumu</div>
+            <div class="legal-box" onclick="openModal('safe')">✅ Güvenli Tarama</div>
+        </div>
+    </div>
+</footer>
+
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Bilgilendirme</h3>
+        <p id="modalBody"></p>
+        <button class="btn-close-modal" onclick="closeModal()">Kapat</button>
+    </div>
+</div>
+
+<script>
+    const modalData = {
+        'ssl': { title: 'SSL Güvenlik Sertifikası', body: 'Bu web sitesi 256-bit SSL sertifikası ile korunmaktadır. Paylaştığınız veriler şifrelenerek iletilir.' },
+        'kvkk': { title: 'KVKK Bilgilendirmesi', body: 'Kişisel verileriniz 6698 sayılı KVKK uyarınca korunmaktadır. Bilgileriniz üçüncü şahıslarla paylaşılmaz.' },
+        'safe': { title: 'Güvenli Tarama', body: 'Sitemiz Google Güvenli Tarama standartlarına uygundur ve zararlı içerik barındırmaz.' }
+    };
+
+    function openModal(type) {
+        document.getElementById('modalTitle').innerText = modalData[type].title;
+        document.getElementById('modalBody').innerText = modalData[type].body;
+        document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('infoModal').style.display = 'none';
+    }
+
+    // Modal dışına tıklayınca kapatma
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('infoModal')) { closeModal(); }
+    }
+</script>
+
 </body>
 </html>
