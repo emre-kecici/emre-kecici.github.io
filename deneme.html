@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Operasyonel Mükemmellik & İş Geliştirme</title>
+    <title>Emre Keçici | Dijital Portfolyo</title>
     <style>
         /* GENEL TASARIM */
         body {
@@ -24,19 +24,30 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* ÜST ALAN */
+        /* ÜST ALAN - YENİ DÜZENLEME */
         .header {
             text-align: center;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
 
         .header h1 {
             margin: 0;
             color: #1B263B;
-            font-size: 38px;
+            font-size: 42px; /* Tek satırda daha güçlü görünüm */
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-weight: 800;
+            white-space: nowrap; /* Tek satır kalmasını garantiler */
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            color: #636E72; /* Daha soft, uygun renk */
+            letter-spacing: 8px; /* Profesyonel yayılım */
+            text-transform: uppercase;
+            margin-top: 5px;
+            font-weight: 600;
+            opacity: 0.8;
         }
 
         /* BÖLÜMLER */
@@ -56,7 +67,7 @@
             font-weight: 800;
         }
 
-        /* HAKKIMDA - SİMETRİK KUTUCUK VE ŞERİT DÜZENİ */
+        /* HAKKIMDA - KUTUCUK VE ŞERİT DÜZENİ KORUNDU */
         .about-list {
             padding: 0;
             list-style: none;
@@ -65,20 +76,20 @@
 
         .about-list li {
             margin-bottom: 12px;
-            text-align: justify; /* Yazıları iki yana yaslayarak blok görünümü sağlar */
+            text-align: justify;
             padding: 15px 20px;
             background: #F9F9F9;
-            border-left: 6px solid #1B263B; /* Siyah şerit korunuyor */
+            border-left: 6px solid #1B263B;
             font-size: 15px;
-            display: flex; /* İçerik hizalaması için */
+            display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 60px; /* Kutucukların eşit hissettirmesi için denge boyutu */
+            min-height: 60px;
         }
 
         strong { color: #1B263B; }
 
-        /* DENEYİM VE SERTİFİKA LİSTELERİ */
+        /* STANDART LİSTELER KORUNDU */
         .standard-list { padding-left: 20px; margin: 0; }
         .standard-list li { margin-bottom: 15px; }
 
@@ -90,7 +101,7 @@
             font-style: italic;
         }
 
-        /* ÖZGEÇMİŞ İNDİR BUTONU */
+        /* ÖZGEÇMİŞ İNDİR BUTONU KORUNDU */
         .cv-download-section {
             text-align: center;
             margin: 50px 0;
@@ -117,7 +128,7 @@
             box-shadow: 0 10px 25px rgba(27, 38, 59, 0.4);
         }
 
-        /* YASAL FOOTER */
+        /* YASAL FOOTER KORUNDU */
         .legal-footer {
             display: flex;
             justify-content: space-between;
@@ -175,6 +186,8 @@
         }
 
         @media (max-width: 768px) {
+            .header h1 { font-size: 28px; white-space: normal; }
+            .header .subtitle { letter-spacing: 4px; }
             .legal-footer { flex-direction: column; }
         }
     </style>
@@ -184,6 +197,7 @@
 <div class="container">
     <div class="header">
         <h1>EMRE KEÇİCİ</h1>
+        <div class="subtitle">DİJİTAL PORTFOLYO</div>
     </div>
 
     <div class="section">
