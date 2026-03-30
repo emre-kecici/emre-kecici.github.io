@@ -27,10 +27,10 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-        /* Üst Bölüm Kartları */
+        /* Üst Bölüm Kartları - Eşit Boyut ve Hizalama */
         .intro-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 20px;
         }
@@ -41,6 +41,9 @@
             border-radius: 24px;
             padding: 35px;
             box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .section-card h2 {
@@ -66,19 +69,6 @@
         .philosophy-list li::before {
             content: "•"; position: absolute; left: 0; color: var(--primary-blue); font-weight: bold; font-size: 1.5rem; line-height: 1;
         }
-
-        /* Şu An Ne Yapıyorum Kartı */
-        .focus-card {
-            background: var(--dark-navy);
-            color: white;
-            border-radius: 24px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .focus-card h4 { color: var(--primary-blue); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .focus-card p { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
 
         /* 10 Maddelik Grid */
         .grid-container {
@@ -121,7 +111,7 @@
             opacity: 0.6;
             filter: grayscale(1);
         }
-        .tech-item { font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; }
+        .tech-item { font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; }
 
         /* İletişim Alanı */
         .contact-area { text-align: center; padding: 60px 0; }
@@ -149,7 +139,10 @@
         .modal-content { background: white; margin: 12% auto; padding: 35px; border-radius: 28px; width: 90%; max-width: 500px; position: relative; }
         .close-modal { position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #94a3b8; }
         
-        @media (max-width: 850px) { .intro-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 850px) { 
+            .intro-grid { grid-template-columns: 1fr; }
+            .section-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
@@ -160,9 +153,9 @@
             <h2>Ben Kimim?</h2>
             <p><strong>Ben Emre Keçici.</strong> 26 Mayıs 1985 doğumluyum. Analog dünyanın disipliniyle yetişmiş, dijital devrimin tüm aşamalarını bizzat deneyimlemiş bir profesyonelim. Eski toprak iş ahlakını bugünün teknolojisiyle harmanlıyorum.</p>
         </div>
-        <div class="focus-card">
-            <h4>GÜNCEL ODAK</h4>
-            <p>Yapay zeka entegrasyonlu süreç otomasyonları ve rasyonel dijital dönüşüm stratejileri üzerine yoğunlaşmaktayım.</p>
+        <div class="section-card">
+            <h2>Güncel Odak</h2>
+            <p>Yapay zeka entegrasyonlu süreç otomasyonları, rasyonel dijital dönüşüm stratejileri ve yüksek verimlilik odaklı sistem mimarileri üzerine yoğunlaşmaktayım.</p>
         </div>
     </div>
 
@@ -184,12 +177,11 @@
         <div class="grid-item"><h3>Sadeleştirme</h3><p>Gereksiz detaylarla ağırlaşmış iş akışlarının, her seviyedeki paydaş için yönetilebilir ve sürdürülebilir yalın bir forma dönüştürülmesi ana vizyonumdur.</p></div>
         <div class="grid-item"><h3>Analitik Gözlem</h3><p>Sistem mekanizmalarının derinlemesine analizi, potansiyel teknik darboğazların henüz kriz aşamasına gelmeden bertaraf edilmesinde esas teşkil eder.</p></div>
         <div class="grid-item"><h3>Sürdürülebilir Yapılar</h3><p>Günü kurtarmaya yönelik geçici çözümler yerine, teknolojik değişimlere dirençli ve uzun vadede istikrarını koruyan kalıcı projelerin kurgusu önceliklidir.</p></div>
-        <div class="grid-item"><h3>Sonuç Odaklılık</h3><p>Operasyonel süreçlerdeki bürokratik engellerin bypass edilmesi ve doğrudan hedefe giden en kısa yolun izlenmesi, çalışma prensibimin ayrılmaz bir parçasıdır.</p>
-        </div>
+        <div class="grid-item"><h3>Sonuç Odaklılık</h3><p>Operasyonel süreçlerdeki bürokratik engellerin bypass edilmesi ve doğrudan hedefe giden en kısa yolun izlenmesi, çalışma prensibimin ayrılmaz bir parçasıdır.</p></div>
         <div class="grid-item"><h3>Şeffaf İletişim</h3><p>Teknik terminoloji yerine işin gerçekliğini ve uygulanabilirlik sınırlarını en dürüst haliyle paylaşmak, sürdürülebilir iş birliklerinin anahtarı niteliğindedir.</p></div>
     </div>
 
-    <div class="section-card">
+    <div class="section-card" style="margin-bottom: 40px;">
         <h2>Çalışma Metodolojisi</h2>
         <div class="process-flow">
             <div class="process-step"><span>01</span><strong>Analiz</strong><p style="font-size:0.8rem">Sorunun ve mevcut yapının derinlemesine incelenmesi.</p></div>
@@ -210,7 +202,7 @@
         <p class="contact-note">Sormak istediğiniz bir şey olursa, dilediğiniz zaman iletişime geçebilirsiniz.</p>
         <div class="btn-group">
             <a href="https://wa.me/905375807666" class="btn btn-whatsapp">WhatsApp ile Bağlan</a>
-            <a href="#" class="btn btn-linkedin">LinkedIn Profilim</a>
+            <a href="https://www.linkedin.com/in/emrekeçici" target="_blank" class="btn btn-linkedin">LinkedIn Profilim</a>
         </div>
     </div>
 </div>
