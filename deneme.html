@@ -56,10 +56,27 @@
             font-weight: 800;
         }
 
-        ul { padding-left: 5px; list-style: none; margin: 0; }
-        li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
-        .icon { min-width: 20px; }
+        /* HAKKIMDA ÖZEL DÜZENLEME */
+        .about-list {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+            text-align: justify; /* Cümleleri iki yana yaslayarak tam hizalar */
+            padding: 10px;
+            background: #F9F9F9;
+            border-left: 5px solid #1B263B;
+            font-size: 15px;
+        }
+
         strong { color: #1B263B; }
+
+        /* DENEYİM VE SERTİFİKA LİSTELERİ */
+        .standard-list { padding-left: 20px; margin: 0; }
+        .standard-list li { margin-bottom: 15px; }
 
         .job-detail {
             display: block;
@@ -96,7 +113,7 @@
             box-shadow: 0 10px 25px rgba(27, 38, 59, 0.4);
         }
 
-        /* YASAL FOOTER */
+        /* YASAL FOOTER - TAM SİMETRİK */
         .legal-footer {
             display: flex;
             justify-content: space-between;
@@ -121,6 +138,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+        }
+
+        .legal-item:hover {
+            background: #E1E8EE;
+            transform: translateY(-2px);
         }
 
         /* MODAL SİSTEMİ */
@@ -167,31 +189,31 @@
 
     <div class="section">
         <h2 class="section-title">Hakkımda</h2>
-        <ul>
-            <li><span class="icon">🚀</span> <strong>Kaizen Felsefesi:</strong> Operasyonel süreçlerde sürekli iyileştirme ve verimlilik odağı.</li>
-            <li><span class="icon">🎯</span> <strong>Metodolojik Yaklaşım:</strong> 5S, Poka-Yoke ve Kök Neden Analizi ile profesyonel çözümler.</li>
-            <li><span class="icon">📉</span> <strong>İsraf Yönetimi:</strong> Üretim ve hizmet süreçlerinde MUDA (israf) tespiti ve minimizasyonu.</li>
-            <li><span class="icon">🤖</span> <strong>Dijital Entegrasyon:</strong> BTK Akademi onaylı Yapay Zeka ve risk yönetimi yetkinliği.</li>
-            <li><span class="icon">🛠️</span> <strong>Saha Tecrübesi:</strong> Endüstriyel dinamikleri saha gerçekleriyle optimize etme uzmanlığı.</li>
+        <ul class="about-list">
+            <li><strong>Kaizen Felsefesi:</strong> Operasyonel süreçlerde israfın önlenmesi, sürekli iyileştirme kültürü ve sürdürülebilir verimlilik odağıyla kurumsal değer yaratma stratejisi.</li>
+            <li><strong>Metodolojik Yaklaşım:</strong> İş akışlarının 5S, Poka-Yoke ve Kök Neden Analizi gibi bilimsel metodolojilerle yapılandırılması ve standartların dijitalleşmeye uygun hale getirilmesi.</li>
+            <li><strong>İsraf Yönetimi:</strong> Üretim, lojistik ve hizmet süreçlerinde MUDA (israf) türlerinin hassasiyetle tespiti, elimine edilmesi ve operasyonel maliyetlerin minimize edilmesi uzmanlığı.</li>
+            <li><strong>Dijital Entegrasyon:</strong> BTK Akademi onaylı ileri seviye Yapay Zeka uygulamaları, süreç otomasyonu ve risk yönetimi yetkinliklerinin saha dinamikleriyle tam uyumlu entegrasyonu.</li>
+            <li><strong>Saha Tecrübesi:</strong> Endüstriyel disiplin ve operasyonel dinamikleri, gerçek saha verileriyle harmanlayarak yüksek performanslı iş modellerine dönüştürme ve optimize etme yetisi.</li>
         </ul>
     </div>
 
     <div class="section">
         <h2 class="section-title">Profesyonel Deneyim</h2>
-        <ul style="list-style: disc; padding-left: 20px;">
-            <li style="display: list-item;"><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam
+        <ul class="standard-list" style="list-style: disc;">
+            <li><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam
                 <span class="job-detail">Kurumsal süreç analizi, darboğaz tespiti ve verimlilik artırıcı metodolojilerin sahaya entegrasyonu.</span>
             </li>
-            <li style="display: list-item;"><strong>Süreç Danışmanı | Iberyarns Tekstil</strong> | 2021 - 2024
+            <li><strong>Süreç Danışmanı | Iberyarns Tekstil</strong> | 2021 - 2024
                 <span class="job-detail">Operasyonel verimlilik, talep analizi ve sürdürülebilir kalite standartları yönetimi.</span>
             </li>
-            <li style="display: list-item;"><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021
+            <li><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021
                 <span class="job-detail">Üretim hattı koordinasyonu, ekip liderliği ve vardiya bazlı hedef optimizasyonu.</span>
             </li>
-            <li style="display: list-item;"><strong>Endüstriyel Operatör | Kırpart</strong> | 2016 - 2018
+            <li><strong>Endüstriyel Operatör | Kırpart</strong> | 2016 - 2018
                 <span class="job-detail">Otomotiv yan sanayi disiplininde döküm ve hassas operasyon süreç yönetimi.</span>
             </li>
-            <li style="display: list-item;"><strong>Operasyonel Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
+            <li><strong>Operasyonel Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
                 <span class="job-detail">Kriz yönetimi, güvenlik protokolleri ve yüksek yoğunluklu ekip koordinasyonu.</span>
             </li>
         </ul>
@@ -199,13 +221,13 @@
 
     <div class="section">
         <h2 class="section-title">Uzmanlık & Sertifikasyon</h2>
-        <ul style="list-style: disc; padding-left: 20px;">
-            <li style="display: list-item;"><strong>Yüzey Temizleme Sertifikası:</strong> Endüstriyel alanlarda hijyen standartları ve teknik bakım uzmanlığı.</li>
-            <li style="display: list-item;"><strong>Hijyen Eğitim Belgesi:</strong> Gıda güvenliği ve profesyonel sanitasyon yetkinliği.</li>
-            <li style="display: list-item;"><strong>İplik Teknolojileri Ustalık Belgesi:</strong> Tekstil üretim süreçleri ve kalite kontrol standartları.</li>
-            <li style="display: list-item;"><strong>BTK Akademi Sertifikaları:</strong> Yapay Zeka Uygulamaları, Problem Çözme ve Risk Yönetimi (2026).</li>
-            <li style="display: list-item;"><strong>Teknik Belgeler:</strong> Forklift Operatörlüğü (G Sınıfı) ve Profesyonel İlkyardım Sertifikası.</li>
-            <li style="display: list-item;"><strong>Cankurtaran Sertifikası:</strong> T.C. Gençlik ve Spor Bakanlığı onaylı can güvenliği protokolleri liderliği.</li>
+        <ul class="standard-list" style="list-style: disc;">
+            <li><strong>Yüzey Temizleme Sertifikası:</strong> Endüstriyel alanlarda hijyen standartları ve teknik bakım uzmanlığı.</li>
+            <li><strong>Hijyen Eğitim Belgesi:</strong> Gıda güvenliği ve profesyonel sanitasyon yetkinliği.</li>
+            <li><strong>İplik Teknolojileri Ustalık Belgesi:</strong> Tekstil üretim süreçleri ve kalite kontrol standartları.</li>
+            <li><strong>BTK Akademi Sertifikaları:</strong> Yapay Zeka Uygulamaları, Problem Çözme ve Risk Yönetimi (2026).</li>
+            <li><strong>Teknik Belgeler:</strong> Forklift Operatörlüğü (G Sınıfı) ve Profesyonel İlkyardım Sertifikası.</li>
+            <li><strong>Cankurtaran Sertifikası:</strong> T.C. Gençlik ve Spor Bakanlığı onaylı can güvenliği protokolleri liderliği.</li>
         </ul>
     </div>
 
