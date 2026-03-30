@@ -51,6 +51,24 @@
             background: var(--primary-blue); border-radius: 10px;
         }
 
+        /* Felsefem Maddeleri */
+        .philosophy-list { list-style: none; margin-top: 10px; }
+        .philosophy-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .philosophy-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
         /* 10 Maddelik Grid */
         .grid-container {
             display: grid;
@@ -65,8 +83,6 @@
             border-radius: 20px;
             padding: 25px;
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
         }
 
         .grid-item:hover { border-color: var(--primary-blue); transform: translateY(-3px); }
@@ -81,21 +97,17 @@
         }
 
         .grid-item h3::after { content: ""; width: 15px; height: 2px; background: #CBD5E1; }
+        .grid-item p { font-size: 0.9rem; color: var(--text-main); text-align: justify; }
 
-        .grid-item p { font-size: 0.9rem; color: var(--text-main); font-weight: 400; text-align: justify; }
-
-        /* WhatsApp Alanı */
+        /* WhatsApp */
         .contact-area { text-align: center; padding: 60px 0; }
         .contact-note { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; font-weight: 500; }
-        
         .btn-whatsapp {
             display: inline-flex; align-items: center; gap: 12px;
             background: #25D366; color: white; padding: 18px 45px;
             border-radius: 18px; text-decoration: none; font-weight: 700;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
-            transition: all 0.3s ease;
         }
-        .btn-whatsapp:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); }
 
         /* Footer & Modals */
         footer { margin-top: 50px; padding: 40px 0; text-align: center; border-top: 1px solid var(--border-color); }
@@ -111,14 +123,11 @@
             left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px);
         }
-
         .modal-content {
             background-color: white; margin: 12% auto; padding: 35px;
             border-radius: 28px; width: 90%; max-width: 500px;
-            position: relative; animation: slideIn 0.3s ease-out;
+            position: relative;
         }
-
-        @keyframes slideIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         .close-modal { position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #94a3b8; }
         
         @media (max-width: 768px) { .grid-container { grid-template-columns: 1fr; } }
@@ -135,30 +144,34 @@
 
         <div class="section-card">
             <h2>Felsefem ve Yaklaşımım</h2>
-            <p>Hayata rasyonel bir pencereden bakan, teknolojiyi insan odaklı kullanan bir yapıya sahibim. İnternetin olmadığı dönemleri de bugünün yapay zekasını da iyi analiz edebiliyor; nerede durulması ve çözümün nerede aranması gerektiğini biliyorum. Gereksiz kalabalıktan uzak, sonuç odaklı bir vizyonu benimsiyorum.</p>
+            <ul class="philosophy-list">
+                <li>Hayata rasyonel bir pencereden bakan, teknolojiyi insan odağına yerleştiren bir yapıya sahibim.</li>
+                <li>İnternetin olmadığı dönemleri de bugünün yapay zekasını da iyi analiz edebiliyor; nerede durulması gerektiğini biliyorum.</li>
+                <li>Gereksiz detaylardan arınmış, tamamen sonuç odaklı ve sürdürülebilir bir vizyonu benimsiyorum.</li>
+            </ul>
         </div>
     </div>
 
     <div class="grid-container">
         <div class="grid-item">
             <h3>Düğüm Çözme</h3>
-            <p>Teknik veya sistemsel süreçlerde meydana gelen karmaşık tıkanıklıkların rasyonel bir metodolojiyle giderilmesi, profesyonel çalışma disiplinimin temelini oluşturur.</p>
+            <p>Teknik veya sistemsel süreçlerde meydana gelen karmaşık tıkanıklıkların rasyonel bir metodolojiyle giderilmesi, profesyonel disiplinimin temelidir.</p>
         </div>
         <div class="grid-item">
             <h3>Dijital Hijyen</h3>
-            <p>Sistemleri yavaşlatan gereksiz veri yığınlarından ve işlevsiz süreçlerden arındırılmış, optimize edilmiş bir mimari yapı, verimlilik anlayışımın en üst basamağındadır.</p>
+            <p>Sistemleri yavaşlatan veri yığınlarından ve işlevsiz süreçlerden arındırılmış optimize bir mimari, verimlilik anlayışımın odağında yer alır.</p>
         </div>
         <div class="grid-item">
             <h3>İnternet Varlığı</h3>
-            <p>Stratejik alan adı yönetimi ve yüksek performanslı sunucu konfigürasyonları sayesinde, dijital kimliğin sarsılmaz bir temel üzerine inşa edilmesi hedeflenir.</p>
+            <p>Stratejik alan adı yönetimi ve yüksek performanslı sunucu konfigürasyonları, dijital kimliğin sarsılmaz bir temel üzerine inşasını mümkün kılar.</p>
         </div>
         <div class="grid-item">
             <h3>Mesleki Etik</h3>
-            <p>1985 kuşağının kazandırdığı sorumluluk bilinci ve şeffaflık ilkesiyle, üstlenilen her proje yüksek standartlarda nihai sonuca ulaştırılmasıyla bilinir.</p>
+            <p>1985 kuşağının kazandırdığı sorumluluk bilinci ve şeffaflık ilkesi, üstlenilen her projenin yüksek standartlarda neticelenmesini güvence altına alır.</p>
         </div>
         <div class="grid-item">
             <h3>Rasyonel Takip</h3>
-            <p>Yapay zeka modelleri ve güncel donanım teknolojileri, yalnızca iş süreçlerine somut bir katma değer sağladığı noktada sistem ekosistemine dahil edilir.</p>
+            <p>Yapay zeka modelleri ve güncel donanımlar, yalnızca iş süreçlerine somut bir katma değer sağladığı takdirde ekosisteme dahil edilme kriteridir.</p>
         </div>
         <div class="grid-item">
             <h3>Sadeleştirme</h3>
@@ -166,19 +179,19 @@
         </div>
         <div class="grid-item">
             <h3>Analitik Gözlem</h3>
-            <p>Sistemlerin çalışma mekanizmalarının derinlemesine analiz edilmesiyle, potansiyel teknik darboğazların henüz kriz aşamasına gelmeden bertaraf edilmesi esastır.</p>
+            <p>Sistem mekanizmalarının derinlemesine analizi, potansiyel teknik darboğazların henüz kriz aşamasına gelmeden bertaraf edilmesinde esas teşkil eder.</p>
         </div>
         <div class="grid-item">
             <h3>Sürdürülebilir Yapılar</h3>
-            <p>Günü kurtarmaya yönelik geçici çözümler yerine, teknolojik değişimlere dirençli ve uzun vadede istikrarını koruyan kalıcı projelerin kurgulanması önceliklidir.</p>
+            <p>Günü kurtarmaya yönelik geçici çözümler yerine, teknolojik değişimlere dirençli ve uzun vadede istikrarını koruyan kalıcı projelerin kurgusu önceliklidir.</p>
         </div>
         <div class="grid-item">
             <h3>Sonuç Odaklılık</h3>
-            <p>Operasyonel süreçlerdeki bürokratik engellerin ve vakit kaybına yol açan aşamaların bypass edilerek, doğrudan hedefe giden en kısa yolun izlenmesi esas teşkil eder.</p>
+            <p>Operasyonel süreçlerdeki bürokratik engellerin bypass edilmesi ve doğrudan hedefe giden en kısa yolun izlenmesi, çalışma prensibimin ayrılmaz bir parçasıdır.</p>
         </div>
         <div class="grid-item">
             <h3>Şeffaf İletişim</h3>
-            <p>Teknik terminolojiye boğulmadan, işin gerçekliğini ve uygulanabilirlik sınırlarını en dürüst haliyle paylaşmak, sürdürülebilir iş birliklerinin anahtarıdır.</p>
+            <p>Teknik terminoloji yerine işin gerçekliğini ve uygulanabilirlik sınırlarını en dürüst haliyle paylaşmak, sürdürülebilir iş birliklerinin anahtarı niteliğindedir.</p>
         </div>
     </div>
 
@@ -190,7 +203,7 @@
 
 <footer>
     <div class="legal-buttons">
-        <div class="legal-trigger" onclick="openModal('kvkkModal')">⚖️ KVKK Aydınlatma Metni</div>
+        <div class="legal-trigger" onclick="openModal('kvkkModal')">⚖️ KVKK Aydınlatma</div>
         <div class="legal-trigger" onclick="openModal('safetyModal')">🛡️ Güvenlik Politikası</div>
     </div>
     <p>© 2026 | Emre Keçici | Orhangazi, Bursa</p>
@@ -200,7 +213,7 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('kvkkModal')">&times;</span>
         <h3 style="color:var(--dark-navy)">KVKK Aydınlatma</h3><br>
-        <p>6698 sayılı kanun kapsamında; paylaşılan veriler sadece profesyonel iletişimi sürdürmek amacıyla kullanılır ve izniniz olmadan üçüncü taraflara aktarılmaz.</p>
+        <p>6698 sayılı kanun kapsamında; verileriniz sadece profesyonel iletişim amacıyla kullanılır ve üçüncü taraflara aktarılmaz.</p>
     </div>
 </div>
 
@@ -208,7 +221,7 @@
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('safetyModal')">&times;</span>
         <h3 style="color:var(--dark-navy)">Dijital Güvenlik</h3><br>
-        <p>Platformumuz 256-Bit SSL sertifikası ile korunmaktadır. Güvenliğiniz ve gizliliğiniz temel çalışma prensibimizdir.</p>
+        <p>Platformumuz 256-Bit SSL sertifikası ile korunmaktadır. Güvenliğiniz temel çalışma prensibimizdir.</p>
     </div>
 </div>
 
