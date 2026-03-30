@@ -172,6 +172,31 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
+        /* DAKTİLO EFEKTİ İLE KAYAN YAZI */
+        .typing-footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+            color: #1B263B;
+            font-weight: bold;
+            letter-spacing: 1px;
+            overflow: hidden;
+            border-right: 2px solid #1B263B;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 5s steps(30) infinite alternate, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 250px; /* Yazının genişliği kadar ayarlayın */ }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #1B263B; }
+        }
     </style>
 </head>
 <body>
@@ -218,8 +243,17 @@
         <h2 class="section-title">İş Tecrübesi</h2>
         <ul>
             <li><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam</li>
-            <li><strong>Danışma Memuru | Iberyarns Tekstil</strong> | 2021 - 2024</li>
+            <li><strong>Danışma Memuru | Iberyarns Tekstil</strong> | 2021 - 2024
+                <ul style="list-style-type: none; padding-left: 0; margin-top: 5px; font-size: 14px;">
+                    <li>Süreç iyileştirme ve operasyonel verimlilik odaklı çalışmalarda aktif rol aldım.</li>
+                </ul>
+            </li>
             <li><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021</li>
+            <li><strong>Cankurtaran Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
+                <ul style="list-style-type: none; padding-left: 0; margin-top: 5px; font-size: 14px;">
+                    <li>Ekip yönetimi ve güvenlik protokollerinin takibi süreçlerini yönettim.</li>
+                </ul>
+            </li>
         </ul>
     </div>
 
@@ -242,6 +276,8 @@
         <div class="legal-item" onclick="openLeg('kvkk')">🛡️ KVKK Uyumu</div>
         <div class="legal-item" onclick="openLeg('safe')">✅ Güvenli Site</div>
     </div>
+    
+    <div class="typing-footer">DESIGNED BY EMRE KEÇİCİ</div>
 </div>
 
 <div id="legModal" class="modal">
@@ -282,4 +318,5 @@
 </script>
 
 </body>
-</html>
+            </html>
+            
