@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Kişisel Portfolyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #F8FAFC;
@@ -12,41 +12,21 @@
             --primary-blue: #3B82F6;
             --dark-navy: #0F172A;
             --text-main: #334155;
-            --text-muted: #64748B;
             --border-color: #E2E8F0;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            padding-top: 50px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-        /* Header: Sadece İsim */
-        header {
-            text-align: center;
-            padding: 100px 0 60px;
-        }
-
-        header h1 {
-            color: var(--dark-navy);
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            margin: 0;
-        }
-
-        /* 10 Maddelik Grid Yapısı */
+        /* Grid Yapısı */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -75,108 +55,75 @@
         }
 
         .section-card h2::before {
-            content: "";
-            width: 5px;
-            height: 20px;
-            background: var(--primary-blue);
-            border-radius: 10px;
-        }
-
-        .section-card p {
-            font-size: 0.95rem;
-            color: var(--text-main);
+            content: ""; width: 5px; height: 20px;
+            background: var(--primary-blue); border-radius: 10px;
         }
 
         /* WhatsApp Butonu */
-        .contact-area { text-align: center; padding: 60px 0; }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #25D366;
-            color: white;
-            padding: 20px 45px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
+        .contact-area { text-align: center; padding: 40px 0; }
+        .btn-whatsapp {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: #25D366; color: white; padding: 18px 40px;
+            border-radius: 16px; text-decoration: none; font-weight: 700;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
         }
 
-        .btn:hover { transform: scale(1.05); }
-
-        /* En Alttaki Profesyonel Kutular */
+        /* Footer ve Mini Hukuki Butonlar */
         footer {
-            margin-top: 80px;
-            padding: 80px 0 40px;
-            background: #EDF2F7;
-            border-radius: 60px 60px 0 0;
+            margin-top: 50px; padding: 40px 0;
+            text-align: center; border-top: 1px solid var(--border-color);
         }
 
-        .legal-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .legal-buttons {
+            display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;
         }
 
-        .legal-box {
-            background: #FFFFFF;
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        .legal-trigger {
+            background: white; border: 1px solid var(--border-color);
+            padding: 8px 16px; border-radius: 12px; cursor: pointer;
+            font-size: 0.85rem; font-weight: 600; color: var(--text-main);
+            display: flex; align-items: center; gap: 8px; transition: all 0.2s;
         }
 
-        .legal-box h3 {
-            color: var(--dark-navy);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-            display: inline-block;
-            border-bottom: 2px solid var(--primary-blue);
-            padding-bottom: 4px;
+        .legal-trigger:hover { background: var(--bg-color); border-color: var(--primary-blue); }
+
+        /* Modal (Açılır Pencere) Stilleri */
+        .modal {
+            display: none; position: fixed; z-index: 999;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px);
         }
 
-        .legal-box p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: justify;
-            line-height: 1.6;
+        .modal-content {
+            background-color: white; margin: 10% auto; padding: 30px;
+            border-radius: 24px; width: 90%; max-width: 500px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative; animation: slideDown 0.3s ease-out;
         }
 
-        .copyright {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .close-modal {
+            position: absolute; right: 20px; top: 15px;
+            font-size: 24px; cursor: pointer; color: var(--text-muted);
         }
 
-        @media (max-width: 768px) {
-            .legal-wrapper { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.8rem; }
-        }
+        .modal h3 { margin-bottom: 15px; color: var(--dark-navy); border-bottom: 2px solid var(--primary-blue); display: inline-block; }
+        .modal p { font-size: 0.9rem; color: var(--text-main); text-align: justify; line-height: 1.6; }
+
+        @media (max-width: 768px) { .grid-container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>Emre Keçici</h1>
-    </header>
-
     <div class="grid-container">
         <div class="section-card">
             <h2>Ben Kimim?</h2>
-            <p>26 Mayıs 1985 doğumluyum. İnternet kafelerin tozunu yutmuş, kasetten buluta geçişi yaşamış o şanslı nesildenim. Teknoloji benim için en güçlü asistanımdır.</p>
+            <p><strong>Ben Emre Keçici.</strong> 26 Mayıs 1985 doğumluyum. İnternet kafelerin tozunu yutmuş, analogdan dijitale geçişi bizzat yaşamış o şanslı nesildenim. Teknoloji benim için en güçlü asistanımdır.</p>
         </div>
         <div class="section-card">
-            <h2>Düğüm Çözme Sanatı</h2>
+            <h2>Düğüm Çözme</h2>
             <p>Bir sistem hantallaştıysa veya çalışmıyorsa, o düğümü kökünden çözene kadar başından kalkmam. Yarım yamalak işe tahammülüm yok.</p>
         </div>
         <div class="section-card">
@@ -195,46 +142,42 @@
             <h2>Sözüm Senettir</h2>
             <p>Eski toprak disipliniyle yetiştim. Şeffaflık temel taşım. Bir iş biter dediysem o iş biter; karmaşık terimlerin arkasına sığınmam.</p>
         </div>
-        <div class="section-card">
-            <h2>Sadeleştirme Ustası</h2>
-            <p>Dünya karmaşık, ben basitlikten yanayım. Bir sorunu anlatırken veya sistem kurarken en sade ve işleyen yolu seçerim.</p>
-        </div>
-        <div class="section-card">
-            <h2>Analitik Merak</h2>
-            <p>Sadece düğmeye basmam. Arka plandaki mekanizmayı anlamak isterim. Bu merak, sorunları büyümeden fark etmemi sağlar.</p>
-        </div>
-        <div class="section-card">
-            <h2>Geleceğe Hazırlık</h2>
-            <p>Bugünü kurtaran çözümlerle ilgilenmem. Kurduğum bir yapının yıllar sonra da tıkır tıkır işlemesi için temelini sağlam atarım.</p>
-        </div>
-        <div class="section-card">
-            <h2>Hızlı İletişim</h2>
-            <p>Anlamsız yazışmalarla vakit kaybetmeyi sevmem. Sorun belliyse çözüm de bellidir. Dürüst ve doğrudan iletişim her zaman kazandırır.</p>
-        </div>
     </div>
 
     <div class="contact-area">
-        <a href="https://wa.me/905375807666" class="btn">WhatsApp ile Bağlan</a>
+        <a href="https://wa.me/905375807666" class="btn-whatsapp">WhatsApp ile Bağlan</a>
     </div>
 </div>
 
 <footer>
-    <div class="legal-wrapper">
-        <div class="legal-box">
-            <h3>KVKK Aydınlatma Metni</h3>
-            <p>6698 sayılı kanun çerçevesinde; paylaştığınız kişisel veriler yalnızca iletişimi sürdürmek ve taleplerinize yanıt vermek amacıyla işlenmektedir. Verileriniz üçüncü şahıslarla paylaşılmaz ve siber güvenlik standartlarına uygun şekilde yüksek güvenlikli altyapılarda muhafaza edilir.</p>
-        </div>
-
-        <div class="legal-box">
-            <h3>Dijital Güvenlik Politikası</h3>
-            <p>Web sitemiz, veri bütünlüğünü koruyan 256-Bit SSL sertifikası ile güçlendirilmiştir. Kullanıcı deneyimini optimize etmek adına sadece teknik ve anonim çerezler kullanılır. Sitemizde gezinmeye devam ederek bu profesyonel standartları kabul etmiş sayılırsınız.</p>
-        </div>
+    <div class="legal-buttons">
+        <div class="legal-trigger" onclick="openModal('kvkkModal')">⚖️ KVKK Aydınlatma</div>
+        <div class="legal-trigger" onclick="openModal('safetyModal')">🛡️ Güvenlik Politikası</div>
     </div>
-
-    <div class="copyright">
-        <p>© 2026 | Emre Keçici | Tüm Hakları Saklıdır. | Orhangazi, Bursa</p>
-    </div>
+    <p>© 2026 | Emre Keçici | Orhangazi, Bursa</p>
 </footer>
+
+<div id="kvkkModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('kvkkModal')">&times;</span>
+        <h3>KVKK Aydınlatma</h3>
+        <p>6698 sayılı kanun çerçevesinde; paylaştığınız kişisel veriler yalnızca iletişimi sürdürmek ve taleplerinize yanıt vermek amacıyla işlenmektedir. Verileriniz üçüncü şahıslarla paylaşılmaz ve yüksek güvenlikli altyapılarda muhafaza edilir.</p>
+    </div>
+</div>
+
+<div id="safetyModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('safetyModal')">&times;</span>
+        <h3>Dijital Güvenlik</h3>
+        <p>Web sitemiz, veri bütünlüğünü koruyan 256-Bit SSL sertifikası ile güçlendirilmiştir. Kullanıcı deneyimini optimize etmek adına sadece teknik ve anonim çerezler kullanılır.</p>
+    </div>
+</div>
+
+<script>
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+</script>
 
 </body>
 </html>
