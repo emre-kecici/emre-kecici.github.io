@@ -3,163 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Profesyonel Öz Geçmiş</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Emre Keçici | Öz Geçmiş</title>
     <style>
-        /* GENEL TASARIM VE RENK PALETİ */
-        :root {
-            --bg-color: #F8F9FA; /* Açık Gri Arka Plan */
-            --card-bg: #FFFFFF;  /* Beyaz Kartlar */
-            --primary-dark: #1B263B; /* Lacivert Başlıklar */
-            --text-color: #415A77;   /* Füme Yazılar */
-            --accent-blue: #007BFF;  /* Vurgu Mavisi */
-        }
-
+        /* SIFIR ANİMASYON - SADE VE CİDDİ TASARIM */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F4;
+            color: #333;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-dark); }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #FFF;
+            padding: 40px;
+            border-top: 5px solid #1B263B;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        /* BAŞLIK VE İLETİŞİM */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #EEE;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
 
-        /* HERO (GİRİŞ) ALANI */
-        .hero { text-align: center; padding: 40px 20px; background: var(--card-bg); border-bottom: 3px solid var(--accent-blue); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .hero h1 { margin: 0; font-size: 2.5em; }
-        .hero p { font-size: 1.1em; max-width: 700px; margin: 15px auto; }
+        .header h1 {
+            margin: 0;
+            color: #1B263B;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
 
-        /* KART DÜZENİ */
-        .section-card { background: var(--card-bg); padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .section-title { border-left: 5px solid var(--accent-blue); padding-left: 15px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .contact-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-        /* LİSTE STİLLERİ */
-        ul { list-style: none; padding: 0; }
-        ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        ul li::before { content: "•"; color: var(--accent-blue); font-weight: bold; position: absolute; left: 0; }
-
-        /* CV İNDİR BUTONU */
-        .btn-download {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: white;
-            padding: 12px 25px;
+        .contact-item {
             text-decoration: none;
-            border-radius: 50px;
+            color: #415A77;
             font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-        .btn-download:hover { background: #0056b3; transform: scale(1.05); }
 
-        /* FOOTER VE YASAL KUTUCUKLAR */
-        footer { text-align: center; padding: 40px 0; background: #eee; margin-top: 50px; }
-        .legal-box-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .legal-box { 
-            background: #ddd; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 0.85em; 
-            transition: 0.3s; border: 1px solid #ccc;
+        /* BÖLÜM TASARIMLARI */
+        .section {
+            margin-bottom: 30px;
         }
-        .legal-box:hover { background: #ccc; }
 
-        /* MODAL (AÇILIR PENCERE) */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 30px; border-radius: 10px; max-width: 500px; text-align: center; position: relative; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #888; }
-        .btn-close-modal { background: var(--primary-dark); color: white; padding: 8px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; }
+        .section-title {
+            color: #1B263B;
+            border-bottom: 1px solid #1B263B;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
 
-        @media (max-width: 600px) { .hero h1 { font-size: 1.8em; } }
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* BUTON */
+        .btn-cv {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            text-align: center;
+            background: #1B263B;
+            color: #FFF;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* FOOTER KUTUCUKLARI */
+        .footer-legal {
+            margin-top: 50px;
+            border-top: 1px solid #EEE;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .legal-btn {
+            background: #EEE;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #CCC;
+            border-radius: 3px;
+        }
+
+        /* MODAL SİSTEMİ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #FFF;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-modal {
+            background: #1B263B;
+            color: #FFF;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-<div class="hero">
-    [span_0](start_span)<h1>EMRE KEÇİCİ</h1>[span_0](end_span)
-    <p>Bursa/Orhangazi | [span_1](start_span)0537 580 76 66 | emrekecici1985@outlook.com</p>[span_1](end_span)
-    [span_2](start_span)[span_3](start_span)<p>Sürekli gelişim ve operasyonel mükemmelliği hedefleyen, 5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaşmış disiplinli bir profesyonelim.[span_2](end_span)[span_3](end_span)</p>
-    <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-download" target="_blank">📄 Güncel Öz Geçmişi PDF İndir</a>
-</div>
-
 <div class="container">
-
-    <div class="section-card">
-        <h2 class="section-title">Teknik Yetkinlikler</h2>
-        <ul>
-            [span_4](start_span)<li><strong>Yalın Araçlar:</strong> 5S (Tertip-Düzen), Kaizen, Poka-Yoke (Hata Önleme).[span_4](end_span)</li>
-            [span_5](start_span)<li><strong>Analiz Teknikleri:</strong> 5 Neden Analizi, Balık Kılçığı, Pareto (80/20) Analizi.[span_5](end_span)</li>
-            [span_6](start_span)<li><strong>Operasyonel Yönetim:</strong> MUDA (8 Büyük İsraf) Avcılığı, Gemba Walk, PUKÖ Döngüsü.[span_6](end_span)</li>
-            [span_7](start_span)<li><strong>Görsel Yönetim:</strong> Andon Sistemleri, T-Kart Takip, Standart İş Talimatları.[span_7](end_span)</li>
-            [span_8](start_span)<li><strong>Lojistik & Üretim:</strong> Depo Yönetimi, Stok Optimizasyonu, Forklift Operatörlüğü.[span_8](end_span)</li>
-        </ul>
-    </div>
-
-    <div class="section-card">
-        <h2 class="section-title">İş Tecrübesi</h2>
-        <p><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | [span_9](start_span)2024 - Devam</p>[span_9](end_span)
-        [span_10](start_span)<ul><li>Sahadaki israfları (MUDA) minimize edecek veri odaklı çözüm önerileri geliştirme.[span_10](end_span)</li></ul>
-
-        <p><strong>Danışma Memuru | Iberyarns Tekstil</strong> | [span_11](start_span)2021 - 2024</p>[span_11](end_span)
-        [span_12](start_span)<ul><li>Süreç iyileştirme ve gereksinim analizi çalışmalarında aktif rol.[span_12](end_span)</li></ul>
-
-        <p><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | [span_13](start_span)2019 - 2021</p>[span_13](end_span)
-        [span_14](start_span)<ul><li>Üretim süreç koordinasyonu ve ekip liderliği.[span_14](end_span)</li></ul>
-    </div>
-
-    <div class="section-card">
-        <h2 class="section-title">Başarılar & Sertifikalar</h2>
-        <ul>
-            [span_15](start_span)<li><strong>Hata Önleme (Poka-Yoke):</strong> Fire oranlarında belirgin düşüş sağlandı.[span_15](end_span)</li>
-            [span_16](start_span)<li><strong>Hat Optimizasyonu:</strong> 5 Neden Analizi ile duruş sürelerinde %10 iyileşme.[span_16](end_span)</li>
-            [span_17](start_span)<li><strong>BTK Akademi (2026):</strong> Yapay Zeka, Problem Çözme, Proje ve Risk Yönetimi.[span_17](end_span)</li>
-            [span_18](start_span)<li><strong>Mesleki Belgeler:</strong> İplik Teknolojileri Ustalık, Yüzey Temizleme, Hijyen, Forklift, İlkyardım.[span_18](end_span)</li>
-        </ul>
-    </div>
-
-</div>
-
-<footer>
-    <div class="container">
-        <p>© 2026 Emre Keçici - Tüm Hakları Saklıdır.</p>
-        <div class="legal-box-container">
-            <div class="legal-box" onclick="openModal('ssl')">🔒 SSL Güvenliği</div>
-            <div class="legal-box" onclick="openModal('kvkk')">🛡️ KVKK Uyumu</div>
-            <div class="legal-box" onclick="openModal('safe')">✅ Güvenli Tarama</div>
+    <div class="header">
+        [span_0](start_span)<h1>EMRE KEÇİCİ[span_0](end_span)</h1>
+        <div class="contact-info">
+            [span_1](start_span)<span class="contact-item">📍 Bursa/Orhangazi[span_1](end_span)</span>
+            [span_2](start_span)<a href="tel:05375807666" class="contact-item">📞 0537 580 76 66[span_2](end_span)</a>
+            [span_3](start_span)<a href="mailto:emrekecici1985@outlook.com" class="contact-item">📧 emrekecici1985@outlook.com[span_3](end_span)</a>
         </div>
     </div>
-</footer>
 
-<div id="infoModal" class="modal">
+    <div class="section">
+        <h2 class="section-title">Hakkımda</h2>
+        [span_4](start_span)<p>Sürekli gelişim ve değişimin gücüne inanan, operasyonel mükemmelliği hedefleyen disiplinli bir profesyonelim[span_4](end_span). [span_5](start_span)[span_6](start_span)5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaştım[span_5](end_span)[span_6](end_span).</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Teknik Yetkinlikler</h2>
+        <ul>
+            [span_7](start_span)<li><strong>Yalın Araçlar:</strong> 5S, Kaizen, Poka-Yoke[span_7](end_span).</li>
+            [span_8](start_span)<li><strong>Analiz:</strong> 5 Neden Analizi, Balık Kılçığı, Pareto Analizi[span_8](end_span).</li>
+            [span_9](start_span)<li><strong>Operasyon:</strong> MUDA Avcılığı, Gemba Walk, PUKÖ Döngüsü[span_9](end_span).</li>
+            [span_10](start_span)<li><strong>Lojistik:</strong> Depo Yönetimi, Stok Optimizasyonu, Forklift Operatörlüğü[span_10](end_span).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">İş Tecrübesi</h2>
+        <p><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | [span_11](start_span)2024 - Devam[span_11](end_span)</p>
+        <p><strong>Danışma Memuru | Iberyarns Tekstil</strong> | [span_12](start_span)2021 - 2024[span_12](end_span)</p>
+        <p><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | [span_13](start_span)2019 - 2021[span_13](end_span)</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Sertifikalar</h2>
+        <ul>
+            <li>İplik Teknolojileri Ustalık Belgesi</li>
+            <li>Yüzey Temizleme Sertifikası</li>
+            <li>Hijyen Belgesi</li>
+            [span_14](start_span)<li>BTK Akademi: Yapay Zeka ve Risk Yönetimi[span_14](end_span)</li>
+            [span_15](start_span)<li>Forklift Operatörlüğü ve İlkyardım Sertifikası[span_15](end_span)</li>
+        </ul>
+    </div>
+
+    <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-cv" target="_blank">ÖZGEÇMİŞİ İNDİR (PDF)</a>
+
+    <div class="footer-legal">
+        <div class="legal-btn" onclick="showMsg('🔒 Bağlantınız SSL sertifikası ile korunmaktadır.')">SSL Güvenliği</div>
+        <div class="legal-btn" onclick="showMsg('🛡️ Verileriniz KVKK kapsamında korunmaktadır.')">KVKK Uyumu</div>
+        <div class="legal-btn" onclick="showMsg('✅ Site Google Güvenli Tarama onaylıdır.')">Güvenli Site</div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
     <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <h3 id="modalTitle">Bilgilendirme</h3>
-        <p id="modalBody"></p>
-        <button class="btn-close-modal" onclick="closeModal()">Kapat</button>
+        <p id="modalText"></p>
+        <button class="close-modal" onclick="hideMsg()">Kapat</button>
     </div>
 </div>
 
 <script>
-    const modalData = {
-        'ssl': { title: 'SSL Güvenlik Sertifikası', body: 'Bu web sitesi 256-bit SSL sertifikası ile korunmaktadır. Paylaştığınız veriler şifrelenerek iletilir.' },
-        'kvkk': { title: 'KVKK Bilgilendirmesi', body: 'Kişisel verileriniz 6698 sayılı KVKK uyarınca korunmaktadır. Bilgileriniz üçüncü şahıslarla paylaşılmaz.' },
-        'safe': { title: 'Güvenli Tarama', body: 'Sitemiz Google Güvenli Tarama standartlarına uygundur ve zararlı içerik barındırmaz.' }
-    };
-
-    function openModal(type) {
-        document.getElementById('modalTitle').innerText = modalData[type].title;
-        document.getElementById('modalBody').innerText = modalData[type].body;
-        document.getElementById('infoModal').style.display = 'flex';
+    function showMsg(text) {
+        document.getElementById('modalText').innerText = text;
+        document.getElementById('myModal').style.display = 'flex';
     }
-
-    function closeModal() {
-        document.getElementById('infoModal').style.display = 'none';
-    }
-
-    // Modal dışına tıklayınca kapatma
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('infoModal')) { closeModal(); }
+    function hideMsg() {
+        document.getElementById('myModal').style.display = 'none';
     }
 </script>
 
