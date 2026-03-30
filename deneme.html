@@ -24,7 +24,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* ÜST ALAN - SADECE İSİM */
+        /* ÜST ALAN */
         .header {
             text-align: center;
             padding-bottom: 30px;
@@ -56,8 +56,9 @@
             font-weight: 800;
         }
 
-        ul { padding-left: 20px; margin: 0; }
-        li { margin-bottom: 12px; }
+        ul { padding-left: 5px; list-style: none; margin: 0; }
+        li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+        .icon { min-width: 20px; }
         strong { color: #1B263B; }
 
         .job-detail {
@@ -166,41 +167,45 @@
 
     <div class="section">
         <h2 class="section-title">Hakkımda</h2>
-        <p>Sürekli iyileştirme (Kaizen) felsefesini operasyonel süreçlerin merkezine konumlandıran, disiplinli ve sonuç odaklı bir profesyonelim. Endüstriyel saha tecrübemi; 5S, Poka-Yoke ve Kök Neden Analizi metodolojileriyle birleştirerek; israfı (MUDA) minimize eden ve verimliliği maksimize eden stratejik çözümler üretiyorum. BTK Akademi bünyesinde kazandığım dijital yetkinlikleri saha dinamikleriyle harmanlayarak, operasyonel standartları optimize etmeyi hedefliyorum.</p>
+        <ul>
+            <li><span class="icon">🚀</span> <strong>Kaizen Felsefesi:</strong> Operasyonel süreçlerde sürekli iyileştirme ve verimlilik odağı.</li>
+            <li><span class="icon">🎯</span> <strong>Metodolojik Yaklaşım:</strong> 5S, Poka-Yoke ve Kök Neden Analizi ile profesyonel çözümler.</li>
+            <li><span class="icon">📉</span> <strong>İsraf Yönetimi:</strong> Üretim ve hizmet süreçlerinde MUDA (israf) tespiti ve minimizasyonu.</li>
+            <li><span class="icon">🤖</span> <strong>Dijital Entegrasyon:</strong> BTK Akademi onaylı Yapay Zeka ve risk yönetimi yetkinliği.</li>
+            <li><span class="icon">🛠️</span> <strong>Saha Tecrübesi:</strong> Endüstriyel dinamikleri saha gerçekleriyle optimize etme uzmanlığı.</li>
+        </ul>
     </div>
 
     <div class="section">
         <h2 class="section-title">Profesyonel Deneyim</h2>
-        <ul>
-            <li><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam
-                <span class="job-detail">Kurumsal süreçlerin analizi, darboğaz tespiti ve verimlilik artırıcı metodolojilerin sahaya entegrasyonu üzerine danışmanlık yürütüyorum.</span>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li style="display: list-item;"><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam
+                <span class="job-detail">Kurumsal süreç analizi, darboğaz tespiti ve verimlilik artırıcı metodolojilerin sahaya entegrasyonu.</span>
             </li>
-            <li><strong>Süreç Danışmanı | Iberyarns Tekstil</strong> | 2021 - 2024
-                <span class="job-detail">Operasyonel verimlilik, talep analizi ve kalite standartlarının sürdürülebilirliği konularında kritik sorumluluklar üstlendim.</span>
+            <li style="display: list-item;"><strong>Süreç Danışmanı | Iberyarns Tekstil</strong> | 2021 - 2024
+                <span class="job-detail">Operasyonel verimlilik, talep analizi ve sürdürülebilir kalite standartları yönetimi.</span>
             </li>
-            <li><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021
-                <span class="job-detail">Üretim hattı koordinasyonu, ekip yönetimi ve vardiya bazlı hedef optimizasyonu süreçlerini sevk ve idare ettim.</span>
+            <li style="display: list-item;"><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021
+                <span class="job-detail">Üretim hattı koordinasyonu, ekip liderliği ve vardiya bazlı hedef optimizasyonu.</span>
             </li>
-            <li><strong>Endüstriyel Operatör | Kırpart</strong> | 2016 - 2018
-                <span class="job-detail">Otomotiv yan sanayi üretim disiplininde, döküm ve hassas operasyon süreçlerinde teknik sorumluluk aldım.</span>
+            <li style="display: list-item;"><strong>Endüstriyel Operatör | Kırpart</strong> | 2016 - 2018
+                <span class="job-detail">Otomotiv yan sanayi disiplininde döküm ve hassas operasyon süreç yönetimi.</span>
             </li>
-            <li><strong>Operasyonel Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
-                <span class="job-detail">Kriz yönetimi, güvenlik protokolleri ve yüksek yoğunluklu ekip koordinasyonunu başarıyla yürüttüm.</span>
+            <li style="display: list-item;"><strong>Operasyonel Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
+                <span class="job-detail">Kriz yönetimi, güvenlik protokolleri ve yüksek yoğunluklu ekip koordinasyonu.</span>
             </li>
         </ul>
     </div>
 
     <div class="section">
         <h2 class="section-title">Uzmanlık & Sertifikasyon</h2>
-        <ul>
-            <li><strong>Yüzey Temizleme Sertifikası:</strong> Endüstriyel alanlarda hijyen standartlarının korunması ve yüzey bakım teknikleri uzmanlığı.</li>
-            <li><strong>Hijyen Eğitim Belgesi:</strong> Gıda güvenliği ve genel sanitasyon kuralları çerçevesinde profesyonel hijyen yetkinliği.</li>
-            <li><strong>İplik Teknolojileri Ustalık Belgesi:</strong> Tekstil üretim süreçleri, iplik mukavemeti ve kalite kontrol standartları uzmanlığı.</li>
-            <li><strong>BTK Akademi: Yapay Zeka Uygulamaları:</strong> İş süreçlerinde yapay zekanın stratejik kullanımı ve veri analizi yetkinliği (2026).</li>
-            <li><strong>BTK Akademi: Problem Çözme & Risk Yönetimi:</strong> Operasyonel risklerin analizi ve çözüm odaklı metodolojilerin uygulanması.</li>
-            <li><strong>Forklift Operatörlük Belgesi (G Sınıfı):</strong> Depo yönetimi ve endüstriyel araçların güvenli operasyonel kullanımı.</li>
-            <li><strong>İlkyardım ve Acil Müdahale Sertifikası:</strong> İş sağlığı ve güvenliği kapsamında acil durum yönetimi yetkinliği.</li>
-            <li><strong>T.C. Gençlik ve Spor Bakanlığı: Cankurtaran Sertifikası:</strong> Ekip yönetimi ve can güvenliği protokolleri liderliği.</li>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li style="display: list-item;"><strong>Yüzey Temizleme Sertifikası:</strong> Endüstriyel alanlarda hijyen standartları ve teknik bakım uzmanlığı.</li>
+            <li style="display: list-item;"><strong>Hijyen Eğitim Belgesi:</strong> Gıda güvenliği ve profesyonel sanitasyon yetkinliği.</li>
+            <li style="display: list-item;"><strong>İplik Teknolojileri Ustalık Belgesi:</strong> Tekstil üretim süreçleri ve kalite kontrol standartları.</li>
+            <li style="display: list-item;"><strong>BTK Akademi Sertifikaları:</strong> Yapay Zeka Uygulamaları, Problem Çözme ve Risk Yönetimi (2026).</li>
+            <li style="display: list-item;"><strong>Teknik Belgeler:</strong> Forklift Operatörlüğü (G Sınıfı) ve Profesyonel İlkyardım Sertifikası.</li>
+            <li style="display: list-item;"><strong>Cankurtaran Sertifikası:</strong> T.C. Gençlik ve Spor Bakanlığı onaylı can güvenliği protokolleri liderliği.</li>
         </ul>
     </div>
 
