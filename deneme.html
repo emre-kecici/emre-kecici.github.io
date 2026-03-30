@@ -34,7 +34,7 @@
 
         header {
             text-align: center;
-            padding: 100px 0 60px;
+            padding: 80px 0 40px;
         }
 
         header h1 {
@@ -46,7 +46,7 @@
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--primary-blue);
             font-weight: 500;
         }
@@ -62,8 +62,8 @@
 
         h2 {
             color: var(--dark-navy);
-            font-size: 1.7rem;
-            margin-bottom: 25px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -72,7 +72,7 @@
         h2::before {
             content: "";
             width: 6px;
-            height: 28px;
+            height: 25px;
             background: var(--primary-blue);
             border-radius: 10px;
         }
@@ -92,11 +92,11 @@
         .grid-item strong {
             display: block;
             color: var(--dark-navy);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
         }
 
-        .contact-area { text-align: center; padding: 60px 0; }
+        .contact-area { text-align: center; padding: 40px 0; }
 
         .btn {
             display: inline-flex;
@@ -108,56 +108,63 @@
             border-radius: 14px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
 
-        /* --- Görseldeki Kutucuk Yapısı --- */
+        /* --- Footer Kutucuk Yapısı (Görseldeki Gibi) --- */
         footer {
-            margin-top: 100px;
+            margin-top: 80px;
             padding: 60px 0;
-            background: #F1F5F9;
-            border-radius: 60px 60px 0 0;
+            background: #EDF2F7;
+            border-radius: 50px 50px 0 0;
         }
 
-        .legal-container {
-            display: flex;
-            flex-direction: column;
+        .legal-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .legal-button-card {
+        .legal-box {
             background: #FFFFFF;
             border-radius: 20px;
             padding: 30px;
-            text-align: center;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
-        .legal-button-card h3 {
+        .legal-box h3 {
             color: var(--dark-navy);
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary-blue);
             display: inline-block;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 4px;
+        }
+
+        .legal-box p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-align: justify;
+            line-height: 1.6;
         }
 
         .footer-bottom {
             text-align: center;
             margin-top: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
-            .grid-list { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.4rem; }
+            .grid-list, .legal-wrapper { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -166,12 +173,12 @@
 <div class="container">
     <header>
         <h1>Emre Keçici</h1>
-        <p>Dijital Süreçlerin Arkasındaki İş Ahlakı ve Tecrübe</p>
+        <p>Dijital Süreçlerde Şeffaflık ve Tecrübe</p>
     </header>
 
     <div class="section-card">
         <h2>Hikayem</h2>
-        <p>Analog dünyanın disipliniyle yetişmiş, dijital devrimin tüm aşamalarını bizzat deneyimlemiş biriyim. Benim için teknoloji sadece bir araçtır; asıl mesele o aracın hayata ne kadar değer kattığı ve süreçleri ne kadar sadeleştirdiğidir.</p>
+        <p>26 Mayıs 1985 doğumluyum. Analog dünyanın disipliniyle yetişmiş, dijital devrimin tüm aşamalarını bizzat deneyimlemiş biriyim. Benim için teknoloji sadece bir araçtır; asıl mesele o aracın hayata ne kadar değer kattığı ve süreçleri ne kadar sadeleştirdiğidir.</p>
     </div>
 
     <div class="section-card">
@@ -179,11 +186,19 @@
         <div class="grid-list">
             <div class="grid-item">
                 <strong>Varlık Yönetimi</strong>
-                Doğru domain seçimi ve güvenli sunucu yapılandırmaları.
+                Doğru domain seçimi ve güvenli sunucu yapılandırmalarıyla internette sağlam izler bırakmak.
+            </div>
+            <div class="grid-item">
+                <strong>Süreç Yönetimi</strong>
+                Karmaşık iş akışlarını analiz etmek, pürüzleri gidermek ve her şeyi akıcı bir hale getirmek.
             </div>
             <div class="grid-item">
                 <strong>Sorun Çözme</strong>
-                Teknik tıkanıklıkları bulma ve kalıcı giderme.
+                Teknik tıkanıklıkları bulma ve kalıcı olarak giderme konusundaki inatçı ve çözüm odaklı yapım.
+            </div>
+            <div class="grid-item">
+                <strong>Analitik Gözlem</strong>
+                Sistemlerin çalışma mantığını anlamak ve performansı en üst seviyeye çıkarmak için yapılan derin analizler.
             </div>
         </div>
     </div>
@@ -194,19 +209,20 @@
 </div>
 
 <footer>
-    <div class="container">
-        <div class="legal-container">
-            <div class="legal-button-card">
-                <h3>KVKK Aydınlatma Metni</h3>
-            </div>
-            <div class="legal-button-card">
-                <h3>Dijital Güvenlik Politikası</h3>
-            </div>
+    <div class="legal-wrapper">
+        <div class="legal-box">
+            <h3>KVKK Aydınlatma Metni</h3>
+            <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) çerçevesinde; bu platform üzerinden paylaşılan her türlü kişisel veri, "Veri Sorumlusu" sıfatıyla, yalnızca profesyonel iletişimi sürdürmek ve taleplerinize doğru yanıtlar üretmek amacıyla işlenmektedir. Verileriniz, yasal zorunluluklar dışında hiçbir üçüncü taraf kurum veya kuruluşla paylaşılmamakta; siber güvenlik standartlarına uygun idari ve teknik tedbirlerle korunmaktadır.</p>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 | Emre Keçici | Tüm Hakları Saklıdır. | Orhangazi, Bursa</p>
+        <div class="legal-box">
+            <h3>Dijital Güvenlik Politikası</h3>
+            <p>Ziyaretçi güvenliği temel standarttır. Web sitemiz, veri bütünlüğünü ve gizliliğini uçtan uca koruma altına alan endüstri standardı 256-Bit SSL (Secure Sockets Layer) sertifikası ile güçlendirilmiştir. Kullanıcı deneyiminizi optimize etmek adına sitemizde sadece teknik ve anonim çerezler kullanılmaktadır. Sitemizde gezinmeye devam ederek bu standartları kabul etmiş sayılırsınız.</p>
         </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 | Emre Keçici | Tüm Hakları Saklıdır. | Orhangazi, Bursa</p>
     </div>
 </footer>
 
