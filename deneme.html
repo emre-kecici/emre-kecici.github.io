@@ -2,155 +2,39 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Keçici | Öz Geçmiş</title>
     <style>
-        /* SIFIR ANİMASYON - SADE VE CİDDİ TASARIM */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F4F4F4;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+        /* TAMAMEN SADE VE CİDDİ - HİÇBİR ANİMASYON YOK */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .cv-container { max-width: 850px; margin: auto; background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 6px solid #1a2a6c; }
+        
+        /* BAŞLIK VE İKONLU İLETİŞİM */
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { margin: 0; font-size: 32px; color: #1a2a6c; text-transform: uppercase; }
+        .contact-box { margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .contact-item { text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 14px; }
+        .contact-item:hover { color: #1a2a6c; }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #FFF;
-            padding: 40px;
-            border-top: 5px solid #1B263B;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+        /* BÖLÜM YAPISI */
+        .section { margin-top: 25px; }
+        .section-title { font-size: 18px; color: #1a2a6c; border-bottom: 2px solid #1a2a6c; padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; }
+        p, li { font-size: 15px; line-height: 1.6; }
+        ul { padding-left: 20px; }
+        
+        /* İNDİRME BUTONU */
+        .download-area { text-align: center; margin-top: 40px; }
+        .btn-pdf { background-color: #1a2a6c; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; }
 
-        /* BAŞLIK VE İLETİŞİM */
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #EEE;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #1B263B;
-            font-size: 28px;
-            text-transform: uppercase;
-        }
-
-        .contact-info {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            text-decoration: none;
-            color: #415A77;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* BÖLÜM TASARIMLARI */
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            color: #1B263B;
-            border-bottom: 1px solid #1B263B;
-            display: inline-block;
-            margin-bottom: 15px;
-            font-size: 20px;
-            text-transform: uppercase;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* BUTON */
-        .btn-cv {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            text-align: center;
-            background: #1B263B;
-            color: #FFF;
-            padding: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-
-        /* FOOTER KUTUCUKLARI */
-        .footer-legal {
-            margin-top: 50px;
-            border-top: 1px solid #EEE;
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .legal-btn {
-            background: #EEE;
-            padding: 5px 10px;
-            font-size: 12px;
-            cursor: pointer;
-            border: 1px solid #CCC;
-            border-radius: 3px;
-        }
-
-        /* MODAL SİSTEMİ */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: #FFF;
-            padding: 20px;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .close-modal {
-            background: #1B263B;
-            color: #FFF;
-            border: none;
-            padding: 8px 15px;
-            margin-top: 15px;
-            cursor: pointer;
-        }
+        /* YASAL KUTUCUKLAR (MODALSIZ, DAHA SADE) */
+        .legal-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: center; gap: 15px; }
+        .legal-tag { background: #eee; padding: 5px 12px; font-size: 11px; color: #777; cursor: pointer; border-radius: 3px; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="cv-container">
     <div class="header">
         [span_0](start_span)<h1>EMRE KEÇİCİ[span_0](end_span)</h1>
-        <div class="contact-info">
+        <div class="contact-box">
             [span_1](start_span)<span class="contact-item">📍 Bursa/Orhangazi[span_1](end_span)</span>
             [span_2](start_span)<a href="tel:05375807666" class="contact-item">📞 0537 580 76 66[span_2](end_span)</a>
             [span_3](start_span)<a href="mailto:emrekecici1985@outlook.com" class="contact-item">📧 emrekecici1985@outlook.com[span_3](end_span)</a>
@@ -159,16 +43,16 @@
 
     <div class="section">
         <h2 class="section-title">Hakkımda</h2>
-        [span_4](start_span)<p>Sürekli gelişim ve değişimin gücüne inanan, operasyonel mükemmelliği hedefleyen disiplinli bir profesyonelim[span_4](end_span). [span_5](start_span)[span_6](start_span)5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaştım[span_5](end_span)[span_6](end_span).</p>
+        [span_4](start_span)<p>Sürekli gelişim ve değişimin gücüne inanan, operasyonel mükemmelliği hedefleyen disiplinli bir profesyonelim[span_4](end_span). [span_5](start_span)5S, Kaizen ve Poka-Yoke metodolojileriyle süreç iyileştirme konusunda uzmanlaştım[span_5](end_span).</p>
     </div>
 
     <div class="section">
-        <h2 class="section-title">Teknik Yetkinlikler</h2>
+        [span_6](start_span)<h2 class="section-title">Teknik Yetkinlikler[span_6](end_span)</h2>
         <ul>
             [span_7](start_span)<li><strong>Yalın Araçlar:</strong> 5S, Kaizen, Poka-Yoke[span_7](end_span).</li>
             [span_8](start_span)<li><strong>Analiz:</strong> 5 Neden Analizi, Balık Kılçığı, Pareto Analizi[span_8](end_span).</li>
             [span_9](start_span)<li><strong>Operasyon:</strong> MUDA Avcılığı, Gemba Walk, PUKÖ Döngüsü[span_9](end_span).</li>
-            [span_10](start_span)<li><strong>Lojistik:</strong> Depo Yönetimi, Stok Optimizasyonu, Forklift Operatörlüğü[span_10](end_span).</li>
+            [span_10](start_span)<li><strong>Lojistik & Üretim:</strong> Depo Yönetimi, Stok Optimizasyonu, Forklift Operatörlüğü[span_10](end_span).</li>
         </ul>
     </div>
 
@@ -177,44 +61,30 @@
         <p><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | [span_11](start_span)2024 - Devam[span_11](end_span)</p>
         <p><strong>Danışma Memuru | Iberyarns Tekstil</strong> | [span_12](start_span)2021 - 2024[span_12](end_span)</p>
         <p><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | [span_13](start_span)2019 - 2021[span_13](end_span)</p>
+        <p><strong>Cankurtaran Takım Lideri | Baia Bodrum Hotel</strong> | [span_14](start_span)2010 - 2015[span_14](end_span)</p>
     </div>
 
     <div class="section">
-        <h2 class="section-title">Sertifikalar</h2>
+        [span_15](start_span)<h2 class="section-title">Sertifikalar[span_15](end_span)</h2>
         <ul>
             <li>İplik Teknolojileri Ustalık Belgesi</li>
             <li>Yüzey Temizleme Sertifikası</li>
             <li>Hijyen Belgesi</li>
-            [span_14](start_span)<li>BTK Akademi: Yapay Zeka ve Risk Yönetimi[span_14](end_span)</li>
-            [span_15](start_span)<li>Forklift Operatörlüğü ve İlkyardım Sertifikası[span_15](end_span)</li>
+            [span_16](start_span)<li>BTK Akademi: Yapay Zeka ve Risk Yönetimi (2026)[span_16](end_span)</li>
+            [span_17](start_span)<li>Forklift Operatörlüğü ve İlkyardım Sertifikası[span_17](end_span)</li>
         </ul>
     </div>
 
-    <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-cv" target="_blank">ÖZGEÇMİŞİ İNDİR (PDF)</a>
+    <div class="download-area">
+        <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-pdf" target="_blank">📄 GÜNCEL ÖZGEÇMİŞİ İNDİR</a>
+    </div>
 
-    <div class="footer-legal">
-        <div class="legal-btn" onclick="showMsg('🔒 Bağlantınız SSL sertifikası ile korunmaktadır.')">SSL Güvenliği</div>
-        <div class="legal-btn" onclick="showMsg('🛡️ Verileriniz KVKK kapsamında korunmaktadır.')">KVKK Uyumu</div>
-        <div class="legal-btn" onclick="showMsg('✅ Site Google Güvenli Tarama onaylıdır.')">Güvenli Site</div>
+    <div class="legal-footer">
+        <div class="legal-tag" onclick="alert('Bağlantınız 256-bit SSL ile korunmaktadır.')">🔒 SSL GÜVENLİĞİ</div>
+        <div class="legal-tag" onclick="alert('Verileriniz KVKK kapsamında korunmaktadır.')">🛡️ KVKK UYUMU</div>
+        <div class="legal-tag" onclick="alert('Site güvenli tarama onaylıdır.')">✅ GÜVENLİ SİTE</div>
     </div>
 </div>
-
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <p id="modalText"></p>
-        <button class="close-modal" onclick="hideMsg()">Kapat</button>
-    </div>
-</div>
-
-<script>
-    function showMsg(text) {
-        document.getElementById('modalText').innerText = text;
-        document.getElementById('myModal').style.display = 'flex';
-    }
-    function hideMsg() {
-        document.getElementById('myModal').style.display = 'none';
-    }
-</script>
 
 </body>
 </html>
