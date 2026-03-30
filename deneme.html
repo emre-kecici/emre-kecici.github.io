@@ -27,7 +27,13 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-        .intro-section { margin-bottom: 40px; display: flex; flex-direction: column; gap: 20px; }
+        /* Üst Bölüm Kartları */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
 
         .section-card {
             background: var(--card-bg);
@@ -51,30 +57,35 @@
             background: var(--primary-blue); border-radius: 10px;
         }
 
-        /* Felsefem Maddeleri */
-        .philosophy-list { list-style: none; margin-top: 10px; }
+        .philosophy-list { list-style: none; }
         .philosophy-list li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 12px;
-            font-size: 1rem;
         }
         .philosophy-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 1.5rem;
-            line-height: 1;
+            content: "•"; position: absolute; left: 0; color: var(--primary-blue); font-weight: bold; font-size: 1.5rem; line-height: 1;
         }
+
+        /* Şu An Ne Yapıyorum Kartı */
+        .focus-card {
+            background: var(--dark-navy);
+            color: white;
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .focus-card h4 { color: var(--primary-blue); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .focus-card p { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
 
         /* 10 Maddelik Grid */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
-            margin-bottom: 50px;
+            margin: 40px 0;
         }
 
         .grid-item {
@@ -84,30 +95,47 @@
             padding: 25px;
             transition: all 0.3s ease;
         }
-
         .grid-item:hover { border-color: var(--primary-blue); transform: translateY(-3px); }
-
-        .grid-item h3 {
-            font-size: 1.1rem;
-            color: var(--dark-navy);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .grid-item h3 { font-size: 1.1rem; color: var(--dark-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
         .grid-item h3::after { content: ""; width: 15px; height: 2px; background: #CBD5E1; }
-        .grid-item p { font-size: 0.9rem; color: var(--text-main); text-align: justify; }
 
-        /* WhatsApp */
-        .contact-area { text-align: center; padding: 60px 0; }
-        .contact-note { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; font-weight: 500; }
-        .btn-whatsapp {
-            display: inline-flex; align-items: center; gap: 12px;
-            background: #25D366; color: white; padding: 18px 45px;
-            border-radius: 18px; text-decoration: none; font-weight: 700;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+        /* Metodoloji Akışı */
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            text-align: center;
         }
+        .process-step { padding: 20px; background: #F1F5F9; border-radius: 16px; border: 1px dashed #CBD5E1; }
+        .process-step span { display: block; font-weight: 800; color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 5px; }
+        .process-step strong { color: var(--dark-navy); display: block; margin-bottom: 5px; }
+
+        /* Teknoloji Şeridi */
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            opacity: 0.6;
+            filter: grayscale(1);
+        }
+        .tech-item { font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; }
+
+        /* İletişim Alanı */
+        .contact-area { text-align: center; padding: 60px 0; }
+        .contact-note { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px; font-weight: 500; }
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 18px 40px; border-radius: 18px; text-decoration: none; font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2); }
+        .btn-linkedin { background: #0077B5; color: white; box-shadow: 0 10px 25px rgba(0, 119, 181, 0.2); }
+        .btn:hover { transform: scale(1.05); }
 
         /* Footer & Modals */
         footer { margin-top: 50px; padding: 40px 0; text-align: center; border-top: 1px solid var(--border-color); }
@@ -117,87 +145,73 @@
             padding: 10px 20px; border-radius: 14px; cursor: pointer;
             font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 8px;
         }
-
-        .modal {
-            display: none; position: fixed; z-index: 1000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: white; margin: 12% auto; padding: 35px;
-            border-radius: 28px; width: 90%; max-width: 500px;
-            position: relative;
-        }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); }
+        .modal-content { background: white; margin: 12% auto; padding: 35px; border-radius: 28px; width: 90%; max-width: 500px; position: relative; }
         .close-modal { position: absolute; right: 20px; top: 15px; font-size: 28px; cursor: pointer; color: #94a3b8; }
         
-        @media (max-width: 768px) { .grid-container { grid-template-columns: 1fr; } }
+        @media (max-width: 850px) { .intro-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="intro-section">
+    <div class="intro-grid">
         <div class="section-card">
             <h2>Ben Kimim?</h2>
             <p><strong>Ben Emre Keçici.</strong> 26 Mayıs 1985 doğumluyum. Analog dünyanın disipliniyle yetişmiş, dijital devrimin tüm aşamalarını bizzat deneyimlemiş bir profesyonelim. Eski toprak iş ahlakını bugünün teknolojisiyle harmanlıyorum.</p>
         </div>
-
-        <div class="section-card">
-            <h2>Felsefem ve Yaklaşımım</h2>
-            <ul class="philosophy-list">
-                <li>Hayata rasyonel bir pencereden bakan, teknolojiyi insan odağına yerleştiren bir yapıya sahibim.</li>
-                <li>İnternetin olmadığı dönemleri de bugünün yapay zekasını da iyi analiz edebiliyor; nerede durulması gerektiğini biliyorum.</li>
-                <li>Gereksiz detaylardan arınmış, tamamen sonuç odaklı ve sürdürülebilir bir vizyonu benimsiyorum.</li>
-            </ul>
+        <div class="focus-card">
+            <h4>GÜNCEL ODAK</h4>
+            <p>Yapay zeka entegrasyonlu süreç otomasyonları ve rasyonel dijital dönüşüm stratejileri üzerine yoğunlaşmaktayım.</p>
         </div>
     </div>
 
+    <div class="section-card" style="margin-bottom: 40px;">
+        <h2>Felsefem ve Yaklaşımım</h2>
+        <ul class="philosophy-list">
+            <li>Hayata rasyonel bir pencereden bakan, teknolojiyi insan odağına yerleştiren bir yapıya sahibim.</li>
+            <li>İnternetin olmadığı dönemleri de bugünün yapay zekasını da iyi analiz edebiliyor; nerede durulması gerektiğini biliyorum.</li>
+            <li>Gereksiz detaylardan arınmış, tamamen sonuç odaklı ve sürdürülebilir bir vizyonu benimsiyorum.</li>
+        </ul>
+    </div>
+
     <div class="grid-container">
-        <div class="grid-item">
-            <h3>Düğüm Çözme</h3>
-            <p>Teknik veya sistemsel süreçlerde meydana gelen karmaşık tıkanıklıkların rasyonel bir metodolojiyle giderilmesi, profesyonel disiplinimin temelidir.</p>
+        <div class="grid-item"><h3>Düğüm Çözme</h3><p>Teknik veya sistemsel süreçlerde meydana gelen karmaşık tıkanıklıkların rasyonel bir metodolojiyle giderilmesi, profesyonel disiplinimin temelidir.</p></div>
+        <div class="grid-item"><h3>Dijital Hijyen</h3><p>Sistemleri yavaşlatan veri yığınlarından ve işlevsiz süreçlerden arındırılmış optimize bir mimari, verimlilik anlayışımın odağında yer alır.</p></div>
+        <div class="grid-item"><h3>İnternet Varlığı</h3><p>Stratejik alan adı yönetimi ve yüksek performanslı sunucu konfigürasyonları, dijital kimliğin sarsılmaz bir temel üzerine inşasını mümkün kılar.</p></div>
+        <div class="grid-item"><h3>Mesleki Etik</h3><p>1985 kuşağının kazandırdığı sorumluluk bilinci ve şeffaflık ilkesi, üstlenilen her projenin yüksek standartlarda neticelenmesini güvence altına alır.</p></div>
+        <div class="grid-item"><h3>Rasyonel Takip</h3><p>Yapay zeka modelleri ve güncel donanımlar, yalnızca iş süreçlerine somut bir katma değer sağladığı takdirde ekosisteme dahil edilme kriteridir.</p></div>
+        <div class="grid-item"><h3>Sadeleştirme</h3><p>Gereksiz detaylarla ağırlaşmış iş akışlarının, her seviyedeki paydaş için yönetilebilir ve sürdürülebilir yalın bir forma dönüştürülmesi ana vizyonumdur.</p></div>
+        <div class="grid-item"><h3>Analitik Gözlem</h3><p>Sistem mekanizmalarının derinlemesine analizi, potansiyel teknik darboğazların henüz kriz aşamasına gelmeden bertaraf edilmesinde esas teşkil eder.</p></div>
+        <div class="grid-item"><h3>Sürdürülebilir Yapılar</h3><p>Günü kurtarmaya yönelik geçici çözümler yerine, teknolojik değişimlere dirençli ve uzun vadede istikrarını koruyan kalıcı projelerin kurgusu önceliklidir.</p></div>
+        <div class="grid-item"><h3>Sonuç Odaklılık</h3><p>Operasyonel süreçlerdeki bürokratik engellerin bypass edilmesi ve doğrudan hedefe giden en kısa yolun izlenmesi, çalışma prensibimin ayrılmaz bir parçasıdır.</p>
         </div>
-        <div class="grid-item">
-            <h3>Dijital Hijyen</h3>
-            <p>Sistemleri yavaşlatan veri yığınlarından ve işlevsiz süreçlerden arındırılmış optimize bir mimari, verimlilik anlayışımın odağında yer alır.</p>
+        <div class="grid-item"><h3>Şeffaf İletişim</h3><p>Teknik terminoloji yerine işin gerçekliğini ve uygulanabilirlik sınırlarını en dürüst haliyle paylaşmak, sürdürülebilir iş birliklerinin anahtarı niteliğindedir.</p></div>
+    </div>
+
+    <div class="section-card">
+        <h2>Çalışma Metodolojisi</h2>
+        <div class="process-flow">
+            <div class="process-step"><span>01</span><strong>Analiz</strong><p style="font-size:0.8rem">Sorunun ve mevcut yapının derinlemesine incelenmesi.</p></div>
+            <div class="process-step"><span>02</span><strong>Strateji</strong><p style="font-size:0.8rem">En rasyonel ve hızlı çözüm yolunun planlanması.</p></div>
+            <div class="process-step"><span>03</span><strong>Uygulama</strong><p style="font-size:0.8rem">Projenin standartlara uygun şekilde hayata geçirilmesi.</p></div>
         </div>
-        <div class="grid-item">
-            <h3>İnternet Varlığı</h3>
-            <p>Stratejik alan adı yönetimi ve yüksek performanslı sunucu konfigürasyonları, dijital kimliğin sarsılmaz bir temel üzerine inşasını mümkün kılar.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Mesleki Etik</h3>
-            <p>1985 kuşağının kazandırdığı sorumluluk bilinci ve şeffaflık ilkesi, üstlenilen her projenin yüksek standartlarda neticelenmesini güvence altına alır.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Rasyonel Takip</h3>
-            <p>Yapay zeka modelleri ve güncel donanımlar, yalnızca iş süreçlerine somut bir katma değer sağladığı takdirde ekosisteme dahil edilme kriteridir.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Sadeleştirme</h3>
-            <p>Gereksiz detaylarla ağırlaşmış iş akışlarının, her seviyedeki paydaş için yönetilebilir ve sürdürülebilir yalın bir forma dönüştürülmesi ana vizyonumdur.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Analitik Gözlem</h3>
-            <p>Sistem mekanizmalarının derinlemesine analizi, potansiyel teknik darboğazların henüz kriz aşamasına gelmeden bertaraf edilmesinde esas teşkil eder.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Sürdürülebilir Yapılar</h3>
-            <p>Günü kurtarmaya yönelik geçici çözümler yerine, teknolojik değişimlere dirençli ve uzun vadede istikrarını koruyan kalıcı projelerin kurgusu önceliklidir.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Sonuç Odaklılık</h3>
-            <p>Operasyonel süreçlerdeki bürokratik engellerin bypass edilmesi ve doğrudan hedefe giden en kısa yolun izlenmesi, çalışma prensibimin ayrılmaz bir parçasıdır.</p>
-        </div>
-        <div class="grid-item">
-            <h3>Şeffaf İletişim</h3>
-            <p>Teknik terminoloji yerine işin gerçekliğini ve uygulanabilirlik sınırlarını en dürüst haliyle paylaşmak, sürdürülebilir iş birliklerinin anahtarı niteliğindedir.</p>
-        </div>
+    </div>
+
+    <div class="tech-stack">
+        <div class="tech-item">TURHOST</div>
+        <div class="tech-item">SSL SECURITY</div>
+        <div class="tech-item">OPEN AI</div>
+        <div class="tech-item">WORDPRESS</div>
+        <div class="tech-item">CLOUD INFRA</div>
     </div>
 
     <div class="contact-area">
         <p class="contact-note">Sormak istediğiniz bir şey olursa, dilediğiniz zaman iletişime geçebilirsiniz.</p>
-        <a href="https://wa.me/905375807666" class="btn-whatsapp">WhatsApp ile Bağlan</a>
+        <div class="btn-group">
+            <a href="https://wa.me/905375807666" class="btn btn-whatsapp">WhatsApp ile Bağlan</a>
+            <a href="#" class="btn btn-linkedin">LinkedIn Profilim</a>
+        </div>
     </div>
 </div>
 
@@ -209,27 +223,13 @@
     <p>© 2026 | Emre Keçici | Orhangazi, Bursa</p>
 </footer>
 
-<div id="kvkkModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('kvkkModal')">&times;</span>
-        <h3 style="color:var(--dark-navy)">KVKK Aydınlatma</h3><br>
-        <p>6698 sayılı kanun kapsamında; verileriniz sadece profesyonel iletişim amacıyla kullanılır ve üçüncü taraflara aktarılmaz.</p>
-    </div>
-</div>
-
-<div id="safetyModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('safetyModal')">&times;</span>
-        <h3 style="color:var(--dark-navy)">Dijital Güvenlik</h3><br>
-        <p>Platformumuz 256-Bit SSL sertifikası ile korunmaktadır. Güvenliğiniz temel çalışma prensibimizdir.</p>
-    </div>
-</div>
+<div id="kvkkModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('kvkkModal')">&times;</span><h3>KVKK Aydınlatma</h3><br><p>Paylaştığınız veriler sadece profesyonel iletişim için kullanılır, üçüncü taraflara aktarılmaz.</p></div></div>
+<div id="safetyModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('safetyModal')">&times;</span><h3>Dijital Güvenlik</h3><br><p>Platformumuz 256-Bit SSL sertifikası ile korunmaktadır. Güvenliğiniz temel çalışma prensibimizdir.</p></div></div>
 
 <script>
     function openModal(id) { document.getElementById(id).style.display = "block"; }
     function closeModal(id) { document.getElementById(id).style.display = "none"; }
     window.onclick = function(e) { if (e.target.className === 'modal') { e.target.style.display = "none"; } }
 </script>
-
 </body>
 </html>
