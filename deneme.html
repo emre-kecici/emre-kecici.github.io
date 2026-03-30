@@ -56,7 +56,7 @@
             font-weight: 800;
         }
 
-        /* HAKKIMDA ÖZEL DÜZENLEME */
+        /* HAKKIMDA - SİMETRİK KUTUCUK VE ŞERİT DÜZENİ */
         .about-list {
             padding: 0;
             list-style: none;
@@ -64,12 +64,16 @@
         }
 
         .about-list li {
-            margin-bottom: 15px;
-            text-align: justify; /* Cümleleri iki yana yaslayarak tam hizalar */
-            padding: 10px;
+            margin-bottom: 12px;
+            text-align: justify; /* Yazıları iki yana yaslayarak blok görünümü sağlar */
+            padding: 15px 20px;
             background: #F9F9F9;
-            border-left: 5px solid #1B263B;
+            border-left: 6px solid #1B263B; /* Siyah şerit korunuyor */
             font-size: 15px;
+            display: flex; /* İçerik hizalaması için */
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60px; /* Kutucukların eşit hissettirmesi için denge boyutu */
         }
 
         strong { color: #1B263B; }
@@ -113,7 +117,7 @@
             box-shadow: 0 10px 25px rgba(27, 38, 59, 0.4);
         }
 
-        /* YASAL FOOTER - TAM SİMETRİK */
+        /* YASAL FOOTER */
         .legal-footer {
             display: flex;
             justify-content: space-between;
@@ -138,11 +142,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-
-        .legal-item:hover {
-            background: #E1E8EE;
-            transform: translateY(-2px);
         }
 
         /* MODAL SİSTEMİ */
@@ -245,9 +244,9 @@
 <div id="legModal" class="modal">
     <div class="modal-content">
         <span class="close-x" onclick="closeLeg()">&times;</span>
-        <h3 id="legTitle">Kurumsal Bilgilendirme</h3>
+        <h3 id="legTitle">Bilgilendirme</h3>
         <p id="legBody"></p>
-        <button class="btn-modal-close" onclick="closeLeg()">Anladım, Kapat</button>
+        <button class="btn-modal-close" onclick="closeLeg()">Kapat</button>
     </div>
 </div>
 
