@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Operasyonel Mükemmellik & İş Geliştirme</title>
     <style>
-        /* GENEL TASARIM - KURUMSAL STANDARTLAR */
+        /* GENEL TASARIM */
         body {
             font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
             background-color: #F4F7F6;
@@ -27,13 +27,13 @@
         /* ÜST ALAN - SADECE İSİM */
         .header {
             text-align: center;
-            padding-bottom: 20px; /* Hakkımda silindiği için boşluk azaltıldı */
+            padding-bottom: 30px;
         }
 
         .header h1 {
             margin: 0;
             color: #1B263B;
-            font-size: 38px; /* İsim daha belirgin */
+            font-size: 38px;
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 800;
@@ -68,7 +68,7 @@
             font-style: italic;
         }
 
-        /* ÖZGEÇMİŞ İNDİR BUTONU - DİKEY KELİME DÜZENİ */
+        /* ÖZGEÇMİŞ İNDİR BUTONU - YATAY DİKDÖRTGEN */
         .cv-download-section {
             text-align: center;
             margin: 50px 0;
@@ -77,18 +77,16 @@
         .btn-pdf {
             background: #1B263B;
             color: #FFF;
-            padding: 25px 30px;
+            padding: 18px 60px; /* Yatay genişlik artırıldı */
             text-decoration: none;
             font-weight: 800;
-            border-radius: 8px;
-            font-size: 18px;
+            border-radius: 6px;
+            font-size: 16px;
             letter-spacing: 1.5px;
             display: inline-block;
             box-shadow: 0 6px 20px rgba(27, 38, 59, 0.25);
             transition: all 0.3s ease;
             text-transform: uppercase;
-            writing-mode: vertical-rl; /* Dikey metin düzeni */
-            text-orientation: upright; /* Harfleri düz tutma */
         }
 
         .btn-pdf:hover {
@@ -97,24 +95,23 @@
             box-shadow: 0 10px 25px rgba(27, 38, 59, 0.4);
         }
 
-        /* YASAL FOOTER - TAM ORTALI VE EŞİT */
+        /* YASAL FOOTER - TAM HİZALI VE PROFESYONEL */
         .legal-footer {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 eşit sütun */
+            display: flex;
+            justify-content: space-between; /* Kutuları eşit dağıtır */
             gap: 15px;
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 2px solid #EEE;
-            width: 100%;
-            text-align: center;
+            border-top: 2px solid #F1F1F1;
         }
 
         .legal-item {
+            flex: 1; /* Tüm kutular eşit genişlikte olur */
             background: #F8F9FA;
-            padding: 15px;
+            padding: 15px 10px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: #2D3436;
             border: 1px solid #DFE6E9;
@@ -122,12 +119,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100%; /* İçeriklerin dikeyde ortalanması için */
+            text-align: center;
+            white-space: nowrap; /* Yazıları tek satırda tutmaya zorlar */
         }
 
         .legal-item:hover {
             background: #E1E8EE;
             border-color: #B2BEC3;
+            transform: translateY(-2px);
         }
 
         /* MODAL SİSTEMİ */
@@ -145,7 +144,6 @@
             background: #FFF; padding: 40px; border-radius: 12px;
             max-width: 550px; width: 90%; text-align: left;
             position: relative; animation: modalIn 0.3s ease;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         @keyframes modalIn {
@@ -158,23 +156,24 @@
             right: 20px; top: 15px;
             font-size: 28px; font-weight: bold;
             color: #B2BEC3; cursor: pointer;
-            line-height: 1;
         }
 
         .close-x:hover { color: #D63031; }
 
-        .modal-content h3 { color: #1B263B; margin-top: 0; font-size: 22px; border-bottom: 2px solid #F1F1F1; padding-bottom: 10px; }
-        .modal-content p { color: #4A4A4A; font-size: 15px; margin-bottom: 25px; text-align: justify; line-height: 1.6; }
-
         .btn-modal-close {
             background: #1B263B; color: #FFF; border: none;
             padding: 12px 35px; font-weight: 700; cursor: pointer; border-radius: 6px;
-            display: block; margin: 0 auto; text-transform: uppercase;
+            display: block; margin: 20px auto 0 auto; text-transform: uppercase;
         }
 
+        /* MOBİL UYUM */
         @media (max-width: 768px) {
             .legal-footer {
-                grid-template-columns: 1fr; /* Mobilde tek sütun */
+                flex-direction: column;
+            }
+            .btn-pdf {
+                padding: 18px 30px;
+                width: 80%;
             }
         }
     </style>
@@ -184,7 +183,7 @@
 <div class="container">
     <div class="header">
         <h1>EMRE KEÇİCİ</h1>
-        </div>
+    </div>
 
     <div class="section">
         <h2 class="section-title">Hakkımda</h2>
@@ -223,38 +222,38 @@
     </div>
 
     <div class="cv-download-section">
-        <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-pdf" target="_blank">ÖZGEÇMİŞİ İNDİR</a>
+        <a href="https://drive.google.com/file/d/1pNW4lY_vJoFnGyuvIJorfdFlwo_toQOq/view?usp=drivesdk" class="btn-pdf" target="_blank">ÖZGEÇMİŞİ İNDİR (PDF)</a>
     </div>
 
     <div class="legal-footer">
-        <div class="legal-item" onclick="openLeg('ssl')">SSL GÜVENLİK PROTOKOLÜ</div>
-        <div class="legal-item" onclick="openLeg('kvkk')">KVKK AYDINLATMA METNİ</div>
-        <div class="legal-item" onclick="openLeg('safe')">GÜVENLİ ERİŞİM ONAYI</div>
+        <div class="legal-item" onclick="openLeg('ssl')">🔒 SSL GÜVENLİK PROTOKOLÜ</div>
+        <div class="legal-item" onclick="openLeg('kvkk')">🛡️ KVKK AYDINLATMA METNİ</div>
+        <div class="legal-item" onclick="openLeg('safe')">✅ GÜVENLİ ERİŞİM ONAYI</div>
     </div>
 </div>
 
 <div id="legModal" class="modal">
     <div class="modal-content">
         <span class="close-x" onclick="closeLeg()">&times;</span>
-        <h3 id="legTitle">Bilgilendirme</h3>
+        <h3 id="legTitle">Kurumsal Bilgilendirme</h3>
         <p id="legBody"></p>
         <button class="btn-modal-close" onclick="closeLeg()">Anladım, Kapat</button>
-        </div>
+    </div>
 </div>
 
 <script>
     const legData = {
         'ssl': { 
             t: 'Veri İletişim Güvenliği (SSL)', 
-            b: 'Web sitemiz üzerinden gerçekleştirilen tüm veri trafiği, uluslararası standartlarda kabul görmüş 256-bit SSL (Secure Sockets Layer) sertifikası ile uçtan uca şifrelenmektedir. Paylaştığınız veriler ve iletişim talepleriniz, sunucularımıza iletilirken dış müdahalelere karşı tam koruma altındadır.' 
+            b: 'Web sitemiz üzerinden gerçekleştirilen tüm veri trafiği, uluslararası standartlarda kabul görmüş 256-bit SSL sertifikası ile uçtan uca şifrelenmektedir. Paylaştığınız veriler ve iletişim talepleriniz tam koruma altındadır.' 
         },
         'kvkk': { 
             t: 'KVKK ve Veri Gizliliği Uyumu', 
-            b: 'Paylaşmış olduğunuz kişisel veriler, 6698 sayılı KVKK hükümlerine tam uyumlu şekilde işlenmektedir. Bilgileriniz, yalnızca profesyonel iletişim süreçlerinin yürütülmesi amacıyla kullanılmakta olup; yasal zorunluluklar dışında üçüncü taraf kurum veya şahıslarla asla paylaşılmamaktadır.' 
+            b: 'Paylaşmış olduğunuz kişisel veriler, 6698 sayılı KVKK hükümlerine tam uyumlu şekilde işlenmektedir. Bilgileriniz, yasal zorunluluklar dışında üçüncü taraflarla asla paylaşılmamaktadır.' 
         },
         'safe': { 
             t: 'Google Güvenli Tarama Standartları', 
-            b: 'Platformumuz, Google Safe Browsing protokolleri tarafından düzenli olarak taranmaktadır. İçeriğimizde hiçbir zararlı yazılım veya güvenlik açığı bulunmamaktadır. Ziyaretçilerimiz için dijital güvenlik standartlarına uygun, temiz ve güvenilir bir deneyim sunulmaktadır.' 
+            b: 'Platformumuz, modern siber güvenlik protokolleri tarafından düzenli olarak taranmaktadır. İçeriğimizde hiçbir zararlı yazılım veya güvenlik açığı bulunmamaktadır.' 
         }
     };
 
@@ -264,12 +263,8 @@
         document.getElementById('legModal').style.display = 'flex';
     }
 
-    function closeModal() { 
+    function closeLeg() { 
         document.getElementById('legModal').style.display = 'none'; 
-    }
-
-    function closeLeg() {
-        closeModal();
     }
 
     window.onclick = function(e) { 
