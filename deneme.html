@@ -27,72 +27,67 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* --- Header: Sadece İsim --- */
+        /* Header: Sadece İsim */
         header {
             text-align: center;
-            padding: 120px 0 60px;
+            padding: 100px 0 60px;
         }
 
         header h1 {
             color: var(--dark-navy);
             font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.05em;
             margin: 0;
         }
 
-        /* --- Ana İçerik Kartları --- */
+        /* 10 Maddelik Grid Yapısı */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
         .section-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+            padding: 30px;
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
 
-        h2 {
+        .section-card:hover { transform: translateY(-5px); }
+
+        .section-card h2 {
             color: var(--dark-navy);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        h2::before {
+        .section-card h2::before {
             content: "";
-            width: 6px;
-            height: 25px;
+            width: 5px;
+            height: 20px;
             background: var(--primary-blue);
             border-radius: 10px;
         }
 
-        .grid-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .section-card p {
+            font-size: 0.95rem;
+            color: var(--text-main);
         }
 
-        .grid-item {
-            background: #F1F5F9;
-            padding: 24px;
-            border-radius: 16px;
-        }
-
-        .grid-item strong {
-            display: block;
-            color: var(--dark-navy);
-            margin-bottom: 5px;
-            font-size: 1.05rem;
-        }
-
-        /* --- WhatsApp Butonu --- */
+        /* WhatsApp Butonu */
         .contact-area { text-align: center; padding: 60px 0; }
 
         .btn {
@@ -101,30 +96,30 @@
             gap: 12px;
             background: #25D366;
             color: white;
-            padding: 18px 40px;
-            border-radius: 14px;
+            padding: 20px 45px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-            transition: transform 0.2s;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .btn:hover { transform: scale(1.03); }
+        .btn:hover { transform: scale(1.05); }
 
-        /* --- En Alttaki Profesyonel Kutular (Footer) --- */
+        /* En Alttaki Profesyonel Kutular */
         footer {
             margin-top: 80px;
-            padding: 60px 0;
+            padding: 80px 0 40px;
             background: #EDF2F7;
-            border-radius: 50px 50px 0 0;
+            border-radius: 60px 60px 0 0;
         }
 
-        .legal-grid {
+        .legal-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -139,7 +134,7 @@
 
         .legal-box h3 {
             color: var(--dark-navy);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 15px;
@@ -149,11 +144,10 @@
         }
 
         .legal-box p {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             text-align: justify;
             line-height: 1.6;
-            margin: 0;
         }
 
         .copyright {
@@ -164,7 +158,7 @@
         }
 
         @media (max-width: 768px) {
-            .grid-list, .legal-grid { grid-template-columns: 1fr; }
+            .legal-wrapper { grid-template-columns: 1fr; }
             header h1 { font-size: 2.8rem; }
         }
     </style>
@@ -176,30 +170,46 @@
         <h1>Emre Keçici</h1>
     </header>
 
-    <div class="section-card">
-        <h2>Hikayem</h2>
-        <p>26 Mayıs 1985 doğumluyum. Analog dünyanın disipliniyle yetişmiş, dijital devrimin tüm aşamalarını bizzat deneyimlemiş biriyim. Benim için teknoloji sadece bir araçtır; asıl mesele o aracın hayata ne kadar değer kattığı ve süreçleri ne kadar sadeleştirdiğidir.</p>
-    </div>
-
-    <div class="section-card">
-        <h2>Nelerle Uğraşıyorum?</h2>
-        <div class="grid-list">
-            <div class="grid-item">
-                <strong>Varlık Yönetimi</strong>
-                Doğru domain seçimi ve güvenli sunucu yapılandırmalarıyla internette sağlam izler bırakmak.
-            </div>
-            <div class="grid-item">
-                <strong>Süreç Yönetimi</strong>
-                Karmaşık iş akışlarını analiz etmek, pürüzleri gidermek ve her şeyi akıcı bir hale getirmek.
-            </div>
-            <div class="grid-item">
-                <strong>Sorun Çözme</strong>
-                Teknik tıkanıklıkları bulma ve kalıcı olarak giderme konusundaki inatçı ve çözüm odaklı yapım.
-            </div>
-            <div class="grid-item">
-                <strong>Analitik Gözlem</strong>
-                Sistemlerin çalışma mantığını anlamak ve performansı en üst seviyeye çıkarmak için yapılan derin analizler.
-            </div>
+    <div class="grid-container">
+        <div class="section-card">
+            <h2>Ben Kimim?</h2>
+            <p>26 Mayıs 1985 doğumluyum. İnternet kafelerin tozunu yutmuş, kasetten buluta geçişi yaşamış o şanslı nesildenim. Teknoloji benim için en güçlü asistanımdır.</p>
+        </div>
+        <div class="section-card">
+            <h2>Düğüm Çözme Sanatı</h2>
+            <p>Bir sistem hantallaştıysa veya çalışmıyorsa, o düğümü kökünden çözene kadar başından kalkmam. Yarım yamalak işe tahammülüm yok.</p>
+        </div>
+        <div class="section-card">
+            <h2>İnternette Yer Açmak</h2>
+            <p>Bir fikir için en doğru ismi bulur, sağlam bir sunucuya kurar ve yayına alırım. Dijital ayak izinin temiz olması benim standartımdır.</p>
+        </div>
+        <div class="section-card">
+            <h2>Dijital Hijyen</h2>
+            <p>Masaüstünden iş akışına kadar her şeyin tıkır tıkır işlemesini severim. Arka planda vakit çalan gereksiz işlemlere asla izin vermem.</p>
+        </div>
+        <div class="section-card">
+            <h2>Rasyonel Takip</h2>
+            <p>Yeni teknolojileri "moda" olduğu için değil; gerçekten bir işe yarıyor mu, rasyonel bir faydası var mı diye kurcalarım.</p>
+        </div>
+        <div class="section-card">
+            <h2>Sözüm Senettir</h2>
+            <p>Eski toprak disipliniyle yetiştim. Şeffaflık temel taşım. Bir iş biter dediysem o iş biter; karmaşık terimlerin arkasına sığınmam.</p>
+        </div>
+        <div class="section-card">
+            <h2>Sadeleştirme Ustası</h2>
+            <p>Dünya karmaşık, ben basitlikten yanayım. Bir sorunu anlatırken veya sistem kurarken en sade ve işleyen yolu seçerim.</p>
+        </div>
+        <div class="section-card">
+            <h2>Analitik Merak</h2>
+            <p>Sadece düğmeye basmam. Arka plandaki mekanizmayı anlamak isterim. Bu merak, sorunları büyümeden fark etmemi sağlar.</p>
+        </div>
+        <div class="section-card">
+            <h2>Geleceğe Hazırlık</h2>
+            <p>Bugünü kurtaran çözümlerle ilgilenmem. Kurduğum bir yapının yıllar sonra da tıkır tıkır işlemesi için temelini sağlam atarım.</p>
+        </div>
+        <div class="section-card">
+            <h2>Hızlı İletişim</h2>
+            <p>Anlamsız yazışmalarla vakit kaybetmeyi sevmem. Sorun belliyse çözüm de bellidir. Dürüst ve doğrudan iletişim her zaman kazandırır.</p>
         </div>
     </div>
 
@@ -209,15 +219,15 @@
 </div>
 
 <footer>
-    <div class="legal-grid">
+    <div class="legal-wrapper">
         <div class="legal-box">
             <h3>KVKK Aydınlatma Metni</h3>
-            <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) çerçevesinde; bu platform üzerinden paylaşılan her türlü kişisel veri, "Veri Sorumlusu" sıfatıyla, yalnızca profesyonel iletişimi sürdürmek ve taleplerinize doğru yanıtlar üretmek amacıyla işlenmektedir. Verileriniz, yasal zorunluluklar dışında hiçbir üçüncü taraf kurum veya kuruluşla paylaşılmamakta; siber güvenlik standartlarına uygun idari ve teknik tedbirlerle korunmaktadır.</p>
+            <p>6698 sayılı kanun çerçevesinde; paylaştığınız kişisel veriler yalnızca iletişimi sürdürmek ve taleplerinize yanıt vermek amacıyla işlenmektedir. Verileriniz üçüncü şahıslarla paylaşılmaz ve siber güvenlik standartlarına uygun şekilde yüksek güvenlikli altyapılarda muhafaza edilir.</p>
         </div>
 
         <div class="legal-box">
             <h3>Dijital Güvenlik Politikası</h3>
-            <p>Ziyaretçi güvenliği temel standarttır. Web sitemiz, veri bütünlüğünü ve gizliliğini uçtan uca koruma altına alan endüstri standardı 256-Bit SSL sertifikası ile güçlendirilmiştir. Kullanıcı deneyiminizi optimize etmek adına sitemizde sadece teknik ve anonim çerezler kullanılmaktadır. Sitemizde gezinmeye devam ederek bu standartları kabul etmiş sayılırsınız.</p>
+            <p>Web sitemiz, veri bütünlüğünü koruyan 256-Bit SSL sertifikası ile güçlendirilmiştir. Kullanıcı deneyimini optimize etmek adına sadece teknik ve anonim çerezler kullanılır. Sitemizde gezinmeye devam ederek bu profesyonel standartları kabul etmiş sayılırsınız.</p>
         </div>
     </div>
 
