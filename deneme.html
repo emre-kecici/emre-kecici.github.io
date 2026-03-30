@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emre Keçici | Profesyonel Portfolyo</title>
     <style>
-        /* GENEL TASARIM */
+        /* GENEL TASARIM - KURUMSAL VE SADE */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #F4F7F6;
@@ -24,6 +24,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
+        /* ÜST ALAN */
         .header {
             text-align: center;
             border-bottom: 1px solid #EEE;
@@ -36,6 +37,13 @@
             color: #1B263B;
             font-size: 30px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            color: #777;
+            margin: 10px 0;
+            font-weight: bold;
         }
 
         .contact-actions {
@@ -51,10 +59,17 @@
             border: 2px solid #1B263B;
             color: #1B263B;
             font-weight: bold;
-            border-radius: 5px;
             font-size: 14px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
+        .btn-action:hover {
+            background: #1B263B;
+            color: #FFF;
+        }
+
+        /* BÖLÜMLER */
         .section-title {
             color: #1B263B;
             border-bottom: 2px solid #1B263B;
@@ -65,13 +80,18 @@
             font-weight: 800;
         }
 
-        .project-item {
-            background: #F9F9F9;
-            padding: 15px;
-            border-left: 4px solid #1B263B;
-            margin-bottom: 15px;
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+        strong { color: #1B263B; }
+
+        .job-detail {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
         }
 
+        /* CV İNDİR BUTONU */
         .btn-pdf {
             background: #1B263B;
             color: #FFF;
@@ -79,17 +99,19 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
+            font-size: 16px;
             display: inline-block;
         }
 
-        /* YASAL KUTUCUKLAR */
+        /* YASAL FOOTER */
         .legal-footer {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 50px;
-            padding-top: 20px;
+            padding-top: 25px;
             border-top: 1px solid #EEE;
+            flex-wrap: wrap;
         }
 
         .legal-item {
@@ -101,30 +123,6 @@
             font-weight: bold;
             color: #555;
             border: 1px solid #DDD;
-        }
-
-        /* YENİ AKAN YAZI SİSTEMİ (DAKTİLO VE ÇUBUK KALDIRILDI) */
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            background: #FFF;
-            margin-top: 40px;
-            padding: 10px 0;
-        }
-
-        .marquee-text {
-            display: inline-block;
-            white-space: nowrap;
-            font-size: 14px;
-            color: #1B263B;
-            font-weight: bold;
-            letter-spacing: 2px;
-            animation: scroll-left 15s linear infinite;
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
         }
 
         /* MODAL */
@@ -168,21 +166,31 @@
     <div class="section">
         <h2 class="section-title">İş Tecrübesi</h2>
         <ul>
-            <li><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam</li>
-            <li><strong>Danışma Memuru | Iberyarns Tekstil</strong> | 2021 - 2024</li>
-            <li><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021</li>
-            <li><strong>Döküm Operatörü | Kırpart</strong> | 2016 - 2018</li>
-            <li><strong>Cankurtaran Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015</li>
+            <li><strong>İş Geliştirme Danışmanı (Bağımsız)</strong> | 2024 - Devam
+                <span class="job-detail">Operasyonel darboğazların tespiti ve saha analizi süreçlerini yönetiyorum.</span>
+            </li>
+            <li><strong>Danışma Memuru | Iberyarns Tekstil</strong> | 2021 - 2024
+                <span class="job-detail">Gereksinim analizi ve süreç iyileştirme odaklı çalışmalarda aktif rol aldım.</span>
+            </li>
+            <li><strong>Vardiya Süpervizörü | Örgün Kalsit</strong> | 2019 - 2021
+                <span class="job-detail">Üretim süreçlerinin koordinasyonu ve vardiya yönetimi sorumluluğunu üstlendim.</span>
+            </li>
+            <li><strong>Döküm Operatörü | Kırpart</strong> | 2016 - 2018
+                <span class="job-detail">Otomotiv döküm süreçlerinde operasyonel sorumluluklar üstlendim.</span>
+            </li>
+            <li><strong>Cankurtaran Takım Lideri | Baia Bodrum Hotel</strong> | 2010 - 2015
+                <span class="job-detail">Ekip yönetimi ve güvenlik protokollerinin takibi süreçlerini başarıyla yönettim.</span>
+            </li>
         </ul>
     </div>
 
     <div class="section">
-        <h2 class="section-title">Sertifikalar</h2>
+        <h2 class="section-title">Eğitim ve Sertifikalar</h2>
         <ul>
             <li>İplik Teknolojileri Ustalık Belgesi</li>
-            <li>Yüzey Temizleme ve Hijyen Sertifikaları</li>
-            <li>BTK Akademi: Yapay Zeka ve Risk Yönetimi (2026)</li>
-            <li>Forklift Operatörlük ve İlkyardım Belgeleri</li>
+            <li>Yüzey Temizleme Sertifikası ve Hijyen Belgesi</li>
+            <li>BTK Akademi: Yapay Zeka, Problem Çözme ve Risk Yönetimi (2026)</li>
+            <li>Forklift Operatörlük Belgesi ve İlkyardım Sertifikası</li>
         </ul>
     </div>
 
@@ -194,10 +202,6 @@
         <div class="legal-item" onclick="openLeg('ssl')">🔒 SSL Güvenliği</div>
         <div class="legal-item" onclick="openLeg('kvkk')">🛡️ KVKK Uyumu</div>
         <div class="legal-item" onclick="openLeg('safe')">✅ Güvenli Site</div>
-    </div>
-    
-    <div class="marquee-container">
-        <div class="marquee-text">DESIGNED BY EMRE KEÇİCİ — DESIGNED BY EMRE KEÇİCİ — DESIGNED BY EMRE KEÇİCİ</div>
     </div>
 </div>
 
@@ -211,9 +215,9 @@
 
 <script>
     const legData = {
-        'ssl': { t: 'SSL Güvenliği', b: 'Verileriniz 256-bit şifreleme ile korunmaktadır.' },
-        'kvkk': { t: 'KVKK Uyumu', b: 'Bilgileriniz yasal mevzuata uygun işlenmektedir.' },
-        'safe': { t: 'Güvenli Site', b: 'Sitemiz zararlı içerik taramasından geçmiştir.' }
+        'ssl': { t: 'SSL Güvenliği', b: 'Bağlantınız 256-bit SSL sertifikası ile korunmaktadır. Paylaştığınız veriler şifrelenerek iletilir.' },
+        'kvkk': { t: 'KVKK Uyumu', b: 'Kişisel verileriniz 6698 sayılı KVKK kapsamında korunmaktadır. Bilgileriniz asla üçüncü şahıslarla paylaşılmaz.' },
+        'safe': { t: 'Güvenli Site', b: 'Sitemiz Google Güvenli Tarama standartlarına uygundur ve zararlı içerik barındırmaz.' }
     };
 
     function openLeg(key) {
